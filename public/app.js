@@ -148,7 +148,10 @@ function setupFilters() {
     state.problems.flatMap((p) => (p.freq && p.freq.companies ? p.freq.companies : []).map((c) => c.name)),
   )].sort((a, b) => a.localeCompare(b, 'zh-CN'));
   $('companyFilter').innerHTML = ['<option value="全部">全部</option>',
-    ...companies.map((c) => `<option value="${c}">${c}</option>`),
+    ...companies.map((c) => {
+      const cnt = state.problems.filter((p) => (p.freq && p.freq.companies || []).some((x) => x.name === c)).length;
+      return `<option value="${c}">${c}（${cnt} 题）</option>`;
+    }),
   ].join('');
 }
 
@@ -247,7 +250,7 @@ function renderProblem() {
   const freqNote = $('freqNote');
   if (freq) {
     freqNote.hidden = false;
-    freqNote.textContent = `最近被考：${freq.lastAsked || '未知'} ｜ 高频/公司数据来自 CodeTop（codetop.cc），仅供参考`;
+    freqNote.textContent = `最近被考：${freq.lastAsked || '未知'} ｜ 数据来源：CodeTop（codetop.cc）`;
   } else {
     freqNote.hidden = true;
   }
