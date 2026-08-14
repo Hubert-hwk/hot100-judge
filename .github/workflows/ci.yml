@@ -1,0 +1,47 @@
+name: CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  verify:
+    name: 评测管线与题库验证
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 环境检查
+        run: |
+          node --version
+          python3 --version
+          gcc --version | head -1
+          g++ --version | head -1
+
+      - name: 评测管线自测（驱动生成：链表/树/矩阵/ops）
+        run: node scripts/test-judge.js
+
+      - name: 数据结构与 JSON 完整性检查
+        run: |
+          node -e "
+            const p = require('./public/data/problems.json');
+            const t = require('./public/data/tests.json');
+            const s = require('./public/data/solutions.json');
+            const missP = p.filter(x => !x.core || !x.explain);
+            const missT = p.filter(x => !t[x.id] || !t[x.id].acm || !t[x.id].core);
+            const missS = p.filter(x => !s[x.id] || !s[x.id].python3 || !s[x.id].cpp);
+            if (missP.length || missT.length || missS.length) {
+              console.error('数据不完整', missP.map(x=>x.id), missT.map(x=>x.id), missS.map(x=>x.id));
+              process.exit(1);
+            }
+            console.log('✅ 100 题数据完整（core/explain/测试用例/题解）');
+          "
+
+      - name: 全量题解验证（100 题 × ACM/核心 × Python3/C++，真实编译运行）
+        run: node scripts/verify-parts.js all
+
+      - name: 前端语法检查
+        run: node --check public/app.js && node --check server.js
