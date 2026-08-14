@@ -12,9 +12,9 @@ const path = require('path');
 const partsDir = path.join(__dirname, '..', 'work', 'parts');
 const dataDir = path.join(__dirname, '..', 'public', 'data');
 
-const problemParts = fs.readdirSync(partsDir).filter((f) => /^problems-.*\.json$/.test(f)).sort();
-const testParts = fs.readdirSync(partsDir).filter((f) => /^tests-.*\.json$/.test(f)).sort();
-const solParts = fs.readdirSync(partsDir).filter((f) => /^solutions-.*\.json$/.test(f)).sort();
+const problemParts = fs.readdirSync(partsDir).filter((f) => /^problems-g\d{2}\.json$/.test(f)).sort();
+const testParts = fs.readdirSync(partsDir).filter((f) => /^tests-g\d{2}\.json$/.test(f)).sort();
+const solParts = fs.readdirSync(partsDir).filter((f) => /^solutions-g\d{2}\.json$/.test(f)).sort();
 
 if (!problemParts.length) {
   console.error('work/parts/ 下没有数据分片，请先运行子代理生成。');
@@ -25,6 +25,18 @@ const problems = [];
 const tests = {};
 const solutions = {};
 
+// 保留上一次合并时由生成脚本（build-codetop-data / add-explains）写入的字段
+let existing = [];
+try {
+  existing = JSON.parse(fs.readFileSync(path.join(dataDir, 'problems.json'), 'utf8'));
+} catch (e) { /* 首次合并无旧文件 */ }
+const preserveFields = (p) => {
+  const old = existing.find((x) => x.id === p.id);
+  if (!old) return;
+  if (old.freq) p.freq = old.freq;
+  if (old.explain) p.explain = old.explain;
+};
+
 for (const f of problemParts) {
   const arr = JSON.parse(fs.readFileSync(path.join(partsDir, f), 'utf8'));
   for (const p of arr) {
@@ -32,6 +44,7 @@ for (const f of problemParts) {
       console.error(`重复题目 id=${p.id}（${f}）`);
       process.exit(1);
     }
+    preserveFields(p);
     problems.push(p);
   }
 }
