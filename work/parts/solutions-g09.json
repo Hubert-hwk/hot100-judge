@@ -1,0 +1,102 @@
+{
+  "32": {
+    "python3": {
+      "core": "def longestValidParentheses(s):\n    # dp[i]：以 s[i] 结尾的最长有效括号子串长度\n    n = len(s)\n    dp = [0] * n\n    res = 0\n    for i in range(1, n):\n        if s[i] == ')':\n            if s[i - 1] == '(':\n                dp[i] = (dp[i - 2] if i >= 2 else 0) + 2\n            elif i - dp[i - 1] - 1 >= 0 and s[i - dp[i - 1] - 1] == '(':\n                dp[i] = dp[i - 1] + 2 + (dp[i - dp[i - 1] - 2] if i - dp[i - 1] - 2 >= 0 else 0)\n            res = max(res, dp[i])\n    return res\n",
+      "acm": "import sys\n\ndef main():\n    lines = sys.stdin.read().splitlines()\n    s = lines[0].strip() if lines else ''\n    # dp[i]：以 s[i] 结尾的最长有效括号子串长度\n    n = len(s)\n    dp = [0] * n\n    res = 0\n    for i in range(1, n):\n        if s[i] == ')':\n            if s[i - 1] == '(':\n                dp[i] = (dp[i - 2] if i >= 2 else 0) + 2\n            elif i - dp[i - 1] - 1 >= 0 and s[i - dp[i - 1] - 1] == '(':\n                dp[i] = dp[i - 1] + 2 + (dp[i - dp[i - 1] - 2] if i - dp[i - 1] - 2 >= 0 else 0)\n            res = max(res, dp[i])\n    print(res)\n\nif __name__ == \"__main__\":\n    main()\n"
+    },
+    "cpp": {
+      "core": "class Solution {\npublic:\n    int longestValidParentheses(string s) {\n        // dp[i]：以 s[i] 结尾的最长有效括号子串长度\n        int n = (int)s.size();\n        vector<int> dp(n, 0);\n        int res = 0;\n        for (int i = 1; i < n; i++) {\n            if (s[i] == ')') {\n                if (s[i - 1] == '(') {\n                    dp[i] = (i >= 2 ? dp[i - 2] : 0) + 2;\n                } else if (i - dp[i - 1] - 1 >= 0 && s[i - dp[i - 1] - 1] == '(') {\n                    dp[i] = dp[i - 1] + 2 + (i - dp[i - 1] - 2 >= 0 ? dp[i - dp[i - 1] - 2] : 0);\n                }\n                res = max(res, dp[i]);\n            }\n        }\n        return res;\n    }\n};\n",
+      "acm": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    string s;\n    getline(cin, s);\n    // dp[i]：以 s[i] 结尾的最长有效括号子串长度\n    int n = (int)s.size();\n    vector<int> dp(n, 0);\n    int res = 0;\n    for (int i = 1; i < n; i++) {\n        if (s[i] == ')') {\n            if (s[i - 1] == '(') {\n                dp[i] = (i >= 2 ? dp[i - 2] : 0) + 2;\n            } else if (i - dp[i - 1] - 1 >= 0 && s[i - dp[i - 1] - 1] == '(') {\n                dp[i] = dp[i - 1] + 2 + (i - dp[i - 1] - 2 >= 0 ? dp[i - dp[i - 1] - 2] : 0);\n            }\n            res = max(res, dp[i]);\n        }\n    }\n    cout << res << '\\n';\n    return 0;\n}\n"
+    }
+  },
+  "70": {
+    "python3": {
+      "core": "def climbStairs(n):\n    # 斐波那契递推：爬到第 i 阶 = 第 i-1 阶 + 第 i-2 阶\n    if n <= 2:\n        return n\n    a, b = 1, 2\n    for _ in range(3, n + 1):\n        a, b = b, a + b\n    return b\n",
+      "acm": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    n = int(data[0])\n    # dp 递推：dp[i] = dp[i-1] + dp[i-2]，滚动变量节省空间\n    if n <= 2:\n        print(n)\n        return\n    a, b = 1, 2\n    for _ in range(3, n + 1):\n        a, b = b, a + b\n    print(b)\n\nif __name__ == \"__main__\":\n    main()\n"
+    },
+    "cpp": {
+      "core": "class Solution {\npublic:\n    int climbStairs(int n) {\n        // 斐波那契递推，滚动变量节省空间\n        if (n <= 2) return n;\n        long long a = 1, b = 2;\n        for (int i = 3; i <= n; i++) {\n            long long c = a + b;\n            a = b;\n            b = c;\n        }\n        return (int)b;\n    }\n};\n",
+      "acm": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n;\n    cin >> n;\n    // dp 递推：dp[i] = dp[i-1] + dp[i-2]，滚动变量节省空间\n    if (n <= 2) {\n        cout << n << '\\n';\n        return 0;\n    }\n    long long a = 1, b = 2;\n    for (int i = 3; i <= n; i++) {\n        long long c = a + b;\n        a = b;\n        b = c;\n    }\n    cout << b << '\\n';\n    return 0;\n}\n"
+    }
+  },
+  "118": {
+    "python3": {
+      "core": "def generate(numRows):\n    # 逐行构造：每行两端为 1，中间为上一行相邻两数之和\n    res = []\n    for r in range(numRows):\n        row = [1] * (r + 1)\n        for i in range(1, r):\n            row[i] = res[r - 1][i - 1] + res[r - 1][i]\n        res.append(row)\n    return res\n",
+      "acm": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    num_rows = int(data[0])\n    # 每行两端为 1，中间元素为上一行相邻两数之和\n    row = [1]\n    for _ in range(num_rows):\n        print(' '.join(map(str, row)))\n        nxt = [1] * (len(row) + 1)\n        for i in range(1, len(row)):\n            nxt[i] = row[i - 1] + row[i]\n        row = nxt\n\nif __name__ == \"__main__\":\n    main()\n"
+    },
+    "cpp": {
+      "core": "class Solution {\npublic:\n    vector<vector<int>> generate(int numRows) {\n        // 逐行构造：每行两端为 1，中间为上一行相邻两数之和\n        vector<vector<int>> res;\n        for (int r = 0; r < numRows; r++) {\n            vector<int> row(r + 1, 1);\n            for (int i = 1; i < r; i++) row[i] = res[r - 1][i - 1] + res[r - 1][i];\n            res.push_back(row);\n        }\n        return res;\n    }\n};\n",
+      "acm": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int num_rows;\n    cin >> num_rows;\n    // 每行两端为 1，中间元素为上一行相邻两数之和\n    vector<int> row = {1};\n    for (int r = 0; r < num_rows; r++) {\n        for (size_t i = 0; i < row.size(); i++) {\n            if (i) cout << ' ';\n            cout << row[i];\n        }\n        cout << '\\n';\n        vector<int> nxt(row.size() + 1, 1);\n        for (size_t i = 1; i < row.size(); i++) nxt[i] = row[i - 1] + row[i];\n        row = nxt;\n    }\n    return 0;\n}\n"
+    }
+  },
+  "139": {
+    "python3": {
+      "core": "def wordBreak(s, wordDict):\n    # dp[i] 表示 s 的前 i 个字符能否由字典中的单词拼接\n    words = set(wordDict)\n    n = len(s)\n    dp = [False] * (n + 1)\n    dp[0] = True\n    max_len = max((len(w) for w in words), default=0)\n    for i in range(1, n + 1):\n        for j in range(max(0, i - max_len), i):\n            if dp[j] and s[j:i] in words:\n                dp[i] = True\n                break\n    return dp[n]\n",
+      "acm": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    s = data[0]\n    m = int(data[1])\n    word_dict = set(data[2:2 + m])\n    # dp[i] 表示 s 的前 i 个字符能否由字典中的单词拼接\n    n = len(s)\n    dp = [False] * (n + 1)\n    dp[0] = True\n    max_len = max((len(w) for w in word_dict), default=0)\n    for i in range(1, n + 1):\n        for j in range(max(0, i - max_len), i):\n            if dp[j] and s[j:i] in word_dict:\n                dp[i] = True\n                break\n    print('true' if dp[n] else 'false')\n\nif __name__ == \"__main__\":\n    main()\n"
+    },
+    "cpp": {
+      "core": "class Solution {\npublic:\n    bool wordBreak(string s, vector<string>& wordDict) {\n        // dp[i] 表示 s 的前 i 个字符能否由字典中的单词拼接\n        unordered_set<string> words(wordDict.begin(), wordDict.end());\n        int max_len = 0;\n        for (const string& w : words) max_len = max(max_len, (int)w.size());\n        int n = (int)s.size();\n        vector<bool> dp(n + 1, false);\n        dp[0] = true;\n        for (int i = 1; i <= n; i++) {\n            for (int j = max(0, i - max_len); j < i; j++) {\n                if (dp[j] && words.count(s.substr(j, i - j))) {\n                    dp[i] = true;\n                    break;\n                }\n            }\n        }\n        return dp[n];\n    }\n};\n",
+      "acm": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    string s;\n    cin >> s;\n    int m;\n    cin >> m;\n    unordered_set<string> dict;\n    int max_len = 0;\n    for (int i = 0; i < m; i++) {\n        string w;\n        cin >> w;\n        dict.insert(w);\n        max_len = max(max_len, (int)w.size());\n    }\n    // dp[i] 表示 s 的前 i 个字符能否由字典中的单词拼接\n    int n = (int)s.size();\n    vector<bool> dp(n + 1, false);\n    dp[0] = true;\n    for (int i = 1; i <= n; i++) {\n        for (int j = max(0, i - max_len); j < i; j++) {\n            if (dp[j] && dict.count(s.substr(j, i - j))) {\n                dp[i] = true;\n                break;\n            }\n        }\n    }\n    cout << (dp[n] ? \"true\" : \"false\") << '\\n';\n    return 0;\n}\n"
+    }
+  },
+  "152": {
+    "python3": {
+      "core": "def maxProduct(nums):\n    # 同时维护以当前元素结尾的最大/最小乘积（负负得正）\n    cur_max = cur_min = best = nums[0]\n    for v in nums[1:]:\n        if v < 0:\n            cur_max, cur_min = cur_min, cur_max\n        cur_max = max(v, cur_max * v)\n        cur_min = min(v, cur_min * v)\n        best = max(best, cur_max)\n    return best\n",
+      "acm": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    n = int(data[0])\n    nums = list(map(int, data[1:1 + n]))\n    # 同时维护以当前元素结尾的最大/最小乘积（负负得正）\n    cur_max = cur_min = best = nums[0]\n    for v in nums[1:]:\n        if v < 0:\n            cur_max, cur_min = cur_min, cur_max\n        cur_max = max(v, cur_max * v)\n        cur_min = min(v, cur_min * v)\n        best = max(best, cur_max)\n    print(best)\n\nif __name__ == \"__main__\":\n    main()\n"
+    },
+    "cpp": {
+      "core": "class Solution {\npublic:\n    int maxProduct(vector<int>& nums) {\n        // 同时维护以当前元素结尾的最大/最小乘积，中间量用 long long 防溢出\n        long long cur_max = nums[0], cur_min = nums[0], best = nums[0];\n        for (int i = 1; i < (int)nums.size(); i++) {\n            long long v = nums[i];\n            if (v < 0) swap(cur_max, cur_min);\n            cur_max = max(v, cur_max * v);\n            cur_min = min(v, cur_min * v);\n            best = max(best, cur_max);\n        }\n        return (int)best;\n    }\n};\n",
+      "acm": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n;\n    cin >> n;\n    vector<int> nums(n);\n    for (int i = 0; i < n; i++) cin >> nums[i];\n    // 同时维护以当前元素结尾的最大/最小乘积（负负得正），中间量用 long long 防溢出\n    long long cur_max = nums[0], cur_min = nums[0], best = nums[0];\n    for (int i = 1; i < n; i++) {\n        long long v = nums[i];\n        if (v < 0) swap(cur_max, cur_min);\n        cur_max = max(v, cur_max * v);\n        cur_min = min(v, cur_min * v);\n        best = max(best, cur_max);\n    }\n    cout << best << '\\n';\n    return 0;\n}\n"
+    }
+  },
+  "198": {
+    "python3": {
+      "core": "def rob(nums):\n    # 滚动 DP：rob2/rob1 分别表示到上一家与当前家的最大收益\n    rob2 = rob1 = 0\n    for v in nums:\n        rob2, rob1 = rob1, max(rob1, rob2 + v)\n    return rob1\n",
+      "acm": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    n = int(data[0])\n    nums = list(map(int, data[1:1 + n]))\n    # 滚动 DP：rob2/rob1 分别表示到上一家与当前家的最大收益\n    rob2 = rob1 = 0\n    for v in nums:\n        rob2, rob1 = rob1, max(rob1, rob2 + v)\n    print(rob1)\n\nif __name__ == \"__main__\":\n    main()\n"
+    },
+    "cpp": {
+      "core": "class Solution {\npublic:\n    int rob(vector<int>& nums) {\n        // 滚动 DP：rob2/rob1 分别表示到上一家与当前家的最大收益\n        long long rob2 = 0, rob1 = 0;\n        for (int v : nums) {\n            long long nxt = max(rob1, rob2 + v);\n            rob2 = rob1;\n            rob1 = nxt;\n        }\n        return (int)rob1;\n    }\n};\n",
+      "acm": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n;\n    cin >> n;\n    vector<int> nums(n);\n    for (int i = 0; i < n; i++) cin >> nums[i];\n    // 滚动 DP：rob2/rob1 分别表示到上一家与当前家的最大收益\n    long long rob2 = 0, rob1 = 0;\n    for (int v : nums) {\n        long long nxt = max(rob1, rob2 + v);\n        rob2 = rob1;\n        rob1 = nxt;\n    }\n    cout << rob1 << '\\n';\n    return 0;\n}\n"
+    }
+  },
+  "279": {
+    "python3": {
+      "core": "def numSquares(n):\n    # dp[i] = min(dp[i - j*j] + 1)，其中 j*j <= i\n    INF = 10 ** 9\n    dp = [INF] * (n + 1)\n    dp[0] = 0\n    for i in range(1, n + 1):\n        j = 1\n        while j * j <= i:\n            dp[i] = min(dp[i], dp[i - j * j] + 1)\n            j += 1\n    return dp[n]\n",
+      "acm": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    n = int(data[0])\n    # dp[i] = min(dp[i - j*j] + 1)，其中 j*j <= i\n    INF = 10 ** 9\n    dp = [INF] * (n + 1)\n    dp[0] = 0\n    for i in range(1, n + 1):\n        j = 1\n        while j * j <= i:\n            dp[i] = min(dp[i], dp[i - j * j] + 1)\n            j += 1\n    print(dp[n])\n\nif __name__ == \"__main__\":\n    main()\n"
+    },
+    "cpp": {
+      "core": "class Solution {\npublic:\n    int numSquares(int n) {\n        // dp[i] = min(dp[i - j*j] + 1)，其中 j*j <= i\n        vector<int> dp(n + 1, INT_MAX);\n        dp[0] = 0;\n        for (int i = 1; i <= n; i++) {\n            for (int j = 1; j * j <= i; j++) {\n                dp[i] = min(dp[i], dp[i - j * j] + 1);\n            }\n        }\n        return dp[n];\n    }\n};\n",
+      "acm": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n;\n    cin >> n;\n    // dp[i] = min(dp[i - j*j] + 1)，其中 j*j <= i\n    vector<int> dp(n + 1, INT_MAX);\n    dp[0] = 0;\n    for (int i = 1; i <= n; i++) {\n        for (int j = 1; j * j <= i; j++) {\n            dp[i] = min(dp[i], dp[i - j * j] + 1);\n        }\n    }\n    cout << dp[n] << '\\n';\n    return 0;\n}\n"
+    }
+  },
+  "300": {
+    "python3": {
+      "core": "def lengthOfLIS(nums):\n    # 贪心 + 二分：tails[i] 记录长度为 i+1 的递增子序列的最小末尾值\n    tails = []\n    for x in nums:\n        lo, hi = 0, len(tails)\n        while lo < hi:\n            mid = (lo + hi) // 2\n            if tails[mid] < x:\n                lo = mid + 1\n            else:\n                hi = mid\n        if lo == len(tails):\n            tails.append(x)\n        else:\n            tails[lo] = x\n    return len(tails)\n",
+      "acm": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    n = int(data[0])\n    nums = list(map(int, data[1:1 + n]))\n    # 贪心 + 二分：tails[i] 记录长度为 i+1 的递增子序列的最小末尾值\n    tails = []\n    for x in nums:\n        lo, hi = 0, len(tails)\n        while lo < hi:\n            mid = (lo + hi) // 2\n            if tails[mid] < x:\n                lo = mid + 1\n            else:\n                hi = mid\n        if lo == len(tails):\n            tails.append(x)\n        else:\n            tails[lo] = x\n    print(len(tails))\n\nif __name__ == \"__main__\":\n    main()\n"
+    },
+    "cpp": {
+      "core": "class Solution {\npublic:\n    int lengthOfLIS(vector<int>& nums) {\n        // 贪心 + 二分：tails[i] 记录长度为 i+1 的递增子序列的最小末尾值\n        vector<int> tails;\n        for (int x : nums) {\n            auto it = lower_bound(tails.begin(), tails.end(), x);\n            if (it == tails.end()) tails.push_back(x);\n            else *it = x;\n        }\n        return (int)tails.size();\n    }\n};\n",
+      "acm": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n;\n    cin >> n;\n    vector<int> nums(n);\n    for (int i = 0; i < n; i++) cin >> nums[i];\n    // 贪心 + 二分：tails[i] 记录长度为 i+1 的递增子序列的最小末尾值\n    vector<int> tails;\n    for (int x : nums) {\n        auto it = lower_bound(tails.begin(), tails.end(), x);\n        if (it == tails.end()) tails.push_back(x);\n        else *it = x;\n    }\n    cout << tails.size() << '\\n';\n    return 0;\n}\n"
+    }
+  },
+  "322": {
+    "python3": {
+      "core": "def coinChange(coins, amount):\n    # 完全背包 DP：dp[i] = min(dp[i - c] + 1)\n    INF = 10 ** 9\n    dp = [INF] * (amount + 1)\n    dp[0] = 0\n    for i in range(1, amount + 1):\n        for c in coins:\n            if c <= i:\n                dp[i] = min(dp[i], dp[i - c] + 1)\n    return dp[amount] if dp[amount] < INF else -1\n",
+      "acm": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    n = int(data[0])\n    amount = int(data[1])\n    coins = list(map(int, data[2:2 + n]))\n    # 完全背包 DP：dp[i] 表示凑成金额 i 的最少硬币数\n    INF = 10 ** 9\n    dp = [INF] * (amount + 1)\n    dp[0] = 0\n    for i in range(1, amount + 1):\n        for c in coins:\n            if c <= i:\n                dp[i] = min(dp[i], dp[i - c] + 1)\n    print(dp[amount] if dp[amount] < INF else -1)\n\nif __name__ == \"__main__\":\n    main()\n"
+    },
+    "cpp": {
+      "core": "class Solution {\npublic:\n    int coinChange(vector<int>& coins, int amount) {\n        // 完全背包 DP：dp[i] = min(dp[i - c] + 1)\n        const int INF = 1e9;\n        vector<int> dp(amount + 1, INF);\n        dp[0] = 0;\n        for (int i = 1; i <= amount; i++) {\n            for (int c : coins) {\n                if (c <= i) dp[i] = min(dp[i], dp[i - c] + 1);\n            }\n        }\n        return dp[amount] >= INF ? -1 : dp[amount];\n    }\n};\n",
+      "acm": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n, amount;\n    cin >> n >> amount;\n    vector<int> coins(n);\n    for (int i = 0; i < n; i++) cin >> coins[i];\n    // 完全背包 DP：dp[i] 表示凑成金额 i 的最少硬币数\n    const int INF = 1e9;\n    vector<int> dp(amount + 1, INF);\n    dp[0] = 0;\n    for (int i = 1; i <= amount; i++) {\n        for (int c : coins) {\n            if (c <= i) dp[i] = min(dp[i], dp[i - c] + 1);\n        }\n    }\n    cout << (dp[amount] >= INF ? -1 : dp[amount]) << '\\n';\n    return 0;\n}\n"
+    }
+  },
+  "416": {
+    "python3": {
+      "core": "def canPartition(nums):\n    total = sum(nums)\n    if total % 2 == 1:\n        return False\n    target = total // 2\n    # 0/1 背包：dp[s] 表示能否凑出和 s\n    dp = [False] * (target + 1)\n    dp[0] = True\n    for v in nums:\n        for s in range(target, v - 1, -1):\n            if dp[s - v]:\n                dp[s] = True\n    return dp[target]\n",
+      "acm": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    n = int(data[0])\n    nums = list(map(int, data[1:1 + n]))\n    total = sum(nums)\n    # 总和为奇数无法平分；空数组总和为 0，按 LeetCode 语义返回 true\n    if total % 2 == 1:\n        print('false')\n        return\n    target = total // 2\n    # 0/1 背包：dp[s] 表示能否凑出和 s\n    dp = [False] * (target + 1)\n    dp[0] = True\n    for v in nums:\n        for s in range(target, v - 1, -1):\n            if dp[s - v]:\n                dp[s] = True\n    print('true' if dp[target] else 'false')\n\nif __name__ == \"__main__\":\n    main()\n"
+    },
+    "cpp": {
+      "core": "class Solution {\npublic:\n    bool canPartition(vector<int>& nums) {\n        long long total = 0;\n        for (int v : nums) total += v;\n        if (total % 2 == 1) return false;\n        int target = (int)(total / 2);\n        // 0/1 背包：dp[s] 表示能否凑出和 s\n        vector<bool> dp(target + 1, false);\n        dp[0] = true;\n        for (int v : nums) {\n            for (int s = target; s >= v; s--) {\n                if (dp[s - v]) dp[s] = true;\n            }\n        }\n        return dp[target];\n    }\n};\n",
+      "acm": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n;\n    cin >> n;\n    vector<int> nums(n);\n    long long total = 0;\n    for (int i = 0; i < n; i++) {\n        cin >> nums[i];\n        total += nums[i];\n    }\n    // 总和为奇数无法平分；空数组总和为 0，按 LeetCode 语义返回 true\n    if (total % 2 == 1) {\n        cout << \"false\\n\";\n        return 0;\n    }\n    int target = (int)(total / 2);\n    // 0/1 背包：dp[s] 表示能否凑出和 s\n    vector<bool> dp(target + 1, false);\n    dp[0] = true;\n    for (int v : nums) {\n        for (int s = target; s >= v; s--) {\n            if (dp[s - v]) dp[s] = true;\n        }\n    }\n    cout << (dp[target] ? \"true\" : \"false\") << '\\n';\n    return 0;\n}\n"
+    }
+  }
+}

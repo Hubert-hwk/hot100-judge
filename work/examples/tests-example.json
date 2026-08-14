@@ -1,0 +1,313 @@
+{
+  "1": {
+    "acm": [
+      {
+        "input": "4\n2 7 11 15\n9\n",
+        "output": "0 1\n"
+      },
+      {
+        "input": "3\n3 2 4\n6\n",
+        "output": "1 2\n"
+      },
+      {
+        "input": "2\n3 3\n6\n",
+        "output": "0 1\n"
+      },
+      {
+        "input": "4\n2 7 11 15\n26\n",
+        "output": "2 3\n"
+      }
+    ],
+    "core": [
+      {
+        "args": [
+          [
+            2,
+            7,
+            11,
+            15
+          ],
+          9
+        ],
+        "expected": [
+          0,
+          1
+        ]
+      },
+      {
+        "args": [
+          [
+            3,
+            2,
+            4
+          ],
+          6
+        ],
+        "expected": [
+          1,
+          2
+        ]
+      },
+      {
+        "args": [
+          [
+            3,
+            3
+          ],
+          6
+        ],
+        "expected": [
+          0,
+          1
+        ]
+      },
+      {
+        "args": [
+          [
+            2,
+            7,
+            11,
+            15
+          ],
+          26
+        ],
+        "expected": [
+          2,
+          3
+        ]
+      }
+    ]
+  },
+  "94": {
+    "acm": [
+      {
+        "input": "4\n1 null 2 3\n",
+        "output": "1 3 2\n"
+      },
+      {
+        "input": "3\n1 2 3\n",
+        "output": "2 1 3\n"
+      },
+      {
+        "input": "1\n5\n",
+        "output": "5\n"
+      },
+      {
+        "input": "0\n",
+        "output": "\n"
+      }
+    ],
+    "core": [
+      {
+        "args": [
+          "tree:[1,null,2,3]"
+        ],
+        "expected": [
+          1,
+          3,
+          2
+        ]
+      },
+      {
+        "args": [
+          "tree:[1,2,3]"
+        ],
+        "expected": [
+          2,
+          1,
+          3
+        ]
+      },
+      {
+        "args": [
+          "tree:[]"
+        ],
+        "expected": []
+      }
+    ]
+  },
+  "146": {
+    "acm": [
+      {
+        "input": "2 9\nput 1 1\nput 2 2\nget 1\nput 3 3\nget 2\nput 4 4\nget 1\nget 3\nget 4\n",
+        "output": "1\n-1\n-1\n3\n4\n"
+      },
+      {
+        "input": "1 3\nget 1\nput 1 1\nget 1\n",
+        "output": "-1\n1\n"
+      },
+      {
+        "input": "1 4\nput 1 1\nput 2 2\nget 1\nget 2\n",
+        "output": "-1\n2\n"
+      }
+    ],
+    "core": [
+      {
+        "ops": [
+          "LRUCache",
+          "put",
+          "put",
+          "get",
+          "put",
+          "get",
+          "put",
+          "get",
+          "get",
+          "get"
+        ],
+        "args": [
+          [
+            2
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            1
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            2
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            1
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ]
+        ],
+        "expected": [
+          null,
+          null,
+          null,
+          1,
+          null,
+          -1,
+          null,
+          -1,
+          3,
+          4
+        ]
+      },
+      {
+        "ops": [
+          "LRUCache",
+          "get",
+          "put",
+          "get"
+        ],
+        "args": [
+          [
+            1
+          ],
+          [
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1
+          ]
+        ],
+        "expected": [
+          null,
+          -1,
+          null,
+          1
+        ]
+      },
+      {
+        "ops": [
+          "LRUCache",
+          "put",
+          "put",
+          "get",
+          "get"
+        ],
+        "args": [
+          [
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ]
+        ],
+        "expected": [
+          null,
+          null,
+          null,
+          -1,
+          2
+        ]
+      }
+    ]
+  },
+  "206": {
+    "acm": [
+      {
+        "input": "5\n1 2 3 4 5\n",
+        "output": "5 4 3 2 1\n"
+      },
+      {
+        "input": "2\n1 2\n",
+        "output": "2 1\n"
+      },
+      {
+        "input": "1\n7\n",
+        "output": "7\n"
+      },
+      {
+        "input": "0\n",
+        "output": "\n"
+      }
+    ],
+    "core": [
+      {
+        "args": [
+          "list:[1,2,3,4,5]"
+        ],
+        "expected": "list:[5,4,3,2,1]"
+      },
+      {
+        "args": [
+          "list:[1,2]"
+        ],
+        "expected": "list:[2,1]"
+      },
+      {
+        "args": [
+          "list:[]"
+        ],
+        "expected": "list:[]"
+      }
+    ]
+  }
+}

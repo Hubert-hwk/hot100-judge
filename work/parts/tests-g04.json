@@ -1,0 +1,744 @@
+{
+  "23": {
+    "acm": [
+      {
+        "input": "3\n3 1 4 5\n3 1 3 4\n2 2 6\n",
+        "output": "1 1 2 3 4 4 5 6\n"
+      },
+      {
+        "input": "2\n0\n1 1\n",
+        "output": "1\n"
+      },
+      {
+        "input": "0\n",
+        "output": "\n"
+      },
+      {
+        "input": "2\n3 1 1 1\n3 1 1 1\n",
+        "output": "1 1 1 1 1 1\n"
+      }
+    ],
+    "core": [
+      {
+        "args": [
+          [
+            "list:[1,4,5]",
+            "list:[1,3,4]",
+            "list:[2,6]"
+          ]
+        ],
+        "expected": "list:[1,1,2,3,4,4,5,6]"
+      },
+      {
+        "args": [
+          [
+            "list:[1,2,3]"
+          ]
+        ],
+        "expected": "list:[1,2,3]"
+      },
+      {
+        "args": [
+          []
+        ],
+        "expected": "list:[]"
+      },
+      {
+        "args": [
+          [
+            "list:[]",
+            "list:[1]"
+          ]
+        ],
+        "expected": "list:[1]"
+      },
+      {
+        "args": [
+          [
+            "list:[1,1,1]",
+            "list:[1,1,1]"
+          ]
+        ],
+        "expected": "list:[1,1,1,1,1,1]"
+      }
+    ]
+  },
+  "25": {
+    "acm": [
+      {
+        "input": "5 2\n1 2 3 4 5\n",
+        "output": "2 1 4 3 5\n"
+      },
+      {
+        "input": "5 3\n1 2 3 4 5\n",
+        "output": "3 2 1 4 5\n"
+      },
+      {
+        "input": "4 5\n1 2 3 4\n",
+        "output": "1 2 3 4\n"
+      },
+      {
+        "input": "0 1\n",
+        "output": "\n"
+      },
+      {
+        "input": "5 1\n1 2 3 4 5\n",
+        "output": "1 2 3 4 5\n"
+      }
+    ],
+    "core": [
+      {
+        "args": [
+          "list:[1,2,3,4,5]",
+          2
+        ],
+        "expected": "list:[2,1,4,3,5]"
+      },
+      {
+        "args": [
+          "list:[1,2,3,4,5]",
+          3
+        ],
+        "expected": "list:[3,2,1,4,5]"
+      },
+      {
+        "args": [
+          "list:[1,2,3,4,5]",
+          5
+        ],
+        "expected": "list:[5,4,3,2,1]"
+      },
+      {
+        "args": [
+          "list:[1,2]",
+          3
+        ],
+        "expected": "list:[1,2]"
+      },
+      {
+        "args": [
+          "list:[]",
+          2
+        ],
+        "expected": "list:[]"
+      }
+    ]
+  },
+  "94": {
+    "acm": [
+      {
+        "input": "3\n1 null 2 3\n",
+        "output": "1 2\n"
+      },
+      {
+        "input": "3\n1 2 3\n",
+        "output": "2 1 3\n"
+      },
+      {
+        "input": "1\n5\n",
+        "output": "5\n"
+      },
+      {
+        "input": "0\n",
+        "output": "\n"
+      }
+    ],
+    "core": [
+      {
+        "args": [
+          "tree:[1,null,2,3]"
+        ],
+        "expected": [
+          1,
+          3,
+          2
+        ]
+      },
+      {
+        "args": [
+          "tree:[1,2,3]"
+        ],
+        "expected": [
+          2,
+          1,
+          3
+        ]
+      },
+      {
+        "args": [
+          "tree:[1]"
+        ],
+        "expected": [
+          1
+        ]
+      },
+      {
+        "args": [
+          "tree:[]"
+        ],
+        "expected": []
+      },
+      {
+        "args": [
+          "tree:[5,3,6,2,4,null,7]"
+        ],
+        "expected": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      }
+    ]
+  },
+  "101": {
+    "acm": [
+      {
+        "input": "7\n1 2 2 3 4 4 3\n",
+        "output": "true\n"
+      },
+      {
+        "input": "5\n1 2 2 null 3 null 3\n",
+        "output": "false\n"
+      },
+      {
+        "input": "3\n1 2 null\n",
+        "output": "false\n"
+      },
+      {
+        "input": "0\n",
+        "output": "true\n"
+      }
+    ],
+    "core": [
+      {
+        "args": [
+          "tree:[1,2,2,3,4,4,3]"
+        ],
+        "expected": true
+      },
+      {
+        "args": [
+          "tree:[1,2,2,null,3,null,3]"
+        ],
+        "expected": false
+      },
+      {
+        "args": [
+          "tree:[1,2,2]"
+        ],
+        "expected": true
+      },
+      {
+        "args": [
+          "tree:[1,2,null]"
+        ],
+        "expected": false
+      },
+      {
+        "args": [
+          "tree:[]"
+        ],
+        "expected": true
+      }
+    ]
+  },
+  "104": {
+    "acm": [
+      {
+        "input": "7\n3 9 20 null null 15 7\n",
+        "output": "3\n"
+      },
+      {
+        "input": "2\n1 null 2\n",
+        "output": "1\n"
+      },
+      {
+        "input": "1\n1\n",
+        "output": "1\n"
+      },
+      {
+        "input": "0\n",
+        "output": "0\n"
+      }
+    ],
+    "core": [
+      {
+        "args": [
+          "tree:[3,9,20,null,null,15,7]"
+        ],
+        "expected": 3
+      },
+      {
+        "args": [
+          "tree:[1,null,2]"
+        ],
+        "expected": 2
+      },
+      {
+        "args": [
+          "tree:[1]"
+        ],
+        "expected": 1
+      },
+      {
+        "args": [
+          "tree:[]"
+        ],
+        "expected": 0
+      },
+      {
+        "args": [
+          "tree:[1,1,1]"
+        ],
+        "expected": 2
+      }
+    ]
+  },
+  "138": {
+    "acm": [
+      {
+        "input": "5\n7 -1\n13 0\n11 4\n10 2\n1 0\n",
+        "output": "7 -1\n13 0\n11 4\n10 2\n1 0\n"
+      },
+      {
+        "input": "2\n1 1\n2 1\n",
+        "output": "1 1\n2 1\n"
+      },
+      {
+        "input": "1\n1 0\n",
+        "output": "1 0\n"
+      },
+      {
+        "input": "0\n",
+        "output": ""
+      }
+    ],
+    "core": [
+      {
+        "args": [
+          "randomList:[[7,-1],[13,0],[11,4],[10,2],[1,0]]"
+        ],
+        "expected": "randomList:[[7,-1],[13,0],[11,4],[10,2],[1,0]]"
+      },
+      {
+        "args": [
+          "randomList:[[1,1],[2,1]]"
+        ],
+        "expected": "randomList:[[1,1],[2,1]]"
+      },
+      {
+        "args": [
+          "randomList:[[3,-1],[3,-1],[3,-1]]"
+        ],
+        "expected": "randomList:[[3,-1],[3,-1],[3,-1]]"
+      },
+      {
+        "args": [
+          "randomList:[[1,0]]"
+        ],
+        "expected": "randomList:[[1,0]]"
+      },
+      {
+        "args": [
+          "randomList:[]"
+        ],
+        "expected": "randomList:[]"
+      }
+    ]
+  },
+  "146": {
+    "acm": [
+      {
+        "input": "2 9\nput 1 1\nput 2 2\nget 1\nput 3 3\nget 2\nput 4 4\nget 1\nget 3\nget 4\n",
+        "output": "1\n-1\n-1\n3\n4\n"
+      },
+      {
+        "input": "1 3\nget 1\nput 1 1\nget 1\n",
+        "output": "-1\n1\n"
+      },
+      {
+        "input": "2 5\nput 1 1\nput 2 2\nput 1 3\nget 1\nget 2\n",
+        "output": "3\n2\n"
+      }
+    ],
+    "core": [
+      {
+        "ops": [
+          "LRUCache",
+          "put",
+          "put",
+          "get",
+          "put",
+          "get",
+          "put",
+          "get",
+          "get",
+          "get"
+        ],
+        "args": [
+          [
+            2
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            1
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            2
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            1
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ]
+        ],
+        "expected": [
+          null,
+          null,
+          null,
+          1,
+          null,
+          -1,
+          null,
+          -1,
+          3,
+          4
+        ]
+      },
+      {
+        "ops": [
+          "LRUCache",
+          "put",
+          "get",
+          "put",
+          "get",
+          "get"
+        ],
+        "args": [
+          [
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ]
+        ],
+        "expected": [
+          null,
+          null,
+          1,
+          null,
+          -1,
+          2
+        ]
+      },
+      {
+        "ops": [
+          "LRUCache",
+          "put",
+          "put",
+          "put",
+          "get",
+          "get"
+        ],
+        "args": [
+          [
+            2
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ]
+        ],
+        "expected": [
+          null,
+          null,
+          null,
+          null,
+          3,
+          2
+        ]
+      },
+      {
+        "ops": [
+          "LRUCache",
+          "put",
+          "put",
+          "put",
+          "put",
+          "get",
+          "get",
+          "get"
+        ],
+        "args": [
+          [
+            3
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ]
+        ],
+        "expected": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          -1,
+          2,
+          3
+        ]
+      },
+      {
+        "ops": [
+          "LRUCache",
+          "get",
+          "get"
+        ],
+        "args": [
+          [
+            2
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ]
+        ],
+        "expected": [
+          null,
+          -1,
+          -1
+        ]
+      }
+    ]
+  },
+  "148": {
+    "acm": [
+      {
+        "input": "4\n4 2 1 3\n",
+        "output": "1 2 3 4\n"
+      },
+      {
+        "input": "5\n-1 5 3 4 0\n",
+        "output": "-1 0 3 4 5\n"
+      },
+      {
+        "input": "1\n7\n",
+        "output": "7\n"
+      },
+      {
+        "input": "0\n",
+        "output": "\n"
+      }
+    ],
+    "core": [
+      {
+        "args": [
+          "list:[4,2,1,3]"
+        ],
+        "expected": "list:[1,2,3,4]"
+      },
+      {
+        "args": [
+          "list:[-1,5,3,4,0]"
+        ],
+        "expected": "list:[-1,0,3,4,5]"
+      },
+      {
+        "args": [
+          "list:[1]"
+        ],
+        "expected": "list:[1]"
+      },
+      {
+        "args": [
+          "list:[]"
+        ],
+        "expected": "list:[]"
+      },
+      {
+        "args": [
+          "list:[2,2,2]"
+        ],
+        "expected": "list:[2,2,2]"
+      }
+    ]
+  },
+  "226": {
+    "acm": [
+      {
+        "input": "7\n4 2 7 1 3 6 9\n",
+        "output": "4 7 2 9 6 3 1\n"
+      },
+      {
+        "input": "2\n1 2\n",
+        "output": "1 null 2\n"
+      },
+      {
+        "input": "3\n1 null 2\n",
+        "output": "1 2\n"
+      },
+      {
+        "input": "0\n",
+        "output": "\n"
+      }
+    ],
+    "core": [
+      {
+        "args": [
+          "tree:[4,2,7,1,3,6,9]"
+        ],
+        "expected": "tree:[4,7,2,9,6,3,1]"
+      },
+      {
+        "args": [
+          "tree:[1,2]"
+        ],
+        "expected": "tree:[1,null,2]"
+      },
+      {
+        "args": [
+          "tree:[1,null,2]"
+        ],
+        "expected": "tree:[1,2]"
+      },
+      {
+        "args": [
+          "tree:[]"
+        ],
+        "expected": "tree:[]"
+      },
+      {
+        "args": [
+          "tree:[1]"
+        ],
+        "expected": "tree:[1]"
+      }
+    ]
+  },
+  "543": {
+    "acm": [
+      {
+        "input": "5\n1 2 3 4 5\n",
+        "output": "3\n"
+      },
+      {
+        "input": "7\n1 2 3 4 5 6 7\n",
+        "output": "4\n"
+      },
+      {
+        "input": "1\n1\n",
+        "output": "0\n"
+      },
+      {
+        "input": "0\n",
+        "output": "0\n"
+      }
+    ],
+    "core": [
+      {
+        "args": [
+          "tree:[1,2,3,4,5]"
+        ],
+        "expected": 3
+      },
+      {
+        "args": [
+          "tree:[1,2]"
+        ],
+        "expected": 1
+      },
+      {
+        "args": [
+          "tree:[1]"
+        ],
+        "expected": 0
+      },
+      {
+        "args": [
+          "tree:[]"
+        ],
+        "expected": 0
+      },
+      {
+        "args": [
+          "tree:[1,2,3,4,5,6,7]"
+        ],
+        "expected": 4
+      }
+    ]
+  }
+}

@@ -1,0 +1,468 @@
+[
+  {
+    "id": 45,
+    "title": "跳跃游戏 II",
+    "difficulty": "中等",
+    "topic": "贪心",
+    "url": "https://leetcode.cn/problems/jump-game-ii/",
+    "desc": "给定长度为 n 的 0 索引整数数组 nums，初始位置为 nums[0]，数组中的每个元素代表在该位置可以跳跃的最大长度。题目保证总是可以到达最后一个位置，返回到达最后一个位置的最少跳跃次数。",
+    "acm": {
+      "input": "第一行一个整数 n，表示数组长度。\n第二行 n 个整数，表示每个位置最多能跳跃的步数。题目保证可以到达最后一个下标。",
+      "output": "输出到达最后一个下标所需的最少跳跃次数，末尾换行。",
+      "examples": [
+        {
+          "input": "5\n2 3 1 1 4\n",
+          "output": "2\n"
+        },
+        {
+          "input": "5\n2 3 0 1 4\n",
+          "output": "2\n"
+        }
+      ],
+      "template": {
+        "python3": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    n = int(data[0])\n    nums = list(map(int, data[1:1 + n]))\n    # TODO: 输出到达最后一个下标所需的最少跳跃次数（末尾换行）\n\nif __name__ == \"__main__\":\n    main()\n",
+        "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n;\n    cin >> n;\n    vector<int> nums(n);\n    for (int i = 0; i < n; i++) cin >> nums[i];\n    // TODO: 输出到达最后一个下标所需的最少跳跃次数（末尾换行）\n    return 0;\n}\n"
+      }
+    },
+    "core": {
+      "kind": "function",
+      "className": "Solution",
+      "method": "jump",
+      "params": [
+        {
+          "name": "nums",
+          "type": "int[]",
+          "desc": "最大跳跃长度数组"
+        }
+      ],
+      "returns": "int",
+      "returnsDesc": "最少跳跃次数",
+      "mutates": -1,
+      "templates": {
+        "python3": "def jump(nums):\n    # TODO: 返回最少跳跃次数\n    pass\n",
+        "cpp": "class Solution {\npublic:\n    int jump(vector<int>& nums) {\n        // TODO\n    }\n};\n"
+      }
+    }
+  },
+  {
+    "id": 55,
+    "title": "跳跃游戏",
+    "difficulty": "中等",
+    "topic": "贪心",
+    "url": "https://leetcode.cn/problems/jump-game/",
+    "desc": "给定一个非负整数数组 nums，最初位于数组的第一个下标。数组中的每个元素代表在该位置可以跳跃的最大长度。判断是否能够到达最后一个下标。",
+    "acm": {
+      "input": "第一行一个整数 n，表示数组长度。\n第二行 n 个整数，表示每个位置最多能跳跃的步数。",
+      "output": "若能到达最后一个下标输出 true，否则输出 false，末尾换行。",
+      "examples": [
+        {
+          "input": "5\n2 3 1 1 4\n",
+          "output": "true\n"
+        },
+        {
+          "input": "5\n3 2 1 0 4\n",
+          "output": "false\n"
+        }
+      ],
+      "template": {
+        "python3": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    n = int(data[0])\n    nums = list(map(int, data[1:1 + n]))\n    # TODO: 判断能否到达最后一个下标，输出 true 或 false（末尾换行）\n\nif __name__ == \"__main__\":\n    main()\n",
+        "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n;\n    cin >> n;\n    vector<int> nums(n);\n    for (int i = 0; i < n; i++) cin >> nums[i];\n    // TODO: 判断能否到达最后一个下标，输出 true 或 false（末尾换行）\n    return 0;\n}\n"
+      }
+    },
+    "core": {
+      "kind": "function",
+      "className": "Solution",
+      "method": "canJump",
+      "params": [
+        {
+          "name": "nums",
+          "type": "int[]",
+          "desc": "最大跳跃长度数组"
+        }
+      ],
+      "returns": "bool",
+      "returnsDesc": "能否到达最后一个下标",
+      "mutates": -1,
+      "templates": {
+        "python3": "def canJump(nums):\n    # TODO: 返回能否到达最后一个下标\n    pass\n",
+        "cpp": "class Solution {\npublic:\n    bool canJump(vector<int>& nums) {\n        // TODO\n    }\n};\n"
+      }
+    }
+  },
+  {
+    "id": 84,
+    "title": "柱状图中最大的矩形",
+    "difficulty": "困难",
+    "topic": "单调栈",
+    "url": "https://leetcode.cn/problems/largest-rectangle-in-histogram/",
+    "desc": "给定 n 个非负整数，用来表示柱状图中各个柱子的高度，每个柱子彼此相邻且宽度为 1。求在该柱状图中，能够勾勒出来的矩形的最大面积。",
+    "acm": {
+      "input": "第一行一个整数 n，表示柱子的数量。\n第二行 n 个整数，表示每个柱子的高度。",
+      "output": "输出柱状图中最大矩形面积，末尾换行。",
+      "examples": [
+        {
+          "input": "6\n2 1 5 6 2 3\n",
+          "output": "10\n"
+        },
+        {
+          "input": "1\n2\n",
+          "output": "2\n"
+        }
+      ],
+      "template": {
+        "python3": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    n = int(data[0])\n    heights = list(map(int, data[1:1 + n]))\n    # TODO: 计算最大矩形面积并输出（末尾换行）\n\nif __name__ == \"__main__\":\n    main()\n",
+        "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n;\n    cin >> n;\n    vector<int> heights(n);\n    for (int i = 0; i < n; i++) cin >> heights[i];\n    // TODO: 计算最大矩形面积并输出（末尾换行）\n    return 0;\n}\n"
+      }
+    },
+    "core": {
+      "kind": "function",
+      "className": "Solution",
+      "method": "largestRectangleArea",
+      "params": [
+        {
+          "name": "heights",
+          "type": "int[]",
+          "desc": "柱子高度数组"
+        }
+      ],
+      "returns": "int",
+      "returnsDesc": "最大矩形面积",
+      "mutates": -1,
+      "templates": {
+        "python3": "def largestRectangleArea(heights):\n    # TODO: 返回最大矩形面积\n    pass\n",
+        "cpp": "class Solution {\npublic:\n    int largestRectangleArea(vector<int>& heights) {\n        // TODO\n    }\n};\n"
+      }
+    }
+  },
+  {
+    "id": 121,
+    "title": "买卖股票的最佳时机",
+    "difficulty": "简单",
+    "topic": "动态规划",
+    "url": "https://leetcode.cn/problems/best-time-to-buy-and-sell-stock/",
+    "desc": "给定数组 prices，prices[i] 表示第 i 天的股票价格。只能选择某一天买入并在之后的某一天卖出，设计算法计算能获取的最大利润。如果无法获得任何利润，返回 0。",
+    "acm": {
+      "input": "第一行一个整数 n，表示天数。\n第二行 n 个整数，表示每天的价格。",
+      "output": "输出能获取的最大利润，无法获利时输出 0，末尾换行。",
+      "examples": [
+        {
+          "input": "6\n7 1 5 3 6 4\n",
+          "output": "5\n"
+        },
+        {
+          "input": "5\n7 6 4 3 1\n",
+          "output": "0\n"
+        }
+      ],
+      "template": {
+        "python3": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    n = int(data[0])\n    prices = list(map(int, data[1:1 + n]))\n    # TODO: 计算最大利润并输出（末尾换行）\n\nif __name__ == \"__main__\":\n    main()\n",
+        "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n;\n    cin >> n;\n    vector<int> prices(n);\n    for (int i = 0; i < n; i++) cin >> prices[i];\n    // TODO: 计算最大利润并输出（末尾换行）\n    return 0;\n}\n"
+      }
+    },
+    "core": {
+      "kind": "function",
+      "className": "Solution",
+      "method": "maxProfit",
+      "params": [
+        {
+          "name": "prices",
+          "type": "int[]",
+          "desc": "每日价格数组"
+        }
+      ],
+      "returns": "int",
+      "returnsDesc": "最大利润",
+      "mutates": -1,
+      "templates": {
+        "python3": "def maxProfit(prices):\n    # TODO: 返回最大利润\n    pass\n",
+        "cpp": "class Solution {\npublic:\n    int maxProfit(vector<int>& prices) {\n        // TODO\n    }\n};\n"
+      }
+    }
+  },
+  {
+    "id": 215,
+    "title": "数组中的第 K 个最大元素",
+    "difficulty": "中等",
+    "topic": "堆/快选",
+    "url": "https://leetcode.cn/problems/kth-largest-element-in-an-array/",
+    "desc": "给定整数数组 nums 和整数 k，返回数组中第 k 个最大的元素。注意需要找的是排序后第 k 个最大的元素，而不是第 k 个不同的元素。",
+    "acm": {
+      "input": "第一行两个整数 n 和 k，分别表示数组长度与要找的第 k 大。\n第二行 n 个整数，表示数组 nums。",
+      "output": "输出数组中第 k 大的元素，末尾换行。",
+      "examples": [
+        {
+          "input": "6 2\n3 2 1 5 6 4\n",
+          "output": "5\n"
+        },
+        {
+          "input": "9 4\n3 2 3 1 2 4 5 5 6\n",
+          "output": "4\n"
+        }
+      ],
+      "template": {
+        "python3": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    n = int(data[0])\n    k = int(data[1])\n    nums = list(map(int, data[2:2 + n]))\n    # TODO: 输出第 k 大的元素（末尾换行）\n\nif __name__ == \"__main__\":\n    main()\n",
+        "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n, k;\n    cin >> n >> k;\n    vector<int> nums(n);\n    for (int i = 0; i < n; i++) cin >> nums[i];\n    // TODO: 输出第 k 大的元素（末尾换行）\n    return 0;\n}\n"
+      }
+    },
+    "core": {
+      "kind": "function",
+      "className": "Solution",
+      "method": "findKthLargest",
+      "params": [
+        {
+          "name": "nums",
+          "type": "int[]",
+          "desc": "整数数组"
+        },
+        {
+          "name": "k",
+          "type": "int",
+          "desc": "第 k 大"
+        }
+      ],
+      "returns": "int",
+      "returnsDesc": "第 k 大的元素",
+      "mutates": -1,
+      "templates": {
+        "python3": "def findKthLargest(nums, k):\n    # TODO: 返回第 k 大的元素\n    pass\n",
+        "cpp": "class Solution {\npublic:\n    int findKthLargest(vector<int>& nums, int k) {\n        // TODO\n    }\n};\n"
+      }
+    }
+  },
+  {
+    "id": 295,
+    "title": "数据流的中位数",
+    "difficulty": "困难",
+    "topic": "堆/设计",
+    "url": "https://leetcode.cn/problems/find-median-from-data-stream/",
+    "desc": "设计一个支持两种操作的数据结构：addNum(int val) 将一个整数加入数据流；findMedian() 返回当前所有元素的中位数，若元素个数为偶数则返回中间两个数的平均值。",
+    "acm": {
+      "input": "第一行一个整数 m，表示操作次数。\n接下来 m 行，每行一个操作：addNum 后跟一个整数 x 表示插入数据；findMedian 无参数表示查询中位数。",
+      "output": "按操作顺序输出每个 findMedian 的结果，每个一行。",
+      "examples": [
+        {
+          "input": "7\naddNum 1\naddNum 2\nfindMedian\naddNum 3\nfindMedian\naddNum 4\nfindMedian\n",
+          "output": "1.5\n2\n2.5\n"
+        },
+        {
+          "input": "3\naddNum 5\naddNum 5\nfindMedian\n",
+          "output": "5\n"
+        }
+      ],
+      "template": {
+        "python3": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    it = iter(data)\n    m = int(next(it))\n    # TODO: 实现数据流中位数，处理操作并输出 findMedian 的结果（每行一个）\n\nif __name__ == \"__main__\":\n    main()\n",
+        "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int m;\n    cin >> m;\n    string op;\n    for (int i = 0; i < m; i++) {\n        cin >> op;\n        // TODO: addNum x 时读取 x 并插入；findMedian 时输出中位数\n    }\n    return 0;\n}\n"
+      }
+    },
+    "core": {
+      "kind": "ops",
+      "className": "MedianFinder",
+      "ops": {
+        "constructor": [],
+        "methods": [
+          {
+            "name": "addNum",
+            "args": [
+              "int"
+            ],
+            "ret": "void"
+          },
+          {
+            "name": "findMedian",
+            "args": [],
+            "ret": "double"
+          }
+        ]
+      },
+      "templates": {
+        "python3": "class MedianFinder:\n    def __init__(self):\n        # TODO\n\n    def addNum(self, num: int) -> None:\n        # TODO\n\n    def findMedian(self) -> float:\n        # TODO\n",
+        "cpp": "class MedianFinder {\npublic:\n    MedianFinder() {\n        // TODO\n    }\n\n    void addNum(int num) {\n        // TODO\n    }\n\n    double findMedian() {\n        // TODO\n    }\n};\n"
+      }
+    }
+  },
+  {
+    "id": 347,
+    "title": "前 K 个高频元素",
+    "difficulty": "中等",
+    "topic": "堆/哈希",
+    "url": "https://leetcode.cn/problems/top-k-frequent-elements/",
+    "desc": "给定一个整数数组 nums 和一个整数 k，返回其中出现频率前 k 高的元素。可以按任意顺序返回答案，本题以参考题解的确定性顺序作为评测基准。",
+    "acm": {
+      "input": "第一行两个整数 n 和 k，分别表示数组长度与需要返回的高频元素个数。\n第二行 n 个整数，表示数组 nums。",
+      "output": "输出频率最高的 k 个元素，空格分隔，末尾换行。",
+      "examples": [
+        {
+          "input": "6 2\n1 1 1 2 2 3\n",
+          "output": "1 2\n"
+        },
+        {
+          "input": "2 2\n1 2\n",
+          "output": "1 2\n"
+        }
+      ],
+      "template": {
+        "python3": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    n = int(data[0])\n    k = int(data[1])\n    nums = list(map(int, data[2:2 + n]))\n    # TODO: 输出频率最高的 k 个元素（空格分隔，末尾换行）\n\nif __name__ == \"__main__\":\n    main()\n",
+        "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n, k;\n    cin >> n >> k;\n    vector<int> nums(n);\n    for (int i = 0; i < n; i++) cin >> nums[i];\n    // TODO: 输出频率最高的 k 个元素（空格分隔，末尾换行）\n    return 0;\n}\n"
+      }
+    },
+    "core": {
+      "kind": "function",
+      "className": "Solution",
+      "method": "topKFrequent",
+      "params": [
+        {
+          "name": "nums",
+          "type": "int[]",
+          "desc": "整数数组"
+        },
+        {
+          "name": "k",
+          "type": "int",
+          "desc": "返回的高频元素个数"
+        }
+      ],
+      "returns": "int[]",
+      "returnsDesc": "频率最高的 k 个元素数组",
+      "mutates": -1,
+      "templates": {
+        "python3": "def topKFrequent(nums, k):\n    # TODO: 返回前 k 个高频元素数组\n    pass\n",
+        "cpp": "class Solution {\npublic:\n    vector<int> topKFrequent(vector<int>& nums, int k) {\n        // TODO\n    }\n};\n"
+      }
+    }
+  },
+  {
+    "id": 394,
+    "title": "字符串解码",
+    "difficulty": "中等",
+    "topic": "栈",
+    "url": "https://leetcode.cn/problems/decode-string/",
+    "desc": "给定一个经过编码的字符串 s，编码规则为 k[encoded_string]，表示方括号内部的字符串重复 k 次，其中 k 为正整数且可为多位。可以认为输入总是合法、无多余空白。请返回解码后的字符串。",
+    "acm": {
+      "input": "第一行一个字符串 s，仅包含小写字母、数字和方括号 []，表示需要解码的编码串。",
+      "output": "输出解码后的字符串，末尾换行。",
+      "examples": [
+        {
+          "input": "3[a]2[bc]\n",
+          "output": "aaabcbc\n"
+        },
+        {
+          "input": "3[a2[c]]\n",
+          "output": "accaccacc\n"
+        }
+      ],
+      "template": {
+        "python3": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    s = data[0]\n    # TODO: 解码字符串并输出（末尾换行）\n\nif __name__ == \"__main__\":\n    main()\n",
+        "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    string s;\n    cin >> s;\n    // TODO: 解码字符串并输出（末尾换行）\n    return 0;\n}\n"
+      }
+    },
+    "core": {
+      "kind": "function",
+      "className": "Solution",
+      "method": "decodeString",
+      "params": [
+        {
+          "name": "s",
+          "type": "string",
+          "desc": "编码字符串"
+        }
+      ],
+      "returns": "string",
+      "returnsDesc": "解码后的字符串",
+      "mutates": -1,
+      "templates": {
+        "python3": "def decodeString(s):\n    # TODO: 返回解码后的字符串\n    pass\n",
+        "cpp": "class Solution {\npublic:\n    string decodeString(string s) {\n        // TODO\n    }\n};\n"
+      }
+    }
+  },
+  {
+    "id": 739,
+    "title": "每日温度",
+    "difficulty": "中等",
+    "topic": "单调栈",
+    "url": "https://leetcode.cn/problems/daily-temperatures/",
+    "desc": "给定一个整数数组 temperatures 表示每天的温度，返回一个等长数组 answer，其中 answer[i] 表示在第 i 天之后需要等待多少天才会出现更高的温度。如果之后不会有更高的温度，则 answer[i] = 0。",
+    "acm": {
+      "input": "第一行一个整数 n，表示天数。\n第二行 n 个整数，表示每天的华氏温度。",
+      "output": "输出 n 个整数，表示每个位置需要等待的天数，没有更高温度记为 0，空格分隔，末尾换行。",
+      "examples": [
+        {
+          "input": "8\n73 74 75 71 69 72 76 73\n",
+          "output": "1 1 4 2 1 1 0 0\n"
+        },
+        {
+          "input": "1\n30\n",
+          "output": "0\n"
+        }
+      ],
+      "template": {
+        "python3": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    n = int(data[0])\n    temps = list(map(int, data[1:1 + n]))\n    # TODO: 计算每天需要等待的天数并输出（空格分隔，末尾换行）\n\nif __name__ == \"__main__\":\n    main()\n",
+        "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n;\n    cin >> n;\n    vector<int> temps(n);\n    for (int i = 0; i < n; i++) cin >> temps[i];\n    // TODO: 计算每天需要等待的天数并输出（空格分隔，末尾换行）\n    return 0;\n}\n"
+      }
+    },
+    "core": {
+      "kind": "function",
+      "className": "Solution",
+      "method": "dailyTemperatures",
+      "params": [
+        {
+          "name": "temperatures",
+          "type": "int[]",
+          "desc": "每日温度数组"
+        }
+      ],
+      "returns": "int[]",
+      "returnsDesc": "每个位置需要等待的天数数组",
+      "mutates": -1,
+      "templates": {
+        "python3": "def dailyTemperatures(temperatures):\n    # TODO: 返回每个位置需要等待的天数数组\n    pass\n",
+        "cpp": "class Solution {\npublic:\n    vector<int> dailyTemperatures(vector<int>& temperatures) {\n        // TODO\n    }\n};\n"
+      }
+    }
+  },
+  {
+    "id": 763,
+    "title": "划分字母区间",
+    "difficulty": "中等",
+    "topic": "贪心",
+    "url": "https://leetcode.cn/problems/partition-labels/",
+    "desc": "给定一个只含小写字母的字符串 s，把它划分为尽可能多的片段，使得同一字母最多出现在一个片段中。返回一个表示每个字符串片段长度的数组。",
+    "acm": {
+      "input": "第一行一个字符串 s，仅包含小写字母。",
+      "output": "输出每个片段包含的字母个数，空格分隔，末尾换行。",
+      "examples": [
+        {
+          "input": "ababcbacadefegdehijhklij\n",
+          "output": "9 7 8\n"
+        },
+        {
+          "input": "eccbbbbdec\n",
+          "output": "10\n"
+        }
+      ],
+      "template": {
+        "python3": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    s = data[0]\n    # TODO: 输出每个片段长度（空格分隔，末尾换行）\n\nif __name__ == \"__main__\":\n    main()\n",
+        "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    string s;\n    cin >> s;\n    // TODO: 输出每个片段长度（空格分隔，末尾换行）\n    return 0;\n}\n"
+      }
+    },
+    "core": {
+      "kind": "function",
+      "className": "Solution",
+      "method": "partitionLabels",
+      "params": [
+        {
+          "name": "s",
+          "type": "string",
+          "desc": "小写字母字符串"
+        }
+      ],
+      "returns": "int[]",
+      "returnsDesc": "各片段长度数组",
+      "mutates": -1,
+      "templates": {
+        "python3": "def partitionLabels(s):\n    # TODO: 返回各片段长度数组\n    pass\n",
+        "cpp": "class Solution {\npublic:\n    vector<int> partitionLabels(string s) {\n        // TODO\n    }\n};\n"
+      }
+    }
+  }
+]

@@ -1,0 +1,905 @@
+{
+  "45": {
+    "acm": [
+      {
+        "input": "5\n2 3 1 1 4\n",
+        "output": "2\n"
+      },
+      {
+        "input": "5\n2 3 0 1 4\n",
+        "output": "2\n"
+      },
+      {
+        "input": "1\n0\n",
+        "output": "0\n"
+      },
+      {
+        "input": "6\n1 2 1 1 1 1\n",
+        "output": "4\n"
+      },
+      {
+        "input": "7\n2 1 1 1 1 1 1\n",
+        "output": "5\n"
+      }
+    ],
+    "core": [
+      {
+        "args": [
+          [
+            2,
+            3,
+            1,
+            1,
+            4
+          ]
+        ],
+        "expected": 2
+      },
+      {
+        "args": [
+          [
+            2,
+            3,
+            0,
+            1,
+            4
+          ]
+        ],
+        "expected": 2
+      },
+      {
+        "args": [
+          [
+            0
+          ]
+        ],
+        "expected": 0
+      },
+      {
+        "args": [
+          [
+            1,
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "expected": 4
+      },
+      {
+        "args": [
+          [
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "expected": 5
+      }
+    ]
+  },
+  "55": {
+    "acm": [
+      {
+        "input": "5\n2 3 1 1 4\n",
+        "output": "true\n"
+      },
+      {
+        "input": "5\n3 2 1 0 4\n",
+        "output": "false\n"
+      },
+      {
+        "input": "1\n0\n",
+        "output": "true\n"
+      },
+      {
+        "input": "4\n0 2 3 4\n",
+        "output": "false\n"
+      },
+      {
+        "input": "5\n1 1 1 1 1\n",
+        "output": "true\n"
+      }
+    ],
+    "core": [
+      {
+        "args": [
+          [
+            2,
+            3,
+            1,
+            1,
+            4
+          ]
+        ],
+        "expected": true
+      },
+      {
+        "args": [
+          [
+            3,
+            2,
+            1,
+            0,
+            4
+          ]
+        ],
+        "expected": false
+      },
+      {
+        "args": [
+          [
+            0
+          ]
+        ],
+        "expected": true
+      },
+      {
+        "args": [
+          [
+            0,
+            2,
+            3,
+            4
+          ]
+        ],
+        "expected": false
+      },
+      {
+        "args": [
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "expected": true
+      }
+    ]
+  },
+  "84": {
+    "acm": [
+      {
+        "input": "6\n2 1 5 6 2 3\n",
+        "output": "10\n"
+      },
+      {
+        "input": "1\n2\n",
+        "output": "2\n"
+      },
+      {
+        "input": "4\n2 4 4 2\n",
+        "output": "8\n"
+      },
+      {
+        "input": "3\n2 1 2\n",
+        "output": "3\n"
+      },
+      {
+        "input": "4\n6 7 5 2\n",
+        "output": "15\n"
+      }
+    ],
+    "core": [
+      {
+        "args": [
+          [
+            2,
+            1,
+            5,
+            6,
+            2,
+            3
+          ]
+        ],
+        "expected": 10
+      },
+      {
+        "args": [
+          [
+            2
+          ]
+        ],
+        "expected": 2
+      },
+      {
+        "args": [
+          [
+            2,
+            4,
+            4,
+            2
+          ]
+        ],
+        "expected": 8
+      },
+      {
+        "args": [
+          [
+            2,
+            1,
+            2
+          ]
+        ],
+        "expected": 3
+      },
+      {
+        "args": [
+          [
+            6,
+            7,
+            5,
+            2
+          ]
+        ],
+        "expected": 15
+      }
+    ]
+  },
+  "121": {
+    "acm": [
+      {
+        "input": "6\n7 1 5 3 6 4\n",
+        "output": "5\n"
+      },
+      {
+        "input": "5\n7 6 4 3 1\n",
+        "output": "0\n"
+      },
+      {
+        "input": "1\n2\n",
+        "output": "0\n"
+      },
+      {
+        "input": "4\n1 2 3 4\n",
+        "output": "3\n"
+      },
+      {
+        "input": "5\n2 2 2 2 2\n",
+        "output": "0\n"
+      }
+    ],
+    "core": [
+      {
+        "args": [
+          [
+            7,
+            1,
+            5,
+            3,
+            6,
+            4
+          ]
+        ],
+        "expected": 5
+      },
+      {
+        "args": [
+          [
+            7,
+            6,
+            4,
+            3,
+            1
+          ]
+        ],
+        "expected": 0
+      },
+      {
+        "args": [
+          [
+            2
+          ]
+        ],
+        "expected": 0
+      },
+      {
+        "args": [
+          [
+            1,
+            2,
+            3,
+            4
+          ]
+        ],
+        "expected": 3
+      },
+      {
+        "args": [
+          [
+            2,
+            2,
+            2,
+            2,
+            2
+          ]
+        ],
+        "expected": 0
+      }
+    ]
+  },
+  "215": {
+    "acm": [
+      {
+        "input": "6 2\n3 2 1 5 6 4\n",
+        "output": "5\n"
+      },
+      {
+        "input": "9 4\n3 2 3 1 2 4 5 5 6\n",
+        "output": "4\n"
+      },
+      {
+        "input": "1 1\n3\n",
+        "output": "3\n"
+      },
+      {
+        "input": "5 3\n1 1 1 1 1\n",
+        "output": "1\n"
+      },
+      {
+        "input": "4 4\n1 2 3 4\n",
+        "output": "1\n"
+      }
+    ],
+    "core": [
+      {
+        "args": [
+          [
+            3,
+            2,
+            1,
+            5,
+            6,
+            4
+          ],
+          2
+        ],
+        "expected": 5
+      },
+      {
+        "args": [
+          [
+            3,
+            2,
+            3,
+            1,
+            2,
+            4,
+            5,
+            5,
+            6
+          ],
+          4
+        ],
+        "expected": 4
+      },
+      {
+        "args": [
+          [
+            3
+          ],
+          1
+        ],
+        "expected": 3
+      },
+      {
+        "args": [
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          3
+        ],
+        "expected": 1
+      },
+      {
+        "args": [
+          [
+            1,
+            2,
+            3,
+            4
+          ],
+          4
+        ],
+        "expected": 1
+      }
+    ]
+  },
+  "295": {
+    "acm": [
+      {
+        "input": "7\naddNum 1\naddNum 2\nfindMedian\naddNum 3\nfindMedian\naddNum 4\nfindMedian\n",
+        "output": "1.5\n2\n2.5\n"
+      },
+      {
+        "input": "3\naddNum 5\naddNum 5\nfindMedian\n",
+        "output": "5\n"
+      },
+      {
+        "input": "5\naddNum -1\naddNum -2\nfindMedian\naddNum -3\nfindMedian\n",
+        "output": "-1.5\n-2\n"
+      },
+      {
+        "input": "4\naddNum 1\naddNum 3\nfindMedian\nfindMedian\n",
+        "output": "2\n2\n"
+      },
+      {
+        "input": "2\naddNum 10\nfindMedian\n",
+        "output": "10\n"
+      }
+    ],
+    "core": [
+      {
+        "ops": [
+          "MedianFinder",
+          "addNum",
+          "addNum",
+          "findMedian",
+          "addNum",
+          "findMedian",
+          "addNum",
+          "findMedian"
+        ],
+        "args": [
+          [],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [],
+          [
+            3
+          ],
+          [],
+          [
+            4
+          ],
+          []
+        ],
+        "expected": [
+          null,
+          null,
+          null,
+          1.5,
+          null,
+          2,
+          null,
+          2.5
+        ]
+      },
+      {
+        "ops": [
+          "MedianFinder",
+          "addNum",
+          "addNum",
+          "addNum",
+          "findMedian"
+        ],
+        "args": [
+          [],
+          [
+            5
+          ],
+          [
+            5
+          ],
+          [
+            5
+          ],
+          []
+        ],
+        "expected": [
+          null,
+          null,
+          null,
+          null,
+          5
+        ]
+      },
+      {
+        "ops": [
+          "MedianFinder",
+          "addNum",
+          "findMedian",
+          "addNum",
+          "findMedian"
+        ],
+        "args": [
+          [],
+          [
+            -1
+          ],
+          [],
+          [
+            -2
+          ],
+          []
+        ],
+        "expected": [
+          null,
+          null,
+          -1,
+          null,
+          -1.5
+        ]
+      },
+      {
+        "ops": [
+          "MedianFinder",
+          "addNum",
+          "findMedian"
+        ],
+        "args": [
+          [],
+          [
+            10
+          ],
+          []
+        ],
+        "expected": [
+          null,
+          null,
+          10
+        ]
+      }
+    ]
+  },
+  "347": {
+    "acm": [
+      {
+        "input": "6 2\n1 1 1 2 2 3\n",
+        "output": "1 2\n"
+      },
+      {
+        "input": "2 2\n1 2\n",
+        "output": "1 2\n"
+      },
+      {
+        "input": "5 1\n1 1 1 1 1\n",
+        "output": "1\n"
+      },
+      {
+        "input": "7 3\n1 1 2 2 3 3 4\n",
+        "output": "1 2 3\n"
+      },
+      {
+        "input": "4 2\n-1 -1 2 2\n",
+        "output": "-1 2\n"
+      }
+    ],
+    "core": [
+      {
+        "args": [
+          [
+            1,
+            1,
+            1,
+            2,
+            2,
+            3
+          ],
+          2
+        ],
+        "expected": [
+          1,
+          2
+        ]
+      },
+      {
+        "args": [
+          [
+            1,
+            2
+          ],
+          2
+        ],
+        "expected": [
+          1,
+          2
+        ]
+      },
+      {
+        "args": [
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          1
+        ],
+        "expected": [
+          1
+        ]
+      },
+      {
+        "args": [
+          [
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4
+          ],
+          3
+        ],
+        "expected": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "args": [
+          [
+            -1,
+            -1,
+            2,
+            2
+          ],
+          2
+        ],
+        "expected": [
+          -1,
+          2
+        ]
+      }
+    ]
+  },
+  "394": {
+    "acm": [
+      {
+        "input": "3[a]2[bc]\n",
+        "output": "aaabcbc\n"
+      },
+      {
+        "input": "3[a2[c]]\n",
+        "output": "accaccacc\n"
+      },
+      {
+        "input": "2[abc]3[cd]ef\n",
+        "output": "abcabccdcdcdef\n"
+      },
+      {
+        "input": "abc3[cd]xyz\n",
+        "output": "abccdcdcdxyz\n"
+      },
+      {
+        "input": "10[a]\n",
+        "output": "aaaaaaaaaa\n"
+      }
+    ],
+    "core": [
+      {
+        "args": [
+          "3[a]2[bc]"
+        ],
+        "expected": "aaabcbc"
+      },
+      {
+        "args": [
+          "3[a2[c]]"
+        ],
+        "expected": "accaccacc"
+      },
+      {
+        "args": [
+          "2[abc]3[cd]ef"
+        ],
+        "expected": "abcabccdcdcdef"
+      },
+      {
+        "args": [
+          "a"
+        ],
+        "expected": "a"
+      },
+      {
+        "args": [
+          "10[ab]"
+        ],
+        "expected": "abababababababababab"
+      }
+    ]
+  },
+  "739": {
+    "acm": [
+      {
+        "input": "8\n73 74 75 71 69 72 76 73\n",
+        "output": "1 1 4 2 1 1 0 0\n"
+      },
+      {
+        "input": "1\n30\n",
+        "output": "0\n"
+      },
+      {
+        "input": "5\n89 62 70 58 47\n",
+        "output": "0 1 0 0 0\n"
+      },
+      {
+        "input": "4\n30 30 30 30\n",
+        "output": "0 0 0 0\n"
+      },
+      {
+        "input": "6\n34 80 80 34 34 80\n",
+        "output": "1 0 0 2 1 0\n"
+      }
+    ],
+    "core": [
+      {
+        "args": [
+          [
+            73,
+            74,
+            75,
+            71,
+            69,
+            72,
+            76,
+            73
+          ]
+        ],
+        "expected": [
+          1,
+          1,
+          4,
+          2,
+          1,
+          1,
+          0,
+          0
+        ]
+      },
+      {
+        "args": [
+          [
+            30
+          ]
+        ],
+        "expected": [
+          0
+        ]
+      },
+      {
+        "args": [
+          [
+            89,
+            62,
+            70,
+            58,
+            47
+          ]
+        ],
+        "expected": [
+          0,
+          1,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "args": [
+          [
+            30,
+            30,
+            30,
+            30
+          ]
+        ],
+        "expected": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "args": [
+          [
+            34,
+            80,
+            80,
+            34,
+            34,
+            80
+          ]
+        ],
+        "expected": [
+          1,
+          0,
+          0,
+          2,
+          1,
+          0
+        ]
+      }
+    ]
+  },
+  "763": {
+    "acm": [
+      {
+        "input": "ababcbacadefegdehijhklij\n",
+        "output": "9 7 8\n"
+      },
+      {
+        "input": "eccbbbbdec\n",
+        "output": "10\n"
+      },
+      {
+        "input": "a\n",
+        "output": "1\n"
+      },
+      {
+        "input": "ab\n",
+        "output": "1 1\n"
+      },
+      {
+        "input": "aaaa\n",
+        "output": "4\n"
+      }
+    ],
+    "core": [
+      {
+        "args": [
+          "ababcbacadefegdehijhklij"
+        ],
+        "expected": [
+          9,
+          7,
+          8
+        ]
+      },
+      {
+        "args": [
+          "eccbbbbdec"
+        ],
+        "expected": [
+          10
+        ]
+      },
+      {
+        "args": [
+          "a"
+        ],
+        "expected": [
+          1
+        ]
+      },
+      {
+        "args": [
+          "ab"
+        ],
+        "expected": [
+          1,
+          1
+        ]
+      },
+      {
+        "args": [
+          "aaaa"
+        ],
+        "expected": [
+          4
+        ]
+      }
+    ]
+  }
+}

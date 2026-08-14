@@ -1,0 +1,507 @@
+[
+  {
+    "id": 23,
+    "title": "合并 K 个升序链表",
+    "difficulty": "困难",
+    "topic": "链表/堆",
+    "url": "https://leetcode.cn/problems/merge-k-sorted-lists/",
+    "desc": "给你一个链表数组，每个链表都已经按升序排列。请你将所有链表合并到一个升序链表中，返回合并后的链表。",
+    "acm": {
+      "input": "第一行一个整数 k，表示链表个数。\n接下来 k 行，每行先给出该链表的长度 n，再给出 n 个升序排列的节点值（n 为 0 表示空链表）。",
+      "output": "输出合并后的链表节点值，空格分隔，末尾换行。链表为空时输出空行。",
+      "examples": [
+        {
+          "input": "3\n3 1 4 5\n3 1 3 4\n2 2 6\n",
+          "output": "1 1 2 3 4 4 5 6\n"
+        },
+        {
+          "input": "2\n0\n1 1\n",
+          "output": "1\n"
+        },
+        {
+          "input": "0\n",
+          "output": "\n"
+        }
+      ],
+      "template": {
+        "python3": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        print()\n        return\n    it = iter(data)\n    k = int(next(it))\n    lists = []\n    for _ in range(k):\n        n = int(next(it))\n        vals = [int(next(it)) for _ in range(n)]\n        lists.append(vals)\n    # TODO: 合并 k 个升序链表，输出节点值（空格分隔，末尾换行）\n\nif __name__ == \"__main__\":\n    main()\n",
+        "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int k;\n    cin >> k;\n    vector<vector<int>> lists;\n    for (int i = 0; i < k; i++) {\n        int n;\n        cin >> n;\n        vector<int> vals(n);\n        for (int j = 0; j < n; j++) cin >> vals[j];\n        lists.push_back(vals);\n    }\n    // TODO: 合并 k 个升序链表，输出节点值（空格分隔，末尾换行）\n    return 0;\n}\n"
+      }
+    },
+    "core": {
+      "kind": "function",
+      "className": "Solution",
+      "method": "mergeKLists",
+      "params": [
+        {
+          "name": "lists",
+          "type": "string[]",
+          "desc": "待合并的升序链表数组，元素为形如 list:[1,4,5] 的链表描述字符串（Python 侧评测环境会自动构建为链表节点）"
+        }
+      ],
+      "returns": "list",
+      "returnsDesc": "合并后的链表头节点",
+      "mutates": -1,
+      "templates": {
+        "python3": "# ListNode 由评测环境提供，请勿重复定义\n# lists 的元素可能是 ListNode，也可能是形如 \"list:[1,4,5]\" 的字符串，需自行解析\ndef mergeKLists(lists):\n    # TODO: 合并所有升序链表并返回新头\n    pass\n",
+        "cpp": "// ListNode 由评测环境提供，请勿重复定义\n// 参数是 string[]，每个元素形如 \"list:[1,4,5]\"，需自行解析构建链表\nclass Solution {\npublic:\n    ListNode* mergeKLists(vector<string> lists) {\n        // TODO\n    }\n};\n"
+      }
+    }
+  },
+  {
+    "id": 25,
+    "title": "K 个一组翻转链表",
+    "difficulty": "困难",
+    "topic": "链表",
+    "url": "https://leetcode.cn/problems/reverse-nodes-in-k-group/",
+    "desc": "给你链表的头节点 head，每 k 个节点一组进行翻转，请你返回修改后的链表。k 是一个正整数，它的值小于或等于链表的长度。如果节点总数不是 k 的整数倍，那么请将最后剩余的节点保持原有顺序。你不能只是单纯的改变节点内部的值，而是需要实际进行节点交换。",
+    "acm": {
+      "input": "第一行两个整数 n 和 k，分别表示链表长度与每组节点数。\n第二行 n 个整数，表示链表节点值（从头到尾）。",
+      "output": "输出翻转后的链表节点值，空格分隔，末尾换行。链表为空时输出空行。",
+      "examples": [
+        {
+          "input": "5 2\n1 2 3 4 5\n",
+          "output": "2 1 4 3 5\n"
+        },
+        {
+          "input": "5 3\n1 2 3 4 5\n",
+          "output": "3 2 1 4 5\n"
+        },
+        {
+          "input": "4 5\n1 2 3 4\n",
+          "output": "1 2 3 4\n"
+        }
+      ],
+      "template": {
+        "python3": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        print()\n        return\n    n = int(data[0])\n    k = int(data[1])\n    vals = list(map(int, data[2:2 + n]))\n    # TODO: 每 k 个节点一组翻转链表（不足 k 个保持原序），输出节点值（空格分隔，末尾换行）\n\nif __name__ == \"__main__\":\n    main()\n",
+        "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n, k;\n    cin >> n >> k;\n    vector<int> vals(n);\n    for (int i = 0; i < n; i++) cin >> vals[i];\n    // TODO: 每 k 个节点一组翻转链表（不足 k 个保持原序），输出节点值（空格分隔，末尾换行）\n    return 0;\n}\n"
+      }
+    },
+    "core": {
+      "kind": "function",
+      "className": "Solution",
+      "method": "reverseKGroup",
+      "params": [
+        {
+          "name": "head",
+          "type": "list",
+          "desc": "链表头节点"
+        },
+        {
+          "name": "k",
+          "type": "int",
+          "desc": "每组节点数"
+        }
+      ],
+      "returns": "list",
+      "returnsDesc": "翻转后的链表头节点",
+      "mutates": -1,
+      "templates": {
+        "python3": "# ListNode 由评测环境提供，请勿重复定义\ndef reverseKGroup(head, k):\n    # TODO: 每 k 个节点一组翻转链表（不足 k 个保持原序），返回新头\n    pass\n",
+        "cpp": "// ListNode 由评测环境提供，请勿重复定义\nclass Solution {\npublic:\n    ListNode* reverseKGroup(ListNode* head, int k) {\n        // TODO\n    }\n};\n"
+      }
+    }
+  },
+  {
+    "id": 94,
+    "title": "二叉树的中序遍历",
+    "difficulty": "简单",
+    "topic": "二叉树",
+    "url": "https://leetcode.cn/problems/binary-tree-inorder-traversal/",
+    "desc": "给定一个二叉树的根节点 root，返回它的中序遍历结果。中序遍历的顺序为：先访问左子树，再访问根节点，最后访问右子树。",
+    "acm": {
+      "input": "第一行一个整数 n，表示节点个数。\n第二行按层序给出 n 个节点值，用 null 表示空节点。",
+      "output": "输出中序遍历的节点值，空格分隔，末尾换行。树为空时输出空行。",
+      "examples": [
+        {
+          "input": "3\n1 null 2 3\n",
+          "output": "1 2\n"
+        },
+        {
+          "input": "3\n1 2 3\n",
+          "output": "2 1 3\n"
+        },
+        {
+          "input": "1\n5\n",
+          "output": "5\n"
+        }
+      ],
+      "template": {
+        "python3": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        print()\n        return\n    n = int(data[0])\n    arr = data[1:1 + n]\n    # TODO: 按层序数组 arr 构建二叉树，输出中序遍历结果（空格分隔，末尾换行）\n\nif __name__ == \"__main__\":\n    main()\n",
+        "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n;\n    cin >> n;\n    vector<string> arr(n);\n    for (int i = 0; i < n; i++) cin >> arr[i];\n    // TODO: 按层序数组 arr 构建二叉树，输出中序遍历结果（空格分隔，末尾换行）\n    return 0;\n}\n"
+      }
+    },
+    "core": {
+      "kind": "function",
+      "className": "Solution",
+      "method": "inorderTraversal",
+      "params": [
+        {
+          "name": "root",
+          "type": "tree",
+          "desc": "二叉树根节点"
+        }
+      ],
+      "returns": "int[]",
+      "returnsDesc": "中序遍历的节点值数组",
+      "mutates": -1,
+      "templates": {
+        "python3": "# TreeNode 由评测环境提供，请勿重复定义\ndef inorderTraversal(root):\n    # TODO: 返回中序遍历结果数组\n    pass\n",
+        "cpp": "// TreeNode 由评测环境提供，请勿重复定义\nclass Solution {\npublic:\n    vector<int> inorderTraversal(TreeNode* root) {\n        // TODO\n    }\n};\n"
+      }
+    }
+  },
+  {
+    "id": 101,
+    "title": "对称二叉树",
+    "difficulty": "简单",
+    "topic": "二叉树",
+    "url": "https://leetcode.cn/problems/symmetric-tree/",
+    "desc": "给你一个二叉树的根节点 root，检查它是否轴对称。一棵二叉树是轴对称的，当且仅当它的左右子树互为镜像。",
+    "acm": {
+      "input": "第一行一个整数 n，表示节点个数。\n第二行按层序给出 n 个节点值，用 null 表示空节点。",
+      "output": "输出 true 或 false，表示该二叉树是否轴对称，末尾换行。",
+      "examples": [
+        {
+          "input": "7\n1 2 2 3 4 4 3\n",
+          "output": "true\n"
+        },
+        {
+          "input": "5\n1 2 2 null 3 null 3\n",
+          "output": "false\n"
+        },
+        {
+          "input": "3\n1 2 null\n",
+          "output": "false\n"
+        }
+      ],
+      "template": {
+        "python3": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        print()\n        return\n    n = int(data[0])\n    arr = data[1:1 + n]\n    # TODO: 按层序数组 arr 构建二叉树，输出 true 或 false 表示是否轴对称\n\nif __name__ == \"__main__\":\n    main()\n",
+        "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n;\n    cin >> n;\n    vector<string> arr(n);\n    for (int i = 0; i < n; i++) cin >> arr[i];\n    // TODO: 按层序数组 arr 构建二叉树，输出 true 或 false 表示是否轴对称\n    return 0;\n}\n"
+      }
+    },
+    "core": {
+      "kind": "function",
+      "className": "Solution",
+      "method": "isSymmetric",
+      "params": [
+        {
+          "name": "root",
+          "type": "tree",
+          "desc": "二叉树根节点"
+        }
+      ],
+      "returns": "bool",
+      "returnsDesc": "是否轴对称",
+      "mutates": -1,
+      "templates": {
+        "python3": "# TreeNode 由评测环境提供，请勿重复定义\ndef isSymmetric(root):\n    # TODO: 返回是否轴对称\n    pass\n",
+        "cpp": "// TreeNode 由评测环境提供，请勿重复定义\nclass Solution {\npublic:\n    bool isSymmetric(TreeNode* root) {\n        // TODO\n    }\n};\n"
+      }
+    }
+  },
+  {
+    "id": 104,
+    "title": "二叉树的最大深度",
+    "difficulty": "简单",
+    "topic": "二叉树/DFS",
+    "url": "https://leetcode.cn/problems/maximum-depth-of-binary-tree/",
+    "desc": "给定一个二叉树 root，返回其最大深度。二叉树的最大深度是指从根节点到最远叶子节点的最长路径上的节点数。",
+    "acm": {
+      "input": "第一行一个整数 n，表示节点个数。\n第二行按层序给出 n 个节点值，用 null 表示空节点。",
+      "output": "输出二叉树的最大深度（一个整数），末尾换行。树为空时输出 0。",
+      "examples": [
+        {
+          "input": "7\n3 9 20 null null 15 7\n",
+          "output": "3\n"
+        },
+        {
+          "input": "2\n1 null 2\n",
+          "output": "1\n"
+        },
+        {
+          "input": "1\n1\n",
+          "output": "1\n"
+        }
+      ],
+      "template": {
+        "python3": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        print()\n        return\n    n = int(data[0])\n    arr = data[1:1 + n]\n    # TODO: 按层序数组 arr 构建二叉树，输出最大深度\n\nif __name__ == \"__main__\":\n    main()\n",
+        "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n;\n    cin >> n;\n    vector<string> arr(n);\n    for (int i = 0; i < n; i++) cin >> arr[i];\n    // TODO: 按层序数组 arr 构建二叉树，输出最大深度\n    return 0;\n}\n"
+      }
+    },
+    "core": {
+      "kind": "function",
+      "className": "Solution",
+      "method": "maxDepth",
+      "params": [
+        {
+          "name": "root",
+          "type": "tree",
+          "desc": "二叉树根节点"
+        }
+      ],
+      "returns": "int",
+      "returnsDesc": "二叉树的最大深度",
+      "mutates": -1,
+      "templates": {
+        "python3": "# TreeNode 由评测环境提供，请勿重复定义\ndef maxDepth(root):\n    # TODO: 返回最大深度\n    pass\n",
+        "cpp": "// TreeNode 由评测环境提供，请勿重复定义\nclass Solution {\npublic:\n    int maxDepth(TreeNode* root) {\n        // TODO\n    }\n};\n"
+      }
+    }
+  },
+  {
+    "id": 138,
+    "title": "随机链表的复制",
+    "difficulty": "中等",
+    "topic": "链表/哈希",
+    "url": "https://leetcode.cn/problems/copy-list-with-random-pointer/",
+    "desc": "给你一个长度为 n 的链表，每个节点除了 next 指针之外还包含一个随机指针 random，它可以指向链表中的任意节点或空节点。请你构造该链表的深拷贝。深拷贝应包含 n 个全新节点，新节点的 next 与 random 指针都应指向复制链表中的节点，使原链表与复制链表保持完全相同的结构。",
+    "acm": {
+      "input": "第一行一个整数 n，表示节点个数。\n接下来 n 行，每行两个整数 val 和 r，其中 r 表示该节点 random 指针指向的节点下标（-1 表示 random 为空）。\n第 i 行对应下标为 i 的节点（下标从 0 开始）。",
+      "output": "按 next 顺序输出复制链表中每个节点的 val 和其 random 在复制链表中的下标（-1 表示 random 为空），每行两个整数，末尾换行。链表为空时无输出。",
+      "examples": [
+        {
+          "input": "5\n7 -1\n13 0\n11 4\n10 2\n1 0\n",
+          "output": "7 -1\n13 0\n11 4\n10 2\n1 0\n"
+        },
+        {
+          "input": "2\n1 1\n2 1\n",
+          "output": "1 1\n2 1\n"
+        },
+        {
+          "input": "1\n1 0\n",
+          "output": "1 0\n"
+        }
+      ],
+      "template": {
+        "python3": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    n = int(data[0])\n    pairs = []\n    p = 1\n    for _ in range(n):\n        v = int(data[p]); r = int(data[p + 1]); p += 2\n        pairs.append((v, r))\n    # TODO: 按 (val, random下标) 构建链表并深拷贝，输出复制链表中每行的 val 与其 random 下标\n\nif __name__ == \"__main__\":\n    main()\n",
+        "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n;\n    cin >> n;\n    vector<pair<int, int>> pairs(n);\n    for (int i = 0; i < n; i++) cin >> pairs[i].first >> pairs[i].second;\n    // TODO: 按 (val, random下标) 构建链表并深拷贝，输出复制链表中每行的 val 与其 random 下标\n    return 0;\n}\n"
+      }
+    },
+    "core": {
+      "kind": "function",
+      "className": "Solution",
+      "method": "copyRandomList",
+      "params": [
+        {
+          "name": "head",
+          "type": "randomList",
+          "desc": "带 random 指针的链表头节点"
+        }
+      ],
+      "returns": "randomList",
+      "returnsDesc": "深拷贝后的链表头节点",
+      "mutates": -1,
+      "templates": {
+        "python3": "# Node 由评测环境提供，请勿重复定义\ndef copyRandomList(head):\n    # TODO: 返回深拷贝后的链表头\n    pass\n",
+        "cpp": "// Node 由评测环境提供，请勿重复定义\nclass Solution {\npublic:\n    Node* copyRandomList(Node* head) {\n        // TODO\n    }\n};\n"
+      }
+    }
+  },
+  {
+    "id": 146,
+    "title": "LRU 缓存",
+    "difficulty": "中等",
+    "topic": "设计/链表/哈希",
+    "url": "https://leetcode.cn/problems/lru-cache/",
+    "desc": "请你设计并实现一个满足 LRU（最近最少使用）缓存约束的数据结构。get(key) 返回关键字的值，若不存在返回 -1；put(key, value) 写入或更新关键字的值，当缓存容量达到上限时，应淘汰最久未使用的关键字。get 和 put 的平均时间复杂度应为 O(1)。",
+    "acm": {
+      "input": "第一行两个整数 capacity 和 m，表示缓存容量与操作次数。\n接下来 m 行，每行一个操作：put 后跟两个整数（put key value），get 后跟一个整数（get key）。",
+      "output": "按顺序输出所有 get 操作的返回值，每个一行。",
+      "examples": [
+        {
+          "input": "2 9\nput 1 1\nput 2 2\nget 1\nput 3 3\nget 2\nput 4 4\nget 1\nget 3\nget 4\n",
+          "output": "1\n-1\n-1\n3\n4\n"
+        },
+        {
+          "input": "1 3\nget 1\nput 1 1\nget 1\n",
+          "output": "-1\n1\n"
+        }
+      ],
+      "template": {
+        "python3": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    it = iter(data)\n    capacity = int(next(it))\n    m = int(next(it))\n    # TODO: 实现 LRU 缓存，按顺序处理操作并输出 get 的结果\n\nif __name__ == \"__main__\":\n    main()\n",
+        "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int capacity, m;\n    cin >> capacity >> m;\n    // TODO: 实现 LRU 缓存，按顺序处理操作并输出 get 的结果\n    return 0;\n}\n"
+      }
+    },
+    "core": {
+      "kind": "ops",
+      "className": "LRUCache",
+      "ops": {
+        "constructor": [
+          {
+            "name": "capacity",
+            "type": "int"
+          }
+        ],
+        "methods": [
+          {
+            "name": "put",
+            "args": [
+              "int",
+              "int"
+            ],
+            "ret": "void"
+          },
+          {
+            "name": "get",
+            "args": [
+              "int"
+            ],
+            "ret": "int"
+          }
+        ]
+      },
+      "templates": {
+        "python3": "class LRUCache:\n    def __init__(self, capacity: int):\n        # TODO\n\n    def get(self, key: int) -> int:\n        # TODO\n\n    def put(self, key: int, value: int) -> None:\n        # TODO\n",
+        "cpp": "class LRUCache {\npublic:\n    LRUCache(int capacity) {\n        // TODO\n    }\n\n    int get(int key) {\n        // TODO\n    }\n\n    void put(int key, int value) {\n        // TODO\n    }\n};\n"
+      }
+    }
+  },
+  {
+    "id": 148,
+    "title": "排序链表",
+    "difficulty": "中等",
+    "topic": "链表/归并",
+    "url": "https://leetcode.cn/problems/sort-list/",
+    "desc": "给你链表的头结点 head，请将其按升序排列并返回排序后的链表。要求时间复杂度为 O(n log n)、空间复杂度为 O(1)（可使用自底向上归并或递归归并实现）。",
+    "acm": {
+      "input": "第一行一个整数 n，表示链表长度。\n第二行 n 个整数，表示链表节点值（从头到尾）。",
+      "output": "输出排序后的链表节点值，空格分隔，末尾换行。链表为空时输出空行。",
+      "examples": [
+        {
+          "input": "4\n4 2 1 3\n",
+          "output": "1 2 3 4\n"
+        },
+        {
+          "input": "5\n-1 5 3 4 0\n",
+          "output": "-1 0 3 4 5\n"
+        },
+        {
+          "input": "1\n7\n",
+          "output": "7\n"
+        }
+      ],
+      "template": {
+        "python3": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        print()\n        return\n    n = int(data[0])\n    vals = list(map(int, data[1:1 + n]))\n    # TODO: 对链表升序排序，输出节点值（空格分隔，末尾换行）\n\nif __name__ == \"__main__\":\n    main()\n",
+        "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n;\n    cin >> n;\n    vector<int> vals(n);\n    for (int i = 0; i < n; i++) cin >> vals[i];\n    // TODO: 对链表升序排序，输出节点值（空格分隔，末尾换行）\n    return 0;\n}\n"
+      }
+    },
+    "core": {
+      "kind": "function",
+      "className": "Solution",
+      "method": "sortList",
+      "params": [
+        {
+          "name": "head",
+          "type": "list",
+          "desc": "链表头节点"
+        }
+      ],
+      "returns": "list",
+      "returnsDesc": "排序后的链表头节点",
+      "mutates": -1,
+      "templates": {
+        "python3": "# ListNode 由评测环境提供，请勿重复定义\ndef sortList(head):\n    # TODO: 升序排序链表并返回新头\n    pass\n",
+        "cpp": "// ListNode 由评测环境提供，请勿重复定义\nclass Solution {\npublic:\n    ListNode* sortList(ListNode* head) {\n        // TODO\n    }\n};\n"
+      }
+    }
+  },
+  {
+    "id": 226,
+    "title": "翻转二叉树",
+    "difficulty": "简单",
+    "topic": "二叉树",
+    "url": "https://leetcode.cn/problems/invert-binary-tree/",
+    "desc": "给你一棵二叉树的根节点 root，翻转这棵二叉树，并返回其根节点。翻转是指交换每个节点的左右子树。",
+    "acm": {
+      "input": "第一行一个整数 n，表示节点个数。\n第二行按层序给出 n 个节点值，用 null 表示空节点。",
+      "output": "输出翻转后二叉树的层序遍历结果（空节点用 null 表示，末尾的 null 省略），空格分隔，末尾换行。树为空时输出空行。",
+      "examples": [
+        {
+          "input": "7\n4 2 7 1 3 6 9\n",
+          "output": "4 7 2 9 6 3 1\n"
+        },
+        {
+          "input": "2\n1 2\n",
+          "output": "1 null 2\n"
+        },
+        {
+          "input": "3\n1 null 2\n",
+          "output": "1 2\n"
+        }
+      ],
+      "template": {
+        "python3": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        print()\n        return\n    n = int(data[0])\n    arr = data[1:1 + n]\n    # TODO: 按层序数组 arr 构建二叉树并翻转，输出翻转后的层序（空节点用 null，末尾 null 省略）\n\nif __name__ == \"__main__\":\n    main()\n",
+        "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n;\n    cin >> n;\n    vector<string> arr(n);\n    for (int i = 0; i < n; i++) cin >> arr[i];\n    // TODO: 按层序数组 arr 构建二叉树并翻转，输出翻转后的层序（空节点用 null，末尾 null 省略）\n    return 0;\n}\n"
+      }
+    },
+    "core": {
+      "kind": "function",
+      "className": "Solution",
+      "method": "invertTree",
+      "params": [
+        {
+          "name": "root",
+          "type": "tree",
+          "desc": "二叉树根节点"
+        }
+      ],
+      "returns": "tree",
+      "returnsDesc": "翻转后的二叉树根节点",
+      "mutates": -1,
+      "templates": {
+        "python3": "# TreeNode 由评测环境提供，请勿重复定义\ndef invertTree(root):\n    # TODO: 翻转二叉树并返回根节点\n    pass\n",
+        "cpp": "// TreeNode 由评测环境提供，请勿重复定义\nclass Solution {\npublic:\n    TreeNode* invertTree(TreeNode* root) {\n        // TODO\n    }\n};\n"
+      }
+    }
+  },
+  {
+    "id": 543,
+    "title": "二叉树的直径",
+    "difficulty": "简单",
+    "topic": "二叉树/DFS",
+    "url": "https://leetcode.cn/problems/diameter-of-binary-tree/",
+    "desc": "给你一棵二叉树的根节点 root，返回它的直径。二叉树的直径是指任意两个节点之间路径长度中的最大值，这条路径可能穿过也可能不穿过根节点。两节点之间的路径长度用它们之间边的数目表示。",
+    "acm": {
+      "input": "第一行一个整数 n，表示节点个数。\n第二行按层序给出 n 个节点值，用 null 表示空节点。",
+      "output": "输出二叉树的直径（一个整数），末尾换行。树为空时输出 0。",
+      "examples": [
+        {
+          "input": "5\n1 2 3 4 5\n",
+          "output": "3\n"
+        },
+        {
+          "input": "7\n1 2 3 4 5 6 7\n",
+          "output": "4\n"
+        },
+        {
+          "input": "1\n1\n",
+          "output": "0\n"
+        }
+      ],
+      "template": {
+        "python3": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        print()\n        return\n    n = int(data[0])\n    arr = data[1:1 + n]\n    # TODO: 按层序数组 arr 构建二叉树，输出其直径\n\nif __name__ == \"__main__\":\n    main()\n",
+        "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n;\n    cin >> n;\n    vector<string> arr(n);\n    for (int i = 0; i < n; i++) cin >> arr[i];\n    // TODO: 按层序数组 arr 构建二叉树，输出其直径\n    return 0;\n}\n"
+      }
+    },
+    "core": {
+      "kind": "function",
+      "className": "Solution",
+      "method": "diameterOfBinaryTree",
+      "params": [
+        {
+          "name": "root",
+          "type": "tree",
+          "desc": "二叉树根节点"
+        }
+      ],
+      "returns": "int",
+      "returnsDesc": "二叉树的直径",
+      "mutates": -1,
+      "templates": {
+        "python3": "# TreeNode 由评测环境提供，请勿重复定义\ndef diameterOfBinaryTree(root):\n    # TODO: 返回二叉树的直径\n    pass\n",
+        "cpp": "// TreeNode 由评测环境提供，请勿重复定义\nclass Solution {\npublic:\n    int diameterOfBinaryTree(TreeNode* root) {\n        // TODO\n    }\n};\n"
+      }
+    }
+  }
+]

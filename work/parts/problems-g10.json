@@ -1,0 +1,467 @@
+[
+  {
+    "id": 5,
+    "title": "最长回文子串",
+    "difficulty": "中等",
+    "topic": "动态规划/字符串",
+    "url": "https://leetcode.cn/problems/longest-palindromic-substring/",
+    "desc": "给你一个字符串 s，找出其中最长的回文子串。如果存在多个长度相同的最长回文子串，返回任意一个即可。其中 1 ≤ s.length ≤ 1000。",
+    "acm": {
+      "input": "一行一个字符串 s（1 ≤ |s| ≤ 1000）。",
+      "output": "输出 s 的一个最长回文子串，末尾换行。",
+      "examples": [
+        {
+          "input": "babad\n",
+          "output": "bab\n"
+        },
+        {
+          "input": "cbbd\n",
+          "output": "bb\n"
+        }
+      ],
+      "template": {
+        "python3": "import sys\n\ndef main():\n    lines = sys.stdin.read().splitlines()\n    s = lines[0] if lines else ''\n    # TODO: 找出最长回文子串并输出\n\nif __name__ == \"__main__\":\n    main()\n",
+        "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    string s;\n    getline(cin, s);\n    // TODO: 找出最长回文子串并输出\n    return 0;\n}\n"
+      }
+    },
+    "core": {
+      "kind": "function",
+      "className": "Solution",
+      "method": "longestPalindrome",
+      "params": [
+        {
+          "name": "s",
+          "type": "string",
+          "desc": "输入字符串"
+        }
+      ],
+      "returns": "string",
+      "returnsDesc": "最长回文子串",
+      "mutates": -1,
+      "templates": {
+        "python3": "def longestPalindrome(s):\n    # TODO: 返回最长回文子串\n    pass\n",
+        "cpp": "class Solution {\npublic:\n    string longestPalindrome(string s) {\n        // TODO\n    }\n};\n"
+      }
+    }
+  },
+  {
+    "id": 31,
+    "title": "下一个排列",
+    "difficulty": "中等",
+    "topic": "数组",
+    "url": "https://leetcode.cn/problems/next-permutation/",
+    "desc": "整数数组的下一个排列是指其整数的下一个字典序更大的排列。给你一个整数数组 nums，请原地修改它，将其重排为下一个更大的排列；若不存在下一个更大的排列，则将数组重排为最小的排列（即升序排列）。其中 1 ≤ nums.length ≤ 100。",
+    "acm": {
+      "input": "第一行一个整数 n（1 ≤ n ≤ 100）。\n第二行 n 个整数，表示数组 nums。",
+      "output": "输出下一个排列对应的数组，空格分隔，末尾换行。",
+      "examples": [
+        {
+          "input": "3\n1 2 3\n",
+          "output": "1 3 2\n"
+        },
+        {
+          "input": "3\n3 2 1\n",
+          "output": "1 2 3\n"
+        }
+      ],
+      "template": {
+        "python3": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    n = int(data[0])\n    nums = list(map(int, data[1:1 + n]))\n    # TODO: 原地求下一个排列，输出排列后的数组\n\nif __name__ == \"__main__\":\n    main()\n",
+        "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n;\n    cin >> n;\n    vector<int> nums(n);\n    for (int i = 0; i < n; i++) cin >> nums[i];\n    // TODO: 原地求下一个排列，输出排列后的数组\n    return 0;\n}\n"
+      }
+    },
+    "core": {
+      "kind": "function",
+      "className": "Solution",
+      "method": "nextPermutation",
+      "params": [
+        {
+          "name": "nums",
+          "type": "int[]",
+          "desc": "整数数组"
+        }
+      ],
+      "returns": "void",
+      "returnsDesc": "原地修改，无返回值",
+      "mutates": 0,
+      "templates": {
+        "python3": "def nextPermutation(nums):\n    # TODO: 原地修改为下一个排列，无需返回值\n    pass\n",
+        "cpp": "class Solution {\npublic:\n    void nextPermutation(vector<int>& nums) {\n        // TODO\n    }\n};\n"
+      }
+    }
+  },
+  {
+    "id": 62,
+    "title": "不同路径",
+    "difficulty": "中等",
+    "topic": "动态规划",
+    "url": "https://leetcode.cn/problems/unique-paths/",
+    "desc": "一个机器人位于 m × n 网格的左上角（起点），每次只能向下或者向右移动一步。问机器人到达网格右下角共有多少条不同的路径。其中 1 ≤ m, n ≤ 100。",
+    "acm": {
+      "input": "第一行两个整数 m 和 n，表示网格的行数与列数（1 ≤ m, n ≤ 100）。",
+      "output": "输出一个整数，表示从左上角到右下角的不同路径总数，末尾换行。",
+      "examples": [
+        {
+          "input": "3 7\n",
+          "output": "28\n"
+        },
+        {
+          "input": "3 2\n",
+          "output": "3\n"
+        }
+      ],
+      "template": {
+        "python3": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    m = int(data[0])\n    n = int(data[1])\n    # TODO: 动态规划计算不同路径数并输出\n\nif __name__ == \"__main__\":\n    main()\n",
+        "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int m, n;\n    cin >> m >> n;\n    // TODO: 动态规划计算不同路径数并输出\n    return 0;\n}\n"
+      }
+    },
+    "core": {
+      "kind": "function",
+      "className": "Solution",
+      "method": "uniquePaths",
+      "params": [
+        {
+          "name": "m",
+          "type": "int",
+          "desc": "网格行数"
+        },
+        {
+          "name": "n",
+          "type": "int",
+          "desc": "网格列数"
+        }
+      ],
+      "returns": "int",
+      "returnsDesc": "不同路径总数",
+      "mutates": -1,
+      "templates": {
+        "python3": "def uniquePaths(m, n):\n    # TODO: 返回从左上角到右下角的不同路径数\n    pass\n",
+        "cpp": "class Solution {\npublic:\n    int uniquePaths(int m, int n) {\n        // TODO\n    }\n};\n"
+      }
+    }
+  },
+  {
+    "id": 64,
+    "title": "最小路径和",
+    "difficulty": "中等",
+    "topic": "动态规划",
+    "url": "https://leetcode.cn/problems/minimum-path-sum/",
+    "desc": "给定一个包含非负整数的 m × n 网格 grid，每次只能向下或者向右移动一步。请找出一条从左上角到右下角的路径，使得路径上的数字总和最小，并返回这个最小路径和。其中 1 ≤ m, n ≤ 200，0 ≤ grid[i][j] ≤ 200。",
+    "acm": {
+      "input": "第一行两个整数 m 和 n，表示网格的行数与列数。\n接下来 m 行，每行 n 个整数，表示网格 grid 的值。",
+      "output": "输出一个整数，表示最小路径和，末尾换行。",
+      "examples": [
+        {
+          "input": "3 3\n1 3 1\n1 5 1\n4 2 1\n",
+          "output": "7\n"
+        },
+        {
+          "input": "2 3\n1 2 3\n4 5 6\n",
+          "output": "12\n"
+        }
+      ],
+      "template": {
+        "python3": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    m = int(data[0])\n    n = int(data[1])\n    grid = []\n    idx = 2\n    for _ in range(m):\n        grid.append(list(map(int, data[idx:idx + n])))\n        idx += n\n    # TODO: 动态规划求最小路径和并输出\n\nif __name__ == \"__main__\":\n    main()\n",
+        "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int m, n;\n    cin >> m >> n;\n    vector<vector<int>> grid(m, vector<int>(n));\n    for (int i = 0; i < m; i++)\n        for (int j = 0; j < n; j++) cin >> grid[i][j];\n    // TODO: 动态规划求最小路径和并输出\n    return 0;\n}\n"
+      }
+    },
+    "core": {
+      "kind": "function",
+      "className": "Solution",
+      "method": "minPathSum",
+      "params": [
+        {
+          "name": "grid",
+          "type": "int[][]",
+          "desc": "网格，grid[i][j] 为对应格子的值"
+        }
+      ],
+      "returns": "int",
+      "returnsDesc": "最小路径和",
+      "mutates": -1,
+      "templates": {
+        "python3": "def minPathSum(grid):\n    # TODO: 返回最小路径和\n    pass\n",
+        "cpp": "class Solution {\npublic:\n    int minPathSum(vector<vector<int>>& grid) {\n        // TODO\n    }\n};\n"
+      }
+    }
+  },
+  {
+    "id": 72,
+    "title": "编辑距离",
+    "difficulty": "中等",
+    "topic": "动态规划",
+    "url": "https://leetcode.cn/problems/edit-distance/",
+    "desc": "给你两个单词 word1 和 word2，请返回将 word1 转换成 word2 所使用的最少操作数。你可以对一个单词进行插入一个字符、删除一个字符或替换一个字符这三种操作。其中 0 ≤ word1.length, word2.length ≤ 500。",
+    "acm": {
+      "input": "第一行一个字符串 word1（可为空）。\n第二行一个字符串 word2（可为空）。",
+      "output": "输出最小编辑距离，末尾换行。",
+      "examples": [
+        {
+          "input": "horse\nros\n",
+          "output": "3\n"
+        },
+        {
+          "input": "intention\nexecution\n",
+          "output": "5\n"
+        }
+      ],
+      "template": {
+        "python3": "import sys\n\ndef main():\n    lines = sys.stdin.read().splitlines()\n    a = lines[0] if lines else ''\n    b = lines[1] if len(lines) > 1 else ''\n    # TODO: 求最小编辑距离并输出\n\nif __name__ == \"__main__\":\n    main()\n",
+        "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    string a, b;\n    getline(cin, a);\n    getline(cin, b);\n    // TODO: 求最小编辑距离并输出\n    return 0;\n}\n"
+      }
+    },
+    "core": {
+      "kind": "function",
+      "className": "Solution",
+      "method": "minDistance",
+      "params": [
+        {
+          "name": "word1",
+          "type": "string",
+          "desc": "第一个单词"
+        },
+        {
+          "name": "word2",
+          "type": "string",
+          "desc": "第二个单词"
+        }
+      ],
+      "returns": "int",
+      "returnsDesc": "最小编辑距离",
+      "mutates": -1,
+      "templates": {
+        "python3": "def minDistance(word1, word2):\n    # TODO: 返回最小编辑距离\n    pass\n",
+        "cpp": "class Solution {\npublic:\n    int minDistance(string word1, string word2) {\n        // TODO\n    }\n};\n"
+      }
+    }
+  },
+  {
+    "id": 75,
+    "title": "颜色分类",
+    "difficulty": "中等",
+    "topic": "双指针/排序",
+    "url": "https://leetcode.cn/problems/sort-colors/",
+    "desc": "给定一个包含红色、白色和蓝色、共 n 个元素的数组 nums，请原地对它们进行排序，使得相同颜色的元素相邻，并按照红色、白色、蓝色顺序排列。本题使用整数 0、1、2 分别表示红色、白色和蓝色。要求使用常数空间的单趟扫描算法完成。",
+    "acm": {
+      "input": "第一行一个整数 n（1 ≤ n ≤ 300）。\n第二行 n 个整数（取值 0、1、2），表示数组 nums。",
+      "output": "输出排序后的数组，空格分隔，末尾换行。",
+      "examples": [
+        {
+          "input": "6\n2 0 2 1 1 0\n",
+          "output": "0 0 1 1 2 2\n"
+        },
+        {
+          "input": "3\n2 0 1\n",
+          "output": "0 1 2\n"
+        }
+      ],
+      "template": {
+        "python3": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    n = int(data[0])\n    nums = list(map(int, data[1:1 + n]))\n    # TODO: 三指针原地排序（0、1、2），输出排序后的数组\n\nif __name__ == \"__main__\":\n    main()\n",
+        "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n;\n    cin >> n;\n    vector<int> nums(n);\n    for (int i = 0; i < n; i++) cin >> nums[i];\n    // TODO: 三指针原地排序（0、1、2），输出排序后的数组\n    return 0;\n}\n"
+      }
+    },
+    "core": {
+      "kind": "function",
+      "className": "Solution",
+      "method": "sortColors",
+      "params": [
+        {
+          "name": "nums",
+          "type": "int[]",
+          "desc": "整数数组（取值 0、1、2）"
+        }
+      ],
+      "returns": "void",
+      "returnsDesc": "原地排序，无返回值",
+      "mutates": 0,
+      "templates": {
+        "python3": "def sortColors(nums):\n    # TODO: 原地排序（0、1、2），无需返回值\n    pass\n",
+        "cpp": "class Solution {\npublic:\n    void sortColors(vector<int>& nums) {\n        // TODO\n    }\n};\n"
+      }
+    }
+  },
+  {
+    "id": 136,
+    "title": "只出现一次的数字",
+    "difficulty": "简单",
+    "topic": "位运算",
+    "url": "https://leetcode.cn/problems/single-number/",
+    "desc": "给你一个非空整数数组 nums，除了某个元素只出现一次以外，其余每个元素均恰好出现两次。请找出那个只出现一次的元素。要求算法具有线性时间复杂度且不使用额外空间。",
+    "acm": {
+      "input": "第一行一个整数 n（奇数，1 ≤ n ≤ 3×10^4）。\n第二行 n 个整数，表示数组 nums。",
+      "output": "输出只出现一次的那个整数，末尾换行。",
+      "examples": [
+        {
+          "input": "3\n2 2 1\n",
+          "output": "1\n"
+        },
+        {
+          "input": "5\n4 1 2 1 2\n",
+          "output": "4\n"
+        }
+      ],
+      "template": {
+        "python3": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    n = int(data[0])\n    nums = list(map(int, data[1:1 + n]))\n    # TODO: 用异或找出只出现一次的数并输出\n\nif __name__ == \"__main__\":\n    main()\n",
+        "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n;\n    cin >> n;\n    vector<int> nums(n);\n    for (int i = 0; i < n; i++) cin >> nums[i];\n    // TODO: 用异或找出只出现一次的数并输出\n    return 0;\n}\n"
+      }
+    },
+    "core": {
+      "kind": "function",
+      "className": "Solution",
+      "method": "singleNumber",
+      "params": [
+        {
+          "name": "nums",
+          "type": "int[]",
+          "desc": "整数数组"
+        }
+      ],
+      "returns": "int",
+      "returnsDesc": "只出现一次的元素",
+      "mutates": -1,
+      "templates": {
+        "python3": "def singleNumber(nums):\n    # TODO: 返回只出现一次的数字\n    pass\n",
+        "cpp": "class Solution {\npublic:\n    int singleNumber(vector<int>& nums) {\n        // TODO\n    }\n};\n"
+      }
+    }
+  },
+  {
+    "id": 169,
+    "title": "多数元素",
+    "difficulty": "简单",
+    "topic": "数组/投票",
+    "url": "https://leetcode.cn/problems/majority-element/",
+    "desc": "给定一个大小为 n 的数组 nums，返回其中的多数元素。多数元素是指在数组中出现次数大于 ⌊n/2⌋ 的元素。你可以假设给定的数组非空，并且总是存在多数元素。",
+    "acm": {
+      "input": "第一行一个整数 n（1 ≤ n ≤ 5×10^4）。\n第二行 n 个整数，表示数组 nums。",
+      "output": "输出多数元素的值，末尾换行。",
+      "examples": [
+        {
+          "input": "3\n3 2 3\n",
+          "output": "3\n"
+        },
+        {
+          "input": "7\n2 2 1 1 1 2 2\n",
+          "output": "2\n"
+        }
+      ],
+      "template": {
+        "python3": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    n = int(data[0])\n    nums = list(map(int, data[1:1 + n]))\n    # TODO: 用摩尔投票找出多数元素并输出\n\nif __name__ == \"__main__\":\n    main()\n",
+        "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n;\n    cin >> n;\n    vector<int> nums(n);\n    for (int i = 0; i < n; i++) cin >> nums[i];\n    // TODO: 用摩尔投票找出多数元素并输出\n    return 0;\n}\n"
+      }
+    },
+    "core": {
+      "kind": "function",
+      "className": "Solution",
+      "method": "majorityElement",
+      "params": [
+        {
+          "name": "nums",
+          "type": "int[]",
+          "desc": "整数数组"
+        }
+      ],
+      "returns": "int",
+      "returnsDesc": "多数元素",
+      "mutates": -1,
+      "templates": {
+        "python3": "def majorityElement(nums):\n    # TODO: 返回多数元素\n    pass\n",
+        "cpp": "class Solution {\npublic:\n    int majorityElement(vector<int>& nums) {\n        // TODO\n    }\n};\n"
+      }
+    }
+  },
+  {
+    "id": 287,
+    "title": "寻找重复数",
+    "difficulty": "中等",
+    "topic": "快慢指针/二分",
+    "url": "https://leetcode.cn/problems/find-the-duplicate-number/",
+    "desc": "给定一个包含 n + 1 个整数的数组 nums，其数字都在 [1, n] 范围内（包括 1 和 n），可知至少存在一个重复的整数。假设 nums 中只有一个重复的整数，请找出并返回这个重复的数。要求不修改原数组且只使用常数级额外空间。",
+    "acm": {
+      "input": "第一行一个整数 n（1 ≤ n ≤ 10^5），表示数组长度为 n + 1。\n第二行 n + 1 个整数，表示数组 nums，每个整数都在 [1, n] 内。",
+      "output": "输出重复的那个整数，末尾换行。",
+      "examples": [
+        {
+          "input": "5\n1 3 4 2 2\n",
+          "output": "2\n"
+        },
+        {
+          "input": "5\n3 1 3 4 2\n",
+          "output": "3\n"
+        }
+      ],
+      "template": {
+        "python3": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    n = int(data[0])\n    nums = list(map(int, data[1:1 + n + 1]))\n    # TODO: 用快慢指针找出重复的数并输出\n\nif __name__ == \"__main__\":\n    main()\n",
+        "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n;\n    cin >> n;\n    vector<int> nums(n + 1);\n    for (int i = 0; i < n + 1; i++) cin >> nums[i];\n    // TODO: 用快慢指针找出重复的数并输出\n    return 0;\n}\n"
+      }
+    },
+    "core": {
+      "kind": "function",
+      "className": "Solution",
+      "method": "findDuplicate",
+      "params": [
+        {
+          "name": "nums",
+          "type": "int[]",
+          "desc": "长度为 n+1、值在 [1,n] 内的整数数组"
+        }
+      ],
+      "returns": "int",
+      "returnsDesc": "重复的那个整数",
+      "mutates": -1,
+      "templates": {
+        "python3": "def findDuplicate(nums):\n    # TODO: 返回重复的那个整数\n    pass\n",
+        "cpp": "class Solution {\npublic:\n    int findDuplicate(vector<int>& nums) {\n        // TODO\n    }\n};\n"
+      }
+    }
+  },
+  {
+    "id": 1143,
+    "title": "最长公共子序列",
+    "difficulty": "中等",
+    "topic": "动态规划",
+    "url": "https://leetcode.cn/problems/longest-common-subsequence/",
+    "desc": "给定两个字符串 text1 和 text2，返回这两个字符串的最长公共子序列的长度。子序列是指在不改变字符相对顺序的前提下，从原字符串中删除若干字符（也可以不删除）后得到的新字符串。若不存在公共子序列则返回 0。其中 0 ≤ text1.length, text2.length ≤ 1000。",
+    "acm": {
+      "input": "第一行一个字符串 text1（可为空）。\n第二行一个字符串 text2（可为空）。",
+      "output": "输出最长公共子序列的长度，末尾换行。",
+      "examples": [
+        {
+          "input": "abcde\nace\n",
+          "output": "3\n"
+        },
+        {
+          "input": "abc\nabc\n",
+          "output": "3\n"
+        }
+      ],
+      "template": {
+        "python3": "import sys\n\ndef main():\n    lines = sys.stdin.read().splitlines()\n    a = lines[0] if lines else ''\n    b = lines[1] if len(lines) > 1 else ''\n    # TODO: 求最长公共子序列长度并输出\n\nif __name__ == \"__main__\":\n    main()\n",
+        "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    string a, b;\n    getline(cin, a);\n    getline(cin, b);\n    // TODO: 求最长公共子序列长度并输出\n    return 0;\n}\n"
+      }
+    },
+    "core": {
+      "kind": "function",
+      "className": "Solution",
+      "method": "longestCommonSubsequence",
+      "params": [
+        {
+          "name": "text1",
+          "type": "string",
+          "desc": "第一个字符串"
+        },
+        {
+          "name": "text2",
+          "type": "string",
+          "desc": "第二个字符串"
+        }
+      ],
+      "returns": "int",
+      "returnsDesc": "最长公共子序列的长度",
+      "mutates": -1,
+      "templates": {
+        "python3": "def longestCommonSubsequence(text1, text2):\n    # TODO: 返回最长公共子序列的长度\n    pass\n",
+        "cpp": "class Solution {\npublic:\n    int longestCommonSubsequence(string text1, string text2) {\n        // TODO\n    }\n};\n"
+      }
+    }
+  }
+]

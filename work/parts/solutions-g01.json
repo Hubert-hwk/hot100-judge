@@ -1,0 +1,102 @@
+{
+  "1": {
+    "python3": {
+      "core": "def twoSum(nums, target):\n    d = {}\n    for i, v in enumerate(nums):\n        if target - v in d:\n            return [d[target - v], i]\n        d[v] = i\n    return []\n",
+      "acm": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    n = int(data[0])\n    nums = list(map(int, data[1:1 + n]))\n    target = int(data[1 + n])\n    d = {}\n    for i, v in enumerate(nums):\n        if target - v in d:\n            print(d[target - v], i)\n            return\n        d[v] = i\n\nif __name__ == \"__main__\":\n    main()\n"
+    },
+    "cpp": {
+      "core": "class Solution {\npublic:\n    vector<int> twoSum(vector<int>& nums, int target) {\n        unordered_map<int, int> m;\n        for (int i = 0; i < (int)nums.size(); i++) {\n            if (m.count(target - nums[i])) return {m[target - nums[i]], i};\n            m[nums[i]] = i;\n        }\n        return {};\n    }\n};\n",
+      "acm": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n;\n    cin >> n;\n    vector<int> nums(n);\n    for (int i = 0; i < n; i++) cin >> nums[i];\n    int target;\n    cin >> target;\n    unordered_map<int, int> m;\n    for (int i = 0; i < n; i++) {\n        if (m.count(target - nums[i])) {\n            cout << m[target - nums[i]] << ' ' << i << '\\n';\n            return 0;\n        }\n        m[nums[i]] = i;\n    }\n    return 0;\n}\n"
+    }
+  },
+  "49": {
+    "python3": {
+      "core": "def groupAnagrams(strs):\n    idx = {}\n    groups = []\n    for s in strs:\n        key = ''.join(sorted(s))\n        if key not in idx:\n            idx[key] = len(groups)\n            groups.append([])\n        groups[idx[key]].append(s)\n    return groups\n",
+      "acm": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        print()\n        return\n    n = int(data[0])\n    strs = data[1:1 + n]\n    idx = {}\n    groups = []\n    for s in strs:\n        key = ''.join(sorted(s))\n        if key not in idx:\n            idx[key] = len(groups)\n            groups.append([])\n        groups[idx[key]].append(s)\n    if not groups:\n        print()\n        return\n    for g in groups:\n        print(' '.join(g))\n\nif __name__ == \"__main__\":\n    main()\n"
+    },
+    "cpp": {
+      "core": "class Solution {\npublic:\n    vector<vector<string>> groupAnagrams(vector<string>& strs) {\n        unordered_map<string, int> idx;\n        vector<vector<string>> groups;\n        for (const string& s : strs) {\n            string key = s;\n            sort(key.begin(), key.end());\n            if (!idx.count(key)) {\n                idx[key] = (int)groups.size();\n                groups.push_back({});\n            }\n            groups[idx[key]].push_back(s);\n        }\n        return groups;\n    }\n};\n",
+      "acm": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n;\n    cin >> n;\n    vector<string> strs(n);\n    for (int i = 0; i < n; i++) cin >> strs[i];\n    unordered_map<string, int> idx;\n    vector<vector<string>> groups;\n    for (const string& s : strs) {\n        string key = s;\n        sort(key.begin(), key.end());\n        if (!idx.count(key)) {\n            idx[key] = (int)groups.size();\n            groups.push_back({});\n        }\n        groups[idx[key]].push_back(s);\n    }\n    if (groups.empty()) {\n        cout << '\\n';\n        return 0;\n    }\n    for (const auto& g : groups) {\n        for (size_t i = 0; i < g.size(); i++) {\n            if (i) cout << ' ';\n            cout << g[i];\n        }\n        cout << '\\n';\n    }\n    return 0;\n}\n"
+    }
+  },
+  "128": {
+    "python3": {
+      "core": "def longestConsecutive(nums):\n    s = set(nums)\n    best = 0\n    for x in s:\n        if x - 1 in s:\n            continue\n        cur = x\n        length = 1\n        while cur + 1 in s:\n            cur += 1\n            length += 1\n        best = max(best, length)\n    return best\n",
+      "acm": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    n = int(data[0])\n    nums = list(map(int, data[1:1 + n]))\n    s = set(nums)\n    best = 0\n    for x in s:\n        if x - 1 in s:\n            continue\n        cur = x\n        length = 1\n        while cur + 1 in s:\n            cur += 1\n            length += 1\n        best = max(best, length)\n    print(best)\n\nif __name__ == \"__main__\":\n    main()\n"
+    },
+    "cpp": {
+      "core": "class Solution {\npublic:\n    int longestConsecutive(vector<int>& nums) {\n        unordered_set<int> s(nums.begin(), nums.end());\n        int best = 0;\n        for (int x : s) {\n            if (s.count(x - 1)) continue;\n            int cur = x, len = 1;\n            while (s.count(cur + 1)) { cur++; len++; }\n            best = max(best, len);\n        }\n        return best;\n    }\n};\n",
+      "acm": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n;\n    cin >> n;\n    vector<int> nums(n);\n    for (int i = 0; i < n; i++) cin >> nums[i];\n    unordered_set<int> s(nums.begin(), nums.end());\n    int best = 0;\n    for (int x : s) {\n        if (s.count(x - 1)) continue;\n        int cur = x, len = 1;\n        while (s.count(cur + 1)) { cur++; len++; }\n        best = max(best, len);\n    }\n    cout << best << '\\n';\n    return 0;\n}\n"
+    }
+  },
+  "283": {
+    "python3": {
+      "core": "def moveZeroes(nums):\n    j = 0\n    for i in range(len(nums)):\n        if nums[i] != 0:\n            nums[i], nums[j] = nums[j], nums[i]\n            j += 1\n",
+      "acm": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        print()\n        return\n    n = int(data[0])\n    nums = list(map(int, data[1:1 + n]))\n    j = 0\n    for i in range(n):\n        if nums[i] != 0:\n            nums[i], nums[j] = nums[j], nums[i]\n            j += 1\n    print(' '.join(map(str, nums)))\n\nif __name__ == \"__main__\":\n    main()\n"
+    },
+    "cpp": {
+      "core": "class Solution {\npublic:\n    void moveZeroes(vector<int>& nums) {\n        int j = 0;\n        for (int i = 0; i < (int)nums.size(); i++) {\n            if (nums[i] != 0) {\n                swap(nums[i], nums[j]);\n                j++;\n            }\n        }\n    }\n};\n",
+      "acm": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n;\n    cin >> n;\n    vector<int> nums(n);\n    for (int i = 0; i < n; i++) cin >> nums[i];\n    int j = 0;\n    for (int i = 0; i < n; i++) {\n        if (nums[i] != 0) {\n            swap(nums[i], nums[j]);\n            j++;\n        }\n    }\n    for (int i = 0; i < n; i++) {\n        if (i) cout << ' ';\n        cout << nums[i];\n    }\n    cout << '\\n';\n    return 0;\n}\n"
+    }
+  },
+  "11": {
+    "python3": {
+      "core": "def maxArea(height):\n    l, r = 0, len(height) - 1\n    ans = 0\n    while l < r:\n        ans = max(ans, min(height[l], height[r]) * (r - l))\n        if height[l] < height[r]:\n            l += 1\n        else:\n            r -= 1\n    return ans\n",
+      "acm": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    n = int(data[0])\n    height = list(map(int, data[1:1 + n]))\n    l, r = 0, n - 1\n    ans = 0\n    while l < r:\n        ans = max(ans, min(height[l], height[r]) * (r - l))\n        if height[l] < height[r]:\n            l += 1\n        else:\n            r -= 1\n    print(ans)\n\nif __name__ == \"__main__\":\n    main()\n"
+    },
+    "cpp": {
+      "core": "class Solution {\npublic:\n    int maxArea(vector<int>& height) {\n        int l = 0, r = (int)height.size() - 1;\n        long long ans = 0;\n        while (l < r) {\n            ans = max(ans, (long long)min(height[l], height[r]) * (r - l));\n            if (height[l] < height[r]) l++;\n            else r--;\n        }\n        return (int)ans;\n    }\n};\n",
+      "acm": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n;\n    cin >> n;\n    vector<int> h(n);\n    for (int i = 0; i < n; i++) cin >> h[i];\n    long long ans = 0;\n    int l = 0, r = n - 1;\n    while (l < r) {\n        long long w = (long long)min(h[l], h[r]) * (r - l);\n        ans = max(ans, w);\n        if (h[l] < h[r]) l++;\n        else r--;\n    }\n    cout << ans << '\\n';\n    return 0;\n}\n"
+    }
+  },
+  "15": {
+    "python3": {
+      "core": "def threeSum(nums):\n    nums.sort()\n    n = len(nums)\n    res = []\n    for i in range(n - 2):\n        if i > 0 and nums[i] == nums[i - 1]:\n            continue\n        l, r = i + 1, n - 1\n        while l < r:\n            s = nums[i] + nums[l] + nums[r]\n            if s < 0:\n                l += 1\n            elif s > 0:\n                r -= 1\n            else:\n                res.append([nums[i], nums[l], nums[r]])\n                while l < r and nums[l] == nums[l + 1]:\n                    l += 1\n                while l < r and nums[r] == nums[r - 1]:\n                    r -= 1\n                l += 1\n                r -= 1\n    return res\n",
+      "acm": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        print()\n        return\n    n = int(data[0])\n    nums = list(map(int, data[1:1 + n]))\n    nums.sort()\n    res = []\n    for i in range(n - 2):\n        if i > 0 and nums[i] == nums[i - 1]:\n            continue\n        l, r = i + 1, n - 1\n        while l < r:\n            s = nums[i] + nums[l] + nums[r]\n            if s < 0:\n                l += 1\n            elif s > 0:\n                r -= 1\n            else:\n                res.append([nums[i], nums[l], nums[r]])\n                while l < r and nums[l] == nums[l + 1]:\n                    l += 1\n                while l < r and nums[r] == nums[r - 1]:\n                    r -= 1\n                l += 1\n                r -= 1\n    if res:\n        print('\\n'.join(' '.join(map(str, t)) for t in res))\n    else:\n        print()\n\nif __name__ == \"__main__\":\n    main()\n"
+    },
+    "cpp": {
+      "core": "class Solution {\npublic:\n    vector<vector<int>> threeSum(vector<int>& nums) {\n        sort(nums.begin(), nums.end());\n        int n = (int)nums.size();\n        vector<vector<int>> res;\n        for (int i = 0; i < n - 2; i++) {\n            if (i > 0 && nums[i] == nums[i - 1]) continue;\n            int l = i + 1, r = n - 1;\n            while (l < r) {\n                long long s = (long long)nums[i] + nums[l] + nums[r];\n                if (s < 0) l++;\n                else if (s > 0) r--;\n                else {\n                    res.push_back({nums[i], nums[l], nums[r]});\n                    while (l < r && nums[l] == nums[l + 1]) l++;\n                    while (l < r && nums[r] == nums[r - 1]) r--;\n                    l++; r--;\n                }\n            }\n        }\n        return res;\n    }\n};\n",
+      "acm": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n;\n    cin >> n;\n    vector<int> nums(n);\n    for (int i = 0; i < n; i++) cin >> nums[i];\n    sort(nums.begin(), nums.end());\n    vector<vector<int>> res;\n    for (int i = 0; i < n - 2; i++) {\n        if (i > 0 && nums[i] == nums[i - 1]) continue;\n        int l = i + 1, r = n - 1;\n        while (l < r) {\n            long long s = (long long)nums[i] + nums[l] + nums[r];\n            if (s < 0) l++;\n            else if (s > 0) r--;\n            else {\n                res.push_back({nums[i], nums[l], nums[r]});\n                while (l < r && nums[l] == nums[l + 1]) l++;\n                while (l < r && nums[r] == nums[r - 1]) r--;\n                l++; r--;\n            }\n        }\n    }\n    if (res.empty()) {\n        cout << '\\n';\n        return 0;\n    }\n    for (const auto& t : res) {\n        for (size_t i = 0; i < t.size(); i++) {\n            if (i) cout << ' ';\n            cout << t[i];\n        }\n        cout << '\\n';\n    }\n    return 0;\n}\n"
+    }
+  },
+  "42": {
+    "python3": {
+      "core": "def trap(height):\n    n = len(height)\n    l, r = 0, n - 1\n    lmax = rmax = 0\n    ans = 0\n    while l <= r:\n        if lmax <= rmax:\n            lmax = max(lmax, height[l])\n            ans += lmax - height[l]\n            l += 1\n        else:\n            rmax = max(rmax, height[r])\n            ans += rmax - height[r]\n            r -= 1\n    return ans\n",
+      "acm": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    n = int(data[0])\n    height = list(map(int, data[1:1 + n]))\n    l, r = 0, n - 1\n    lmax = rmax = 0\n    ans = 0\n    while l <= r:\n        if lmax <= rmax:\n            lmax = max(lmax, height[l])\n            ans += lmax - height[l]\n            l += 1\n        else:\n            rmax = max(rmax, height[r])\n            ans += rmax - height[r]\n            r -= 1\n    print(ans)\n\nif __name__ == \"__main__\":\n    main()\n"
+    },
+    "cpp": {
+      "core": "class Solution {\npublic:\n    int trap(vector<int>& height) {\n        int n = (int)height.size();\n        int l = 0, r = n - 1, lmax = 0, rmax = 0;\n        long long ans = 0;\n        while (l <= r) {\n            if (lmax <= rmax) {\n                lmax = max(lmax, height[l]);\n                ans += lmax - height[l];\n                l++;\n            } else {\n                rmax = max(rmax, height[r]);\n                ans += rmax - height[r];\n                r--;\n            }\n        }\n        return (int)ans;\n    }\n};\n",
+      "acm": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n;\n    cin >> n;\n    vector<int> h(n);\n    for (int i = 0; i < n; i++) cin >> h[i];\n    int l = 0, r = n - 1, lmax = 0, rmax = 0;\n    long long ans = 0;\n    while (l <= r) {\n        if (lmax <= rmax) {\n            lmax = max(lmax, h[l]);\n            ans += lmax - h[l];\n            l++;\n        } else {\n            rmax = max(rmax, h[r]);\n            ans += rmax - h[r];\n            r--;\n        }\n    }\n    cout << ans << '\\n';\n    return 0;\n}\n"
+    }
+  },
+  "3": {
+    "python3": {
+      "core": "def lengthOfLongestSubstring(s):\n    last = {}\n    l = 0\n    ans = 0\n    for r, c in enumerate(s):\n        if c in last:\n            l = max(l, last[c] + 1)\n        last[c] = r\n        ans = max(ans, r - l + 1)\n    return ans\n",
+      "acm": "import sys\n\ndef main():\n    data = sys.stdin.read().split()\n    s = data[0] if data else \"\"\n    last = {}\n    l = 0\n    ans = 0\n    for r, c in enumerate(s):\n        if c in last:\n            l = max(l, last[c] + 1)\n        last[c] = r\n        ans = max(ans, r - l + 1)\n    print(ans)\n\nif __name__ == \"__main__\":\n    main()\n"
+    },
+    "cpp": {
+      "core": "class Solution {\npublic:\n    int lengthOfLongestSubstring(string s) {\n        unordered_map<char, int> last;\n        int l = 0, ans = 0;\n        for (int r = 0; r < (int)s.size(); r++) {\n            if (last.count(s[r])) l = max(l, last[s[r]] + 1);\n            last[s[r]] = r;\n            ans = max(ans, r - l + 1);\n        }\n        return ans;\n    }\n};\n",
+      "acm": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    string s;\n    if (!(cin >> s)) s = \"\";\n    unordered_map<char, int> last;\n    int l = 0, ans = 0;\n    for (int r = 0; r < (int)s.size(); r++) {\n        if (last.count(s[r])) l = max(l, last[s[r]] + 1);\n        last[s[r]] = r;\n        ans = max(ans, r - l + 1);\n    }\n    cout << ans << '\\n';\n    return 0;\n}\n"
+    }
+  },
+  "438": {
+    "python3": {
+      "core": "def findAnagrams(s, p):\n    if len(s) < len(p):\n        return []\n    need = [0] * 26\n    win = [0] * 26\n    for c in p:\n        need[ord(c) - 97] += 1\n    m = len(p)\n    res = []\n    for i, c in enumerate(s):\n        win[ord(c) - 97] += 1\n        if i >= m:\n            win[ord(s[i - m]) - 97] -= 1\n        if i >= m - 1 and win == need:\n            res.append(i - m + 1)\n    return res\n",
+      "acm": "import sys\n\ndef main():\n    data = sys.stdin.read().split()\n    s = data[0]\n    p = data[1]\n    m = len(p)\n    if len(s) < m:\n        print()\n        return\n    need = [0] * 26\n    win = [0] * 26\n    for c in p:\n        need[ord(c) - 97] += 1\n    res = []\n    for i, c in enumerate(s):\n        win[ord(c) - 97] += 1\n        if i >= m:\n            win[ord(s[i - m]) - 97] -= 1\n        if i >= m - 1 and win == need:\n            res.append(i - m + 1)\n    if res:\n        print(' '.join(map(str, res)))\n    else:\n        print()\n\nif __name__ == \"__main__\":\n    main()\n"
+    },
+    "cpp": {
+      "core": "class Solution {\npublic:\n    vector<int> findAnagrams(string s, string p) {\n        if (s.size() < p.size()) return {};\n        vector<int> need(26, 0), win(26, 0);\n        for (char c : p) need[c - 'a']++;\n        int m = (int)p.size();\n        vector<int> res;\n        for (int i = 0; i < (int)s.size(); i++) {\n            win[s[i] - 'a']++;\n            if (i >= m) win[s[i - m] - 'a']--;\n            if (i >= m - 1 && win == need) res.push_back(i - m + 1);\n        }\n        return res;\n    }\n};\n",
+      "acm": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    string s, p;\n    cin >> s >> p;\n    if (s.size() < p.size()) {\n        cout << '\\n';\n        return 0;\n    }\n    vector<int> need(26, 0), win(26, 0);\n    for (char c : p) need[c - 'a']++;\n    int m = (int)p.size();\n    vector<int> res;\n    for (int i = 0; i < (int)s.size(); i++) {\n        win[s[i] - 'a']++;\n        if (i >= m) win[s[i - m] - 'a']--;\n        if (i >= m - 1 && win == need) res.push_back(i - m + 1);\n    }\n    if (res.empty()) {\n        cout << '\\n';\n        return 0;\n    }\n    for (size_t i = 0; i < res.size(); i++) {\n        if (i) cout << ' ';\n        cout << res[i];\n    }\n    cout << '\\n';\n    return 0;\n}\n"
+    }
+  },
+  "560": {
+    "python3": {
+      "core": "def subarraySum(nums, k):\n    cnt = {0: 1}\n    pre = 0\n    ans = 0\n    for x in nums:\n        pre += x\n        ans += cnt.get(pre - k, 0)\n        cnt[pre] = cnt.get(pre, 0) + 1\n    return ans\n",
+      "acm": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    n = int(data[0])\n    nums = list(map(int, data[1:1 + n]))\n    k = int(data[1 + n])\n    cnt = {0: 1}\n    pre = 0\n    ans = 0\n    for x in nums:\n        pre += x\n        ans += cnt.get(pre - k, 0)\n        cnt[pre] = cnt.get(pre, 0) + 1\n    print(ans)\n\nif __name__ == \"__main__\":\n    main()\n"
+    },
+    "cpp": {
+      "core": "class Solution {\npublic:\n    int subarraySum(vector<int>& nums, int k) {\n        unordered_map<long long, int> cnt;\n        cnt[0] = 1;\n        long long pre = 0;\n        int ans = 0;\n        for (int x : nums) {\n            pre += x;\n            ans += cnt[pre - k];\n            cnt[pre]++;\n        }\n        return ans;\n    }\n};\n",
+      "acm": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n;\n    cin >> n;\n    vector<int> nums(n);\n    for (int i = 0; i < n; i++) cin >> nums[i];\n    long long k;\n    cin >> k;\n    unordered_map<long long, int> cnt;\n    cnt[0] = 1;\n    long long pre = 0;\n    long long ans = 0;\n    for (int x : nums) {\n        pre += x;\n        ans += cnt[pre - k];\n        cnt[pre]++;\n    }\n    cout << ans << '\\n';\n    return 0;\n}\n"
+    }
+  }
+}

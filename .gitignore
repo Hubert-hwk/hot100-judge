@@ -1,0 +1,20 @@
+# 依赖
+node_modules/
+
+# 运行/抓取的临时产物
+work/*.log
+work/dom.html
+work/codetop/
+work/LeetcodeTop/
+
+# 子代理遗留的一次性生成脚本（内容已合并进 public/data）
+work/gen-*
+work/make-*
+work/check-*
+work/tmp/
+work/_scratch/
+
+# 系统文件
+.DS_Store
+Thumbs.db
+.bin/

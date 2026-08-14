@@ -1,0 +1,477 @@
+[
+  {
+    "id": 98,
+    "title": "验证二叉搜索树",
+    "difficulty": "中等",
+    "topic": "二叉搜索树",
+    "url": "https://leetcode.cn/problems/validate-binary-search-tree/",
+    "desc": "给你一个二叉树的根节点 root，判断其是否是一个有效的二叉搜索树。有效二叉搜索树的定义为：节点的左子树只包含小于当前节点的数，节点的右子树只包含大于当前节点的数，并且左右子树本身也必须是二叉搜索树。",
+    "acm": {
+      "input": "第一行一个整数 n，表示节点个数。\n第二行按层序给出 n 个节点值，用 null 表示空节点；n 为 0 时表示空树，第二行省略。",
+      "output": "输出 true 或 false，表示该树是否为有效的二叉搜索树，末尾换行。",
+      "examples": [
+        {
+          "input": "3\n2 1 3\n",
+          "output": "true\n"
+        },
+        {
+          "input": "7\n5 1 4 null null 3 6\n",
+          "output": "false\n"
+        }
+      ],
+      "template": {
+        "python3": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    n = int(data[0])\n    arr = data[1:1 + n]\n    # TODO: 按层序数组构建二叉树，输出 true/false 表示是否为有效二叉搜索树\n\nif __name__ == \"__main__\":\n    main()\n",
+        "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n;\n    cin >> n;\n    vector<string> arr(n);\n    for (int i = 0; i < n; i++) cin >> arr[i];\n    // TODO: 按层序数组构建二叉树，输出 true/false 表示是否为有效二叉搜索树\n    return 0;\n}\n"
+      }
+    },
+    "core": {
+      "kind": "function",
+      "className": "Solution",
+      "method": "isValidBST",
+      "params": [
+        {
+          "name": "root",
+          "type": "tree",
+          "desc": "二叉树根节点"
+        }
+      ],
+      "returns": "bool",
+      "returnsDesc": "是否为有效的二叉搜索树",
+      "mutates": -1,
+      "templates": {
+        "python3": "# TreeNode 由评测环境提供，请勿重复定义\ndef isValidBST(root):\n    # TODO: 返回是否为有效的二叉搜索树\n    pass\n",
+        "cpp": "// TreeNode 由评测环境提供，请勿重复定义\nclass Solution {\npublic:\n    bool isValidBST(TreeNode* root) {\n        // TODO\n    }\n};\n"
+      }
+    }
+  },
+  {
+    "id": 102,
+    "title": "二叉树的层序遍历",
+    "difficulty": "中等",
+    "topic": "二叉树/BFS",
+    "url": "https://leetcode.cn/problems/binary-tree-level-order-traversal/",
+    "desc": "给你二叉树的根节点 root，返回其节点值的层序遍历结果（即逐层地，从左到右访问所有节点）。每层节点存放于一个数组中，最终结果是一个二维数组。",
+    "acm": {
+      "input": "第一行一个整数 n，表示节点个数。\n第二行按层序给出 n 个节点值，用 null 表示空节点；n 为 0 时表示空树，第二行省略。",
+      "output": "按层输出每层的节点值，每层一行，行内节点值用空格分隔，末尾换行；树为空时输出空行。",
+      "examples": [
+        {
+          "input": "7\n3 9 20 null null 15 7\n",
+          "output": "3\n9 20\n15 7\n"
+        },
+        {
+          "input": "1\n1\n",
+          "output": "1\n"
+        }
+      ],
+      "template": {
+        "python3": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        print()\n        return\n    n = int(data[0])\n    arr = data[1:1 + n]\n    # TODO: 按层序数组构建二叉树，按层输出每层节点值（每层一行，空格分隔；树为空输出空行）\n\nif __name__ == \"__main__\":\n    main()\n",
+        "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n;\n    cin >> n;\n    vector<string> arr(n);\n    for (int i = 0; i < n; i++) cin >> arr[i];\n    // TODO: 按层序数组构建二叉树，按层输出每层节点值（每层一行，空格分隔；树为空输出空行）\n    return 0;\n}\n"
+      }
+    },
+    "core": {
+      "kind": "function",
+      "className": "Solution",
+      "method": "levelOrder",
+      "params": [
+        {
+          "name": "root",
+          "type": "tree",
+          "desc": "二叉树根节点"
+        }
+      ],
+      "returns": "int[][]",
+      "returnsDesc": "每层一个数组组成的层序遍历结果",
+      "mutates": -1,
+      "templates": {
+        "python3": "# TreeNode 由评测环境提供，请勿重复定义\ndef levelOrder(root):\n    # TODO: 返回层序遍历结果（每层一个数组）\n    pass\n",
+        "cpp": "// TreeNode 由评测环境提供，请勿重复定义\nclass Solution {\npublic:\n    vector<vector<int>> levelOrder(TreeNode* root) {\n        // TODO\n    }\n};\n"
+      }
+    }
+  },
+  {
+    "id": 105,
+    "title": "从前序与中序遍历序列构造二叉树",
+    "difficulty": "中等",
+    "topic": "二叉树",
+    "url": "https://leetcode.cn/problems/construct-binary-tree-from-preorder-and-inorder-traversal/",
+    "desc": "给定两个整数数组 preorder 和 inorder，其中 preorder 是某二叉树的先序遍历结果，inorder 是同一棵树的中序遍历结果，请构造这棵二叉树并返回其根节点。题目保证两个数组中都不含重复数字。",
+    "acm": {
+      "input": "第一行一个整数 n，表示节点个数。\n第二行 n 个整数，表示前序遍历 preorder。\n第三行 n 个整数，表示中序遍历 inorder。\nn 为 0 时后两行省略。",
+      "output": "输出构造出的二叉树的层序表示：节点值用空格分隔，null 表示空子节点（末尾多余的 null 省略），末尾换行；树为空时输出空行。",
+      "examples": [
+        {
+          "input": "5\n3 9 20 15 7\n9 3 15 20 7\n",
+          "output": "3 9 20 null null 15 7\n"
+        },
+        {
+          "input": "1\n1\n1\n",
+          "output": "1\n"
+        }
+      ],
+      "template": {
+        "python3": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        print()\n        return\n    n = int(data[0])\n    preorder = list(map(int, data[1:1 + n]))\n    inorder = list(map(int, data[1 + n:1 + 2 * n]))\n    # TODO: 由前序与中序构造二叉树，输出其层序表示（null 表示空节点，末尾多余 null 省略）\n\nif __name__ == \"__main__\":\n    main()\n",
+        "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n;\n    cin >> n;\n    vector<int> preorder(n), inorder(n);\n    for (int i = 0; i < n; i++) cin >> preorder[i];\n    for (int i = 0; i < n; i++) cin >> inorder[i];\n    // TODO: 由前序与中序构造二叉树，输出其层序表示（null 表示空节点，末尾多余 null 省略）\n    return 0;\n}\n"
+      }
+    },
+    "core": {
+      "kind": "function",
+      "className": "Solution",
+      "method": "buildTree",
+      "params": [
+        {
+          "name": "preorder",
+          "type": "int[]",
+          "desc": "前序遍历序列"
+        },
+        {
+          "name": "inorder",
+          "type": "int[]",
+          "desc": "中序遍历序列"
+        }
+      ],
+      "returns": "tree",
+      "returnsDesc": "构造出的二叉树根节点",
+      "mutates": -1,
+      "templates": {
+        "python3": "# TreeNode 由评测环境提供，请勿重复定义\ndef buildTree(preorder, inorder):\n    # TODO: 返回构造出的二叉树根节点\n    pass\n",
+        "cpp": "// TreeNode 由评测环境提供，请勿重复定义\nclass Solution {\npublic:\n    TreeNode* buildTree(vector<int>& preorder, vector<int>& inorder) {\n        // TODO\n    }\n};\n"
+      }
+    }
+  },
+  {
+    "id": 108,
+    "title": "将有序数组转换为二叉搜索树",
+    "difficulty": "简单",
+    "topic": "二叉搜索树",
+    "url": "https://leetcode.cn/problems/convert-sorted-array-to-binary-search-tree/",
+    "desc": "给你一个整数数组 nums，其中元素已经按升序排列，请将其转换为一棵高度平衡的二叉搜索树。高度平衡二叉树指每个节点的左右子树高度差的绝对值不超过 1。若存在多种答案，返回任意一种即可。",
+    "acm": {
+      "input": "第一行一个整数 n，表示数组长度。\n第二行 n 个升序排列的整数，表示数组 nums；n 为 0 时第二行省略。",
+      "output": "输出构造出的平衡二叉搜索树的层序表示：节点值用空格分隔，null 表示空子节点（末尾多余的 null 省略），末尾换行；树为空时输出空行。",
+      "examples": [
+        {
+          "input": "5\n1 2 3 4 5\n",
+          "output": "3 1 4 null 2 null 5\n"
+        },
+        {
+          "input": "1\n0\n",
+          "output": "0\n"
+        }
+      ],
+      "template": {
+        "python3": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        print()\n        return\n    n = int(data[0])\n    nums = list(map(int, data[1:1 + n]))\n    # TODO: 由升序数组构造平衡二叉搜索树，输出其层序表示（null 表示空节点，末尾多余 null 省略）\n\nif __name__ == \"__main__\":\n    main()\n",
+        "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n;\n    cin >> n;\n    vector<int> nums(n);\n    for (int i = 0; i < n; i++) cin >> nums[i];\n    // TODO: 由升序数组构造平衡二叉搜索树，输出其层序表示（null 表示空节点，末尾多余 null 省略）\n    return 0;\n}\n"
+      }
+    },
+    "core": {
+      "kind": "function",
+      "className": "Solution",
+      "method": "sortedArrayToBST",
+      "params": [
+        {
+          "name": "nums",
+          "type": "int[]",
+          "desc": "升序整数数组"
+        }
+      ],
+      "returns": "tree",
+      "returnsDesc": "平衡二叉搜索树根节点",
+      "mutates": -1,
+      "templates": {
+        "python3": "# TreeNode 由评测环境提供，请勿重复定义\ndef sortedArrayToBST(nums):\n    # TODO: 返回构造出的平衡二叉搜索树根节点\n    pass\n",
+        "cpp": "// TreeNode 由评测环境提供，请勿重复定义\nclass Solution {\npublic:\n    TreeNode* sortedArrayToBST(vector<int>& nums) {\n        // TODO\n    }\n};\n"
+      }
+    }
+  },
+  {
+    "id": 114,
+    "title": "二叉树展开为链表",
+    "difficulty": "中等",
+    "topic": "二叉树/链表",
+    "url": "https://leetcode.cn/problems/flatten-binary-tree-to-linked-list/",
+    "desc": "给你二叉树的根节点 root，请将它展开为一个单链表：展开后的链表仍使用 TreeNode，其中 right 子指针指向链表中下一个结点，left 子指针始终为 null。展开后的顺序应与二叉树的先序遍历顺序相同，且要求在原树上原地完成。",
+    "acm": {
+      "input": "第一行一个整数 n，表示节点个数。\n第二行按层序给出 n 个节点值，用 null 表示空节点；n 为 0 时表示空树，第二行省略。",
+      "output": "输出展开后链表上的节点值序列（即原二叉树的前序遍历顺序），空格分隔，末尾换行；树为空时输出空行。",
+      "examples": [
+        {
+          "input": "7\n1 2 5 3 4 null 6\n",
+          "output": "1 2 3 4 5 6\n"
+        },
+        {
+          "input": "1\n0\n",
+          "output": "0\n"
+        }
+      ],
+      "template": {
+        "python3": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        print()\n        return\n    n = int(data[0])\n    arr = data[1:1 + n]\n    # TODO: 按层序数组构建二叉树，原地展开为链表，输出链表节点值（即前序顺序，空格分隔）\n\nif __name__ == \"__main__\":\n    main()\n",
+        "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n;\n    cin >> n;\n    vector<string> arr(n);\n    for (int i = 0; i < n; i++) cin >> arr[i];\n    // TODO: 按层序数组构建二叉树，原地展开为链表，输出链表节点值（即前序顺序，空格分隔）\n    return 0;\n}\n"
+      }
+    },
+    "core": {
+      "kind": "function",
+      "className": "Solution",
+      "method": "flatten",
+      "params": [
+        {
+          "name": "root",
+          "type": "tree",
+          "desc": "二叉树根节点"
+        }
+      ],
+      "returns": "void",
+      "returnsDesc": "原地修改 root，使 right 指针串成先序链表",
+      "mutates": 0,
+      "templates": {
+        "python3": "# TreeNode 由评测环境提供，请勿重复定义\ndef flatten(root):\n    # TODO: 原地将二叉树展开为单链表（right 指针串成先序链，left 置空）\n    pass\n",
+        "cpp": "// TreeNode 由评测环境提供，请勿重复定义\nclass Solution {\npublic:\n    void flatten(TreeNode* root) {\n        // TODO\n    }\n};\n"
+      }
+    }
+  },
+  {
+    "id": 124,
+    "title": "二叉树中的最大路径和",
+    "difficulty": "困难",
+    "topic": "二叉树/DFS",
+    "url": "https://leetcode.cn/problems/binary-tree-maximum-path-sum/",
+    "desc": "二叉树中的路径定义为从树中任意节点出发，沿父节点-子节点连接，达到任意节点的序列，路径至少包含一个节点且不一定经过根节点。路径和是路径上各节点值的总和。给你一个二叉树的根节点 root，请返回其最大路径和。",
+    "acm": {
+      "input": "第一行一个整数 n，表示节点个数。\n第二行按层序给出 n 个节点值，用 null 表示空节点；n 为 0 时表示空树，第二行省略。",
+      "output": "输出最大路径和，末尾换行。",
+      "examples": [
+        {
+          "input": "7\n-10 9 20 null null 15 7\n",
+          "output": "42\n"
+        },
+        {
+          "input": "1\n-3\n",
+          "output": "-3\n"
+        }
+      ],
+      "template": {
+        "python3": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    n = int(data[0])\n    arr = data[1:1 + n]\n    # TODO: 按层序数组构建二叉树，输出最大路径和\n\nif __name__ == \"__main__\":\n    main()\n",
+        "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n;\n    cin >> n;\n    vector<string> arr(n);\n    for (int i = 0; i < n; i++) cin >> arr[i];\n    // TODO: 按层序数组构建二叉树，输出最大路径和\n    return 0;\n}\n"
+      }
+    },
+    "core": {
+      "kind": "function",
+      "className": "Solution",
+      "method": "maxPathSum",
+      "params": [
+        {
+          "name": "root",
+          "type": "tree",
+          "desc": "二叉树根节点"
+        }
+      ],
+      "returns": "int",
+      "returnsDesc": "最大路径和",
+      "mutates": -1,
+      "templates": {
+        "python3": "# TreeNode 由评测环境提供，请勿重复定义\ndef maxPathSum(root):\n    # TODO: 返回最大路径和\n    pass\n",
+        "cpp": "// TreeNode 由评测环境提供，请勿重复定义\nclass Solution {\npublic:\n    int maxPathSum(TreeNode* root) {\n        // TODO\n    }\n};\n"
+      }
+    }
+  },
+  {
+    "id": 199,
+    "title": "二叉树的右视图",
+    "difficulty": "中等",
+    "topic": "二叉树/BFS",
+    "url": "https://leetcode.cn/problems/binary-tree-right-side-view/",
+    "desc": "给定一个二叉树的根节点 root，想象自己站在它的右侧，按照从顶部到底部的顺序，返回从右侧所能看到的节点值。右视图即每一层最右边的节点组成的序列。",
+    "acm": {
+      "input": "第一行一个整数 n，表示节点个数。\n第二行按层序给出 n 个节点值，用 null 表示空节点；n 为 0 时表示空树，第二行省略。",
+      "output": "输出右视图的节点值序列，空格分隔，末尾换行；树为空时输出空行。",
+      "examples": [
+        {
+          "input": "7\n1 2 3 null 5 null 4\n",
+          "output": "1 3 4\n"
+        },
+        {
+          "input": "3\n1 2 3\n",
+          "output": "1 3\n"
+        }
+      ],
+      "template": {
+        "python3": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        print()\n        return\n    n = int(data[0])\n    arr = data[1:1 + n]\n    # TODO: 按层序数组构建二叉树，输出右视图节点值（空格分隔，末尾换行）\n\nif __name__ == \"__main__\":\n    main()\n",
+        "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n;\n    cin >> n;\n    vector<string> arr(n);\n    for (int i = 0; i < n; i++) cin >> arr[i];\n    // TODO: 按层序数组构建二叉树，输出右视图节点值（空格分隔，末尾换行）\n    return 0;\n}\n"
+      }
+    },
+    "core": {
+      "kind": "function",
+      "className": "Solution",
+      "method": "rightSideView",
+      "params": [
+        {
+          "name": "root",
+          "type": "tree",
+          "desc": "二叉树根节点"
+        }
+      ],
+      "returns": "int[]",
+      "returnsDesc": "右视图的节点值数组",
+      "mutates": -1,
+      "templates": {
+        "python3": "# TreeNode 由评测环境提供，请勿重复定义\ndef rightSideView(root):\n    # TODO: 返回右视图节点值数组\n    pass\n",
+        "cpp": "// TreeNode 由评测环境提供，请勿重复定义\nclass Solution {\npublic:\n    vector<int> rightSideView(TreeNode* root) {\n        // TODO\n    }\n};\n"
+      }
+    }
+  },
+  {
+    "id": 230,
+    "title": "二叉搜索树中第 K 小的元素",
+    "difficulty": "中等",
+    "topic": "二叉搜索树",
+    "url": "https://leetcode.cn/problems/kth-smallest-element-in-a-bst/",
+    "desc": "给定一个二叉搜索树的根节点 root 和一个整数 k，请设计一个算法查找其中第 k 小的元素（计数从 1 开始）。你可以利用二叉搜索树中序遍历有序的性质来求解。",
+    "acm": {
+      "input": "第一行一个整数 n，表示节点个数。\n第二行按层序给出 n 个节点值，用 null 表示空节点。\n第三行一个整数 k，表示要找第 k 小的元素（从 1 开始计数）。",
+      "output": "输出第 k 小的节点值，末尾换行。",
+      "examples": [
+        {
+          "input": "5\n3 1 4 null 2\n2\n",
+          "output": "2\n"
+        },
+        {
+          "input": "8\n5 3 6 2 4 null null 1\n3\n",
+          "output": "3\n"
+        }
+      ],
+      "template": {
+        "python3": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    n = int(data[0])\n    arr = data[1:1 + n]\n    k = int(data[1 + n])\n    # TODO: 按层序数组构建二叉树，输出第 k 小的节点值\n\nif __name__ == \"__main__\":\n    main()\n",
+        "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n;\n    cin >> n;\n    vector<string> arr(n);\n    for (int i = 0; i < n; i++) cin >> arr[i];\n    int k;\n    cin >> k;\n    // TODO: 按层序数组构建二叉树，输出第 k 小的节点值\n    return 0;\n}\n"
+      }
+    },
+    "core": {
+      "kind": "function",
+      "className": "Solution",
+      "method": "kthSmallest",
+      "params": [
+        {
+          "name": "root",
+          "type": "tree",
+          "desc": "二叉搜索树根节点"
+        },
+        {
+          "name": "k",
+          "type": "int",
+          "desc": "第 k 小（从 1 开始）"
+        }
+      ],
+      "returns": "int",
+      "returnsDesc": "第 k 小的节点值",
+      "mutates": -1,
+      "templates": {
+        "python3": "# TreeNode 由评测环境提供，请勿重复定义\ndef kthSmallest(root, k):\n    # TODO: 返回第 k 小的节点值\n    pass\n",
+        "cpp": "// TreeNode 由评测环境提供，请勿重复定义\nclass Solution {\npublic:\n    int kthSmallest(TreeNode* root, int k) {\n        // TODO\n    }\n};\n"
+      }
+    }
+  },
+  {
+    "id": 236,
+    "title": "二叉树的最近公共祖先",
+    "difficulty": "中等",
+    "topic": "二叉树",
+    "url": "https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-tree/",
+    "desc": "给定一个二叉树的根节点 root 以及两个目标节点的值 p 和 q，请找出这两个节点在树中的最近公共祖先并返回其节点值。最近公共祖先定义为：对于有根树 T 的两个节点，最近公共祖先是一个深度尽可能大的节点 x，使得 x 是 p、q 的祖先（一个节点可以是它自己的祖先）。题目保证值 p 和 q 对应的节点均存在于树中，且树中所有节点值互不相同。",
+    "acm": {
+      "input": "第一行一个整数 n，表示节点个数。\n第二行按层序给出 n 个节点值，用 null 表示空节点。\n第三行两个整数 p 和 q，表示两个目标节点的值（保证存在于树中）。",
+      "output": "输出 p 与 q 的最近公共祖先的节点值，末尾换行。",
+      "examples": [
+        {
+          "input": "7\n3 5 1 6 2 0 8\n5 1\n",
+          "output": "3\n"
+        },
+        {
+          "input": "7\n3 5 1 6 2 0 8\n5 2\n",
+          "output": "5\n"
+        }
+      ],
+      "template": {
+        "python3": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    n = int(data[0])\n    arr = data[1:1 + n]\n    p = int(data[1 + n])\n    q = int(data[2 + n])\n    # TODO: 按层序数组构建二叉树，输出 p 与 q 的最近公共祖先的节点值\n\nif __name__ == \"__main__\":\n    main()\n",
+        "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n;\n    cin >> n;\n    vector<string> arr(n);\n    for (int i = 0; i < n; i++) cin >> arr[i];\n    int p, q;\n    cin >> p >> q;\n    // TODO: 按层序数组构建二叉树，输出 p 与 q 的最近公共祖先的节点值\n    return 0;\n}\n"
+      }
+    },
+    "core": {
+      "kind": "function",
+      "className": "Solution",
+      "method": "lowestCommonAncestor",
+      "params": [
+        {
+          "name": "root",
+          "type": "tree",
+          "desc": "二叉树根节点"
+        },
+        {
+          "name": "p",
+          "type": "int",
+          "desc": "目标节点 p 的值"
+        },
+        {
+          "name": "q",
+          "type": "int",
+          "desc": "目标节点 q 的值"
+        }
+      ],
+      "returns": "int",
+      "returnsDesc": "最近公共祖先的节点值",
+      "mutates": -1,
+      "templates": {
+        "python3": "# TreeNode 由评测环境提供，请勿重复定义\ndef lowestCommonAncestor(root, p, q):\n    # TODO: 返回 p 与 q 的最近公共祖先的节点值\n    pass\n",
+        "cpp": "// TreeNode 由评测环境提供，请勿重复定义\nclass Solution {\npublic:\n    int lowestCommonAncestor(TreeNode* root, int p, int q) {\n        // TODO\n    }\n};\n"
+      }
+    }
+  },
+  {
+    "id": 437,
+    "title": "路径总和 III",
+    "difficulty": "中等",
+    "topic": "二叉树/前缀和",
+    "url": "https://leetcode.cn/problems/path-sum-iii/",
+    "desc": "给定一个二叉树的根节点 root 和一个整数 targetSum，求该二叉树中节点值之和等于 targetSum 的路径的数目。路径不需要从根节点开始，也不需要在叶子节点结束，但路径方向必须是向下的（只能从父节点走到子节点）。",
+    "acm": {
+      "input": "第一行一个整数 n，表示节点个数。\n第二行按层序给出 n 个节点值，用 null 表示空节点。\n第三行一个整数 targetSum。",
+      "output": "输出节点值之和等于 targetSum 的路径数目，末尾换行。",
+      "examples": [
+        {
+          "input": "11\n10 5 -3 3 2 null 11 3 -2 null 1\n8\n",
+          "output": "3\n"
+        },
+        {
+          "input": "1\n1\n1\n",
+          "output": "1\n"
+        }
+      ],
+      "template": {
+        "python3": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    n = int(data[0])\n    arr = data[1:1 + n]\n    target = int(data[1 + n])\n    # TODO: 按层序数组构建二叉树，输出路径和等于 targetSum 的路径数目\n\nif __name__ == \"__main__\":\n    main()\n",
+        "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n;\n    cin >> n;\n    vector<string> arr(n);\n    for (int i = 0; i < n; i++) cin >> arr[i];\n    long long target;\n    cin >> target;\n    // TODO: 按层序数组构建二叉树，输出路径和等于 targetSum 的路径数目\n    return 0;\n}\n"
+      }
+    },
+    "core": {
+      "kind": "function",
+      "className": "Solution",
+      "method": "pathSum",
+      "params": [
+        {
+          "name": "root",
+          "type": "tree",
+          "desc": "二叉树根节点"
+        },
+        {
+          "name": "targetSum",
+          "type": "int",
+          "desc": "目标和"
+        }
+      ],
+      "returns": "int",
+      "returnsDesc": "路径和等于 targetSum 的路径数目",
+      "mutates": -1,
+      "templates": {
+        "python3": "# TreeNode 由评测环境提供，请勿重复定义\ndef pathSum(root, targetSum):\n    # TODO: 返回路径和等于 targetSum 的路径数目\n    pass\n",
+        "cpp": "// TreeNode 由评测环境提供，请勿重复定义\nclass Solution {\npublic:\n    int pathSum(TreeNode* root, int targetSum) {\n        // TODO\n    }\n};\n"
+      }
+    }
+  }
+]

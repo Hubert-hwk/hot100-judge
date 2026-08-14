@@ -1,0 +1,493 @@
+[
+  {
+    "id": 2,
+    "title": "两数相加",
+    "difficulty": "中等",
+    "topic": "链表",
+    "url": "https://leetcode.cn/problems/add-two-numbers/",
+    "desc": "给你两个非空的链表，表示两个非负的整数，其中每个节点只能存储一位数字，且数字按逆序方式存储（个位在链表头）。请你将两个数相加，并以相同形式返回一个表示和的链表。可以假设除了数字 0 之外，这两个数都不会以 0 开头。注意处理每一位的进位，以及最高位相加可能产生的额外节点。",
+    "acm": {
+      "input": "第一行一个整数 n1，表示第一个链表长度。\n第二行 n1 个整数，表示第一个链表（数字按低位到高位存储，即头节点是个位）。\n第三行一个整数 n2，表示第二个链表长度。\n第四行 n2 个整数，表示第二个链表（同样按低位到高位存储）。",
+      "output": "输出相加结果链表的节点值（按低位到高位），空格分隔，末尾换行。",
+      "examples": [
+        {
+          "input": "3\n2 4 3\n3\n5 6 4\n",
+          "output": "7 0 8\n"
+        },
+        {
+          "input": "1\n9\n1\n9\n",
+          "output": "8 1\n"
+        }
+      ],
+      "template": {
+        "python3": "import sys\n\nclass ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\ndef build(vals):\n    head = cur = ListNode()\n    for v in vals:\n        cur.next = ListNode(v)\n        cur = cur.next\n    return head.next\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    n1 = int(data[0])\n    vals1 = list(map(int, data[1:1 + n1]))\n    n2 = int(data[1 + n1])\n    vals2 = list(map(int, data[2 + n1:2 + n1 + n2]))\n    l1 = build(vals1)\n    l2 = build(vals2)\n    # TODO: 实现两数相加，输出结果链表节点值（空格分隔，末尾换行）\n\nif __name__ == '__main__':\n    main()\n",
+        "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nstruct ListNode {\n    int val;\n    ListNode* next;\n    ListNode(int x = 0) : val(x), next(nullptr) {}\n};\n\nListNode* build(const vector<int>& vals) {\n    ListNode dummy;\n    ListNode* cur = &dummy;\n    for (int v : vals) {\n        cur->next = new ListNode(v);\n        cur = cur->next;\n    }\n    return dummy.next;\n}\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n1;\n    cin >> n1;\n    vector<int> vals1(n1);\n    for (int i = 0; i < n1; i++) cin >> vals1[i];\n    int n2;\n    cin >> n2;\n    vector<int> vals2(n2);\n    for (int i = 0; i < n2; i++) cin >> vals2[i];\n    ListNode* l1 = build(vals1);\n    ListNode* l2 = build(vals2);\n    // TODO: 实现两数相加，输出结果链表节点值（空格分隔，末尾换行）\n    return 0;\n}\n"
+      }
+    },
+    "core": {
+      "kind": "function",
+      "className": "Solution",
+      "method": "addTwoNumbers",
+      "params": [
+        {
+          "name": "l1",
+          "type": "list",
+          "desc": "第一个链表的头节点（低位在前）"
+        },
+        {
+          "name": "l2",
+          "type": "list",
+          "desc": "第二个链表的头节点（低位在前）"
+        }
+      ],
+      "returns": "list",
+      "returnsDesc": "相加结果链表的头节点（低位在前）",
+      "mutates": -1,
+      "templates": {
+        "python3": "# ListNode 由评测环境提供，请勿重复定义\ndef addTwoNumbers(l1, l2):\n    # TODO: 返回相加结果的链表头节点\n    pass\n",
+        "cpp": "// ListNode 由评测环境提供，请勿重复定义\nclass Solution {\npublic:\n    ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {\n        // TODO\n    }\n};\n"
+      }
+    }
+  },
+  {
+    "id": 19,
+    "title": "删除链表的倒数第 N 个结点",
+    "difficulty": "中等",
+    "topic": "链表/双指针",
+    "url": "https://leetcode.cn/problems/remove-nth-node-from-end-of-list/",
+    "desc": "给你一个链表，删除链表的倒数第 n 个结点，并且返回链表的头结点。题目保证 n 满足 1 ≤ n ≤ 链表长度。可以使用快慢双指针在一次遍历内完成删除，注意当被删除的是头结点时的边界情况。",
+    "acm": {
+      "input": "第一行两个整数 n 和 N，n 表示链表长度，N 表示要删除的倒数第 N 个节点（1 ≤ N ≤ n）。\n第二行 n 个整数，表示链表节点值（从头到尾）。",
+      "output": "输出删除后链表的节点值（从头到尾），空格分隔，末尾换行。链表为空时输出空行。",
+      "examples": [
+        {
+          "input": "5 2\n1 2 3 4 5\n",
+          "output": "1 2 3 5\n"
+        },
+        {
+          "input": "1 1\n7\n",
+          "output": "\n"
+        }
+      ],
+      "template": {
+        "python3": "import sys\n\nclass ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    n = int(data[0])\n    N = int(data[1])\n    vals = list(map(int, data[2:2 + n]))\n    head = cur = ListNode()\n    for v in vals:\n        cur.next = ListNode(v)\n        cur = cur.next\n    head = head.next\n    # TODO: 删除倒数第 N 个节点，输出剩余节点值（空格分隔，末尾换行）\n\nif __name__ == '__main__':\n    main()\n",
+        "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nstruct ListNode {\n    int val;\n    ListNode* next;\n    ListNode(int x = 0) : val(x), next(nullptr) {}\n};\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n, N;\n    cin >> n >> N;\n    ListNode* head = new ListNode();\n    ListNode* cur = head;\n    for (int i = 0; i < n; i++) {\n        int v;\n        cin >> v;\n        cur->next = new ListNode(v);\n        cur = cur->next;\n    }\n    head = head->next;\n    // TODO: 删除倒数第 N 个节点，输出剩余节点值（空格分隔，末尾换行）\n    return 0;\n}\n"
+      }
+    },
+    "core": {
+      "kind": "function",
+      "className": "Solution",
+      "method": "removeNthFromEnd",
+      "params": [
+        {
+          "name": "head",
+          "type": "list",
+          "desc": "链表头节点"
+        },
+        {
+          "name": "n",
+          "type": "int",
+          "desc": "要删除的倒数第 n 个节点"
+        }
+      ],
+      "returns": "list",
+      "returnsDesc": "删除后的链表头节点",
+      "mutates": -1,
+      "templates": {
+        "python3": "# ListNode 由评测环境提供，请勿重复定义\ndef removeNthFromEnd(head, n):\n    # TODO: 返回删除倒数第 n 个节点后的链表头\n    pass\n",
+        "cpp": "// ListNode 由评测环境提供，请勿重复定义\nclass Solution {\npublic:\n    ListNode* removeNthFromEnd(ListNode* head, int n) {\n        // TODO\n    }\n};\n"
+      }
+    }
+  },
+  {
+    "id": 21,
+    "title": "合并两个有序链表",
+    "difficulty": "简单",
+    "topic": "链表",
+    "url": "https://leetcode.cn/problems/merge-two-sorted-lists/",
+    "desc": "将两个升序链表合并为一个新的升序链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。两个链表的长度都可以为 0，请正确处理空链表的情况。",
+    "acm": {
+      "input": "第一行一个整数 n1，表示第一个链表长度。\n第二行 n1 个整数（升序），表示第一个链表。\n第三行一个整数 n2，表示第二个链表长度。\n第四行 n2 个整数（升序），表示第二个链表。",
+      "output": "输出合并后的升序链表节点值（从头到尾），空格分隔，末尾换行。链表为空时输出空行。",
+      "examples": [
+        {
+          "input": "3\n1 2 4\n3\n1 3 4\n",
+          "output": "1 1 2 3 4 4\n"
+        },
+        {
+          "input": "0\n0\n",
+          "output": "\n"
+        }
+      ],
+      "template": {
+        "python3": "import sys\n\nclass ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\ndef build(vals):\n    head = cur = ListNode()\n    for v in vals:\n        cur.next = ListNode(v)\n        cur = cur.next\n    return head.next\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    n1 = int(data[0])\n    vals1 = list(map(int, data[1:1 + n1]))\n    n2 = int(data[1 + n1])\n    vals2 = list(map(int, data[2 + n1:2 + n1 + n2]))\n    l1 = build(vals1)\n    l2 = build(vals2)\n    # TODO: 合并两个有序链表，输出合并后的节点值（空格分隔，末尾换行）\n\nif __name__ == '__main__':\n    main()\n",
+        "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nstruct ListNode {\n    int val;\n    ListNode* next;\n    ListNode(int x = 0) : val(x), next(nullptr) {}\n};\n\nListNode* build(const vector<int>& vals) {\n    ListNode dummy;\n    ListNode* cur = &dummy;\n    for (int v : vals) {\n        cur->next = new ListNode(v);\n        cur = cur->next;\n    }\n    return dummy.next;\n}\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n1;\n    cin >> n1;\n    vector<int> vals1(n1);\n    for (int i = 0; i < n1; i++) cin >> vals1[i];\n    int n2;\n    cin >> n2;\n    vector<int> vals2(n2);\n    for (int i = 0; i < n2; i++) cin >> vals2[i];\n    ListNode* l1 = build(vals1);\n    ListNode* l2 = build(vals2);\n    // TODO: 合并两个有序链表，输出合并后的节点值（空格分隔，末尾换行）\n    return 0;\n}\n"
+      }
+    },
+    "core": {
+      "kind": "function",
+      "className": "Solution",
+      "method": "mergeTwoLists",
+      "params": [
+        {
+          "name": "list1",
+          "type": "list",
+          "desc": "第一个升序链表头节点"
+        },
+        {
+          "name": "list2",
+          "type": "list",
+          "desc": "第二个升序链表头节点"
+        }
+      ],
+      "returns": "list",
+      "returnsDesc": "合并后的升序链表头节点",
+      "mutates": -1,
+      "templates": {
+        "python3": "# ListNode 由评测环境提供，请勿重复定义\ndef mergeTwoLists(list1, list2):\n    # TODO: 返回合并后的升序链表头\n    pass\n",
+        "cpp": "// ListNode 由评测环境提供，请勿重复定义\nclass Solution {\npublic:\n    ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {\n        // TODO\n    }\n};\n"
+      }
+    }
+  },
+  {
+    "id": 24,
+    "title": "两两交换链表中的节点",
+    "difficulty": "中等",
+    "topic": "链表",
+    "url": "https://leetcode.cn/problems/swap-nodes-in-pairs/",
+    "desc": "给你一个链表，两两交换其中相邻的节点，并返回交换后链表的头节点。必须在不修改节点内部值的情况下完成本题，即只能进行节点交换。当链表长度为奇数时，最后一个节点保持不动。",
+    "acm": {
+      "input": "第一行一个整数 n，表示链表长度。\n第二行 n 个整数，表示链表节点值（从头到尾）。",
+      "output": "输出两两交换后的链表节点值（从头到尾），空格分隔，末尾换行。链表为空时输出空行。",
+      "examples": [
+        {
+          "input": "4\n1 2 3 4\n",
+          "output": "2 1 4 3\n"
+        },
+        {
+          "input": "3\n1 2 3\n",
+          "output": "2 1 3\n"
+        }
+      ],
+      "template": {
+        "python3": "import sys\n\nclass ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    n = int(data[0])\n    vals = list(map(int, data[1:1 + n]))\n    head = cur = ListNode()\n    for v in vals:\n        cur.next = ListNode(v)\n        cur = cur.next\n    head = head.next\n    # TODO: 两两交换相邻节点，输出交换后的节点值（空格分隔，末尾换行）\n\nif __name__ == '__main__':\n    main()\n",
+        "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nstruct ListNode {\n    int val;\n    ListNode* next;\n    ListNode(int x = 0) : val(x), next(nullptr) {}\n};\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n;\n    cin >> n;\n    ListNode* head = new ListNode();\n    ListNode* cur = head;\n    for (int i = 0; i < n; i++) {\n        int v;\n        cin >> v;\n        cur->next = new ListNode(v);\n        cur = cur->next;\n    }\n    head = head->next;\n    // TODO: 两两交换相邻节点，输出交换后的节点值（空格分隔，末尾换行）\n    return 0;\n}\n"
+      }
+    },
+    "core": {
+      "kind": "function",
+      "className": "Solution",
+      "method": "swapPairs",
+      "params": [
+        {
+          "name": "head",
+          "type": "list",
+          "desc": "链表头节点"
+        }
+      ],
+      "returns": "list",
+      "returnsDesc": "两两交换后的链表头节点",
+      "mutates": -1,
+      "templates": {
+        "python3": "# ListNode 由评测环境提供，请勿重复定义\ndef swapPairs(head):\n    # TODO: 返回两两交换后的链表头\n    pass\n",
+        "cpp": "// ListNode 由评测环境提供，请勿重复定义\nclass Solution {\npublic:\n    ListNode* swapPairs(ListNode* head) {\n        // TODO\n    }\n};\n"
+      }
+    }
+  },
+  {
+    "id": 141,
+    "title": "环形链表",
+    "difficulty": "简单",
+    "topic": "链表/快慢指针",
+    "url": "https://leetcode.cn/problems/linked-list-cycle/",
+    "desc": "给你一个链表的头节点 head，判断链表中是否有环。如果链表中有某个节点可以通过连续跟踪 next 指针再次到达，则链表中存在环。若存在环返回 true，否则返回 false。使用快慢双指针可以在 O(1) 额外空间内完成判断。",
+    "acm": {
+      "input": "第一行两个整数 n 和 pos，n 表示链表长度，pos 表示环入口节点下标（-1 表示无环）。\n第二行 n 个整数，表示链表节点值（从头到尾）。",
+      "output": "若链表存在环，输出 true；否则输出 false。末尾换行。",
+      "examples": [
+        {
+          "input": "4 1\n3 2 0 -4\n",
+          "output": "true\n"
+        },
+        {
+          "input": "1 -1\n1\n",
+          "output": "false\n"
+        },
+        {
+          "input": "0 -1\n",
+          "output": "false\n"
+        }
+      ],
+      "template": {
+        "python3": "import sys\n\nclass ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    n = int(data[0])\n    pos = int(data[1])\n    vals = list(map(int, data[2:2 + n]))\n    head = cur = ListNode()\n    nodes = []\n    for v in vals:\n        cur.next = ListNode(v)\n        cur = cur.next\n        nodes.append(cur)\n    if nodes and 0 <= pos < n:\n        cur.next = nodes[pos]\n    head = head.next\n    # TODO: 判断链表是否有环，输出 true 或 false\n\nif __name__ == '__main__':\n    main()\n",
+        "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nstruct ListNode {\n    int val;\n    ListNode* next;\n    ListNode(int x = 0) : val(x), next(nullptr) {}\n};\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n, pos;\n    cin >> n >> pos;\n    vector<ListNode*> nodes;\n    ListNode* head = new ListNode();\n    ListNode* cur = head;\n    for (int i = 0; i < n; i++) {\n        int v;\n        cin >> v;\n        cur->next = new ListNode(v);\n        cur = cur->next;\n        nodes.push_back(cur);\n    }\n    if (!nodes.empty() && pos >= 0 && pos < n) nodes.back()->next = nodes[pos];\n    head = head->next;\n    // TODO: 判断链表是否有环，输出 true 或 false\n    return 0;\n}\n"
+      }
+    },
+    "core": {
+      "kind": "function",
+      "className": "Solution",
+      "method": "hasCycle",
+      "params": [
+        {
+          "name": "head",
+          "type": "list",
+          "desc": "链表头节点（可能带环）"
+        }
+      ],
+      "returns": "bool",
+      "returnsDesc": "是否存在环",
+      "mutates": -1,
+      "templates": {
+        "python3": "# ListNode 由评测环境提供，请勿重复定义\ndef hasCycle(head):\n    # TODO: 返回是否有环（bool）\n    pass\n",
+        "cpp": "// ListNode 由评测环境提供，请勿重复定义\nclass Solution {\npublic:\n    bool hasCycle(ListNode* head) {\n        // TODO\n    }\n};\n"
+      }
+    }
+  },
+  {
+    "id": 142,
+    "title": "环形链表 II",
+    "difficulty": "中等",
+    "topic": "链表/快慢指针",
+    "url": "https://leetcode.cn/problems/linked-list-cycle-ii/",
+    "desc": "给定一个链表的头节点 head，返回链表开始入环的第一个节点。题目保证若存在环，环上各节点的值唯一，因此本题返回环入口节点的值即可；若链表无环则返回 -1。使用快慢双指针相遇后，再让一个指针从头部与慢指针同步前进，即可找到环入口。",
+    "acm": {
+      "input": "第一行两个整数 n 和 pos，n 表示链表长度，pos 表示环入口节点下标（-1 表示无环）。\n第二行 n 个整数，表示链表节点值（从头到尾，环上节点值保证唯一）。",
+      "output": "若链表存在环，输出环入口节点的值；否则输出 -1。末尾换行。",
+      "examples": [
+        {
+          "input": "4 1\n3 2 0 -4\n",
+          "output": "2\n"
+        },
+        {
+          "input": "2 0\n1 2\n",
+          "output": "1\n"
+        },
+        {
+          "input": "1 -1\n7\n",
+          "output": "-1\n"
+        }
+      ],
+      "template": {
+        "python3": "import sys\n\nclass ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    n = int(data[0])\n    pos = int(data[1])\n    vals = list(map(int, data[2:2 + n]))\n    head = cur = ListNode()\n    nodes = []\n    for v in vals:\n        cur.next = ListNode(v)\n        cur = cur.next\n        nodes.append(cur)\n    if nodes and 0 <= pos < n:\n        cur.next = nodes[pos]\n    head = head.next\n    # TODO: 找到环入口节点，输出其值；无环输出 -1\n\nif __name__ == '__main__':\n    main()\n",
+        "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nstruct ListNode {\n    int val;\n    ListNode* next;\n    ListNode(int x = 0) : val(x), next(nullptr) {}\n};\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n, pos;\n    cin >> n >> pos;\n    vector<ListNode*> nodes;\n    ListNode* head = new ListNode();\n    ListNode* cur = head;\n    for (int i = 0; i < n; i++) {\n        int v;\n        cin >> v;\n        cur->next = new ListNode(v);\n        cur = cur->next;\n        nodes.push_back(cur);\n    }\n    if (!nodes.empty() && pos >= 0 && pos < n) nodes.back()->next = nodes[pos];\n    head = head->next;\n    // TODO: 找到环入口节点，输出其值；无环输出 -1\n    return 0;\n}\n"
+      }
+    },
+    "core": {
+      "kind": "function",
+      "className": "Solution",
+      "method": "detectCycle",
+      "params": [
+        {
+          "name": "head",
+          "type": "list",
+          "desc": "链表头节点（可能带环）"
+        }
+      ],
+      "returns": "int",
+      "returnsDesc": "环入口节点值；无环返回 -1",
+      "mutates": -1,
+      "templates": {
+        "python3": "# ListNode 由评测环境提供，请勿重复定义\ndef detectCycle(head):\n    # TODO: 返回环入口节点值；无环返回 -1\n    pass\n",
+        "cpp": "// ListNode 由评测环境提供，请勿重复定义\nclass Solution {\npublic:\n    int detectCycle(ListNode* head) {\n        // TODO\n    }\n};\n"
+      }
+    }
+  },
+  {
+    "id": 160,
+    "title": "相交链表",
+    "difficulty": "简单",
+    "topic": "链表",
+    "url": "https://leetcode.cn/problems/intersection-of-two-linked-lists/",
+    "desc": "给你两个单链表的头节点 headA 和 headB，请你找出并返回两个单链表相交的起始节点。题目保证两条链表确实相交。可以使用双指针法：两个指针各自遍历完所在链表后换到另一条链表继续走，最终会在相交点相遇，额外空间复杂度为 O(1)。",
+    "acm": {
+      "input": "第一行两个整数 lenA 和 lenB，分别表示链表 A 和链表 B 的长度。\n第二行 lenA 个整数，表示链表 A。\n第三行 lenB 个整数，表示链表 B（其中与 A 共享的后缀段从 skipB 下标开始）。\n第四行两个整数 skipA 和 skipB，表示 A 从下标 skipA 起、B 从下标 skipB 起共享同一段节点（保证两链确实相交）。",
+      "output": "输出从相交点开始到链表末尾的节点值（从头到尾），空格分隔，末尾换行。",
+      "examples": [
+        {
+          "input": "5 6\n4 1 8 4 5\n5 0 1 8 4 5\n2 3\n",
+          "output": "8 4 5\n"
+        },
+        {
+          "input": "1 1\n1\n1\n0 0\n",
+          "output": "1\n"
+        }
+      ],
+      "template": {
+        "python3": "import sys\n\nclass ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    lenA = int(data[0])\n    lenB = int(data[1])\n    valsA = list(map(int, data[2:2 + lenA]))\n    valsB = list(map(int, data[2 + lenA:2 + lenA + lenB]))\n    skipA = int(data[2 + lenA + lenB])\n    skipB = int(data[3 + lenA + lenB])\n    # TODO: 构建相交链表，输出相交点起的节点值（空格分隔，末尾换行）\n\nif __name__ == '__main__':\n    main()\n",
+        "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nstruct ListNode {\n    int val;\n    ListNode* next;\n    ListNode(int x = 0) : val(x), next(nullptr) {}\n};\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int lenA, lenB;\n    cin >> lenA >> lenB;\n    vector<int> valsA(lenA), valsB(lenB);\n    for (int i = 0; i < lenA; i++) cin >> valsA[i];\n    for (int i = 0; i < lenB; i++) cin >> valsB[i];\n    int skipA, skipB;\n    cin >> skipA >> skipB;\n    // TODO: 构建相交链表，输出相交点起的节点值（空格分隔，末尾换行）\n    return 0;\n}\n"
+      }
+    },
+    "core": {
+      "kind": "function",
+      "className": "Solution",
+      "method": "getIntersectionNode",
+      "params": [
+        {
+          "name": "headA",
+          "type": "list",
+          "desc": "链表 A 的头节点"
+        },
+        {
+          "name": "headB",
+          "type": "list",
+          "desc": "链表 B 的头节点"
+        }
+      ],
+      "returns": "list",
+      "returnsDesc": "相交起始节点（无相交返回 null）",
+      "mutates": -1,
+      "templates": {
+        "python3": "# ListNode 由评测环境提供，请勿重复定义\ndef getIntersectionNode(headA, headB):\n    # TODO: 返回相交起始节点（无相交返回 None）\n    pass\n",
+        "cpp": "// ListNode 由评测环境提供，请勿重复定义\nclass Solution {\npublic:\n    ListNode* getIntersectionNode(ListNode* headA, ListNode* headB) {\n        // TODO\n    }\n};\n"
+      }
+    }
+  },
+  {
+    "id": 206,
+    "title": "反转链表",
+    "difficulty": "简单",
+    "topic": "链表",
+    "url": "https://leetcode.cn/problems/reverse-linked-list/",
+    "desc": "给你单链表的头节点 head，请你反转链表，并返回反转后的链表。反转后原链表的最后一个节点成为新链表的头节点，原链表的头节点指向 null。使用 prev/cur/next 三个指针迭代即可完成反转。",
+    "acm": {
+      "input": "第一行一个整数 n，表示链表长度。\n第二行 n 个整数，表示链表节点值（从头到尾）。",
+      "output": "输出反转后的链表节点值（从头到尾），空格分隔，末尾换行。链表为空时输出空行。",
+      "examples": [
+        {
+          "input": "5\n1 2 3 4 5\n",
+          "output": "5 4 3 2 1\n"
+        },
+        {
+          "input": "2\n1 2\n",
+          "output": "2 1\n"
+        },
+        {
+          "input": "0\n",
+          "output": "\n"
+        }
+      ],
+      "template": {
+        "python3": "import sys\n\nclass ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    n = int(data[0])\n    vals = list(map(int, data[1:1 + n]))\n    head = cur = ListNode()\n    for v in vals:\n        cur.next = ListNode(v)\n        cur = cur.next\n    head = head.next\n    # TODO: 反转链表，输出节点值（空格分隔，末尾换行）\n\nif __name__ == '__main__':\n    main()\n",
+        "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nstruct ListNode {\n    int val;\n    ListNode* next;\n    ListNode(int x = 0) : val(x), next(nullptr) {}\n};\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n;\n    cin >> n;\n    ListNode* head = new ListNode();\n    ListNode* cur = head;\n    for (int i = 0; i < n; i++) {\n        int v;\n        cin >> v;\n        cur->next = new ListNode(v);\n        cur = cur->next;\n    }\n    head = head->next;\n    // TODO: 反转链表，输出节点值（空格分隔，末尾换行）\n    return 0;\n}\n"
+      }
+    },
+    "core": {
+      "kind": "function",
+      "className": "Solution",
+      "method": "reverseList",
+      "params": [
+        {
+          "name": "head",
+          "type": "list",
+          "desc": "链表头节点"
+        }
+      ],
+      "returns": "list",
+      "returnsDesc": "反转后的链表头节点",
+      "mutates": -1,
+      "templates": {
+        "python3": "# ListNode 由评测环境提供，请勿重复定义\ndef reverseList(head):\n    # TODO: 返回反转后的链表头\n    pass\n",
+        "cpp": "// ListNode 由评测环境提供，请勿重复定义\nclass Solution {\npublic:\n    ListNode* reverseList(ListNode* head) {\n        // TODO\n    }\n};\n"
+      }
+    }
+  },
+  {
+    "id": 234,
+    "title": "回文链表",
+    "difficulty": "简单",
+    "topic": "链表",
+    "url": "https://leetcode.cn/problems/palindrome-linked-list/",
+    "desc": "给你一个单链表的头节点 head，请你判断该链表是否为回文链表。如果是回文链表返回 true，否则返回 false。可以使用快慢指针找到链表中点，反转后半部分后与前半部分逐节点比较，额外空间复杂度为 O(1)。",
+    "acm": {
+      "input": "第一行一个整数 n，表示链表长度。\n第二行 n 个整数，表示链表节点值（从头到尾）。",
+      "output": "若链表是回文链表，输出 true；否则输出 false。末尾换行。",
+      "examples": [
+        {
+          "input": "4\n1 2 2 1\n",
+          "output": "true\n"
+        },
+        {
+          "input": "3\n1 2 3\n",
+          "output": "false\n"
+        },
+        {
+          "input": "1\n1\n",
+          "output": "true\n"
+        }
+      ],
+      "template": {
+        "python3": "import sys\n\nclass ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    n = int(data[0])\n    vals = list(map(int, data[1:1 + n]))\n    head = cur = ListNode()\n    for v in vals:\n        cur.next = ListNode(v)\n        cur = cur.next\n    head = head.next\n    # TODO: 判断是否为回文链表，输出 true 或 false\n\nif __name__ == '__main__':\n    main()\n",
+        "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nstruct ListNode {\n    int val;\n    ListNode* next;\n    ListNode(int x = 0) : val(x), next(nullptr) {}\n};\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n;\n    cin >> n;\n    ListNode* head = new ListNode();\n    ListNode* cur = head;\n    for (int i = 0; i < n; i++) {\n        int v;\n        cin >> v;\n        cur->next = new ListNode(v);\n        cur = cur->next;\n    }\n    head = head->next;\n    // TODO: 判断是否为回文链表，输出 true 或 false\n    return 0;\n}\n"
+      }
+    },
+    "core": {
+      "kind": "function",
+      "className": "Solution",
+      "method": "isPalindrome",
+      "params": [
+        {
+          "name": "head",
+          "type": "list",
+          "desc": "链表头节点"
+        }
+      ],
+      "returns": "bool",
+      "returnsDesc": "是否为回文链表",
+      "mutates": -1,
+      "templates": {
+        "python3": "# ListNode 由评测环境提供，请勿重复定义\ndef isPalindrome(head):\n    # TODO: 返回是否为回文链表（bool）\n    pass\n",
+        "cpp": "// ListNode 由评测环境提供，请勿重复定义\nclass Solution {\npublic:\n    bool isPalindrome(ListNode* head) {\n        // TODO\n    }\n};\n"
+      }
+    }
+  },
+  {
+    "id": 240,
+    "title": "搜索二维矩阵 II",
+    "difficulty": "中等",
+    "topic": "矩阵/二分",
+    "url": "https://leetcode.cn/problems/search-a-2d-matrix-ii/",
+    "desc": "编写一个高效的算法来搜索 m × n 矩阵 matrix 中的一个目标值 target。该矩阵具有以下特性：每行的元素从左到右升序排列，每列的元素从上到下升序排列。如果目标值存在返回 true，否则返回 false。可以从矩阵的右上角开始搜索，利用行列的单调性在 O(m + n) 时间内完成。",
+    "acm": {
+      "input": "第一行两个整数 m 和 n，表示矩阵的行数和列数。\n接下来 m 行，每行 n 个整数，表示矩阵（每行从左到右递增，每列从上到下递增）。\n最后一行一个整数 target，表示目标值。",
+      "output": "若矩阵中存在目标值，输出 true；否则输出 false。末尾换行。",
+      "examples": [
+        {
+          "input": "5 5\n1 4 7 11 15\n2 5 8 12 19\n3 6 9 16 22\n10 13 14 17 24\n18 21 23 26 30\n5\n",
+          "output": "true\n"
+        },
+        {
+          "input": "5 5\n1 4 7 11 15\n2 5 8 12 19\n3 6 9 16 22\n10 13 14 17 24\n18 21 23 26 30\n20\n",
+          "output": "false\n"
+        }
+      ],
+      "template": {
+        "python3": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    m = int(data[0])\n    n = int(data[1])\n    matrix = []\n    idx = 2\n    for _ in range(m):\n        matrix.append(list(map(int, data[idx:idx + n])))\n        idx += n\n    target = int(data[idx])\n    # TODO: 在有序矩阵中搜索 target，输出 true 或 false\n\nif __name__ == '__main__':\n    main()\n",
+        "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int m, n;\n    cin >> m >> n;\n    vector<vector<int>> matrix(m, vector<int>(n));\n    for (int i = 0; i < m; i++)\n        for (int j = 0; j < n; j++)\n            cin >> matrix[i][j];\n    int target;\n    cin >> target;\n    // TODO: 在有序矩阵中搜索 target，输出 true 或 false\n    return 0;\n}\n"
+      }
+    },
+    "core": {
+      "kind": "function",
+      "className": "Solution",
+      "method": "searchMatrix",
+      "params": [
+        {
+          "name": "matrix",
+          "type": "int[][]",
+          "desc": "行列均递增的二维矩阵"
+        },
+        {
+          "name": "target",
+          "type": "int",
+          "desc": "目标值"
+        }
+      ],
+      "returns": "bool",
+      "returnsDesc": "目标值是否存在",
+      "mutates": -1,
+      "templates": {
+        "python3": "def searchMatrix(matrix, target):\n    # TODO: 返回目标值是否存在（bool）\n    pass\n",
+        "cpp": "class Solution {\npublic:\n    bool searchMatrix(vector<vector<int>>& matrix, int target) {\n        // TODO\n    }\n};\n"
+      }
+    }
+  }
+]

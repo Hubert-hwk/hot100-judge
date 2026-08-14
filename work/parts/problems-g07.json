@@ -1,0 +1,493 @@
+[
+ {
+  "id": 4,
+  "title": "寻找两个正序数组的中位数",
+  "difficulty": "困难",
+  "topic": "二分",
+  "url": "https://leetcode.cn/problems/median-of-two-sorted-arrays/",
+  "desc": "给定两个大小分别为 m 和 n 的正序（从小到大）数组 nums1 和 nums2，请你找出并返回这两个正序数组的中位数。要求算法的时间复杂度为 O(log(m+n))。当合并后数组长度为奇数时返回中间的那个数，为偶数时返回中间两个数的平均值，结果以浮点数表示。",
+  "acm": {
+   "input": "第一行两个整数 m 和 n，分别表示两个数组的长度。\n第二行 m 个整数，表示升序数组 nums1（m 为 0 时该行为空）。\n第三行 n 个整数，表示升序数组 nums2。",
+   "output": "输出两个正序数组的中位数，保留 1 位小数，末尾换行。",
+   "examples": [
+    {
+     "input": "1 1\n1\n3\n",
+     "output": "2.0\n"
+    },
+    {
+     "input": "0 1\n\n1\n",
+     "output": "1.0\n"
+    }
+   ],
+   "template": {
+    "python3": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    m = int(data[0]); n = int(data[1])\n    idx = 2\n    nums1 = list(map(int, data[idx:idx + m])); idx += m\n    nums2 = list(map(int, data[idx:idx + n]))\n    # TODO: 计算两个正序数组的中位数并输出（保留 1 位小数）\n\nif __name__ == \"__main__\":\n    main()\n",
+    "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int m, n;\n    cin >> m >> n;\n    vector<int> nums1(m), nums2(n);\n    for (int i = 0; i < m; i++) cin >> nums1[i];\n    for (int i = 0; i < n; i++) cin >> nums2[i];\n    // TODO: 计算两个正序数组的中位数并输出（保留 1 位小数）\n    return 0;\n}\n"
+   }
+  },
+  "core": {
+   "kind": "function",
+   "className": "Solution",
+   "method": "findMedianSortedArrays",
+   "params": [
+    {
+     "name": "nums1",
+     "type": "int[]",
+     "desc": "第一个正序数组"
+    },
+    {
+     "name": "nums2",
+     "type": "int[]",
+     "desc": "第二个正序数组"
+    }
+   ],
+   "returns": "double",
+   "returnsDesc": "两个数组的中位数（浮点数）",
+   "mutates": -1,
+   "templates": {
+    "python3": "def findMedianSortedArrays(nums1, nums2):\n    # TODO: 返回中位数（浮点数）\n    pass\n",
+    "cpp": "class Solution {\npublic:\n    double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {\n        // TODO\n    }\n};\n"
+   }
+  }
+ },
+ {
+  "id": 20,
+  "title": "有效的括号",
+  "difficulty": "简单",
+  "topic": "栈",
+  "url": "https://leetcode.cn/problems/valid-parentheses/",
+  "desc": "给定一个只包括 '('、')'、'['、']'、'{'、'}' 的字符串 s，判断字符串是否有效。有效字符串需满足：左括号必须用相同类型的右括号闭合；左括号必须以正确的顺序闭合；每个右括号都有一个对应的相同类型的左括号。使用栈即可在 O(n) 时间内完成判断。",
+  "acm": {
+   "input": "第一行一个字符串 s，仅包含 '('、')'、'['、']'、'{'、'}' 六种字符。",
+   "output": "若字符串有效输出 true，否则输出 false，末尾换行。",
+   "examples": [
+    {
+     "input": "()\n",
+     "output": "true\n"
+    },
+    {
+     "input": "(]\n",
+     "output": "false\n"
+    }
+   ],
+   "template": {
+    "python3": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    s = data[0]\n    # TODO: 用栈判断括号是否有效，输出 true / false\n\nif __name__ == \"__main__\":\n    main()\n",
+    "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    string s;\n    cin >> s;\n    // TODO: 用栈判断括号是否有效，输出 true / false\n    return 0;\n}\n"
+   }
+  },
+  "core": {
+   "kind": "function",
+   "className": "Solution",
+   "method": "isValid",
+   "params": [
+    {
+     "name": "s",
+     "type": "string",
+     "desc": "括号字符串"
+    }
+   ],
+   "returns": "bool",
+   "returnsDesc": "括号是否有效",
+   "mutates": -1,
+   "templates": {
+    "python3": "def isValid(s):\n    # TODO: 返回括号是否匹配\n    pass\n",
+    "cpp": "class Solution {\npublic:\n    bool isValid(string s) {\n        // TODO\n    }\n};\n"
+   }
+  }
+ },
+ {
+  "id": 33,
+  "title": "搜索旋转排序数组",
+  "difficulty": "中等",
+  "topic": "二分",
+  "url": "https://leetcode.cn/problems/search-in-rotated-sorted-array/",
+  "desc": "整数数组 nums 按升序排列，数组中的值互不相同。在传递给函数之前，nums 在预先未知的某个下标 k 上进行了旋转，使数组变为 [nums[k], nums[k+1], ..., nums[n-1], nums[0], nums[1], ..., nums[k-1]]。给你旋转后的数组 nums 和一个整数 target，如果 target 在数组中则返回它的下标，否则返回 -1。请设计时间复杂度为 O(log n) 的算法。",
+  "acm": {
+   "input": "第一行一个整数 n，表示数组长度。\n第二行 n 个整数，表示旋转后的数组（元素互不相同）。\n第三行一个整数 target。",
+   "output": "输出 target 的下标，末尾换行；不存在时输出 -1。",
+   "examples": [
+    {
+     "input": "7\n4 5 6 7 0 1 2\n0\n",
+     "output": "4\n"
+    },
+    {
+     "input": "1\n1\n0\n",
+     "output": "-1\n"
+    }
+   ],
+   "template": {
+    "python3": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    n = int(data[0])\n    nums = list(map(int, data[1:1 + n]))\n    target = int(data[1 + n])\n    # TODO: 二分搜索旋转数组，输出下标（不存在输出 -1）\n\nif __name__ == \"__main__\":\n    main()\n",
+    "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n;\n    cin >> n;\n    vector<int> nums(n);\n    for (int i = 0; i < n; i++) cin >> nums[i];\n    int target;\n    cin >> target;\n    // TODO: 二分搜索旋转数组，输出下标（不存在输出 -1）\n    return 0;\n}\n"
+   }
+  },
+  "core": {
+   "kind": "function",
+   "className": "Solution",
+   "method": "search",
+   "params": [
+    {
+     "name": "nums",
+     "type": "int[]",
+     "desc": "旋转后的数组"
+    },
+    {
+     "name": "target",
+     "type": "int",
+     "desc": "目标值"
+    }
+   ],
+   "returns": "int",
+   "returnsDesc": "target 的下标，不存在时为 -1",
+   "mutates": -1,
+   "templates": {
+    "python3": "def search(nums, target):\n    # TODO: 返回目标下标，不存在返回 -1\n    pass\n",
+    "cpp": "class Solution {\npublic:\n    int search(vector<int>& nums, int target) {\n        // TODO\n    }\n};\n"
+   }
+  }
+ },
+ {
+  "id": 34,
+  "title": "在排序数组中查找元素的第一个和最后一个位置",
+  "difficulty": "中等",
+  "topic": "二分",
+  "url": "https://leetcode.cn/problems/find-first-and-last-position-of-element-in-sorted-array/",
+  "desc": "给定一个按照非递减顺序排列的整数数组 nums 和一个目标值 target，请你找出给定目标值在数组中的开始位置和结束位置。如果数组中不存在目标值 target，返回 [-1, -1]。请设计并实现时间复杂度为 O(log n) 的算法。",
+  "acm": {
+   "input": "第一行一个整数 n，表示数组长度。\n第二行 n 个整数，表示非降序数组 nums（n 可为 0）。\n第三行一个整数 target。",
+   "output": "输出两个整数：target 的开始与结束下标，空格分隔，末尾换行；不存在时输出 -1 -1。",
+   "examples": [
+    {
+     "input": "6\n5 7 7 8 8 10\n8\n",
+     "output": "3 4\n"
+    },
+    {
+     "input": "6\n5 7 7 8 8 10\n5\n",
+     "output": "0 0\n"
+    }
+   ],
+   "template": {
+    "python3": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    n = int(data[0])\n    nums = list(map(int, data[1:1 + n]))\n    target = int(data[1 + n])\n    # TODO: 二分查找第一个与最后一个位置，输出两个下标（不存在输出 -1 -1）\n\nif __name__ == \"__main__\":\n    main()\n",
+    "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n;\n    cin >> n;\n    vector<int> nums(n);\n    for (int i = 0; i < n; i++) cin >> nums[i];\n    int target;\n    cin >> target;\n    // TODO: 二分查找第一个与最后一个位置，输出两个下标（不存在输出 -1 -1）\n    return 0;\n}\n"
+   }
+  },
+  "core": {
+   "kind": "function",
+   "className": "Solution",
+   "method": "searchRange",
+   "params": [
+    {
+     "name": "nums",
+     "type": "int[]",
+     "desc": "非降序数组"
+    },
+    {
+     "name": "target",
+     "type": "int",
+     "desc": "目标值"
+    }
+   ],
+   "returns": "int[]",
+   "returnsDesc": "target 的开始与结束下标，不存在时为 [-1, -1]",
+   "mutates": -1,
+   "templates": {
+    "python3": "def searchRange(nums, target):\n    # TODO: 返回 [开始下标, 结束下标]，不存在返回 [-1, -1]\n    pass\n",
+    "cpp": "class Solution {\npublic:\n    vector<int> searchRange(vector<int>& nums, int target) {\n        // TODO\n    }\n};\n"
+   }
+  }
+ },
+ {
+  "id": 35,
+  "title": "搜索插入位置",
+  "difficulty": "简单",
+  "topic": "二分",
+  "url": "https://leetcode.cn/problems/search-insert-position/",
+  "desc": "给定一个排序数组 nums 和一个目标值 target，请在数组中找到目标值并返回其下标。如果目标值不存在于数组中，返回它将会被按顺序插入的位置下标。数组中的元素互不相同，且长度至少为 1。请实现时间复杂度为 O(log n) 的算法。",
+  "acm": {
+   "input": "第一行一个整数 n，表示数组长度。\n第二行 n 个整数，表示升序数组 nums。\n第三行一个整数 target。",
+   "output": "输出 target 所在或应插入位置的下标，末尾换行。",
+   "examples": [
+    {
+     "input": "4\n1 3 5 6\n5\n",
+     "output": "2\n"
+    },
+    {
+     "input": "4\n1 3 5 6\n7\n",
+     "output": "4\n"
+    }
+   ],
+   "template": {
+    "python3": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    n = int(data[0])\n    nums = list(map(int, data[1:1 + n]))\n    target = int(data[1 + n])\n    # TODO: 二分查找插入位置，输出下标\n\nif __name__ == \"__main__\":\n    main()\n",
+    "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n;\n    cin >> n;\n    vector<int> nums(n);\n    for (int i = 0; i < n; i++) cin >> nums[i];\n    int target;\n    cin >> target;\n    // TODO: 二分查找插入位置，输出下标\n    return 0;\n}\n"
+   }
+  },
+  "core": {
+   "kind": "function",
+   "className": "Solution",
+   "method": "searchInsert",
+   "params": [
+    {
+     "name": "nums",
+     "type": "int[]",
+     "desc": "升序数组"
+    },
+    {
+     "name": "target",
+     "type": "int",
+     "desc": "目标值"
+    }
+   ],
+   "returns": "int",
+   "returnsDesc": "target 所在或应插入位置的下标",
+   "mutates": -1,
+   "templates": {
+    "python3": "def searchInsert(nums, target):\n    # TODO: 返回插入位置下标\n    pass\n",
+    "cpp": "class Solution {\npublic:\n    int searchInsert(vector<int>& nums, int target) {\n        // TODO\n    }\n};\n"
+   }
+  }
+ },
+ {
+  "id": 51,
+  "title": "N 皇后",
+  "difficulty": "困难",
+  "topic": "回溯",
+  "url": "https://leetcode.cn/problems/n-queens/",
+  "desc": "按照国际象棋的规则，皇后可以攻击与之处在同一行、同一列或同一斜线上的棋子。n 皇后问题研究的是如何将 n 个皇后放置在 n×n 的棋盘上，并且使皇后彼此之间不能相互攻击。给你一个整数 n，返回所有不同的 n 皇后问题的解决方案。每个方案由 n 个字符串组成，其中 'Q' 表示皇后，'.' 表示空位，任意两个皇后不能处于同一行、同一列或同一斜线。",
+  "acm": {
+   "input": "第一行一个整数 n，表示棋盘大小（n×n）。",
+   "output": "输出所有解法，每个解法一行，行内为 n 个棋盘行字符串（含 'Q' 与 '.'）用空格分隔，末尾换行。无解时无输出。",
+   "examples": [
+    {
+     "input": "1\n",
+     "output": "Q\n"
+    },
+    {
+     "input": "4\n",
+     "output": ".Q.. ...Q Q... ..Q.\n..Q. Q... ...Q .Q..\n"
+    }
+   ],
+   "template": {
+    "python3": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    n = int(data[0])\n    # TODO: 求解 n 皇后，每个解法一行（棋盘行字符串用空格分隔）\n\nif __name__ == \"__main__\":\n    main()\n",
+    "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n;\n    cin >> n;\n    // TODO: 求解 n 皇后，每个解法一行（棋盘行字符串用空格分隔）\n    return 0;\n}\n"
+   }
+  },
+  "core": {
+   "kind": "function",
+   "className": "Solution",
+   "method": "solveNQueens",
+   "params": [
+    {
+     "name": "n",
+     "type": "int",
+     "desc": "棋盘大小"
+    }
+   ],
+   "returns": "string[][]",
+   "returnsDesc": "所有 N 皇后解决方案，每个方案是 n 个棋盘行字符串",
+   "mutates": -1,
+   "templates": {
+    "python3": "def solveNQueens(n):\n    # TODO: 返回所有 n 皇后放置方案\n    pass\n",
+    "cpp": "class Solution {\npublic:\n    vector<vector<string>> solveNQueens(int n) {\n        // TODO\n    }\n};\n"
+   }
+  }
+ },
+ {
+  "id": 74,
+  "title": "搜索二维矩阵",
+  "difficulty": "中等",
+  "topic": "二分",
+  "url": "https://leetcode.cn/problems/search-a-2d-matrix/",
+  "desc": "编写一个高效的算法来判断 m×n 矩阵中是否存在目标值 target。该矩阵具有如下特性：每行中的整数从左到右按升序排列；每行的第一个整数大于前一行的最后一个整数。因此整个矩阵可以看作一个升序的一维数组，可以使用二分搜索。",
+  "acm": {
+   "input": "第一行两个整数 m 和 n，表示矩阵行数与列数。\n接下来 m 行，每行 n 个整数，表示矩阵（每行从左到右升序，且每行首元素大于上一行末元素）。\n最后一行一个整数 target。",
+   "output": "若矩阵中存在 target 输出 true，否则输出 false，末尾换行。",
+   "examples": [
+    {
+     "input": "3 4\n1 3 5 7\n10 11 16 20\n23 30 34 60\n3\n",
+     "output": "true\n"
+    },
+    {
+     "input": "3 4\n1 3 5 7\n10 11 16 20\n23 30 34 60\n60\n",
+     "output": "true\n"
+    }
+   ],
+   "template": {
+    "python3": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    m = int(data[0]); n = int(data[1])\n    matrix = []\n    idx = 2\n    for _ in range(m):\n        matrix.append(list(map(int, data[idx:idx + n])))\n        idx += n\n    target = int(data[idx])\n    # TODO: 二分搜索矩阵，输出 true / false\n\nif __name__ == \"__main__\":\n    main()\n",
+    "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int m, n;\n    cin >> m >> n;\n    vector<vector<int>> matrix(m, vector<int>(n));\n    for (int i = 0; i < m; i++)\n        for (int j = 0; j < n; j++) cin >> matrix[i][j];\n    int target;\n    cin >> target;\n    // TODO: 二分搜索矩阵，输出 true / false\n    return 0;\n}\n"
+   }
+  },
+  "core": {
+   "kind": "function",
+   "className": "Solution",
+   "method": "searchMatrix",
+   "params": [
+    {
+     "name": "matrix",
+     "type": "int[][]",
+     "desc": "m×n 升序矩阵"
+    },
+    {
+     "name": "target",
+     "type": "int",
+     "desc": "目标值"
+    }
+   ],
+   "returns": "bool",
+   "returnsDesc": "矩阵中是否存在 target",
+   "mutates": -1,
+   "templates": {
+    "python3": "def searchMatrix(matrix, target):\n    # TODO: 返回矩阵中是否存在目标值\n    pass\n",
+    "cpp": "class Solution {\npublic:\n    bool searchMatrix(vector<vector<int>>& matrix, int target) {\n        // TODO\n    }\n};\n"
+   }
+  }
+ },
+ {
+  "id": 131,
+  "title": "分割回文串",
+  "difficulty": "中等",
+  "topic": "回溯/动态规划",
+  "url": "https://leetcode.cn/problems/palindrome-partitioning/",
+  "desc": "给你一个字符串 s，请你将 s 分割成一些子串，使每个子串都是回文串，并返回所有可能的分割方案。回文串是正着读和反着读都一样的字符串。题目保证 s 只含小写字母，长度不超过 16。",
+  "acm": {
+   "input": "第一行一个字符串 s（仅含小写字母）。",
+   "output": "输出所有分割方案，每个方案一行，方案内各回文子串用空格分隔，末尾换行。方案按确定性顺序输出（逐位优先取更短的回文前缀）。",
+   "examples": [
+    {
+     "input": "aab\n",
+     "output": "a a b\naa b\n"
+    },
+    {
+     "input": "aba\n",
+     "output": "a b a\naba\n"
+    }
+   ],
+   "template": {
+    "python3": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    s = data[0]\n    # TODO: 枚举所有回文分割方案，每个方案一行（回文子串用空格分隔）\n\nif __name__ == \"__main__\":\n    main()\n",
+    "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    string s;\n    cin >> s;\n    // TODO: 枚举所有回文分割方案，每个方案一行（回文子串用空格分隔）\n    return 0;\n}\n"
+   }
+  },
+  "core": {
+   "kind": "function",
+   "className": "Solution",
+   "method": "partition",
+   "params": [
+    {
+     "name": "s",
+     "type": "string",
+     "desc": "输入字符串"
+    }
+   ],
+   "returns": "string[][]",
+   "returnsDesc": "所有分割方案，每个方案是回文子串组成的数组",
+   "mutates": -1,
+   "templates": {
+    "python3": "def partition(s):\n    # TODO: 返回所有分割方案（每个方案是回文子串数组）\n    pass\n",
+    "cpp": "class Solution {\npublic:\n    vector<vector<string>> partition(string s) {\n        // TODO\n    }\n};\n"
+   }
+  }
+ },
+ {
+  "id": 153,
+  "title": "寻找旋转排序数组中的最小值",
+  "difficulty": "中等",
+  "topic": "二分",
+  "url": "https://leetcode.cn/problems/find-minimum-in-rotated-sorted-array/",
+  "desc": "已知一个长度为 n 的数组，预先按照升序排列，经过 1 到 n 次旋转后得到输入数组，数组中的元素互不相同。请你找出数组中的最小元素。请设计时间复杂度为 O(log n) 的算法。",
+  "acm": {
+   "input": "第一行一个整数 n，表示数组长度。\n第二行 n 个整数，表示旋转后的数组（元素互不相同）。",
+   "output": "输出数组中的最小元素，末尾换行。",
+   "examples": [
+    {
+     "input": "3\n3 4 5\n",
+     "output": "3\n"
+    },
+    {
+     "input": "1\n1\n",
+     "output": "1\n"
+    }
+   ],
+   "template": {
+    "python3": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    n = int(data[0])\n    nums = list(map(int, data[1:1 + n]))\n    # TODO: 二分查找旋转数组最小值并输出\n\nif __name__ == \"__main__\":\n    main()\n",
+    "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n;\n    cin >> n;\n    vector<int> nums(n);\n    for (int i = 0; i < n; i++) cin >> nums[i];\n    // TODO: 二分查找旋转数组最小值并输出\n    return 0;\n}\n"
+   }
+  },
+  "core": {
+   "kind": "function",
+   "className": "Solution",
+   "method": "findMin",
+   "params": [
+    {
+     "name": "nums",
+     "type": "int[]",
+     "desc": "旋转后的数组"
+    }
+   ],
+   "returns": "int",
+   "returnsDesc": "数组中的最小元素",
+   "mutates": -1,
+   "templates": {
+    "python3": "def findMin(nums):\n    # TODO: 返回最小元素\n    pass\n",
+    "cpp": "class Solution {\npublic:\n    int findMin(vector<int>& nums) {\n        // TODO\n    }\n};\n"
+   }
+  }
+ },
+ {
+  "id": 155,
+  "title": "最小栈",
+  "difficulty": "中等",
+  "topic": "栈/设计",
+  "url": "https://leetcode.cn/problems/min-stack/",
+  "desc": "设计一个支持 push、pop、top 操作，并能在常数时间内检索到最小元素的栈。push(x) 将元素 x 推入栈中，pop() 删除栈顶元素，top() 获取栈顶元素，getMin() 检索栈中的最小元素。各方法的时间复杂度都应为 O(1)。",
+  "acm": {
+   "input": "第一行一个整数 m，表示操作次数。\n接下来 m 行，每行一个操作，格式为：push x（入栈）、pop（出栈）、top（取栈顶）、getMin（取最小值）。",
+   "output": "按顺序输出每次 top 与 getMin 操作的结果，每个一行，末尾换行；若没有这类操作则无输出。",
+   "examples": [
+    {
+     "input": "7\npush -2\npush 0\npush -3\ngetMin\npop\ntop\ngetMin\n",
+     "output": "-3\n0\n-2\n"
+    },
+    {
+     "input": "6\npush 5\ngetMin\npush 3\ngetMin\npush 7\ngetMin\n",
+     "output": "5\n3\n3\n"
+    }
+   ],
+   "template": {
+    "python3": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    it = iter(data)\n    m = int(next(it))\n    # TODO: 模拟最小栈，按顺序处理 m 个操作，输出每次 top / getMin 的结果\n\nif __name__ == \"__main__\":\n    main()\n",
+    "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int m;\n    cin >> m;\n    // TODO: 模拟最小栈，按顺序处理 m 个操作，输出每次 top / getMin 的结果\n    return 0;\n}\n"
+   }
+  },
+  "core": {
+   "kind": "ops",
+   "className": "MinStack",
+   "ops": {
+    "constructor": [],
+    "methods": [
+     {
+      "name": "push",
+      "args": [
+       "int"
+      ],
+      "ret": "void"
+     },
+     {
+      "name": "pop",
+      "args": [],
+      "ret": "void"
+     },
+     {
+      "name": "top",
+      "args": [],
+      "ret": "int"
+     },
+     {
+      "name": "getMin",
+      "args": [],
+      "ret": "int"
+     }
+    ]
+   },
+   "templates": {
+    "python3": "class MinStack:\n    def __init__(self):\n        # TODO\n\n    def push(self, val: int) -> None:\n        # TODO\n\n    def pop(self) -> None:\n        # TODO\n\n    def top(self) -> int:\n        # TODO\n\n    def getMin(self) -> int:\n        # TODO\n",
+    "cpp": "class MinStack {\npublic:\n    MinStack() {\n        // TODO\n    }\n\n    void push(int val) {\n        // TODO\n    }\n\n    void pop() {\n        // TODO\n    }\n\n    int top() {\n        // TODO\n    }\n\n    int getMin() {\n        // TODO\n    }\n};\n"
+   }
+  }
+ }
+]

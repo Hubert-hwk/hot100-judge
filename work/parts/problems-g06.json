@@ -1,0 +1,482 @@
+[
+  {
+    "id": 200,
+    "title": "岛屿数量",
+    "difficulty": "中等",
+    "topic": "图/DFS/BFS",
+    "url": "https://leetcode.cn/problems/number-of-islands/",
+    "desc": "给你一个由 '0' 和 '1' 组成的二维网格 grid，其中 '1' 表示陆地，'0' 表示水域。请你统计网格中岛屿的数量：岛屿由水平或竖直方向上相邻的陆地连接而成，并且被水域完全包围。可以假设网格的四条边均被水域包围。",
+    "acm": {
+      "input": "第一行两个整数 m 和 n，表示网格的行数和列数。\n接下来 m 行，每行一个长度为 n 的字符串，由字符 '0' 和 '1' 组成（'1' 表示陆地，'0' 表示水域）。",
+      "output": "输出一个整数，表示岛屿数量，末尾换行。",
+      "examples": [
+        {
+          "input": "4 5\n11110\n11010\n11000\n00000\n",
+          "output": "1\n"
+        },
+        {
+          "input": "1 1\n1\n",
+          "output": "1\n"
+        }
+      ],
+      "template": {
+        "python3": "import sys\n\ndef main():\n    data = sys.stdin.read().split()\n    if not data:\n        return\n    m = int(data[0])\n    n = int(data[1])\n    grid = data[2:2 + m]  # 每行一个长度为 n 的字符串\n    # TODO: 统计岛屿数量并输出\n\nif __name__ == \"__main__\":\n    main()\n",
+        "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int m, n;\n    cin >> m >> n;\n    vector<string> grid(m);\n    for (int i = 0; i < m; i++) cin >> grid[i];\n    // TODO: 统计岛屿数量并输出\n    return 0;\n}\n"
+      }
+    },
+    "core": {
+      "kind": "function",
+      "className": "Solution",
+      "method": "numIslands",
+      "params": [
+        {
+          "name": "grid",
+          "type": "grid",
+          "desc": "字符二维网格，'1' 为陆地，'0' 为水域"
+        }
+      ],
+      "returns": "int",
+      "returnsDesc": "岛屿数量",
+      "mutates": -1,
+      "templates": {
+        "python3": "def numIslands(grid):\n    # TODO: 返回岛屿数量\n    pass\n",
+        "cpp": "class Solution {\npublic:\n    int numIslands(vector<vector<char>>& grid) {\n        // TODO\n    }\n};\n"
+      }
+    }
+  },
+  {
+    "id": 994,
+    "title": "腐烂的橘子",
+    "difficulty": "中等",
+    "topic": "图/BFS",
+    "url": "https://leetcode.cn/problems/rotting-oranges/",
+    "desc": "在给定的 m×n 网格中，每个单元格可以是空（0）、新鲜橘子（1）或腐烂橘子（2）。每分钟，腐烂橘子会使其上下左右相邻的新鲜橘子腐烂。请你返回直到网格中没有新鲜橘子为止所需的最少分钟数；如果无法全部腐烂，则返回 -1。",
+    "acm": {
+      "input": "第一行两个整数 m 和 n，表示网格的行数和列数。\n接下来 m 行，每行 n 个整数（0 表示空单元格，1 表示新鲜橘子，2 表示腐烂橘子），整数之间以空格分隔。",
+      "output": "输出一个整数，表示使所有橘子腐烂所需的最少分钟数；若无法全部腐烂，输出 -1。末尾换行。",
+      "examples": [
+        {
+          "input": "3 3\n2 1 1\n1 1 0\n0 1 1\n",
+          "output": "4\n"
+        },
+        {
+          "input": "3 3\n2 1 1\n0 1 1\n1 0 1\n",
+          "output": "-1\n"
+        }
+      ],
+      "template": {
+        "python3": "import sys\n\ndef main():\n    data = sys.stdin.read().split()\n    if not data:\n        return\n    m = int(data[0])\n    n = int(data[1])\n    grid = []\n    idx = 2\n    for _ in range(m):\n        grid.append(data[idx:idx + n])\n        idx += n\n    # TODO: BFS 计算全部腐烂所需分钟数并输出（无法全部腐烂输出 -1）\n\nif __name__ == \"__main__\":\n    main()\n",
+        "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int m, n;\n    cin >> m >> n;\n    vector<vector<char>> grid(m, vector<char>(n));\n    for (int i = 0; i < m; i++) {\n        for (int j = 0; j < n; j++) {\n            int x;\n            cin >> x;\n            grid[i][j] = '0' + x;\n        }\n    }\n    // TODO: BFS 计算全部腐烂所需分钟数并输出（无法全部腐烂输出 -1）\n    return 0;\n}\n"
+      }
+    },
+    "core": {
+      "kind": "function",
+      "className": "Solution",
+      "method": "orangesRotting",
+      "params": [
+        {
+          "name": "grid",
+          "type": "grid",
+          "desc": "字符二维网格，0/1/2 分别表示空/新鲜/腐烂"
+        }
+      ],
+      "returns": "int",
+      "returnsDesc": "全部腐烂所需分钟数，无法全部腐烂返回 -1",
+      "mutates": -1,
+      "templates": {
+        "python3": "def orangesRotting(grid):\n    # TODO: 返回全部腐烂所需分钟数，无法全部腐烂返回 -1\n    pass\n",
+        "cpp": "class Solution {\npublic:\n    int orangesRotting(vector<vector<char>>& grid) {\n        // TODO\n    }\n};\n"
+      }
+    }
+  },
+  {
+    "id": 207,
+    "title": "课程表",
+    "difficulty": "中等",
+    "topic": "图/拓扑排序",
+    "url": "https://leetcode.cn/problems/course-schedule/",
+    "desc": "你这个学期必须选修 numCourses 门课程，记为 0 到 numCourses-1。在选修某些课程之前需要一些先修课程，先修课程用数组 prerequisites 表示，其中 prerequisites[i] = [a, b] 表示要学习课程 a 必须先学习课程 b。请你判断是否可能完成所有课程的学习，即课程安排是否存在合法的拓扑排序。",
+    "acm": {
+      "input": "第一行两个整数 n 和 m，n 表示课程数，m 表示先修关系的数量。\n接下来 m 行，每行两个整数 a 和 b，表示学习课程 a 之前必须先学习课程 b。",
+      "output": "输出 true 或 false，表示能否完成所有课程的学习，末尾换行。",
+      "examples": [
+        {
+          "input": "2 1\n1 0\n",
+          "output": "true\n"
+        },
+        {
+          "input": "2 2\n1 0\n0 1\n",
+          "output": "false\n"
+        }
+      ],
+      "template": {
+        "python3": "import sys\n\ndef main():\n    data = sys.stdin.read().split()\n    if not data:\n        return\n    n = int(data[0])\n    m = int(data[1])\n    prerequisites = []\n    idx = 2\n    for _ in range(m):\n        a = int(data[idx])\n        b = int(data[idx + 1])\n        idx += 2\n        prerequisites.append([a, b])\n    # TODO: 拓扑排序判断能否完成所有课程，输出 true 或 false\n\nif __name__ == \"__main__\":\n    main()\n",
+        "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n, m;\n    cin >> n >> m;\n    vector<vector<int>> prerequisites(m);\n    for (int i = 0; i < m; i++) {\n        int a, b;\n        cin >> a >> b;\n        prerequisites[i] = {a, b};\n    }\n    // TODO: 拓扑排序判断能否完成所有课程，输出 true 或 false\n    return 0;\n}\n"
+      }
+    },
+    "core": {
+      "kind": "function",
+      "className": "Solution",
+      "method": "canFinish",
+      "params": [
+        {
+          "name": "numCourses",
+          "type": "int",
+          "desc": "课程数量"
+        },
+        {
+          "name": "prerequisites",
+          "type": "int[][]",
+          "desc": "先修关系，每项为 [a, b] 表示先学 b 再学 a"
+        }
+      ],
+      "returns": "bool",
+      "returnsDesc": "能否完成所有课程",
+      "mutates": -1,
+      "templates": {
+        "python3": "def canFinish(numCourses, prerequisites):\n    # TODO: 返回能否完成所有课程\n    pass\n",
+        "cpp": "class Solution {\npublic:\n    bool canFinish(int numCourses, vector<vector<int>>& prerequisites) {\n        // TODO\n    }\n};\n"
+      }
+    }
+  },
+  {
+    "id": 208,
+    "title": "实现 Trie",
+    "difficulty": "中等",
+    "topic": "字典树",
+    "url": "https://leetcode.cn/problems/implement-trie-prefix-tree/",
+    "desc": "Trie（前缀树）是一种树形数据结构，用于高效地存储和检索字符串数据集中的键。请你实现 Trie 类：insert(word) 向字典树中插入单词；search(word) 返回单词是否在字典树中；startsWith(prefix) 返回是否存在以该前缀开头的单词。所有输入均由小写英文字母组成。",
+    "acm": {
+      "input": "第一行一个整数 m，表示操作次数。\n接下来 m 行，每行一个操作：insert 后跟一个单词，或 search 后跟一个单词，或 startsWith 后跟一个前缀。所有单词由小写英文字母组成。",
+      "output": "按顺序输出所有 search 与 startsWith 操作的结果，每个一行，结果为 true 或 false。",
+      "examples": [
+        {
+          "input": "6\ninsert apple\nsearch apple\nsearch app\nstartsWith app\ninsert app\nsearch app\n",
+          "output": "true\nfalse\ntrue\ntrue\n"
+        },
+        {
+          "input": "2\nsearch a\ninsert a\n",
+          "output": "false\n"
+        }
+      ],
+      "template": {
+        "python3": "import sys\n\nclass Trie:\n    # TODO: 实现 Trie（insert / search / startsWith）\n\ndef main():\n    data = sys.stdin.read().split()\n    if not data:\n        return\n    m = int(data[0])\n    # TODO: 依次处理 m 个操作（insert 单词 / search 单词 / startsWith 前缀），\n    #       输出所有 search 与 startsWith 的结果（true/false），每个一行\n\nif __name__ == \"__main__\":\n    main()\n",
+        "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Trie {\n    // TODO: 实现 Trie（insert / search / startsWith）\n};\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int m;\n    cin >> m;\n    // TODO: 依次处理 m 个操作（insert 单词 / search 单词 / startsWith 前缀），\n    //       输出所有 search 与 startsWith 的结果（true/false），每个一行\n    return 0;\n}\n"
+      }
+    },
+    "core": {
+      "kind": "ops",
+      "className": "Trie",
+      "ops": {
+        "constructor": [],
+        "methods": [
+          {
+            "name": "insert",
+            "args": [
+              "string"
+            ],
+            "ret": "void"
+          },
+          {
+            "name": "search",
+            "args": [
+              "string"
+            ],
+            "ret": "bool"
+          },
+          {
+            "name": "startsWith",
+            "args": [
+              "string"
+            ],
+            "ret": "bool"
+          }
+        ]
+      },
+      "templates": {
+        "python3": "class Trie:\n    def __init__(self):\n        # TODO\n\n    def insert(self, word: str) -> None:\n        # TODO\n\n    def search(self, word: str) -> bool:\n        # TODO\n\n    def startsWith(self, prefix: str) -> bool:\n        # TODO\n",
+        "cpp": "class Trie {\npublic:\n    Trie() {\n        // TODO\n    }\n\n    void insert(string word) {\n        // TODO\n    }\n\n    bool search(string word) {\n        // TODO\n    }\n\n    bool startsWith(string prefix) {\n        // TODO\n    }\n};\n"
+      }
+    }
+  },
+  {
+    "id": 46,
+    "title": "全排列",
+    "difficulty": "中等",
+    "topic": "回溯",
+    "url": "https://leetcode.cn/problems/permutations/",
+    "desc": "给定一个不含重复数字的数组 nums，返回其所有可能的全排列。可以按任意顺序返回答案，但答案中不应包含重复的排列。",
+    "acm": {
+      "input": "第一行一个整数 n，表示数组长度。\n第二行 n 个整数，表示数组 nums（元素互不相同）。",
+      "output": "输出所有全排列，每个排列一行，元素之间以空格分隔；当 n 为 0 时，输出一个空行。排列的先后顺序任意。",
+      "examples": [
+        {
+          "input": "3\n1 2 3\n",
+          "output": "1 2 3\n1 3 2\n2 1 3\n2 3 1\n3 1 2\n3 2 1\n"
+        },
+        {
+          "input": "1\n5\n",
+          "output": "5\n"
+        }
+      ],
+      "template": {
+        "python3": "import sys\n\ndef main():\n    data = sys.stdin.read().split()\n    if not data:\n        print()\n        return\n    n = int(data[0])\n    nums = list(map(int, data[1:1 + n]))\n    # TODO: 输出所有全排列，每个排列一行（元素空格分隔）；n 为 0 时输出一个空行\n\nif __name__ == \"__main__\":\n    main()\n",
+        "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n;\n    cin >> n;\n    vector<int> nums(n);\n    for (int i = 0; i < n; i++) cin >> nums[i];\n    // TODO: 输出所有全排列，每个排列一行（元素空格分隔）；n 为 0 时输出一个空行\n    return 0;\n}\n"
+      }
+    },
+    "core": {
+      "kind": "function",
+      "className": "Solution",
+      "method": "permute",
+      "params": [
+        {
+          "name": "nums",
+          "type": "int[]",
+          "desc": "不含重复数字的整数数组"
+        }
+      ],
+      "returns": "int[][]",
+      "returnsDesc": "所有全排列组成的数组",
+      "mutates": -1,
+      "templates": {
+        "python3": "def permute(nums):\n    # TODO: 返回所有全排列\n    pass\n",
+        "cpp": "class Solution {\npublic:\n    vector<vector<int>> permute(vector<int>& nums) {\n        // TODO\n    }\n};\n"
+      }
+    }
+  },
+  {
+    "id": 78,
+    "title": "子集",
+    "difficulty": "中等",
+    "topic": "回溯",
+    "url": "https://leetcode.cn/problems/subsets/",
+    "desc": "给你一个整数数组 nums，数组中的元素互不相同。返回该数组所有可能的子集（幂集）。解集不能包含重复的子集，可以按任意顺序返回解集。",
+    "acm": {
+      "input": "第一行一个整数 n，表示数组长度。\n第二行 n 个整数，表示数组 nums（元素互不相同）。",
+      "output": "输出所有子集，每个子集一行，元素之间以空格分隔；空子集输出一个空行。子集的顺序任意。",
+      "examples": [
+        {
+          "input": "3\n1 2 3\n",
+          "output": "\n1\n1 2\n1 2 3\n1 3\n2\n2 3\n3\n"
+        },
+        {
+          "input": "1\n1\n",
+          "output": "\n1\n"
+        }
+      ],
+      "template": {
+        "python3": "import sys\n\ndef main():\n    data = sys.stdin.read().split()\n    if not data:\n        return\n    n = int(data[0])\n    nums = list(map(int, data[1:1 + n]))\n    # TODO: 输出所有子集，每个子集一行（元素空格分隔）；空子集输出空行\n\nif __name__ == \"__main__\":\n    main()\n",
+        "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n;\n    cin >> n;\n    vector<int> nums(n);\n    for (int i = 0; i < n; i++) cin >> nums[i];\n    // TODO: 输出所有子集，每个子集一行（元素空格分隔）；空子集输出空行\n    return 0;\n}\n"
+      }
+    },
+    "core": {
+      "kind": "function",
+      "className": "Solution",
+      "method": "subsets",
+      "params": [
+        {
+          "name": "nums",
+          "type": "int[]",
+          "desc": "元素互不相同的整数数组"
+        }
+      ],
+      "returns": "int[][]",
+      "returnsDesc": "所有子集组成的数组",
+      "mutates": -1,
+      "templates": {
+        "python3": "def subsets(nums):\n    # TODO: 返回所有子集\n    pass\n",
+        "cpp": "class Solution {\npublic:\n    vector<vector<int>> subsets(vector<int>& nums) {\n        // TODO\n    }\n};\n"
+      }
+    }
+  },
+  {
+    "id": 17,
+    "title": "电话号码的字母组合",
+    "difficulty": "中等",
+    "topic": "回溯",
+    "url": "https://leetcode.cn/problems/letter-combinations-of-a-phone-number/",
+    "desc": "给定一个仅包含数字 2-9 的字符串 digits，返回所有它能表示的字母组合。数字与字母的映射与电话按键相同（2 对应 abc，3 对应 def，4 对应 ghi，5 对应 jkl，6 对应 mno，7 对应 pqrs，8 对应 tuv，9 对应 wxyz）。答案可以按任意顺序返回。",
+    "acm": {
+      "input": "第一行一个字符串 digits，仅包含数字 2~9，可以为空（为空时该行是空行）。",
+      "output": "输出所有可能的字母组合，每个组合一行；当 digits 为空时，不输出任何内容。组合的顺序任意。",
+      "examples": [
+        {
+          "input": "23\n",
+          "output": "ad\nae\naf\nbd\nbe\nbf\ncd\nce\ncf\n"
+        },
+        {
+          "input": "2\n",
+          "output": "a\nb\nc\n"
+        }
+      ],
+      "template": {
+        "python3": "import sys\n\ndef main():\n    digits = sys.stdin.readline().strip()\n    # TODO: 输出所有字母组合，每个一行；digits 为空时不输出任何内容\n\nif __name__ == \"__main__\":\n    main()\n",
+        "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    string digits;\n    getline(cin, digits);\n    // TODO: 输出所有字母组合，每个一行；digits 为空时不输出任何内容\n    return 0;\n}\n"
+      }
+    },
+    "core": {
+      "kind": "function",
+      "className": "Solution",
+      "method": "letterCombinations",
+      "params": [
+        {
+          "name": "digits",
+          "type": "string",
+          "desc": "仅含数字 2~9 的字符串"
+        }
+      ],
+      "returns": "string[]",
+      "returnsDesc": "所有可能的字母组合",
+      "mutates": -1,
+      "templates": {
+        "python3": "def letterCombinations(digits):\n    # TODO: 返回所有字母组合\n    pass\n",
+        "cpp": "class Solution {\npublic:\n    vector<string> letterCombinations(string digits) {\n        // TODO\n    }\n};\n"
+      }
+    }
+  },
+  {
+    "id": 39,
+    "title": "组合总和",
+    "difficulty": "中等",
+    "topic": "回溯",
+    "url": "https://leetcode.cn/problems/combination-sum/",
+    "desc": "给你一个无重复元素的整数数组 candidates 和一个目标整数 target，找出 candidates 中可以使数字和为目标数 target 的所有不同组合，并以列表形式返回。candidates 中的同一个数字可以无限制重复被选取。不同组合指元素构成不同，与元素顺序无关。",
+    "acm": {
+      "input": "第一行两个整数 n 和 target，n 表示候选数组长度。\n第二行 n 个整数，表示候选数组 candidates（无重复元素，均为正整数）。",
+      "output": "输出所有和为 target 的组合，每个组合一行，元素之间以空格分隔；无有效组合时，不输出任何内容。组合的顺序任意。",
+      "examples": [
+        {
+          "input": "4 7\n2 3 6 7\n",
+          "output": "2 2 3\n7\n"
+        },
+        {
+          "input": "3 8\n2 3 5\n",
+          "output": "2 2 2 2\n2 3 3\n3 5\n"
+        }
+      ],
+      "template": {
+        "python3": "import sys\n\ndef main():\n    data = sys.stdin.read().split()\n    if not data:\n        return\n    n = int(data[0])\n    target = int(data[1])\n    candidates = list(map(int, data[2:2 + n]))\n    # TODO: 输出所有组合，每个组合一行（元素空格分隔）；无有效组合时输出为空\n\nif __name__ == \"__main__\":\n    main()\n",
+        "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n, target;\n    cin >> n >> target;\n    vector<int> candidates(n);\n    for (int i = 0; i < n; i++) cin >> candidates[i];\n    // TODO: 输出所有组合，每个组合一行（元素空格分隔）；无有效组合时输出为空\n    return 0;\n}\n"
+      }
+    },
+    "core": {
+      "kind": "function",
+      "className": "Solution",
+      "method": "combinationSum",
+      "params": [
+        {
+          "name": "candidates",
+          "type": "int[]",
+          "desc": "无重复元素的正整数数组"
+        },
+        {
+          "name": "target",
+          "type": "int",
+          "desc": "目标和"
+        }
+      ],
+      "returns": "int[][]",
+      "returnsDesc": "所有和为 target 的组合",
+      "mutates": -1,
+      "templates": {
+        "python3": "def combinationSum(candidates, target):\n    # TODO: 返回所有组合\n    pass\n",
+        "cpp": "class Solution {\npublic:\n    vector<vector<int>> combinationSum(vector<int>& candidates, int target) {\n        // TODO\n    }\n};\n"
+      }
+    }
+  },
+  {
+    "id": 22,
+    "title": "括号生成",
+    "difficulty": "中等",
+    "topic": "回溯",
+    "url": "https://leetcode.cn/problems/generate-parentheses/",
+    "desc": "数字 n 代表生成括号的对数，请你设计一个函数，用于生成所有可能的并且有效的括号组合。有效括号组合需要满足：左括号必须以正确的顺序闭合。",
+    "acm": {
+      "input": "第一行一个整数 n，表示括号对数。",
+      "output": "输出所有有效的括号组合，每个一行。组合的顺序任意。",
+      "examples": [
+        {
+          "input": "3\n",
+          "output": "((()))\n(()())\n(())()\n()(())\n()()()\n"
+        },
+        {
+          "input": "1\n",
+          "output": "()\n"
+        }
+      ],
+      "template": {
+        "python3": "import sys\n\ndef main():\n    data = sys.stdin.read().split()\n    if not data:\n        return\n    n = int(data[0])\n    # TODO: 输出所有有效括号组合，每个一行\n\nif __name__ == \"__main__\":\n    main()\n",
+        "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n;\n    cin >> n;\n    // TODO: 输出所有有效括号组合，每个一行\n    return 0;\n}\n"
+      }
+    },
+    "core": {
+      "kind": "function",
+      "className": "Solution",
+      "method": "generateParenthesis",
+      "params": [
+        {
+          "name": "n",
+          "type": "int",
+          "desc": "括号对数"
+        }
+      ],
+      "returns": "string[]",
+      "returnsDesc": "所有有效的括号组合",
+      "mutates": -1,
+      "templates": {
+        "python3": "def generateParenthesis(n):\n    # TODO: 返回所有有效括号组合\n    pass\n",
+        "cpp": "class Solution {\npublic:\n    vector<string> generateParenthesis(int n) {\n        // TODO\n    }\n};\n"
+      }
+    }
+  },
+  {
+    "id": 79,
+    "title": "单词搜索",
+    "difficulty": "中等",
+    "topic": "回溯",
+    "url": "https://leetcode.cn/problems/word-search/",
+    "desc": "给定一个 m×n 的二维字符网格 board 和一个字符串单词 word。如果 word 存在于网格中，返回 true；否则返回 false。单词必须按照字母顺序，通过水平或竖直方向上相邻的单元格内的字母构成，并且同一个单元格内的字母不允许被重复使用。",
+    "acm": {
+      "input": "第一行两个整数 m 和 n，表示网格的行数和列数。\n接下来 m 行，每行一个长度为 n 的字符串，由英文字母组成。\n最后一行一个字符串 word。",
+      "output": "输出 true 或 false，表示单词是否存在于网格中，末尾换行。",
+      "examples": [
+        {
+          "input": "3 4\nABCE\nSFCS\nADEE\nABCCED\n",
+          "output": "true\n"
+        },
+        {
+          "input": "3 4\nABCE\nSFCS\nADEE\nABCB\n",
+          "output": "false\n"
+        }
+      ],
+      "template": {
+        "python3": "import sys\n\ndef main():\n    data = sys.stdin.read().split()\n    if not data:\n        return\n    m = int(data[0])\n    n = int(data[1])\n    board = [list(row) for row in data[2:2 + m]]  # 每行一个长度为 n 的字符串\n    word = data[2 + m]\n    # TODO: 判断 word 是否存在于网格中，输出 true 或 false\n\nif __name__ == \"__main__\":\n    main()\n",
+        "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int m, n;\n    cin >> m >> n;\n    vector<string> board(m);\n    for (int i = 0; i < m; i++) cin >> board[i];\n    string word;\n    cin >> word;\n    // TODO: 判断 word 是否存在于网格中，输出 true 或 false\n    return 0;\n}\n"
+      }
+    },
+    "core": {
+      "kind": "function",
+      "className": "Solution",
+      "method": "exist",
+      "params": [
+        {
+          "name": "board",
+          "type": "grid",
+          "desc": "字符二维网格"
+        },
+        {
+          "name": "word",
+          "type": "string",
+          "desc": "目标单词"
+        }
+      ],
+      "returns": "bool",
+      "returnsDesc": "单词是否存在于网格中",
+      "mutates": -1,
+      "templates": {
+        "python3": "def exist(board, word):\n    # TODO: 返回单词是否存在\n    pass\n",
+        "cpp": "class Solution {\npublic:\n    bool exist(vector<vector<char>>& board, string word) {\n        // TODO\n    }\n};\n"
+      }
+    }
+  }
+]

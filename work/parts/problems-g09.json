@@ -1,0 +1,462 @@
+[
+  {
+    "id": 32,
+    "title": "最长有效括号",
+    "difficulty": "困难",
+    "topic": "动态规划/栈",
+    "url": "https://leetcode.cn/problems/longest-valid-parentheses/",
+    "desc": "给你一个只包含 '(' 和 ')' 的字符串，找出最长有效（格式正确且连续）括号子串的长度。有效括号子串如 \"()\"、\"(())()\" 等；若不存在有效子串，结果为 0。",
+    "acm": {
+      "input": "第一行一个字符串 s，表示括号序列；s 可能为空串（此时第一行为空行）。",
+      "output": "输出最长有效括号子串的长度，末尾换行。",
+      "examples": [
+        {
+          "input": "(()\n",
+          "output": "2\n"
+        },
+        {
+          "input": ")()())\n",
+          "output": "4\n"
+        }
+      ],
+      "template": {
+        "python3": "import sys\n\ndef main():\n    lines = sys.stdin.read().splitlines()\n    s = lines[0].strip() if lines else ''\n    # TODO: 计算最长有效括号子串的长度并输出，末尾换行\n\nif __name__ == \"__main__\":\n    main()\n",
+        "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    string s;\n    getline(cin, s);\n    // TODO: 计算最长有效括号子串的长度并输出，末尾换行\n    return 0;\n}\n"
+      }
+    },
+    "core": {
+      "kind": "function",
+      "className": "Solution",
+      "method": "longestValidParentheses",
+      "params": [
+        {
+          "name": "s",
+          "type": "string",
+          "desc": "只包含 '(' 和 ')' 的字符串"
+        }
+      ],
+      "returns": "int",
+      "returnsDesc": "最长有效括号子串的长度",
+      "mutates": -1,
+      "templates": {
+        "python3": "def longestValidParentheses(s):\n    # TODO: 返回最长有效括号子串的长度\n    pass\n",
+        "cpp": "class Solution {\npublic:\n    int longestValidParentheses(string s) {\n        // TODO\n    }\n};\n"
+      }
+    }
+  },
+  {
+    "id": 70,
+    "title": "爬楼梯",
+    "difficulty": "简单",
+    "topic": "动态规划",
+    "url": "https://leetcode.cn/problems/climbing-stairs/",
+    "desc": "假设你正在爬楼梯，需要 n 阶你才能到达楼顶。每次你可以爬 1 或 2 个台阶。请计算有多少种不同的方法可以爬到楼顶。",
+    "acm": {
+      "input": "第一行一个整数 n（1 ≤ n ≤ 45），表示楼梯的阶数。",
+      "output": "输出爬到楼顶的不同方法数，末尾换行。",
+      "examples": [
+        {
+          "input": "2\n",
+          "output": "2\n"
+        },
+        {
+          "input": "3\n",
+          "output": "3\n"
+        }
+      ],
+      "template": {
+        "python3": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    n = int(data[0])\n    # TODO: 用 dp 递推（dp[i] = dp[i-1] + dp[i-2]）计算爬到第 n 阶的方法数并输出，末尾换行\n\nif __name__ == \"__main__\":\n    main()\n",
+        "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n;\n    cin >> n;\n    // TODO: 用 dp 递推（dp[i] = dp[i-1] + dp[i-2]）计算爬到第 n 阶的方法数并输出，末尾换行\n    return 0;\n}\n"
+      }
+    },
+    "core": {
+      "kind": "function",
+      "className": "Solution",
+      "method": "climbStairs",
+      "params": [
+        {
+          "name": "n",
+          "type": "int",
+          "desc": "楼梯阶数"
+        }
+      ],
+      "returns": "int",
+      "returnsDesc": "爬到楼顶的方法数",
+      "mutates": -1,
+      "templates": {
+        "python3": "def climbStairs(n):\n    # TODO: 返回爬到第 n 阶的方法数\n    pass\n",
+        "cpp": "class Solution {\npublic:\n    int climbStairs(int n) {\n        // TODO\n    }\n};\n"
+      }
+    }
+  },
+  {
+    "id": 118,
+    "title": "杨辉三角",
+    "difficulty": "简单",
+    "topic": "动态规划",
+    "url": "https://leetcode.cn/problems/pascals-triangle/",
+    "desc": "给定一个非负整数 numRows，生成杨辉三角的前 numRows 行。杨辉三角中，每个数是它左上方和右上方的数的和，每行两端均为 1。返回生成的三角形状二维数组。",
+    "acm": {
+      "input": "第一行一个整数 numRows（1 ≤ numRows ≤ 30），表示需要生成的行数。",
+      "output": "输出 numRows 行：第 i 行为杨辉三角第 i 行的整数，空格分隔，每行末尾换行。",
+      "examples": [
+        {
+          "input": "5\n",
+          "output": "1\n1 1\n1 2 1\n1 3 3 1\n1 4 6 4 1\n"
+        },
+        {
+          "input": "1\n",
+          "output": "1\n"
+        }
+      ],
+      "template": {
+        "python3": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    num_rows = int(data[0])\n    # TODO: 生成杨辉三角前 num_rows 行并逐行输出（每行整数空格分隔，末尾换行）\n\nif __name__ == \"__main__\":\n    main()\n",
+        "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int num_rows;\n    cin >> num_rows;\n    // TODO: 生成杨辉三角前 num_rows 行并逐行输出（每行整数空格分隔，末尾换行）\n    return 0;\n}\n"
+      }
+    },
+    "core": {
+      "kind": "function",
+      "className": "Solution",
+      "method": "generate",
+      "params": [
+        {
+          "name": "numRows",
+          "type": "int",
+          "desc": "需要生成的行数"
+        }
+      ],
+      "returns": "int[][]",
+      "returnsDesc": "杨辉三角前 numRows 行组成的二维数组",
+      "mutates": -1,
+      "templates": {
+        "python3": "def generate(numRows):\n    # TODO: 返回杨辉三角前 numRows 行组成的二维数组\n    pass\n",
+        "cpp": "class Solution {\npublic:\n    vector<vector<int>> generate(int numRows) {\n        // TODO\n    }\n};\n"
+      }
+    }
+  },
+  {
+    "id": 139,
+    "title": "单词拆分",
+    "difficulty": "中等",
+    "topic": "动态规划",
+    "url": "https://leetcode.cn/problems/word-break/",
+    "desc": "给你一个字符串 s 和一个字符串列表 wordDict 作为字典。请判断是否可以利用字典中出现的单词拼接出 s。不要求字典中的单词全部使用，且单词可以重复使用。",
+    "acm": {
+      "input": "第一行一个字符串 s（仅含小写字母）。\n第二行一个整数 m，表示字典中单词的个数。\n第三行 m 个单词，空格分隔。",
+      "output": "输出 true 或 false，表示 s 能否由字典中的单词拼接而成，末尾换行。",
+      "examples": [
+        {
+          "input": "leetcode\n2\nleet code\n",
+          "output": "true\n"
+        },
+        {
+          "input": "catsandog\n5\ncats dog sand and cat\n",
+          "output": "false\n"
+        }
+      ],
+      "template": {
+        "python3": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    s = data[0]\n    m = int(data[1])\n    word_dict = data[2:2 + m]\n    # TODO: 判断 s 能否由字典中的单词拼接而成，输出 true 或 false，末尾换行\n\nif __name__ == \"__main__\":\n    main()\n",
+        "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    string s;\n    cin >> s;\n    int m;\n    cin >> m;\n    vector<string> word_dict(m);\n    for (int i = 0; i < m; i++) cin >> word_dict[i];\n    // TODO: 判断 s 能否由字典中的单词拼接而成，输出 true 或 false，末尾换行\n    return 0;\n}\n"
+      }
+    },
+    "core": {
+      "kind": "function",
+      "className": "Solution",
+      "method": "wordBreak",
+      "params": [
+        {
+          "name": "s",
+          "type": "string",
+          "desc": "待拆分的字符串"
+        },
+        {
+          "name": "wordDict",
+          "type": "string[]",
+          "desc": "字典单词列表"
+        }
+      ],
+      "returns": "bool",
+      "returnsDesc": "s 能否由字典中的单词拼接而成",
+      "mutates": -1,
+      "templates": {
+        "python3": "def wordBreak(s, wordDict):\n    # TODO: 返回 s 能否由字典中的单词拼接而成\n    pass\n",
+        "cpp": "class Solution {\npublic:\n    bool wordBreak(string s, vector<string>& wordDict) {\n        // TODO\n    }\n};\n"
+      }
+    }
+  },
+  {
+    "id": 152,
+    "title": "乘积最大子数组",
+    "difficulty": "中等",
+    "topic": "动态规划",
+    "url": "https://leetcode.cn/problems/maximum-product-subarray/",
+    "desc": "给你一个整数数组 nums，请找出数组中乘积最大的非空连续子数组（该子数组中至少包含一个数字），并返回该子数组对应的乘积。测试用例的答案是一个 32 位整数。",
+    "acm": {
+      "input": "第一行一个整数 n，表示数组长度。\n第二行 n 个整数，表示数组 nums。",
+      "output": "输出乘积最大的非空连续子数组对应的乘积，末尾换行。",
+      "examples": [
+        {
+          "input": "4\n2 3 -2 4\n",
+          "output": "6\n"
+        },
+        {
+          "input": "3\n-2 0 -1\n",
+          "output": "0\n"
+        }
+      ],
+      "template": {
+        "python3": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    n = int(data[0])\n    nums = list(map(int, data[1:1 + n]))\n    # TODO: 计算乘积最大的连续子数组乘积并输出，末尾换行\n\nif __name__ == \"__main__\":\n    main()\n",
+        "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n;\n    cin >> n;\n    vector<int> nums(n);\n    for (int i = 0; i < n; i++) cin >> nums[i];\n    // TODO: 计算乘积最大的连续子数组乘积并输出，末尾换行\n    return 0;\n}\n"
+      }
+    },
+    "core": {
+      "kind": "function",
+      "className": "Solution",
+      "method": "maxProduct",
+      "params": [
+        {
+          "name": "nums",
+          "type": "int[]",
+          "desc": "整数数组"
+        }
+      ],
+      "returns": "int",
+      "returnsDesc": "乘积最大的连续子数组的乘积",
+      "mutates": -1,
+      "templates": {
+        "python3": "def maxProduct(nums):\n    # TODO: 返回乘积最大的连续子数组的乘积\n    pass\n",
+        "cpp": "class Solution {\npublic:\n    int maxProduct(vector<int>& nums) {\n        // TODO\n    }\n};\n"
+      }
+    }
+  },
+  {
+    "id": 198,
+    "title": "打家劫舍",
+    "difficulty": "中等",
+    "topic": "动态规划",
+    "url": "https://leetcode.cn/problems/house-robber/",
+    "desc": "你是一个专业的小偷，计划偷窃沿街的房屋，但相邻的两间房屋装有互通的防盗系统，同一晚偷窃相邻两间会自动报警。给定一个代表每间房屋存放金额的非负整数数组，计算不触动警报装置的情况下，一夜之内能够偷窃到的最高金额。",
+    "acm": {
+      "input": "第一行一个整数 n，表示房屋数量。\n第二行 n 个整数，表示每间房屋存放的金额。",
+      "output": "输出一夜之内能够偷窃到的最高金额，末尾换行。",
+      "examples": [
+        {
+          "input": "4\n1 2 3 1\n",
+          "output": "4\n"
+        },
+        {
+          "input": "5\n2 7 9 3 1\n",
+          "output": "12\n"
+        }
+      ],
+      "template": {
+        "python3": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    n = int(data[0])\n    nums = list(map(int, data[1:1 + n]))\n    # TODO: 用滚动 DP 计算不相邻偷窃的最大金额并输出，末尾换行\n\nif __name__ == \"__main__\":\n    main()\n",
+        "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n;\n    cin >> n;\n    vector<int> nums(n);\n    for (int i = 0; i < n; i++) cin >> nums[i];\n    // TODO: 用滚动 DP 计算不相邻偷窃的最大金额并输出，末尾换行\n    return 0;\n}\n"
+      }
+    },
+    "core": {
+      "kind": "function",
+      "className": "Solution",
+      "method": "rob",
+      "params": [
+        {
+          "name": "nums",
+          "type": "int[]",
+          "desc": "每间房屋存放的金额数组"
+        }
+      ],
+      "returns": "int",
+      "returnsDesc": "能偷窃到的最高金额",
+      "mutates": -1,
+      "templates": {
+        "python3": "def rob(nums):\n    # TODO: 返回不相邻偷窃的最大金额\n    pass\n",
+        "cpp": "class Solution {\npublic:\n    int rob(vector<int>& nums) {\n        // TODO\n    }\n};\n"
+      }
+    }
+  },
+  {
+    "id": 279,
+    "title": "完全平方数",
+    "difficulty": "中等",
+    "topic": "动态规划",
+    "url": "https://leetcode.cn/problems/perfect-squares/",
+    "desc": "给你一个整数 n，返回和为 n 的完全平方数的最少数量。完全平方数是一个整数，其值等于另一个整数的平方，例如 1、4、9 和 16 都是完全平方数。",
+    "acm": {
+      "input": "第一行一个整数 n（1 ≤ n ≤ 10^4），表示目标整数。",
+      "output": "输出和为 n 的完全平方数的最少数量，末尾换行。",
+      "examples": [
+        {
+          "input": "12\n",
+          "output": "3\n"
+        },
+        {
+          "input": "13\n",
+          "output": "2\n"
+        }
+      ],
+      "template": {
+        "python3": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    n = int(data[0])\n    # TODO: 用 dp[i] = min(dp[i - j*j] + 1) 计算最少完全平方数个数并输出，末尾换行\n\nif __name__ == \"__main__\":\n    main()\n",
+        "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n;\n    cin >> n;\n    // TODO: 用 dp[i] = min(dp[i - j*j] + 1) 计算最少完全平方数个数并输出，末尾换行\n    return 0;\n}\n"
+      }
+    },
+    "core": {
+      "kind": "function",
+      "className": "Solution",
+      "method": "numSquares",
+      "params": [
+        {
+          "name": "n",
+          "type": "int",
+          "desc": "目标整数"
+        }
+      ],
+      "returns": "int",
+      "returnsDesc": "和为 n 的最少完全平方数个数",
+      "mutates": -1,
+      "templates": {
+        "python3": "def numSquares(n):\n    # TODO: 返回和为 n 的最少完全平方数个数\n    pass\n",
+        "cpp": "class Solution {\npublic:\n    int numSquares(int n) {\n        // TODO\n    }\n};\n"
+      }
+    }
+  },
+  {
+    "id": 300,
+    "title": "最长递增子序列",
+    "difficulty": "中等",
+    "topic": "动态规划/二分",
+    "url": "https://leetcode.cn/problems/longest-increasing-subsequence/",
+    "desc": "给你一个整数数组 nums，找到其中最长严格递增子序列的长度。子序列是由数组派生而来的序列，删除（或不删除）数组中的元素而不改变其余元素的顺序。",
+    "acm": {
+      "input": "第一行一个整数 n，表示数组长度。\n第二行 n 个整数，表示数组 nums。",
+      "output": "输出最长严格递增子序列的长度，末尾换行。",
+      "examples": [
+        {
+          "input": "8\n10 9 2 5 3 7 101 18\n",
+          "output": "4\n"
+        },
+        {
+          "input": "6\n0 1 0 3 2 3\n",
+          "output": "4\n"
+        }
+      ],
+      "template": {
+        "python3": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    n = int(data[0])\n    nums = list(map(int, data[1:1 + n]))\n    # TODO: 计算最长严格递增子序列的长度并输出，末尾换行\n\nif __name__ == \"__main__\":\n    main()\n",
+        "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n;\n    cin >> n;\n    vector<int> nums(n);\n    for (int i = 0; i < n; i++) cin >> nums[i];\n    // TODO: 计算最长严格递增子序列的长度并输出，末尾换行\n    return 0;\n}\n"
+      }
+    },
+    "core": {
+      "kind": "function",
+      "className": "Solution",
+      "method": "lengthOfLIS",
+      "params": [
+        {
+          "name": "nums",
+          "type": "int[]",
+          "desc": "整数数组"
+        }
+      ],
+      "returns": "int",
+      "returnsDesc": "最长严格递增子序列的长度",
+      "mutates": -1,
+      "templates": {
+        "python3": "def lengthOfLIS(nums):\n    # TODO: 返回最长严格递增子序列的长度\n    pass\n",
+        "cpp": "class Solution {\npublic:\n    int lengthOfLIS(vector<int>& nums) {\n        // TODO\n    }\n};\n"
+      }
+    }
+  },
+  {
+    "id": 322,
+    "title": "零钱兑换",
+    "difficulty": "中等",
+    "topic": "动态规划",
+    "url": "https://leetcode.cn/problems/coin-change/",
+    "desc": "给你一个整数数组 coins，表示不同面额的硬币，以及一个整数 amount，表示总金额。计算并返回可以凑成总金额所需的最少硬币个数；如果没有任何一种硬币组合能组成总金额，返回 -1。每种硬币的数量是无限的。",
+    "acm": {
+      "input": "第一行两个整数 n 和 amount，分别表示硬币种类数与总金额。\n第二行 n 个整数，表示每种硬币的面值。",
+      "output": "输出凑成总金额所需的最少硬币个数；若无法凑成，输出 -1。末尾换行。",
+      "examples": [
+        {
+          "input": "3 11\n1 2 5\n",
+          "output": "3\n"
+        },
+        {
+          "input": "1 3\n2\n",
+          "output": "-1\n"
+        }
+      ],
+      "template": {
+        "python3": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    n = int(data[0])\n    amount = int(data[1])\n    coins = list(map(int, data[2:2 + n]))\n    # TODO: 用完全背包 DP 求最少硬币数并输出（无法凑成输出 -1），末尾换行\n\nif __name__ == \"__main__\":\n    main()\n",
+        "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n, amount;\n    cin >> n >> amount;\n    vector<int> coins(n);\n    for (int i = 0; i < n; i++) cin >> coins[i];\n    // TODO: 用完全背包 DP 求最少硬币数并输出（无法凑成输出 -1），末尾换行\n    return 0;\n}\n"
+      }
+    },
+    "core": {
+      "kind": "function",
+      "className": "Solution",
+      "method": "coinChange",
+      "params": [
+        {
+          "name": "coins",
+          "type": "int[]",
+          "desc": "硬币面值数组"
+        },
+        {
+          "name": "amount",
+          "type": "int",
+          "desc": "总金额"
+        }
+      ],
+      "returns": "int",
+      "returnsDesc": "最少硬币个数（无法凑成时为 -1）",
+      "mutates": -1,
+      "templates": {
+        "python3": "def coinChange(coins, amount):\n    # TODO: 返回最少硬币个数，无法凑成时返回 -1\n    pass\n",
+        "cpp": "class Solution {\npublic:\n    int coinChange(vector<int>& coins, int amount) {\n        // TODO\n    }\n};\n"
+      }
+    }
+  },
+  {
+    "id": 416,
+    "title": "分割等和子集",
+    "difficulty": "中等",
+    "topic": "动态规划/背包",
+    "url": "https://leetcode.cn/problems/partition-equal-subset-sum/",
+    "desc": "给你一个只包含正整数的非空数组 nums。请判断是否可以将这个数组分割成两个子集，使得两个子集的元素和相等。若数组为空，按题意视为可以分割（返回 true）。",
+    "acm": {
+      "input": "第一行一个整数 n，表示数组长度。\n第二行 n 个整数，表示数组 nums。",
+      "output": "输出 true 或 false，表示能否分割成两个和相等的子集，末尾换行。",
+      "examples": [
+        {
+          "input": "4\n1 5 11 5\n",
+          "output": "true\n"
+        },
+        {
+          "input": "4\n1 2 3 5\n",
+          "output": "false\n"
+        }
+      ],
+      "template": {
+        "python3": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    n = int(data[0])\n    nums = list(map(int, data[1:1 + n]))\n    # TODO: 判断能否分割成两个和相等的子集，输出 true 或 false，末尾换行\n\nif __name__ == \"__main__\":\n    main()\n",
+        "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n;\n    cin >> n;\n    vector<int> nums(n);\n    for (int i = 0; i < n; i++) cin >> nums[i];\n    // TODO: 判断能否分割成两个和相等的子集，输出 true 或 false，末尾换行\n    return 0;\n}\n"
+      }
+    },
+    "core": {
+      "kind": "function",
+      "className": "Solution",
+      "method": "canPartition",
+      "params": [
+        {
+          "name": "nums",
+          "type": "int[]",
+          "desc": "正整数数组"
+        }
+      ],
+      "returns": "bool",
+      "returnsDesc": "能否分割成两个和相等的子集",
+      "mutates": -1,
+      "templates": {
+        "python3": "def canPartition(nums):\n    # TODO: 返回能否分割成两个和相等的子集\n    pass\n",
+        "cpp": "class Solution {\npublic:\n    bool canPartition(vector<int>& nums) {\n        // TODO\n    }\n};\n"
+      }
+    }
+  }
+]

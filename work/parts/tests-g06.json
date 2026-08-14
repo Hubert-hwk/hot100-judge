@@ -1,0 +1,914 @@
+{
+  "17": {
+    "acm": [
+      {
+        "input": "23\n",
+        "output": "ad\nae\naf\nbd\nbe\nbf\ncd\nce\ncf\n"
+      },
+      {
+        "input": "2\n",
+        "output": "a\nb\nc\n"
+      },
+      {
+        "input": "\n",
+        "output": ""
+      },
+      {
+        "input": "79\n",
+        "output": "pw\npx\npy\npz\nqw\nqx\nqy\nqz\nrw\nrx\nry\nrz\nsw\nsx\nsy\nsz\n"
+      }
+    ],
+    "core": [
+      {
+        "args": [
+          "23"
+        ],
+        "expected": [
+          "ad",
+          "ae",
+          "af",
+          "bd",
+          "be",
+          "bf",
+          "cd",
+          "ce",
+          "cf"
+        ]
+      },
+      {
+        "args": [
+          "2"
+        ],
+        "expected": [
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "args": [
+          ""
+        ],
+        "expected": []
+      },
+      {
+        "args": [
+          "79"
+        ],
+        "expected": [
+          "pw",
+          "px",
+          "py",
+          "pz",
+          "qw",
+          "qx",
+          "qy",
+          "qz",
+          "rw",
+          "rx",
+          "ry",
+          "rz",
+          "sw",
+          "sx",
+          "sy",
+          "sz"
+        ]
+      }
+    ]
+  },
+  "22": {
+    "acm": [
+      {
+        "input": "3\n",
+        "output": "((()))\n(()())\n(())()\n()(())\n()()()\n"
+      },
+      {
+        "input": "2\n",
+        "output": "(())\n()()\n"
+      },
+      {
+        "input": "1\n",
+        "output": "()\n"
+      },
+      {
+        "input": "4\n",
+        "output": "(((())))\n((()()))\n((())())\n((()))()\n(()(()))\n(()()())\n(()())()\n(())(())\n(())()()\n()((()))\n()(()())\n()(())()\n()()(())\n()()()()\n"
+      }
+    ],
+    "core": [
+      {
+        "args": [
+          3
+        ],
+        "expected": [
+          "((()))",
+          "(()())",
+          "(())()",
+          "()(())",
+          "()()()"
+        ]
+      },
+      {
+        "args": [
+          2
+        ],
+        "expected": [
+          "(())",
+          "()()"
+        ]
+      },
+      {
+        "args": [
+          1
+        ],
+        "expected": [
+          "()"
+        ]
+      },
+      {
+        "args": [
+          4
+        ],
+        "expected": [
+          "(((())))",
+          "((()()))",
+          "((())())",
+          "((()))()",
+          "(()(()))",
+          "(()()())",
+          "(()())()",
+          "(())(())",
+          "(())()()",
+          "()((()))",
+          "()(()())",
+          "()(())()",
+          "()()(())",
+          "()()()()"
+        ]
+      }
+    ]
+  },
+  "39": {
+    "acm": [
+      {
+        "input": "4 7\n2 3 6 7\n",
+        "output": "2 2 3\n7\n"
+      },
+      {
+        "input": "3 8\n2 3 5\n",
+        "output": "2 2 2 2\n2 3 3\n3 5\n"
+      },
+      {
+        "input": "3 1\n2 3 5\n",
+        "output": ""
+      },
+      {
+        "input": "1 5\n5\n",
+        "output": "5\n"
+      },
+      {
+        "input": "2 3\n1 2\n",
+        "output": "1 1 1\n1 2\n"
+      }
+    ],
+    "core": [
+      {
+        "args": [
+          [
+            2,
+            3,
+            6,
+            7
+          ],
+          7
+        ],
+        "expected": [
+          [
+            2,
+            2,
+            3
+          ],
+          [
+            7
+          ]
+        ]
+      },
+      {
+        "args": [
+          [
+            2,
+            3,
+            5
+          ],
+          8
+        ],
+        "expected": [
+          [
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            2,
+            3,
+            3
+          ],
+          [
+            3,
+            5
+          ]
+        ]
+      },
+      {
+        "args": [
+          [
+            2
+          ],
+          1
+        ],
+        "expected": []
+      },
+      {
+        "args": [
+          [
+            1,
+            2
+          ],
+          3
+        ],
+        "expected": [
+          [
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            2
+          ]
+        ]
+      },
+      {
+        "args": [
+          [
+            5
+          ],
+          5
+        ],
+        "expected": [
+          [
+            5
+          ]
+        ]
+      }
+    ]
+  },
+  "46": {
+    "acm": [
+      {
+        "input": "3\n1 2 3\n",
+        "output": "1 2 3\n1 3 2\n2 1 3\n2 3 1\n3 1 2\n3 2 1\n"
+      },
+      {
+        "input": "2\n1 2\n",
+        "output": "1 2\n2 1\n"
+      },
+      {
+        "input": "1\n5\n",
+        "output": "5\n"
+      },
+      {
+        "input": "0\n",
+        "output": "\n"
+      }
+    ],
+    "core": [
+      {
+        "args": [
+          [
+            1,
+            2,
+            3
+          ]
+        ],
+        "expected": [
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            1,
+            3,
+            2
+          ],
+          [
+            2,
+            1,
+            3
+          ],
+          [
+            2,
+            3,
+            1
+          ],
+          [
+            3,
+            1,
+            2
+          ],
+          [
+            3,
+            2,
+            1
+          ]
+        ]
+      },
+      {
+        "args": [
+          [
+            1,
+            2
+          ]
+        ],
+        "expected": [
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            1
+          ]
+        ]
+      },
+      {
+        "args": [
+          [
+            1
+          ]
+        ],
+        "expected": [
+          [
+            1
+          ]
+        ]
+      },
+      {
+        "args": [
+          []
+        ],
+        "expected": [
+          []
+        ]
+      }
+    ]
+  },
+  "78": {
+    "acm": [
+      {
+        "input": "3\n1 2 3\n",
+        "output": "\n1\n1 2\n1 2 3\n1 3\n2\n2 3\n3\n"
+      },
+      {
+        "input": "2\n1 2\n",
+        "output": "\n1\n1 2\n2\n"
+      },
+      {
+        "input": "1\n1\n",
+        "output": "\n1\n"
+      },
+      {
+        "input": "0\n",
+        "output": "\n"
+      }
+    ],
+    "core": [
+      {
+        "args": [
+          [
+            1,
+            2,
+            3
+          ]
+        ],
+        "expected": [
+          [],
+          [
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3
+          ]
+        ]
+      },
+      {
+        "args": [
+          [
+            1,
+            2
+          ]
+        ],
+        "expected": [
+          [],
+          [
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2
+          ]
+        ]
+      },
+      {
+        "args": [
+          [
+            1
+          ]
+        ],
+        "expected": [
+          [],
+          [
+            1
+          ]
+        ]
+      },
+      {
+        "args": [
+          []
+        ],
+        "expected": [
+          []
+        ]
+      }
+    ]
+  },
+  "79": {
+    "acm": [
+      {
+        "input": "3 4\nABCE\nSFCS\nADEE\nABCCED\n",
+        "output": "true\n"
+      },
+      {
+        "input": "3 4\nABCE\nSFCS\nADEE\nSEE\n",
+        "output": "true\n"
+      },
+      {
+        "input": "3 4\nABCE\nSFCS\nADEE\nABCB\n",
+        "output": "false\n"
+      },
+      {
+        "input": "1 1\nA\nA\n",
+        "output": "true\n"
+      },
+      {
+        "input": "2 2\nAB\nCD\nABC\n",
+        "output": "false\n"
+      }
+    ],
+    "core": [
+      {
+        "args": [
+          "grid:[\"ABCE\",\"SFCS\",\"ADEE\"]",
+          "ABCCED"
+        ],
+        "expected": true
+      },
+      {
+        "args": [
+          "grid:[\"ABCE\",\"SFCS\",\"ADEE\"]",
+          "SEE"
+        ],
+        "expected": true
+      },
+      {
+        "args": [
+          "grid:[\"ABCE\",\"SFCS\",\"ADEE\"]",
+          "ABCB"
+        ],
+        "expected": false
+      },
+      {
+        "args": [
+          "grid:[\"A\"]",
+          "A"
+        ],
+        "expected": true
+      },
+      {
+        "args": [
+          "grid:[\"AB\",\"CD\"]",
+          "ABC"
+        ],
+        "expected": false
+      }
+    ]
+  },
+  "200": {
+    "acm": [
+      {
+        "input": "4 5\n11110\n11010\n11000\n00000\n",
+        "output": "1\n"
+      },
+      {
+        "input": "4 5\n11000\n11000\n00100\n00011\n",
+        "output": "3\n"
+      },
+      {
+        "input": "1 1\n1\n",
+        "output": "1\n"
+      },
+      {
+        "input": "1 1\n0\n",
+        "output": "0\n"
+      },
+      {
+        "input": "2 3\n101\n010\n",
+        "output": "3\n"
+      }
+    ],
+    "core": [
+      {
+        "args": [
+          "grid:[\"11110\",\"11010\",\"11000\",\"00000\"]"
+        ],
+        "expected": 1
+      },
+      {
+        "args": [
+          "grid:[\"11000\",\"11000\",\"00100\",\"00011\"]"
+        ],
+        "expected": 3
+      },
+      {
+        "args": [
+          "grid:[\"1\"]"
+        ],
+        "expected": 1
+      },
+      {
+        "args": [
+          "grid:[\"0\"]"
+        ],
+        "expected": 0
+      },
+      {
+        "args": [
+          "grid:[]"
+        ],
+        "expected": 0
+      }
+    ]
+  },
+  "207": {
+    "acm": [
+      {
+        "input": "2 1\n1 0\n",
+        "output": "true\n"
+      },
+      {
+        "input": "2 2\n1 0\n0 1\n",
+        "output": "false\n"
+      },
+      {
+        "input": "4 4\n1 0\n2 0\n3 1\n3 2\n",
+        "output": "true\n"
+      },
+      {
+        "input": "1 0\n",
+        "output": "true\n"
+      },
+      {
+        "input": "3 2\n1 0\n1 2\n",
+        "output": "true\n"
+      }
+    ],
+    "core": [
+      {
+        "args": [
+          2,
+          [
+            [
+              1,
+              0
+            ]
+          ]
+        ],
+        "expected": true
+      },
+      {
+        "args": [
+          2,
+          [
+            [
+              1,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        ],
+        "expected": false
+      },
+      {
+        "args": [
+          4,
+          [
+            [
+              1,
+              0
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              3,
+              2
+            ]
+          ]
+        ],
+        "expected": true
+      },
+      {
+        "args": [
+          1,
+          []
+        ],
+        "expected": true
+      },
+      {
+        "args": [
+          3,
+          [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              0
+            ]
+          ]
+        ],
+        "expected": false
+      }
+    ]
+  },
+  "208": {
+    "acm": [
+      {
+        "input": "6\ninsert apple\nsearch apple\nsearch app\nstartsWith app\ninsert app\nsearch app\n",
+        "output": "true\nfalse\ntrue\ntrue\n"
+      },
+      {
+        "input": "5\ninsert hello\nsearch hell\nstartsWith hell\nsearch hello\nstartsWith hello\n",
+        "output": "false\ntrue\ntrue\ntrue\n"
+      },
+      {
+        "input": "1\ninsert abc\n",
+        "output": ""
+      },
+      {
+        "input": "2\nsearch a\ninsert a\n",
+        "output": "false\n"
+      },
+      {
+        "input": "3\nstartsWith ab\ninsert ab\nsearch ab\n",
+        "output": "false\ntrue\n"
+      }
+    ],
+    "core": [
+      {
+        "ops": [
+          "Trie",
+          "insert",
+          "search",
+          "search",
+          "startsWith",
+          "insert",
+          "search"
+        ],
+        "args": [
+          [],
+          [
+            "apple"
+          ],
+          [
+            "apple"
+          ],
+          [
+            "app"
+          ],
+          [
+            "app"
+          ],
+          [
+            "app"
+          ],
+          [
+            "app"
+          ]
+        ],
+        "expected": [
+          null,
+          null,
+          true,
+          false,
+          true,
+          null,
+          true
+        ]
+      },
+      {
+        "ops": [
+          "Trie",
+          "insert",
+          "search",
+          "search",
+          "startsWith",
+          "search"
+        ],
+        "args": [
+          [],
+          [
+            "hello"
+          ],
+          [
+            "hell"
+          ],
+          [
+            "hello"
+          ],
+          [
+            "hell"
+          ],
+          [
+            "hello"
+          ]
+        ],
+        "expected": [
+          null,
+          null,
+          false,
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "ops": [
+          "Trie",
+          "search"
+        ],
+        "args": [
+          [],
+          [
+            "a"
+          ]
+        ],
+        "expected": [
+          null,
+          false
+        ]
+      },
+      {
+        "ops": [
+          "Trie",
+          "startsWith"
+        ],
+        "args": [
+          [],
+          [
+            ""
+          ]
+        ],
+        "expected": [
+          null,
+          true
+        ]
+      },
+      {
+        "ops": [
+          "Trie",
+          "insert",
+          "insert",
+          "search",
+          "search"
+        ],
+        "args": [
+          [],
+          [
+            "a"
+          ],
+          [
+            "ab"
+          ],
+          [
+            "a"
+          ],
+          [
+            "ab"
+          ]
+        ],
+        "expected": [
+          null,
+          null,
+          null,
+          true,
+          true
+        ]
+      }
+    ]
+  },
+  "994": {
+    "acm": [
+      {
+        "input": "3 3\n2 1 1\n1 1 0\n0 1 1\n",
+        "output": "4\n"
+      },
+      {
+        "input": "3 3\n2 1 1\n0 1 1\n1 0 1\n",
+        "output": "-1\n"
+      },
+      {
+        "input": "1 1\n2\n",
+        "output": "0\n"
+      },
+      {
+        "input": "2 2\n1 1\n1 1\n",
+        "output": "-1\n"
+      },
+      {
+        "input": "2 3\n2 2 1\n1 1 1\n",
+        "output": "2\n"
+      }
+    ],
+    "core": [
+      {
+        "args": [
+          "grid:[\"211\",\"110\",\"011\"]"
+        ],
+        "expected": 4
+      },
+      {
+        "args": [
+          "grid:[\"211\",\"011\",\"101\"]"
+        ],
+        "expected": -1
+      },
+      {
+        "args": [
+          "grid:[\"2\"]"
+        ],
+        "expected": 0
+      },
+      {
+        "args": [
+          "grid:[\"11\",\"11\"]"
+        ],
+        "expected": -1
+      },
+      {
+        "args": [
+          "grid:[\"221\",\"111\"]"
+        ],
+        "expected": 2
+      }
+    ]
+  }
+}

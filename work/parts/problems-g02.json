@@ -1,0 +1,467 @@
+[
+  {
+    "id": 41,
+    "title": "缺失的第一个正数",
+    "difficulty": "困难",
+    "topic": "数组/原地哈希",
+    "url": "https://leetcode.cn/problems/first-missing-positive/",
+    "desc": "给你一个未排序的整数数组 nums，请找出其中没有出现的最小的正整数。请实现时间复杂度为 O(n) 且只使用常数级别额外空间的解决方案。",
+    "acm": {
+      "input": "第一行一个整数 n，表示数组长度。\n第二行 n 个整数，表示数组 nums。",
+      "output": "输出缺失的第一个正整数，末尾换行。",
+      "examples": [
+        {
+          "input": "3\n1 2 0\n",
+          "output": "3\n"
+        },
+        {
+          "input": "4\n3 4 -1 1\n",
+          "output": "2\n"
+        }
+      ],
+      "template": {
+        "python3": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    n = int(data[0])\n    nums = list(map(int, data[1:1 + n]))\n    # TODO: 找出缺失的第一个正整数并输出\n\nif __name__ == \"__main__\":\n    main()\n",
+        "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n;\n    cin >> n;\n    vector<int> nums(n);\n    for (int i = 0; i < n; i++) cin >> nums[i];\n    // TODO: 找出缺失的第一个正整数并输出\n    return 0;\n}\n"
+      }
+    },
+    "core": {
+      "kind": "function",
+      "className": "Solution",
+      "method": "firstMissingPositive",
+      "params": [
+        {
+          "name": "nums",
+          "type": "int[]",
+          "desc": "整数数组"
+        }
+      ],
+      "returns": "int",
+      "returnsDesc": "缺失的第一个正整数",
+      "mutates": -1,
+      "templates": {
+        "python3": "def firstMissingPositive(nums):\n    # TODO: 返回缺失的第一个正整数\n    pass\n",
+        "cpp": "class Solution {\npublic:\n    int firstMissingPositive(vector<int>& nums) {\n        // TODO\n    }\n};\n"
+      }
+    }
+  },
+  {
+    "id": 48,
+    "title": "旋转图像",
+    "difficulty": "中等",
+    "topic": "矩阵",
+    "url": "https://leetcode.cn/problems/rotate-image/",
+    "desc": "给定一个 n × n 的二维矩阵 matrix 表示一个图像，请将图像顺时针旋转 90 度。你必须原地旋转图像。",
+    "acm": {
+      "input": "第一行一个整数 n，表示矩阵边长（n × n）。\n接下来 n 行，每行 n 个整数，表示矩阵。",
+      "output": "输出顺时针旋转 90 度后的矩阵，每行 n 个整数（空格分隔），末尾换行。",
+      "examples": [
+        {
+          "input": "3\n1 2 3\n4 5 6\n7 8 9\n",
+          "output": "7 4 1\n8 5 2\n9 6 3\n"
+        },
+        {
+          "input": "1\n1\n",
+          "output": "1\n"
+        }
+      ],
+      "template": {
+        "python3": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    n = int(data[0])\n    mat = []\n    idx = 1\n    for _ in range(n):\n        mat.append(list(map(int, data[idx:idx + n])))\n        idx += n\n    # TODO: 原地顺时针旋转 90 度并逐行输出（每行空格分隔，末尾换行）\n\nif __name__ == \"__main__\":\n    main()\n",
+        "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n;\n    cin >> n;\n    vector<vector<int>> mat(n, vector<int>(n));\n    for (int i = 0; i < n; i++)\n        for (int j = 0; j < n; j++)\n            cin >> mat[i][j];\n    // TODO: 原地顺时针旋转 90 度并逐行输出（每行空格分隔，末尾换行）\n    return 0;\n}\n"
+      }
+    },
+    "core": {
+      "kind": "function",
+      "className": "Solution",
+      "method": "rotate",
+      "params": [
+        {
+          "name": "matrix",
+          "type": "int[][]",
+          "desc": "n x n 矩阵（原地修改）"
+        }
+      ],
+      "returns": "void",
+      "returnsDesc": "无返回值（原地修改 matrix）",
+      "mutates": 0,
+      "templates": {
+        "python3": "def rotate(matrix):\n    # TODO: 原地顺时针旋转 90 度（无返回值）\n    pass\n",
+        "cpp": "class Solution {\npublic:\n    void rotate(vector<vector<int>>& matrix) {\n        // TODO\n    }\n};\n"
+      }
+    }
+  },
+  {
+    "id": 53,
+    "title": "最大子数组和",
+    "difficulty": "中等",
+    "topic": "动态规划",
+    "url": "https://leetcode.cn/problems/maximum-subarray/",
+    "desc": "给你一个整数数组 nums，请找出一个具有最大和的连续子数组（子数组最少包含一个元素），并返回其最大和。子数组是数组中的一个连续部分。",
+    "acm": {
+      "input": "第一行一个整数 n，表示数组长度。\n第二行 n 个整数，表示数组 nums。",
+      "output": "输出最大子数组和，末尾换行。",
+      "examples": [
+        {
+          "input": "9\n-2 1 -3 4 -1 2 1 -5 4\n",
+          "output": "6\n"
+        },
+        {
+          "input": "1\n-1\n",
+          "output": "-1\n"
+        }
+      ],
+      "template": {
+        "python3": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    n = int(data[0])\n    nums = list(map(int, data[1:1 + n]))\n    # TODO: 计算最大子数组和并输出\n\nif __name__ == \"__main__\":\n    main()\n",
+        "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n;\n    cin >> n;\n    vector<int> nums(n);\n    for (int i = 0; i < n; i++) cin >> nums[i];\n    // TODO: 计算最大子数组和并输出\n    return 0;\n}\n"
+      }
+    },
+    "core": {
+      "kind": "function",
+      "className": "Solution",
+      "method": "maxSubArray",
+      "params": [
+        {
+          "name": "nums",
+          "type": "int[]",
+          "desc": "整数数组"
+        }
+      ],
+      "returns": "int",
+      "returnsDesc": "最大子数组和",
+      "mutates": -1,
+      "templates": {
+        "python3": "def maxSubArray(nums):\n    # TODO: 返回最大子数组和\n    pass\n",
+        "cpp": "class Solution {\npublic:\n    int maxSubArray(vector<int>& nums) {\n        // TODO\n    }\n};\n"
+      }
+    }
+  },
+  {
+    "id": 54,
+    "title": "螺旋矩阵",
+    "difficulty": "中等",
+    "topic": "矩阵",
+    "url": "https://leetcode.cn/problems/spiral-matrix/",
+    "desc": "给你一个 m 行 n 列的矩阵 matrix，请按照顺时针螺旋顺序，返回矩阵中的所有元素。",
+    "acm": {
+      "input": "第一行两个整数 m 和 n，分别表示矩阵行数与列数。\n接下来 m 行，每行 n 个整数，表示矩阵。",
+      "output": "输出顺时针螺旋顺序的所有元素，空格分隔，末尾换行。",
+      "examples": [
+        {
+          "input": "3 3\n1 2 3\n4 5 6\n7 8 9\n",
+          "output": "1 2 3 6 9 8 7 4 5\n"
+        },
+        {
+          "input": "3 4\n1 2 3 4\n5 6 7 8\n9 10 11 12\n",
+          "output": "1 2 3 4 8 12 11 10 9 5 6 7\n"
+        }
+      ],
+      "template": {
+        "python3": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    m = int(data[0])\n    n = int(data[1])\n    mat = []\n    idx = 2\n    for _ in range(m):\n        mat.append(list(map(int, data[idx:idx + n])))\n        idx += n\n    # TODO: 按顺时针螺旋顺序输出所有元素（空格分隔，末尾换行）\n\nif __name__ == \"__main__\":\n    main()\n",
+        "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int m, n;\n    cin >> m >> n;\n    vector<vector<int>> mat(m, vector<int>(n));\n    for (int i = 0; i < m; i++)\n        for (int j = 0; j < n; j++)\n            cin >> mat[i][j];\n    // TODO: 按顺时针螺旋顺序输出所有元素（空格分隔，末尾换行）\n    return 0;\n}\n"
+      }
+    },
+    "core": {
+      "kind": "function",
+      "className": "Solution",
+      "method": "spiralOrder",
+      "params": [
+        {
+          "name": "matrix",
+          "type": "int[][]",
+          "desc": "m 行 n 列矩阵"
+        }
+      ],
+      "returns": "int[]",
+      "returnsDesc": "顺时针螺旋顺序的元素数组",
+      "mutates": -1,
+      "templates": {
+        "python3": "def spiralOrder(matrix):\n    # TODO: 返回顺时针螺旋顺序的所有元素\n    pass\n",
+        "cpp": "class Solution {\npublic:\n    vector<int> spiralOrder(vector<vector<int>>& matrix) {\n        // TODO\n    }\n};\n"
+      }
+    }
+  },
+  {
+    "id": 56,
+    "title": "合并区间",
+    "difficulty": "中等",
+    "topic": "排序/区间",
+    "url": "https://leetcode.cn/problems/merge-intervals/",
+    "desc": "以数组 intervals 表示若干个区间的集合，其中单个区间为 [l, r]。请你合并所有重叠的区间，并返回一个不重叠的区间数组，该数组需恰好覆盖输入中的所有区间。",
+    "acm": {
+      "input": "第一行一个整数 n，表示区间个数。\n接下来 n 行，每行两个整数 l r，表示一个区间 [l, r]。",
+      "output": "输出合并后的全部区间，每行一个区间（两个整数，空格分隔），末尾换行；若没有区间则输出空行。",
+      "examples": [
+        {
+          "input": "4\n1 3\n2 6\n8 10\n15 18\n",
+          "output": "1 6\n8 10\n15 18\n"
+        },
+        {
+          "input": "2\n1 4\n4 5\n",
+          "output": "1 5\n"
+        }
+      ],
+      "template": {
+        "python3": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        print()\n        return\n    n = int(data[0])\n    intervals = []\n    idx = 1\n    for _ in range(n):\n        l = int(data[idx])\n        r = int(data[idx + 1])\n        idx += 2\n        intervals.append([l, r])\n    # TODO: 合并重叠区间并逐行输出（每行两个整数，空格分隔）；无区间时输出空行\n\nif __name__ == \"__main__\":\n    main()\n",
+        "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n;\n    cin >> n;\n    vector<pair<int, int>> intervals(n);\n    for (int i = 0; i < n; i++) cin >> intervals[i].first >> intervals[i].second;\n    // TODO: 合并重叠区间并逐行输出（每行两个整数，空格分隔）；无区间时输出空行\n    return 0;\n}\n"
+      }
+    },
+    "core": {
+      "kind": "function",
+      "className": "Solution",
+      "method": "merge",
+      "params": [
+        {
+          "name": "intervals",
+          "type": "int[][]",
+          "desc": "区间数组"
+        }
+      ],
+      "returns": "int[][]",
+      "returnsDesc": "合并后的不重叠区间数组",
+      "mutates": -1,
+      "templates": {
+        "python3": "def merge(intervals):\n    # TODO: 返回合并后的不重叠区间数组\n    pass\n",
+        "cpp": "class Solution {\npublic:\n    vector<vector<int>> merge(vector<vector<int>>& intervals) {\n        // TODO\n    }\n};\n"
+      }
+    }
+  },
+  {
+    "id": 73,
+    "title": "矩阵置零",
+    "difficulty": "中等",
+    "topic": "矩阵",
+    "url": "https://leetcode.cn/problems/set-matrix-zeroes/",
+    "desc": "给定一个 m x n 的矩阵，如果某个元素为 0，则将其所在行和列的所有元素都设为 0。请使用原地算法完成修改。",
+    "acm": {
+      "input": "第一行两个整数 m 和 n，分别表示矩阵行数与列数。\n接下来 m 行，每行 n 个整数，表示矩阵。",
+      "output": "输出置零后的矩阵，每行 n 个整数（空格分隔），末尾换行。",
+      "examples": [
+        {
+          "input": "3 3\n1 1 1\n1 0 1\n1 1 1\n",
+          "output": "1 0 1\n0 0 0\n1 0 1\n"
+        },
+        {
+          "input": "3 4\n0 1 2 0\n3 4 5 2\n1 3 1 5\n",
+          "output": "0 0 0 0\n0 4 5 0\n0 3 1 0\n"
+        }
+      ],
+      "template": {
+        "python3": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    m = int(data[0])\n    n = int(data[1])\n    mat = []\n    idx = 2\n    for _ in range(m):\n        mat.append(list(map(int, data[idx:idx + n])))\n        idx += n\n    # TODO: 原地将含 0 的行列全部置零，并逐行输出（每行空格分隔，末尾换行）\n\nif __name__ == \"__main__\":\n    main()\n",
+        "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int m, n;\n    cin >> m >> n;\n    vector<vector<int>> mat(m, vector<int>(n));\n    for (int i = 0; i < m; i++)\n        for (int j = 0; j < n; j++)\n            cin >> mat[i][j];\n    // TODO: 原地将含 0 的行列全部置零，并逐行输出（每行空格分隔，末尾换行）\n    return 0;\n}\n"
+      }
+    },
+    "core": {
+      "kind": "function",
+      "className": "Solution",
+      "method": "setZeroes",
+      "params": [
+        {
+          "name": "matrix",
+          "type": "int[][]",
+          "desc": "m x n 矩阵（原地修改）"
+        }
+      ],
+      "returns": "void",
+      "returnsDesc": "无返回值（原地修改 matrix）",
+      "mutates": 0,
+      "templates": {
+        "python3": "def setZeroes(matrix):\n    # TODO: 原地将含 0 的行列全部置零（无返回值）\n    pass\n",
+        "cpp": "class Solution {\npublic:\n    void setZeroes(vector<vector<int>>& matrix) {\n        // TODO\n    }\n};\n"
+      }
+    }
+  },
+  {
+    "id": 76,
+    "title": "最小覆盖子串",
+    "difficulty": "困难",
+    "topic": "滑动窗口",
+    "url": "https://leetcode.cn/problems/minimum-window-substring/",
+    "desc": "给你一个字符串 s 和一个字符串 t，请返回 s 中涵盖 t 全部字符的最小子串。如果 s 中不存在这样的子串，则返回空字符串。注意 t 中重复的字符也需要被覆盖。",
+    "acm": {
+      "input": "第一行一个字符串 s。\n第二行一个字符串 t。",
+      "output": "输出 s 中涵盖 t 所有字符的最短子串；若不存在则输出空行。",
+      "examples": [
+        {
+          "input": "ADOBECODEBANC\nABC\n",
+          "output": "BANC\n"
+        },
+        {
+          "input": "a\naa\n",
+          "output": "\n"
+        }
+      ],
+      "template": {
+        "python3": "import sys\n\ndef main():\n    data = sys.stdin.read().splitlines()\n    s = data[0] if len(data) > 0 else \"\"\n    t = data[1] if len(data) > 1 else \"\"\n    # TODO: 找出 s 中涵盖 t 的最短子串并输出；不存在则输出空行\n\nif __name__ == \"__main__\":\n    main()\n",
+        "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    string s, t;\n    getline(cin, s);\n    getline(cin, t);\n    // TODO: 找出 s 中涵盖 t 的最短子串并输出；不存在则输出空行\n    return 0;\n}\n"
+      }
+    },
+    "core": {
+      "kind": "function",
+      "className": "Solution",
+      "method": "minWindow",
+      "params": [
+        {
+          "name": "s",
+          "type": "string",
+          "desc": "原字符串"
+        },
+        {
+          "name": "t",
+          "type": "string",
+          "desc": "目标字符串"
+        }
+      ],
+      "returns": "string",
+      "returnsDesc": "最短覆盖子串；不存在则返回空字符串",
+      "mutates": -1,
+      "templates": {
+        "python3": "def minWindow(s, t):\n    # TODO: 返回 s 中涵盖 t 的最短子串；不存在则返回空字符串\n    pass\n",
+        "cpp": "class Solution {\npublic:\n    string minWindow(string s, string t) {\n        // TODO\n    }\n};\n"
+      }
+    }
+  },
+  {
+    "id": 189,
+    "title": "轮转数组",
+    "difficulty": "中等",
+    "topic": "数组",
+    "url": "https://leetcode.cn/problems/rotate-array/",
+    "desc": "给定一个整数数组 nums，将数组中的元素向右轮转 k 个位置，其中 k 是非负数。请在原地修改数组，并输出轮转后的结果。",
+    "acm": {
+      "input": "第一行两个整数 n 和 k，分别表示数组长度与向右轮转次数。\n第二行 n 个整数，表示数组 nums。",
+      "output": "输出轮转后的数组，空格分隔，末尾换行。",
+      "examples": [
+        {
+          "input": "7 3\n1 2 3 4 5 6 7\n",
+          "output": "5 6 7 1 2 3 4\n"
+        },
+        {
+          "input": "4 2\n-1 -100 3 99\n",
+          "output": "3 99 -1 -100\n"
+        }
+      ],
+      "template": {
+        "python3": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    n = int(data[0])\n    k = int(data[1])\n    nums = list(map(int, data[2:2 + n]))\n    # TODO: 原地向右轮转 k 位并输出（空格分隔，末尾换行）\n\nif __name__ == \"__main__\":\n    main()\n",
+        "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n, k;\n    cin >> n >> k;\n    vector<int> nums(n);\n    for (int i = 0; i < n; i++) cin >> nums[i];\n    // TODO: 原地向右轮转 k 位并输出（空格分隔，末尾换行）\n    return 0;\n}\n"
+      }
+    },
+    "core": {
+      "kind": "function",
+      "className": "Solution",
+      "method": "rotate",
+      "params": [
+        {
+          "name": "nums",
+          "type": "int[]",
+          "desc": "整数数组（原地修改）"
+        },
+        {
+          "name": "k",
+          "type": "int",
+          "desc": "轮转次数"
+        }
+      ],
+      "returns": "void",
+      "returnsDesc": "无返回值（原地修改 nums）",
+      "mutates": 0,
+      "templates": {
+        "python3": "def rotate(nums, k):\n    # TODO: 原地向右轮转 k 位（无返回值）\n    pass\n",
+        "cpp": "class Solution {\npublic:\n    void rotate(vector<int>& nums, int k) {\n        // TODO\n    }\n};\n"
+      }
+    }
+  },
+  {
+    "id": 238,
+    "title": "除自身以外数组的乘积",
+    "difficulty": "中等",
+    "topic": "前缀积",
+    "url": "https://leetcode.cn/problems/product-of-array-except-self/",
+    "desc": "给你一个整数数组 nums，请返回数组 answer，其中 answer[i] 等于 nums 中除 nums[i] 之外其余各元素的乘积。题目数据保证数组 nums 的任意前缀或后缀的乘积都在 32 位整数范围内。请使用 O(n) 时间且不使用除法完成。",
+    "acm": {
+      "input": "第一行一个整数 n，表示数组长度。\n第二行 n 个整数，表示数组 nums。",
+      "output": "输出除自身以外数组的乘积，空格分隔，末尾换行。",
+      "examples": [
+        {
+          "input": "4\n1 2 3 4\n",
+          "output": "24 12 8 6\n"
+        },
+        {
+          "input": "5\n-1 1 0 -3 3\n",
+          "output": "0 0 9 0 0\n"
+        }
+      ],
+      "template": {
+        "python3": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    n = int(data[0])\n    nums = list(map(int, data[1:1 + n]))\n    # TODO: 计算除自身以外数组的乘积并输出（空格分隔，末尾换行）\n\nif __name__ == \"__main__\":\n    main()\n",
+        "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n;\n    cin >> n;\n    vector<int> nums(n);\n    for (int i = 0; i < n; i++) cin >> nums[i];\n    // TODO: 计算除自身以外数组的乘积并输出（空格分隔，末尾换行）\n    return 0;\n}\n"
+      }
+    },
+    "core": {
+      "kind": "function",
+      "className": "Solution",
+      "method": "productExceptSelf",
+      "params": [
+        {
+          "name": "nums",
+          "type": "int[]",
+          "desc": "整数数组"
+        }
+      ],
+      "returns": "int[]",
+      "returnsDesc": "除自身以外数组的乘积",
+      "mutates": -1,
+      "templates": {
+        "python3": "def productExceptSelf(nums):\n    # TODO: 返回除自身以外数组的乘积\n    pass\n",
+        "cpp": "class Solution {\npublic:\n    vector<int> productExceptSelf(vector<int>& nums) {\n        // TODO\n    }\n};\n"
+      }
+    }
+  },
+  {
+    "id": 239,
+    "title": "滑动窗口最大值",
+    "difficulty": "困难",
+    "topic": "单调队列",
+    "url": "https://leetcode.cn/problems/sliding-window-maximum/",
+    "desc": "给你一个整数数组 nums，有一个大小为 k 的滑动窗口从数组的最左侧移动到最右侧，每次只向右移动一位。你只可以看到窗口内的 k 个数字。请返回滑动窗口中的最大值，即每个窗口位置的最大值组成的数组。",
+    "acm": {
+      "input": "第一行两个整数 n 和 k，分别表示数组长度与滑动窗口大小。\n第二行 n 个整数，表示数组 nums。",
+      "output": "输出 n-k+1 个整数，即从左到右每个滑动窗口的最大值，空格分隔，末尾换行。",
+      "examples": [
+        {
+          "input": "8 3\n1 3 -1 -3 5 3 6 7\n",
+          "output": "3 3 5 5 6 7\n"
+        },
+        {
+          "input": "1 1\n1\n",
+          "output": "1\n"
+        }
+      ],
+      "template": {
+        "python3": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    n = int(data[0])\n    k = int(data[1])\n    nums = list(map(int, data[2:2 + n]))\n    # TODO: 计算每个滑动窗口的最大值并输出（空格分隔，末尾换行）\n\nif __name__ == \"__main__\":\n    main()\n",
+        "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n, k;\n    cin >> n >> k;\n    vector<int> nums(n);\n    for (int i = 0; i < n; i++) cin >> nums[i];\n    // TODO: 计算每个滑动窗口的最大值并输出（空格分隔，末尾换行）\n    return 0;\n}\n"
+      }
+    },
+    "core": {
+      "kind": "function",
+      "className": "Solution",
+      "method": "maxSlidingWindow",
+      "params": [
+        {
+          "name": "nums",
+          "type": "int[]",
+          "desc": "整数数组"
+        },
+        {
+          "name": "k",
+          "type": "int",
+          "desc": "滑动窗口大小"
+        }
+      ],
+      "returns": "int[]",
+      "returnsDesc": "每个滑动窗口的最大值数组",
+      "mutates": -1,
+      "templates": {
+        "python3": "def maxSlidingWindow(nums, k):\n    # TODO: 返回每个滑动窗口的最大值组成的数组\n    pass\n",
+        "cpp": "class Solution {\npublic:\n    vector<int> maxSlidingWindow(vector<int>& nums, int k) {\n        // TODO\n    }\n};\n"
+      }
+    }
+  }
+]

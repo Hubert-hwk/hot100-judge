@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hot100 刷题台</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231f7a68'/%3E%3Ctext x='50' y='68' font-size='52' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='bold'%3EH%3C/text%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="/vendor/codemirror/lib/codemirror.css" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div id="splash" class="splash">
+    <div class="splash-card">
+      <div class="splash-logo">H</div>
+      <div class="splash-title">Hot100 刷题台</div>
+      <div class="splash-sub">正在加载题目数据…</div>
+    </div>
+  </div>
+
+  <div class="app" id="app" hidden>
+    <aside class="sidebar">
+      <div class="brand-row">
+        <div class="brand-text">
+          <h1>Hot100 刷题台</h1>
+          <p>ACM · 核心代码 双模式</p>
+        </div>
+        <button id="themeBtn" class="icon-btn" type="button" title="切换主题">🌙</button>
+      </div>
+
+      <div class="progress-block">
+        <div class="progress-head">
+          <span>已通过</span>
+          <span id="progressText">0 / 100</span>
+        </div>
+        <div class="progress-track"><div id="progressBar" class="progress-bar" style="width:0%"></div></div>
+      </div>
+
+      <div class="filters">
+        <label class="search-box">
+          <span class="sr-only">搜索</span>
+          <input id="searchInput" type="search" placeholder="搜索题号 / 标题 / 标签…" />
+        </label>
+        <div class="filter-grid">
+          <label>
+            <span>难度</span>
+            <select id="difficultyFilter"></select>
+          </label>
+          <label>
+            <span>分类</span>
+            <select id="topicFilter"></select>
+          </label>
+          <label>
+            <span>排序</span>
+            <select id="sortFilter">
+              <option value="id">默认（题号）</option>
+              <option value="hot">高频榜</option>
+              <option value="difficulty">难度</option>
+            </select>
+          </label>
+        </div>
+      </div>
+
+      <div id="problemList" class="problem-list"></div>
+    </aside>
+    <div id="sidebarResizer" class="sidebar-resizer" role="separator" aria-orientation="vertical" title="拖动调整宽度"></div>
+
+    <main class="workspace">
+      <header class="problem-head">
+        <div>
+          <div class="meta-row">
+            <span id="problemDifficulty" class="pill"></span>
+            <span id="problemTopic" class="pill muted"></span>
+            <span id="problemFreq" class="pill hot-pill" hidden></span>
+            <span id="problemStatus" class="pill status-pill" hidden></span>
+          </div>
+          <h2 id="problemTitle"></h2>
+          <div id="problemCompanies" class="company-tags" hidden></div>
+        </div>
+        <a id="leetcodeLink" class="link-button" target="_blank" rel="noreferrer">LeetCode ↗</a>
+      </header>
+
+      <nav class="view-tabs" role="tablist">
+        <button class="view-tab active" data-view="problem" type="button">题目</button>
+        <button class="view-tab" data-view="solution" type="button">题解</button>
+      </nav>
+
+      <!-- ===== 题目视图 ===== -->
+      <section id="viewProblem" class="view-panel">
+        <div class="card statement-card">
+          <div class="desc-block">
+            <h3>题目描述</h3>
+            <p id="problemDesc" class="desc-text">…</p>
+          </div>
+
+          <div class="mode-switch" role="tablist" aria-label="代码模式">
+            <button class="seg-btn active" data-mode="acm" type="button">ACM 模式</button>
+            <button class="seg-btn" data-mode="core" type="button">核心代码模式</button>
+          </div>
+
+          <div id="acmPanel">
+            <div class="spec-grid">
+              <div>
+                <h3>ACM 输入</h3>
+                <pre id="inputSpec"></pre>
+              </div>
+              <div>
+                <h3>ACM 输出</h3>
+                <pre id="outputSpec"></pre>
+              </div>
+            </div>
+            <div class="examples-block">
+              <h3>样例</h3>
+              <div id="exampleTabs" class="tabs"></div>
+              <div class="io-grid">
+                <label>
+                  <span>输入</span>
+                  <textarea id="sampleInput" spellcheck="false"></textarea>
+                </label>
+                <label>
+                  <span>期望输出</span>
+                  <textarea id="expectedOutput" spellcheck="false"></textarea>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div id="corePanel" hidden>
+            <div class="core-info">
+              <h3>核心函数签名</h3>
+              <table class="sig-table" id="coreSigTable"></table>
+              <p class="hint" id="coreNote"></p>
+            </div>
+            <div class="core-tests">
+              <h3>内置测试用例 <span class="badge" id="coreTestCount"></span></h3>
+              <div id="coreTestList" class="core-test-list"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== 题解视图 ===== -->
+      <section id="viewSolution" class="view-panel" hidden>
+        <div class="card solution-card">
+          <div class="solution-head">
+            <h3>参考题解</h3>
+            <div class="segmented" id="solutionLangTabs"></div>
+          </div>
+          <div id="solutionBody"></div>
+        </div>
+      </section>
+
+      <!-- ===== 代码区 ===== -->
+      <section class="card code-panel">
+        <div class="toolbar">
+          <div class="segmented" id="languageTabs"></div>
+          <div class="actions">
+            <button id="checkBtn" type="button" title="语法/编译检查">语法检查</button>
+            <button id="resetBtn" type="button" title="恢复当前模式下的模板代码">重置模板</button>
+            <button id="runSampleBtn" type="button" title="用当前样例输入运行一次">运行样例</button>
+            <button id="judgeBtn" class="primary" type="button" title="Ctrl+Enter">全部评测</button>
+          </div>
+        </div>
+        <textarea id="codeEditor" class="code-editor" spellcheck="false"></textarea>
+        <div id="diagnosticPanel" class="diagnostic-panel clean">
+          <div class="diagnostic-head">
+            <strong>诊断</strong>
+            <span id="diagnosticStatus">等待输入</span>
+          </div>
+          <pre id="diagnosticBox"></pre>
+        </div>
+      </section>
+
+      <!-- ===== 结果区 ===== -->
+      <section class="card result-panel">
+        <div class="result-head">
+          <h3>运行结果</h3>
+          <span id="statusText">未运行</span>
+        </div>
+        <div id="runResult" class="run-result">
+          <div class="result-grid">
+            <div>
+              <label>标准输出</label>
+              <pre id="stdoutBox"></pre>
+            </div>
+            <div>
+              <label>错误 / 编译信息</label>
+              <pre id="stderrBox"></pre>
+            </div>
+          </div>
+        </div>
+        <div id="judgeResult" hidden>
+          <div id="judgeSummary" class="judge-summary"></div>
+          <div id="judgeCases" class="judge-cases"></div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="/vendor/codemirror/lib/codemirror.min.js"></script>
+  <script src="/vendor/codemirror/mode/clike/clike.min.js"></script>
+  <script src="/vendor/codemirror/mode/python/python.min.js"></script>
+  <script src="/vendor/codemirror/addon/edit/matchbrackets.min.js"></script>
+  <script src="/vendor/codemirror/addon/edit/closebrackets.min.js"></script>
+  <script src="/vendor/codemirror/addon/selection/active-line.min.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>

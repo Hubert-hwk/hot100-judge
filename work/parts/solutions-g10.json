@@ -1,0 +1,102 @@
+{
+  "5": {
+    "python3": {
+      "core": "def longestPalindrome(s):\n    n = len(s)\n    best = ''\n    for i in range(n):\n        l = r = i\n        while l >= 0 and r < n and s[l] == s[r]:\n            l -= 1\n            r += 1\n        if r - l - 1 > len(best):\n            best = s[l + 1:r]\n        l, r = i, i + 1\n        while l >= 0 and r < n and s[l] == s[r]:\n            l -= 1\n            r += 1\n        if r - l - 1 > len(best):\n            best = s[l + 1:r]\n    return best\n",
+      "acm": "import sys\n\ndef main():\n    lines = sys.stdin.read().splitlines()\n    s = lines[0] if lines else ''\n    n = len(s)\n    best = ''\n    for i in range(n):\n        l = r = i\n        while l >= 0 and r < n and s[l] == s[r]:\n            l -= 1\n            r += 1\n        if r - l - 1 > len(best):\n            best = s[l + 1:r]\n        l, r = i, i + 1\n        while l >= 0 and r < n and s[l] == s[r]:\n            l -= 1\n            r += 1\n        if r - l - 1 > len(best):\n            best = s[l + 1:r]\n    print(best)\n\nif __name__ == \"__main__\":\n    main()\n"
+    },
+    "cpp": {
+      "core": "class Solution {\npublic:\n    string longestPalindrome(string s) {\n        int n = (int)s.size();\n        string best;\n        for (int i = 0; i < n; i++) {\n            int l = i, r = i;\n            while (l >= 0 && r < n && s[l] == s[r]) { l--; r++; }\n            if (r - l - 1 > (int)best.size()) best = s.substr(l + 1, r - l - 1);\n            l = i; r = i + 1;\n            while (l >= 0 && r < n && s[l] == s[r]) { l--; r++; }\n            if (r - l - 1 > (int)best.size()) best = s.substr(l + 1, r - l - 1);\n        }\n        return best;\n    }\n};\n",
+      "acm": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    string s;\n    getline(cin, s);\n    int n = (int)s.size();\n    string best;\n    for (int i = 0; i < n; i++) {\n        int l = i, r = i;\n        while (l >= 0 && r < n && s[l] == s[r]) { l--; r++; }\n        if (r - l - 1 > (int)best.size()) best = s.substr(l + 1, r - l - 1);\n        l = i; r = i + 1;\n        while (l >= 0 && r < n && s[l] == s[r]) { l--; r++; }\n        if (r - l - 1 > (int)best.size()) best = s.substr(l + 1, r - l - 1);\n    }\n    cout << best << '\\n';\n    return 0;\n}\n"
+    }
+  },
+  "31": {
+    "python3": {
+      "core": "def nextPermutation(nums):\n    n = len(nums)\n    i = n - 2\n    while i >= 0 and nums[i] >= nums[i + 1]:\n        i -= 1\n    if i >= 0:\n        j = n - 1\n        while j > i and nums[j] <= nums[i]:\n            j -= 1\n        nums[i], nums[j] = nums[j], nums[i]\n    l, r = i + 1, n - 1\n    while l < r:\n        nums[l], nums[r] = nums[r], nums[l]\n        l += 1\n        r -= 1\n",
+      "acm": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    n = int(data[0])\n    nums = list(map(int, data[1:1 + n]))\n    i = n - 2\n    while i >= 0 and nums[i] >= nums[i + 1]:\n        i -= 1\n    if i >= 0:\n        j = n - 1\n        while j > i and nums[j] <= nums[i]:\n            j -= 1\n        nums[i], nums[j] = nums[j], nums[i]\n    l, r = i + 1, n - 1\n    while l < r:\n        nums[l], nums[r] = nums[r], nums[l]\n        l += 1\n        r -= 1\n    print(' '.join(map(str, nums)))\n\nif __name__ == \"__main__\":\n    main()\n"
+    },
+    "cpp": {
+      "core": "class Solution {\npublic:\n    void nextPermutation(vector<int>& nums) {\n        int n = (int)nums.size();\n        int i = n - 2;\n        while (i >= 0 && nums[i] >= nums[i + 1]) i--;\n        if (i >= 0) {\n            int j = n - 1;\n            while (j > i && nums[j] <= nums[i]) j--;\n            swap(nums[i], nums[j]);\n        }\n        reverse(nums.begin() + i + 1, nums.end());\n    }\n};\n",
+      "acm": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n;\n    cin >> n;\n    vector<int> nums(n);\n    for (int i = 0; i < n; i++) cin >> nums[i];\n    int i = n - 2;\n    while (i >= 0 && nums[i] >= nums[i + 1]) i--;\n    if (i >= 0) {\n        int j = n - 1;\n        while (j > i && nums[j] <= nums[i]) j--;\n        swap(nums[i], nums[j]);\n    }\n    reverse(nums.begin() + i + 1, nums.end());\n    for (int t = 0; t < n; t++) {\n        if (t) cout << ' ';\n        cout << nums[t];\n    }\n    cout << '\\n';\n    return 0;\n}\n"
+    }
+  },
+  "62": {
+    "python3": {
+      "core": "def uniquePaths(m, n):\n    dp = [[0] * n for _ in range(m)]\n    for i in range(m):\n        dp[i][0] = 1\n    for j in range(n):\n        dp[0][j] = 1\n    for i in range(1, m):\n        for j in range(1, n):\n            dp[i][j] = dp[i - 1][j] + dp[i][j - 1]\n    return dp[m - 1][n - 1]\n",
+      "acm": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    m, n = int(data[0]), int(data[1])\n    dp = [[0] * n for _ in range(m)]\n    for i in range(m):\n        dp[i][0] = 1\n    for j in range(n):\n        dp[0][j] = 1\n    for i in range(1, m):\n        for j in range(1, n):\n            dp[i][j] = dp[i - 1][j] + dp[i][j - 1]\n    print(dp[m - 1][n - 1])\n\nif __name__ == \"__main__\":\n    main()\n"
+    },
+    "cpp": {
+      "core": "class Solution {\npublic:\n    int uniquePaths(int m, int n) {\n        vector<vector<long long>> dp(m, vector<long long>(n, 0));\n        for (int i = 0; i < m; i++) dp[i][0] = 1;\n        for (int j = 0; j < n; j++) dp[0][j] = 1;\n        for (int i = 1; i < m; i++)\n            for (int j = 1; j < n; j++)\n                dp[i][j] = dp[i - 1][j] + dp[i][j - 1];\n        return (int)dp[m - 1][n - 1];\n    }\n};\n",
+      "acm": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int m, n;\n    cin >> m >> n;\n    vector<vector<long long>> dp(m, vector<long long>(n, 0));\n    for (int i = 0; i < m; i++) dp[i][0] = 1;\n    for (int j = 0; j < n; j++) dp[0][j] = 1;\n    for (int i = 1; i < m; i++)\n        for (int j = 1; j < n; j++)\n            dp[i][j] = dp[i - 1][j] + dp[i][j - 1];\n    cout << dp[m - 1][n - 1] << '\\n';\n    return 0;\n}\n"
+    }
+  },
+  "64": {
+    "python3": {
+      "core": "def minPathSum(grid):\n    m, n = len(grid), len(grid[0])\n    dp = [[0] * n for _ in range(m)]\n    dp[0][0] = grid[0][0]\n    for j in range(1, n):\n        dp[0][j] = dp[0][j - 1] + grid[0][j]\n    for i in range(1, m):\n        dp[i][0] = dp[i - 1][0] + grid[i][0]\n    for i in range(1, m):\n        for j in range(1, n):\n            dp[i][j] = min(dp[i - 1][j], dp[i][j - 1]) + grid[i][j]\n    return dp[m - 1][n - 1]\n",
+      "acm": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    m, n = int(data[0]), int(data[1])\n    grid = []\n    idx = 2\n    for _ in range(m):\n        grid.append([int(x) for x in data[idx:idx + n]])\n        idx += n\n    dp = [[0] * n for _ in range(m)]\n    dp[0][0] = grid[0][0]\n    for j in range(1, n):\n        dp[0][j] = dp[0][j - 1] + grid[0][j]\n    for i in range(1, m):\n        dp[i][0] = dp[i - 1][0] + grid[i][0]\n    for i in range(1, m):\n        for j in range(1, n):\n            dp[i][j] = min(dp[i - 1][j], dp[i][j - 1]) + grid[i][j]\n    print(dp[m - 1][n - 1])\n\nif __name__ == \"__main__\":\n    main()\n"
+    },
+    "cpp": {
+      "core": "class Solution {\npublic:\n    int minPathSum(vector<vector<int>>& grid) {\n        int m = (int)grid.size(), n = (int)grid[0].size();\n        vector<vector<int>> dp(m, vector<int>(n, 0));\n        dp[0][0] = grid[0][0];\n        for (int j = 1; j < n; j++) dp[0][j] = dp[0][j - 1] + grid[0][j];\n        for (int i = 1; i < m; i++) dp[i][0] = dp[i - 1][0] + grid[i][0];\n        for (int i = 1; i < m; i++)\n            for (int j = 1; j < n; j++)\n                dp[i][j] = min(dp[i - 1][j], dp[i][j - 1]) + grid[i][j];\n        return dp[m - 1][n - 1];\n    }\n};\n",
+      "acm": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int m, n;\n    cin >> m >> n;\n    vector<vector<int>> grid(m, vector<int>(n));\n    for (int i = 0; i < m; i++)\n        for (int j = 0; j < n; j++) cin >> grid[i][j];\n    vector<vector<int>> dp(m, vector<int>(n, 0));\n    dp[0][0] = grid[0][0];\n    for (int j = 1; j < n; j++) dp[0][j] = dp[0][j - 1] + grid[0][j];\n    for (int i = 1; i < m; i++) dp[i][0] = dp[i - 1][0] + grid[i][0];\n    for (int i = 1; i < m; i++)\n        for (int j = 1; j < n; j++)\n            dp[i][j] = min(dp[i - 1][j], dp[i][j - 1]) + grid[i][j];\n    cout << dp[m - 1][n - 1] << '\\n';\n    return 0;\n}\n"
+    }
+  },
+  "72": {
+    "python3": {
+      "core": "def minDistance(word1, word2):\n    m, n = len(word1), len(word2)\n    dp = [[0] * (n + 1) for _ in range(m + 1)]\n    for i in range(m + 1):\n        dp[i][0] = i\n    for j in range(n + 1):\n        dp[0][j] = j\n    for i in range(1, m + 1):\n        for j in range(1, n + 1):\n            if word1[i - 1] == word2[j - 1]:\n                dp[i][j] = dp[i - 1][j - 1]\n            else:\n                dp[i][j] = min(dp[i - 1][j], dp[i][j - 1], dp[i - 1][j - 1]) + 1\n    return dp[m][n]\n",
+      "acm": "import sys\n\ndef main():\n    lines = sys.stdin.read().splitlines()\n    a = lines[0] if lines else ''\n    b = lines[1] if len(lines) > 1 else ''\n    m, n = len(a), len(b)\n    dp = [[0] * (n + 1) for _ in range(m + 1)]\n    for i in range(m + 1):\n        dp[i][0] = i\n    for j in range(n + 1):\n        dp[0][j] = j\n    for i in range(1, m + 1):\n        for j in range(1, n + 1):\n            if a[i - 1] == b[j - 1]:\n                dp[i][j] = dp[i - 1][j - 1]\n            else:\n                dp[i][j] = min(dp[i - 1][j], dp[i][j - 1], dp[i - 1][j - 1]) + 1\n    print(dp[m][n])\n\nif __name__ == \"__main__\":\n    main()\n"
+    },
+    "cpp": {
+      "core": "class Solution {\npublic:\n    int minDistance(string word1, string word2) {\n        int m = (int)word1.size(), n = (int)word2.size();\n        vector<vector<int>> dp(m + 1, vector<int>(n + 1, 0));\n        for (int i = 0; i <= m; i++) dp[i][0] = i;\n        for (int j = 0; j <= n; j++) dp[0][j] = j;\n        for (int i = 1; i <= m; i++) {\n            for (int j = 1; j <= n; j++) {\n                if (word1[i - 1] == word2[j - 1]) dp[i][j] = dp[i - 1][j - 1];\n                else dp[i][j] = min({dp[i - 1][j], dp[i][j - 1], dp[i - 1][j - 1]}) + 1;\n            }\n        }\n        return dp[m][n];\n    }\n};\n",
+      "acm": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    string a, b;\n    getline(cin, a);\n    getline(cin, b);\n    int m = (int)a.size(), n = (int)b.size();\n    vector<vector<int>> dp(m + 1, vector<int>(n + 1, 0));\n    for (int i = 0; i <= m; i++) dp[i][0] = i;\n    for (int j = 0; j <= n; j++) dp[0][j] = j;\n    for (int i = 1; i <= m; i++) {\n        for (int j = 1; j <= n; j++) {\n            if (a[i - 1] == b[j - 1]) dp[i][j] = dp[i - 1][j - 1];\n            else dp[i][j] = min({dp[i - 1][j], dp[i][j - 1], dp[i - 1][j - 1]}) + 1;\n        }\n    }\n    cout << dp[m][n] << '\\n';\n    return 0;\n}\n"
+    }
+  },
+  "75": {
+    "python3": {
+      "core": "def sortColors(nums):\n    i, j, k = 0, 0, len(nums) - 1\n    while j <= k:\n        if nums[j] == 0:\n            nums[i], nums[j] = nums[j], nums[i]\n            i += 1\n            j += 1\n        elif nums[j] == 2:\n            nums[j], nums[k] = nums[k], nums[j]\n            k -= 1\n        else:\n            j += 1\n",
+      "acm": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    n = int(data[0])\n    nums = list(map(int, data[1:1 + n]))\n    i, j, k = 0, 0, n - 1\n    while j <= k:\n        if nums[j] == 0:\n            nums[i], nums[j] = nums[j], nums[i]\n            i += 1\n            j += 1\n        elif nums[j] == 2:\n            nums[j], nums[k] = nums[k], nums[j]\n            k -= 1\n        else:\n            j += 1\n    print(' '.join(map(str, nums)))\n\nif __name__ == \"__main__\":\n    main()\n"
+    },
+    "cpp": {
+      "core": "class Solution {\npublic:\n    void sortColors(vector<int>& nums) {\n        int i = 0, j = 0, k = (int)nums.size() - 1;\n        while (j <= k) {\n            if (nums[j] == 0) { swap(nums[i], nums[j]); i++; j++; }\n            else if (nums[j] == 2) { swap(nums[j], nums[k]); k--; }\n            else j++;\n        }\n    }\n};\n",
+      "acm": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n;\n    cin >> n;\n    vector<int> nums(n);\n    for (int i = 0; i < n; i++) cin >> nums[i];\n    int i = 0, j = 0, k = n - 1;\n    while (j <= k) {\n        if (nums[j] == 0) { swap(nums[i], nums[j]); i++; j++; }\n        else if (nums[j] == 2) { swap(nums[j], nums[k]); k--; }\n        else j++;\n    }\n    for (int t = 0; t < n; t++) {\n        if (t) cout << ' ';\n        cout << nums[t];\n    }\n    cout << '\\n';\n    return 0;\n}\n"
+    }
+  },
+  "136": {
+    "python3": {
+      "core": "def singleNumber(nums):\n    x = 0\n    for v in nums:\n        x ^= v\n    return x\n",
+      "acm": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    n = int(data[0])\n    nums = list(map(int, data[1:1 + n]))\n    x = 0\n    for v in nums:\n        x ^= v\n    print(x)\n\nif __name__ == \"__main__\":\n    main()\n"
+    },
+    "cpp": {
+      "core": "class Solution {\npublic:\n    int singleNumber(vector<int>& nums) {\n        int x = 0;\n        for (int v : nums) x ^= v;\n        return x;\n    }\n};\n",
+      "acm": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n;\n    cin >> n;\n    int x = 0;\n    for (int i = 0; i < n; i++) {\n        int v;\n        cin >> v;\n        x ^= v;\n    }\n    cout << x << '\\n';\n    return 0;\n}\n"
+    }
+  },
+  "169": {
+    "python3": {
+      "core": "def majorityElement(nums):\n    cand, cnt = 0, 0\n    for v in nums:\n        if cnt == 0:\n            cand, cnt = v, 1\n        elif v == cand:\n            cnt += 1\n        else:\n            cnt -= 1\n    return cand\n",
+      "acm": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    n = int(data[0])\n    nums = list(map(int, data[1:1 + n]))\n    cand, cnt = 0, 0\n    for v in nums:\n        if cnt == 0:\n            cand, cnt = v, 1\n        elif v == cand:\n            cnt += 1\n        else:\n            cnt -= 1\n    print(cand)\n\nif __name__ == \"__main__\":\n    main()\n"
+    },
+    "cpp": {
+      "core": "class Solution {\npublic:\n    int majorityElement(vector<int>& nums) {\n        int cand = 0, cnt = 0;\n        for (int v : nums) {\n            if (cnt == 0) { cand = v; cnt = 1; }\n            else if (v == cand) cnt++;\n            else cnt--;\n        }\n        return cand;\n    }\n};\n",
+      "acm": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n;\n    cin >> n;\n    int cand = 0, cnt = 0;\n    for (int i = 0; i < n; i++) {\n        int v;\n        cin >> v;\n        if (cnt == 0) { cand = v; cnt = 1; }\n        else if (v == cand) cnt++;\n        else cnt--;\n    }\n    cout << cand << '\\n';\n    return 0;\n}\n"
+    }
+  },
+  "287": {
+    "python3": {
+      "core": "def findDuplicate(nums):\n    slow = fast = 0\n    while True:\n        slow = nums[slow]\n        fast = nums[nums[fast]]\n        if slow == fast:\n            break\n    slow = 0\n    while slow != fast:\n        slow = nums[slow]\n        fast = nums[fast]\n    return slow\n",
+      "acm": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    n = int(data[0])\n    nums = list(map(int, data[1:1 + n + 1]))\n    slow = fast = 0\n    while True:\n        slow = nums[slow]\n        fast = nums[nums[fast]]\n        if slow == fast:\n            break\n    slow = 0\n    while slow != fast:\n        slow = nums[slow]\n        fast = nums[fast]\n    print(slow)\n\nif __name__ == \"__main__\":\n    main()\n"
+    },
+    "cpp": {
+      "core": "class Solution {\npublic:\n    int findDuplicate(vector<int>& nums) {\n        int slow = 0, fast = 0;\n        while (true) {\n            slow = nums[slow];\n            fast = nums[nums[fast]];\n            if (slow == fast) break;\n        }\n        slow = 0;\n        while (slow != fast) {\n            slow = nums[slow];\n            fast = nums[fast];\n        }\n        return slow;\n    }\n};\n",
+      "acm": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n;\n    cin >> n;\n    vector<int> nums(n + 1);\n    for (int i = 0; i < n + 1; i++) cin >> nums[i];\n    int slow = 0, fast = 0;\n    while (true) {\n        slow = nums[slow];\n        fast = nums[nums[fast]];\n        if (slow == fast) break;\n    }\n    slow = 0;\n    while (slow != fast) {\n        slow = nums[slow];\n        fast = nums[fast];\n    }\n    cout << slow << '\\n';\n    return 0;\n}\n"
+    }
+  },
+  "1143": {
+    "python3": {
+      "core": "def longestCommonSubsequence(text1, text2):\n    m, n = len(text1), len(text2)\n    dp = [[0] * (n + 1) for _ in range(m + 1)]\n    for i in range(1, m + 1):\n        for j in range(1, n + 1):\n            if text1[i - 1] == text2[j - 1]:\n                dp[i][j] = dp[i - 1][j - 1] + 1\n            else:\n                dp[i][j] = max(dp[i - 1][j], dp[i][j - 1])\n    return dp[m][n]\n",
+      "acm": "import sys\n\ndef main():\n    lines = sys.stdin.read().splitlines()\n    a = lines[0] if lines else ''\n    b = lines[1] if len(lines) > 1 else ''\n    m, n = len(a), len(b)\n    dp = [[0] * (n + 1) for _ in range(m + 1)]\n    for i in range(1, m + 1):\n        for j in range(1, n + 1):\n            if a[i - 1] == b[j - 1]:\n                dp[i][j] = dp[i - 1][j - 1] + 1\n            else:\n                dp[i][j] = max(dp[i - 1][j], dp[i][j - 1])\n    print(dp[m][n])\n\nif __name__ == \"__main__\":\n    main()\n"
+    },
+    "cpp": {
+      "core": "class Solution {\npublic:\n    int longestCommonSubsequence(string text1, string text2) {\n        int m = (int)text1.size(), n = (int)text2.size();\n        vector<vector<int>> dp(m + 1, vector<int>(n + 1, 0));\n        for (int i = 1; i <= m; i++) {\n            for (int j = 1; j <= n; j++) {\n                if (text1[i - 1] == text2[j - 1]) dp[i][j] = dp[i - 1][j - 1] + 1;\n                else dp[i][j] = max(dp[i - 1][j], dp[i][j - 1]);\n            }\n        }\n        return dp[m][n];\n    }\n};\n",
+      "acm": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    string a, b;\n    getline(cin, a);\n    getline(cin, b);\n    int m = (int)a.size(), n = (int)b.size();\n    vector<vector<int>> dp(m + 1, vector<int>(n + 1, 0));\n    for (int i = 1; i <= m; i++) {\n        for (int j = 1; j <= n; j++) {\n            if (a[i - 1] == b[j - 1]) dp[i][j] = dp[i - 1][j - 1] + 1;\n            else dp[i][j] = max(dp[i - 1][j], dp[i][j - 1]);\n        }\n    }\n    cout << dp[m][n] << '\\n';\n    return 0;\n}\n"
+    }
+  }
+}
