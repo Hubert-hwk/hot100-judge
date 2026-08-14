@@ -66,6 +66,7 @@ const state = {
   checkTimer: null,
   checkSeq: 0,
   progress: {},
+  starred: {},
   judging: false,
 };
 
@@ -115,6 +116,7 @@ function storageKey(id, lang, mode) {
   return `hot100-acm:v2:${id}:${lang}:${mode}`;
 }
 const PROGRESS_KEY = 'hot100-acm:v2:progress';
+const STAR_KEY = 'hot100-acm:v2:starred';
 const THEME_KEY = 'hot100-acm:v2:theme';
 
 function loadCode() {
@@ -149,11 +151,13 @@ function filteredProblems() {
   const difficulty = $('difficultyFilter').value;
   const topic = $('topicFilter').value;
   const sort = $('sortFilter').value;
+  const onlyStar = $('starFilter').checked;
   const list = state.problems.filter((p) => {
     const text = `${p.id} ${p.title} ${p.topic}`.toLowerCase();
     return (!keyword || text.includes(keyword))
       && (difficulty === '全部' || p.difficulty === difficulty)
-      && (topic === '全部' || (p.topic || '').includes(topic));
+      && (topic === '全部' || (p.topic || '').includes(topic))
+      && (!onlyStar || state.starred[p.id]);
   });
   if (sort === 'hot') {
     list.sort((a, b) => (a.freq ? a.freq.rank : 1e9) - (b.freq ? b.freq.rank : 1e9));
@@ -172,12 +176,14 @@ function renderList() {
     const st = state.progress[p.id];
     const stClass = st === 'solved' ? ' solved' : st === 'failed' ? ' failed' : '';
     const hot = p.freq ? `<span class="p-hot" title="CodeTop 高频榜第 ${p.freq.rank} 名">#${p.freq.rank}</span>` : '';
+    const star = state.starred[p.id] ? '<span class="p-star">★</span>' : '';
     return `
       <button class="problem-item ${p.id === state.selectedId ? 'active' : ''}" data-id="${p.id}" type="button">
         <div class="p-row">
           <span class="p-id">${p.id}</span>
           <span class="p-title">${esc(p.title)}</span>
           ${hot}
+          ${star}
           <span class="p-status${stClass}"></span>
         </div>
         <div class="p-meta">
@@ -228,6 +234,11 @@ function renderProblem() {
   } else {
     compsEl.hidden = true;
   }
+
+  // 收藏状态
+  const starBtn = $('starBtn');
+  starBtn.classList.toggle('active', !!state.starred[problem.id]);
+  starBtn.textContent = state.starred[problem.id] ? '★' : '☆';
 
   // 状态 pill
   const st = state.progress[problem.id];
@@ -689,6 +700,27 @@ function setupEvents() {
   $('difficultyFilter').addEventListener('change', renderList);
   $('topicFilter').addEventListener('change', renderList);
   $('sortFilter').addEventListener('change', renderList);
+  $('starFilter').addEventListener('change', renderList);
+
+  $('randomBtn').addEventListener('click', () => {
+    const list = filteredProblems();
+    if (!list.length) return;
+    const pick = list[Math.floor(Math.random() * list.length)];
+    saveCode();
+    state.selectedId = pick.id;
+    state.exampleIndex = 0;
+    renderProblem();
+    if (state.view === 'solution') renderSolution();
+  });
+
+  $('starBtn').addEventListener('click', () => {
+    const id = state.selectedId;
+    if (state.starred[id]) delete state.starred[id];
+    else state.starred[id] = true;
+    localStorage.setItem(STAR_KEY, JSON.stringify(state.starred));
+    renderProblem();
+    renderList();
+  });
 
   $('problemList').addEventListener('click', (e) => {
     const item = e.target.closest('[data-id]');
@@ -787,7 +819,8 @@ async function boot() {
   }
   try {
     state.progress = JSON.parse(localStorage.getItem(PROGRESS_KEY) || '{}');
-  } catch (e) { state.progress = {}; }
+    state.starred = JSON.parse(localStorage.getItem(STAR_KEY) || '{}');
+  } catch (e) { state.progress = {}; state.starred = {}; }
 
   state.selectedId = state.problems[0].id;
 

@@ -58,6 +58,13 @@
             </select>
           </label>
         </div>
+        <div class="filter-tools">
+          <label class="check-row" title="只看已收藏的题目">
+            <input id="starFilter" type="checkbox" />
+            <span>只看收藏</span>
+          </label>
+          <button id="randomBtn" type="button" title="随机抽一题">🎲 随机一题</button>
+        </div>
       </div>
 
       <div id="problemList" class="problem-list"></div>
@@ -76,7 +83,10 @@
           <h2 id="problemTitle"></h2>
           <div id="problemCompanies" class="company-tags" hidden></div>
         </div>
-        <a id="leetcodeLink" class="link-button" target="_blank" rel="noreferrer">LeetCode ↗</a>
+        <div class="head-actions">
+          <button id="starBtn" class="star-btn" type="button" title="收藏到错题本">☆</button>
+          <a id="leetcodeLink" class="link-button" target="_blank" rel="noreferrer">LeetCode ↗</a>
+        </div>
       </header>
 
       <nav class="view-tabs" role="tablist">

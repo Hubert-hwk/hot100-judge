@@ -161,6 +161,22 @@ body.resizing { cursor: col-resize; user-select: none; }
 
 /* 筛选 */
 .filters { display: grid; gap: 10px; }
+.filter-tools { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.check-row { display: flex; align-items: center; gap: 6px; font-size: 12.5px; color: var(--muted); font-weight: 700; cursor: pointer; }
+.check-row input { width: 15px; height: 15px; accent-color: var(--accent); cursor: pointer; }
+#randomBtn {
+  height: 30px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--panel-2);
+  color: var(--text);
+  font-size: 12.5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+#randomBtn:hover { border-color: var(--accent); background: var(--accent-soft); color: var(--accent); }
 .search-box input {
   width: 100%;
   height: 38px;
@@ -317,6 +333,27 @@ select {
   color: #fdba74;
   border-color: rgba(249, 115, 22, 0.35);
 }
+
+/* 收藏 */
+.p-star { flex: none; color: var(--warn); font-size: 12px; }
+.star-btn {
+  flex: none;
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--panel-2);
+  color: var(--muted);
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.star-btn:hover { border-color: var(--warn); color: var(--warn); background: var(--medium-bg); }
+.star-btn.active { border-color: var(--warn); color: var(--warn); background: var(--medium-bg); }
+.head-actions { display: flex; gap: 8px; flex: none; }
 
 .link-button {
   flex: none;
