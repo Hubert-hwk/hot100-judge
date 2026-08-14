@@ -684,6 +684,21 @@ function initEditor() {
 
 /* ---------------- 初始化 ---------------- */
 
+/** 支持 URL 参数：?problem=<id>&view=solution&theme=dark&lang=<cpp|python3> */
+function applyUrlParams() {
+  try {
+    const q = new URLSearchParams(location.search);
+    const pid = Number(q.get('problem'));
+    if (pid && state.problems.some((p) => p.id === pid)) state.selectedId = pid;
+    const view = q.get('view');
+    if (view === 'solution') state.view = 'solution';
+    const theme = q.get('theme');
+    if (theme === 'dark' || theme === 'light') applyTheme(theme);
+    const lang = q.get('lang');
+    if (lang && LANG[lang]) state.language = lang;
+  } catch (e) { /* 参数非法时忽略 */ }
+}
+
 function setupResizer() {
   const saved = localStorage.getItem('hot100-acm:v2:sidebar-width');
   if (saved) document.documentElement.style.setProperty('--sidebar-width', `${saved}px`);
@@ -851,6 +866,7 @@ async function boot() {
   } catch (e) { state.progress = {}; state.starred = {}; }
 
   state.selectedId = state.problems[0].id;
+  applyUrlParams();
 
   setupFilters();
   setupResizer();
@@ -858,6 +874,14 @@ async function boot() {
   initEditor();
   renderLanguageTabs();
   renderProblem();
+
+  // URL 参数指定的视图（题解页）
+  if (state.view === 'solution') {
+    document.querySelectorAll('.view-tab').forEach((b) => b.classList.toggle('active', b.dataset.view === state.view));
+    $('viewProblem').hidden = true;
+    $('viewSolution').hidden = false;
+    renderSolution();
+  }
 
   $('splash').hidden = true;
   $('app').hidden = false;
