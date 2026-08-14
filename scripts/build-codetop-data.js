@@ -24,11 +24,15 @@ const hot = load('hot-all.json');
 // 全局排名（hot-all 已按 value 降序）
 const globalIdx = new Map();
 hot.forEach((q, i) => {
-  globalIdx.set(Number(q.leetcode.frontend_question_id), { rank: i + 1, value: q.value });
+  globalIdx.set(Number(q.leetcode.frontend_question_id), {
+    rank: i + 1,
+    value: q.value,
+    lastAsked: (q.time || '').slice(0, 10),
+  });
 });
 
 // 每公司
-const companyIdx = new Map(); // problemId -> [{name, value}]
+const companyIdx = new Map(); // problemId -> [{name, value, lastAsked}]
 for (const c of companies) {
   const file = path.join(CODETOP_DIR, `company-${c.id}.json`);
   if (!fs.existsSync(file)) continue;
@@ -36,7 +40,11 @@ for (const c of companies) {
   for (const q of list) {
     const pid = Number(q.leetcode.frontend_question_id);
     if (!companyIdx.has(pid)) companyIdx.set(pid, []);
-    companyIdx.get(pid).push({ name: c.name, value: q.value });
+    companyIdx.get(pid).push({
+      name: c.name,
+      value: q.value,
+      lastAsked: (q.time || '').slice(0, 10),
+    });
   }
 }
 
@@ -46,7 +54,12 @@ for (const p of problems) {
   const g = globalIdx.get(p.id);
   const comps = (companyIdx.get(p.id) || []).sort((a, b) => b.value - a.value);
   if (g) {
-    p.freq = { rank: g.rank, value: g.value, companies: comps };
+    p.freq = {
+      rank: g.rank,
+      value: g.value,
+      lastAsked: g.lastAsked,
+      companies: comps,
+    };
     added++;
   } else {
     delete p.freq;

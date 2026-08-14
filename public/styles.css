@@ -313,6 +313,31 @@ select {
   font-size: 11.5px;
   font-weight: 700;
   border: 1px solid var(--line);
+  cursor: default;
+}
+.freq-note { margin-top: 10px; color: var(--muted); font-size: 12px; }
+
+/* 解题思路讲解 */
+.sol-explain {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background: var(--panel-2);
+}
+.sol-explain-head {
+  padding: 9px 12px;
+  background: linear-gradient(135deg, var(--accent-soft), transparent);
+  color: var(--accent);
+  font-size: 12.5px;
+  font-weight: 800;
+  border-bottom: 1px solid var(--line);
+}
+.sol-explain-body {
+  padding: 12px;
+  font-size: 13px;
+  line-height: 1.8;
+  color: var(--text-2);
+  white-space: pre-wrap;
 }
 
 /* 侧边栏高频排名 */

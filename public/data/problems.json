@@ -51,89 +51,111 @@
   "freq": {
    "rank": 14,
    "value": 305,
+   "lastAsked": "2026-08-03",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 126
+     "value": 126,
+     "lastAsked": "2026-06-27"
     },
     {
      "name": "美团",
-     "value": 30
+     "value": 30,
+     "lastAsked": "2026-03-17"
     },
     {
      "name": "腾讯",
-     "value": 30
+     "value": 30,
+     "lastAsked": "2025-05-26"
     },
     {
      "name": "阿里巴巴",
-     "value": 27
+     "value": 27,
+     "lastAsked": "2025-12-04"
     },
     {
      "name": "百度",
-     "value": 19
+     "value": 19,
+     "lastAsked": "2026-03-23"
     },
     {
      "name": "虾皮",
-     "value": 14
+     "value": 14,
+     "lastAsked": "2025-12-04"
     },
     {
      "name": "微软",
-     "value": 12
+     "value": 12,
+     "lastAsked": "2026-06-23"
     },
     {
      "name": "快手",
-     "value": 9
+     "value": 9,
+     "lastAsked": "2026-04-28"
     },
     {
      "name": "华为",
-     "value": 7
+     "value": 7,
+     "lastAsked": "2026-04-25"
     },
     {
      "name": "滴滴",
-     "value": 5
+     "value": 5,
+     "lastAsked": "2026-04-24"
     },
     {
      "name": "京东",
-     "value": 4
+     "value": 4,
+     "lastAsked": "2026-03-17"
     },
     {
      "name": "商汤",
-     "value": 4
+     "value": 4,
+     "lastAsked": "2024-12-29"
     },
     {
      "name": "bilibili",
-     "value": 4
+     "value": 4,
+     "lastAsked": "2024-11-11"
     },
     {
      "name": "拼多多",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2026-08-03"
     },
     {
      "name": "小米",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2024-08-15"
     },
     {
      "name": "猿辅导",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2020-07-08"
     },
     {
      "name": "亚马逊",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2024-01-18"
     },
     {
      "name": "携程",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2024-05-30"
     },
     {
      "name": "网易",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2022-05-06"
     },
     {
      "name": "旷视",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-06-21"
     }
    ]
-  }
+  },
+  "explain": "哈希表：一遍遍历，用字典记录「值 → 下标」，同时检查 target - nums[i] 是否已在字典中，命中即返回两个下标。\n时间复杂度 O(n)，空间 O(n)。注意不能重复使用同一元素。"
  },
  {
   "id": 2,
@@ -187,69 +209,86 @@
   "freq": {
    "rank": 52,
    "value": 133,
+   "lastAsked": "2026-04-16",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 49
+     "value": 49,
+     "lastAsked": "2026-03-17"
     },
     {
      "name": "腾讯",
-     "value": 19
+     "value": 19,
+     "lastAsked": "2026-02-04"
     },
     {
      "name": "美团",
-     "value": 18
+     "value": 18,
+     "lastAsked": "2026-04-16"
     },
     {
      "name": "快手",
-     "value": 8
+     "value": 8,
+     "lastAsked": "2024-09-20"
     },
     {
      "name": "猿辅导",
-     "value": 8
+     "value": 8,
+     "lastAsked": "2023-05-11"
     },
     {
      "name": "阿里巴巴",
-     "value": 7
+     "value": 7,
+     "lastAsked": "2024-04-12"
     },
     {
      "name": "虾皮",
-     "value": 7
+     "value": 7,
+     "lastAsked": "2025-12-26"
     },
     {
      "name": "小米",
-     "value": 5
+     "value": 5,
+     "lastAsked": "2025-05-26"
     },
     {
      "name": "华为",
-     "value": 4
+     "value": 4,
+     "lastAsked": "2022-09-28"
     },
     {
      "name": "微软",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2026-03-22"
     },
     {
      "name": "拼多多",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2022-03-24"
     },
     {
      "name": "百度",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-08-10"
     },
     {
      "name": "滴滴",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-12-20"
     },
     {
      "name": "亚马逊",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-06-09"
     },
     {
      "name": "携程",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2025-09-19"
     }
    ]
-  }
+  },
+  "explain": "逐位相加：对齐两个链表，从低位（头）开始按位加并处理进位，最高位仍有进位则新增节点。\n时间复杂度 O(max(lenA,lenB))，空间 O(1)（输出外）。用 long long 防溢出。"
  },
  {
   "id": 3,
@@ -298,89 +337,111 @@
   "freq": {
    "rank": 1,
    "value": 1175,
+   "lastAsked": "2026-08-12",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 669
+     "value": 669,
+     "lastAsked": "2026-08-12"
     },
     {
      "name": "腾讯",
-     "value": 90
+     "value": 90,
+     "lastAsked": "2026-06-10"
     },
     {
      "name": "美团",
-     "value": 75
+     "value": 75,
+     "lastAsked": "2026-05-12"
     },
     {
      "name": "阿里巴巴",
-     "value": 64
+     "value": 64,
+     "lastAsked": "2026-06-15"
     },
     {
      "name": "快手",
-     "value": 47
+     "value": 47,
+     "lastAsked": "2026-05-13"
     },
     {
      "name": "华为",
-     "value": 44
+     "value": 44,
+     "lastAsked": "2026-08-05"
     },
     {
      "name": "百度",
-     "value": 34
+     "value": 34,
+     "lastAsked": "2026-06-03"
     },
     {
      "name": "微软",
-     "value": 26
+     "value": 26,
+     "lastAsked": "2026-02-03"
     },
     {
      "name": "虾皮",
-     "value": 25
+     "value": 25,
+     "lastAsked": "2026-07-01"
     },
     {
      "name": "滴滴",
-     "value": 20
+     "value": 20,
+     "lastAsked": "2026-05-05"
     },
     {
      "name": "拼多多",
-     "value": 20
+     "value": 20,
+     "lastAsked": "2026-07-28"
     },
     {
      "name": "小米",
-     "value": 12
+     "value": 12,
+     "lastAsked": "2025-09-08"
     },
     {
      "name": "京东",
-     "value": 10
+     "value": 10,
+     "lastAsked": "2026-03-13"
     },
     {
      "name": "bilibili",
-     "value": 9
+     "value": 9,
+     "lastAsked": "2026-06-05"
     },
     {
      "name": "网易",
-     "value": 7
+     "value": 7,
+     "lastAsked": "2026-08-12"
     },
     {
      "name": "携程",
-     "value": 7
+     "value": 7,
+     "lastAsked": "2026-03-31"
     },
     {
      "name": "小红书",
-     "value": 7
+     "value": 7,
+     "lastAsked": "2026-08-05"
     },
     {
      "name": "猿辅导",
-     "value": 4
+     "value": 4,
+     "lastAsked": "2025-09-13"
     },
     {
      "name": "亚马逊",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2024-01-18"
     },
     {
      "name": "图森",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2025-05-31"
     }
    ]
-  }
+  },
+  "explain": "滑动窗口 + 哈希表：记录每个字符最近出现的位置，遇到重复时把窗口左边界移到重复字符之后。\n时间复杂度 O(n)，空间 O(字符集大小)。"
  },
  {
   "id": 4,
@@ -434,73 +495,91 @@
   "freq": {
    "rank": 37,
    "value": 173,
+   "lastAsked": "2026-07-26",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 68
+     "value": 68,
+     "lastAsked": "2026-07-26"
     },
     {
      "name": "腾讯",
-     "value": 25
+     "value": 25,
+     "lastAsked": "2026-05-27"
     },
     {
      "name": "百度",
-     "value": 16
+     "value": 16,
+     "lastAsked": "2025-09-14"
     },
     {
      "name": "阿里巴巴",
-     "value": 12
+     "value": 12,
+     "lastAsked": "2026-04-25"
     },
     {
      "name": "微软",
-     "value": 11
+     "value": 11,
+     "lastAsked": "2022-05-13"
     },
     {
      "name": "快手",
-     "value": 8
+     "value": 8,
+     "lastAsked": "2025-08-17"
     },
     {
      "name": "拼多多",
-     "value": 7
+     "value": 7,
+     "lastAsked": "2026-03-21"
     },
     {
      "name": "美团",
-     "value": 6
+     "value": 6,
+     "lastAsked": "2022-04-14"
     },
     {
      "name": "滴滴",
-     "value": 5
+     "value": 5,
+     "lastAsked": "2025-10-16"
     },
     {
      "name": "京东",
-     "value": 5
+     "value": 5,
+     "lastAsked": "2022-04-05"
     },
     {
      "name": "网易",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2022-05-16"
     },
     {
      "name": "亚马逊",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2021-12-08"
     },
     {
      "name": "小红书",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2025-09-20"
     },
     {
      "name": "猿辅导",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2020-09-19"
     },
     {
      "name": "华为",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2024-09-20"
     },
     {
      "name": "商汤",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-08-18"
     }
    ]
-  }
+  },
+  "explain": "二分切割：对较短的数组二分，保证左半元素数 = (m+n+1)/2 且左半最大 ≤ 右半最小，求中位数。\n时间复杂度 O(log min(m,n))，空间 O(1)。"
  },
  {
   "id": 5,
@@ -549,89 +628,111 @@
   "freq": {
    "rank": 9,
    "value": 353,
+   "lastAsked": "2026-08-07",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 134
+     "value": 134,
+     "lastAsked": "2026-06-29"
     },
     {
      "name": "快手",
-     "value": 36
+     "value": 36,
+     "lastAsked": "2026-08-07"
     },
     {
      "name": "百度",
-     "value": 35
+     "value": 35,
+     "lastAsked": "2026-03-18"
     },
     {
      "name": "腾讯",
-     "value": 32
+     "value": 32,
+     "lastAsked": "2026-07-07"
     },
     {
      "name": "美团",
-     "value": 23
+     "value": 23,
+     "lastAsked": "2024-04-01"
     },
     {
      "name": "阿里巴巴",
-     "value": 14
+     "value": 14,
+     "lastAsked": "2025-04-09"
     },
     {
      "name": "滴滴",
-     "value": 12
+     "value": 12,
+     "lastAsked": "2025-12-24"
     },
     {
      "name": "拼多多",
-     "value": 11
+     "value": 11,
+     "lastAsked": "2026-08-02"
     },
     {
      "name": "微软",
-     "value": 9
+     "value": 9,
+     "lastAsked": "2022-06-23"
     },
     {
      "name": "华为",
-     "value": 9
+     "value": 9,
+     "lastAsked": "2025-10-20"
     },
     {
      "name": "虾皮",
-     "value": 9
+     "value": 9,
+     "lastAsked": "2025-02-28"
     },
     {
      "name": "京东",
-     "value": 5
+     "value": 5,
+     "lastAsked": "2026-04-27"
     },
     {
      "name": "小米",
-     "value": 5
+     "value": 5,
+     "lastAsked": "2026-03-11"
     },
     {
      "name": "小红书",
-     "value": 5
+     "value": 5,
+     "lastAsked": "2026-04-01"
     },
     {
      "name": "猿辅导",
-     "value": 4
+     "value": 4,
+     "lastAsked": "2021-08-13"
     },
     {
      "name": "bilibili",
-     "value": 4
+     "value": 4,
+     "lastAsked": "2025-07-22"
     },
     {
      "name": "网易",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2024-04-15"
     },
     {
      "name": "携程",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2023-11-22"
     },
     {
      "name": "商汤",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-08-06"
     },
     {
      "name": "旷视",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2025-07-24"
     }
    ]
-  }
+  },
+  "explain": "中心扩展：枚举每个字符（奇数中心）与相邻字符中间（偶数中心）向两边扩展，记录最长回文。\n时间复杂度 O(n²)，空间 O(1)。"
  },
  {
   "id": 11,
@@ -680,57 +781,71 @@
   "freq": {
    "rank": 109,
    "value": 57,
+   "lastAsked": "2026-05-10",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 26
+     "value": 26,
+     "lastAsked": "2026-05-06"
     },
     {
      "name": "快手",
-     "value": 9
+     "value": 9,
+     "lastAsked": "2026-05-10"
     },
     {
      "name": "美团",
-     "value": 5
+     "value": 5,
+     "lastAsked": "2025-01-14"
     },
     {
      "name": "腾讯",
-     "value": 5
+     "value": 5,
+     "lastAsked": "2026-03-23"
     },
     {
      "name": "百度",
-     "value": 4
+     "value": 4,
+     "lastAsked": "2026-01-06"
     },
     {
      "name": "滴滴",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2022-06-22"
     },
     {
      "name": "微软",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2022-03-09"
     },
     {
      "name": "阿里巴巴",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2026-04-10"
     },
     {
      "name": "华为",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2022-09-16"
     },
     {
      "name": "拼多多",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2022-09-28"
     },
     {
      "name": "小米",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2024-12-05"
     },
     {
      "name": "商汤",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2022-06-20"
     }
    ]
-  }
+  },
+  "explain": "双指针：左右各一个指针，每次移动高度较小的一侧（宽度减小，只有提高短板才有机会增大面积）。\n时间复杂度 O(n)，空间 O(1)。注意中间结果用 long long 防溢出。"
  },
  {
   "id": 15,
@@ -779,97 +894,121 @@
   "freq": {
    "rank": 6,
    "value": 483,
+   "lastAsked": "2026-08-12",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 184
+     "value": 184,
+     "lastAsked": "2026-08-12"
     },
     {
      "name": "美团",
-     "value": 65
+     "value": 65,
+     "lastAsked": "2026-04-01"
     },
     {
      "name": "百度",
-     "value": 42
+     "value": 42,
+     "lastAsked": "2026-06-06"
     },
     {
      "name": "快手",
-     "value": 34
+     "value": 34,
+     "lastAsked": "2026-04-28"
     },
     {
      "name": "腾讯",
-     "value": 33
+     "value": 33,
+     "lastAsked": "2026-03-29"
     },
     {
      "name": "阿里巴巴",
-     "value": 29
+     "value": 29,
+     "lastAsked": "2026-04-27"
     },
     {
      "name": "虾皮",
-     "value": 14
+     "value": 14,
+     "lastAsked": "2026-03-18"
     },
     {
      "name": "华为",
-     "value": 13
+     "value": 13,
+     "lastAsked": "2025-06-20"
     },
     {
      "name": "微软",
-     "value": 12
+     "value": 12,
+     "lastAsked": "2026-01-31"
     },
     {
      "name": "滴滴",
-     "value": 12
+     "value": 12,
+     "lastAsked": "2026-03-25"
     },
     {
      "name": "小米",
-     "value": 10
+     "value": 10,
+     "lastAsked": "2026-08-12"
     },
     {
      "name": "京东",
-     "value": 9
+     "value": 9,
+     "lastAsked": "2026-07-27"
     },
     {
      "name": "拼多多",
-     "value": 7
+     "value": 7,
+     "lastAsked": "2026-03-15"
     },
     {
      "name": "bilibili",
-     "value": 6
+     "value": 6,
+     "lastAsked": "2025-10-10"
     },
     {
      "name": "小红书",
-     "value": 4
+     "value": 4,
+     "lastAsked": "2026-05-08"
     },
     {
      "name": "网易",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2025-05-13"
     },
     {
      "name": "携程",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2024-04-10"
     },
     {
      "name": "猿辅导",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-08-07"
     },
     {
      "name": "商汤",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2022-09-06"
     },
     {
      "name": "旷视",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-07-19"
     },
     {
      "name": "亚马逊",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-04-14"
     },
     {
      "name": "图森",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-08-16"
     }
    ]
-  }
+  },
+  "explain": "排序 + 固定一个数 + 双指针：先排序，遍历 i，双指针在 i+1..n-1 中找两数之和等于 -nums[i]，跳过重复元素去重。\n时间复杂度 O(n²)，空间 O(1)（排序外）。"
  },
  {
   "id": 17,
@@ -918,49 +1057,61 @@
   "freq": {
    "rank": 198,
    "value": 24,
+   "lastAsked": "2026-06-12",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 13
+     "value": 13,
+     "lastAsked": "2026-06-12"
     },
     {
      "name": "快手",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2026-04-20"
     },
     {
      "name": "小米",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2025-09-26"
     },
     {
      "name": "微软",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-04-19"
     },
     {
      "name": "美团",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-12-21"
     },
     {
      "name": "腾讯",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2026-02-24"
     },
     {
      "name": "猿辅导",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2020-09-11"
     },
     {
      "name": "百度",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-08-05"
     },
     {
      "name": "滴滴",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2026-02-26"
     },
     {
      "name": "华为",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2024-11-20"
     }
    ]
-  }
+  },
+  "explain": "回溯：数字到字母映射，逐位尝试所有字母，digits 为空时无输出。\n时间复杂度 O(3ᵐ×4ⁿ)，空间 O(m+n)。"
  },
  {
   "id": 19,
@@ -1014,81 +1165,101 @@
   "freq": {
    "rank": 36,
    "value": 184,
+   "lastAsked": "2026-07-23",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 50
+     "value": 50,
+     "lastAsked": "2026-06-23"
     },
     {
      "name": "美团",
-     "value": 34
+     "value": 34,
+     "lastAsked": "2026-04-23"
     },
     {
      "name": "阿里巴巴",
-     "value": 19
+     "value": 19,
+     "lastAsked": "2025-03-20"
     },
     {
      "name": "快手",
-     "value": 16
+     "value": 16,
+     "lastAsked": "2026-03-10"
     },
     {
      "name": "腾讯",
-     "value": 15
+     "value": 15,
+     "lastAsked": "2026-07-23"
     },
     {
      "name": "百度",
-     "value": 13
+     "value": 13,
+     "lastAsked": "2026-05-26"
     },
     {
      "name": "滴滴",
-     "value": 8
+     "value": 8,
+     "lastAsked": "2026-04-21"
     },
     {
      "name": "商汤",
-     "value": 7
+     "value": 7,
+     "lastAsked": "2022-03-16"
     },
     {
      "name": "小米",
-     "value": 4
+     "value": 4,
+     "lastAsked": "2025-07-08"
     },
     {
      "name": "虾皮",
-     "value": 4
+     "value": 4,
+     "lastAsked": "2023-10-18"
     },
     {
      "name": "华为",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2024-12-10"
     },
     {
      "name": "微软",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2025-12-21"
     },
     {
      "name": "京东",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2022-03-18"
     },
     {
      "name": "网易",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2022-05-04"
     },
     {
      "name": "bilibili",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2022-11-27"
     },
     {
      "name": "猿辅导",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-08-13"
     },
     {
      "name": "拼多多",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2023-08-19"
     },
     {
      "name": "小红书",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2025-09-14"
     }
    ]
-  }
+  },
+  "explain": "双指针：哑节点 + 快指针先走 n 步，然后快慢同步走，快指针到尾部时慢指针即倒数第 n 个的前驱。\n时间复杂度 O(n)，空间 O(1)。"
  },
  {
   "id": 20,
@@ -1137,89 +1308,111 @@
   "freq": {
    "rank": 17,
    "value": 297,
+   "lastAsked": "2026-07-02",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 90
+     "value": 90,
+     "lastAsked": "2026-07-02"
     },
     {
      "name": "腾讯",
-     "value": 38
+     "value": 38,
+     "lastAsked": "2026-05-11"
     },
     {
      "name": "美团",
-     "value": 35
+     "value": 35,
+     "lastAsked": "2026-05-08"
     },
     {
      "name": "快手",
-     "value": 25
+     "value": 25,
+     "lastAsked": "2026-06-18"
     },
     {
      "name": "百度",
-     "value": 24
+     "value": 24,
+     "lastAsked": "2026-03-12"
     },
     {
      "name": "华为",
-     "value": 16
+     "value": 16,
+     "lastAsked": "2024-10-22"
     },
     {
      "name": "阿里巴巴",
-     "value": 13
+     "value": 13,
+     "lastAsked": "2026-04-01"
     },
     {
      "name": "微软",
-     "value": 8
+     "value": 8,
+     "lastAsked": "2024-04-09"
     },
     {
      "name": "滴滴",
-     "value": 8
+     "value": 8,
+     "lastAsked": "2026-04-28"
     },
     {
      "name": "京东",
-     "value": 7
+     "value": 7,
+     "lastAsked": "2026-01-26"
     },
     {
      "name": "网易",
-     "value": 7
+     "value": 7,
+     "lastAsked": "2021-12-10"
     },
     {
      "name": "小米",
-     "value": 5
+     "value": 5,
+     "lastAsked": "2025-10-28"
     },
     {
      "name": "虾皮",
-     "value": 5
+     "value": 5,
+     "lastAsked": "2025-12-09"
     },
     {
      "name": "bilibili",
-     "value": 4
+     "value": 4,
+     "lastAsked": "2026-04-16"
     },
     {
      "name": "猿辅导",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2025-03-19"
     },
     {
      "name": "拼多多",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2022-10-28"
     },
     {
      "name": "商汤",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2022-03-16"
     },
     {
      "name": "图森",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2023-05-09"
     },
     {
      "name": "携程",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2026-03-16"
     },
     {
      "name": "旷视",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2022-02-26"
     }
    ]
-  }
+  },
+  "explain": "栈：左括号入栈，右括号与栈顶匹配则弹出，否则非法；结束栈空才合法。\n时间复杂度 O(n)，空间 O(n)。"
  },
  {
   "id": 21,
@@ -1273,77 +1466,96 @@
   "freq": {
    "rank": 10,
    "value": 332,
+   "lastAsked": "2026-07-22",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 83
+     "value": 83,
+     "lastAsked": "2026-04-30"
     },
     {
      "name": "美团",
-     "value": 71
+     "value": 71,
+     "lastAsked": "2026-04-16"
     },
     {
      "name": "腾讯",
-     "value": 61
+     "value": 61,
+     "lastAsked": "2026-07-22"
     },
     {
      "name": "快手",
-     "value": 31
+     "value": 31,
+     "lastAsked": "2026-04-16"
     },
     {
      "name": "百度",
-     "value": 20
+     "value": 20,
+     "lastAsked": "2026-06-08"
     },
     {
      "name": "虾皮",
-     "value": 12
+     "value": 12,
+     "lastAsked": "2024-09-22"
     },
     {
      "name": "猿辅导",
-     "value": 8
+     "value": 8,
+     "lastAsked": "2025-01-04"
     },
     {
      "name": "微软",
-     "value": 7
+     "value": 7,
+     "lastAsked": "2022-09-27"
     },
     {
      "name": "阿里巴巴",
-     "value": 7
+     "value": 7,
+     "lastAsked": "2025-10-15"
     },
     {
      "name": "京东",
-     "value": 7
+     "value": 7,
+     "lastAsked": "2025-08-03"
     },
     {
      "name": "小米",
-     "value": 7
+     "value": 7,
+     "lastAsked": "2022-09-06"
     },
     {
      "name": "滴滴",
-     "value": 5
+     "value": 5,
+     "lastAsked": "2025-10-16"
     },
     {
      "name": "拼多多",
-     "value": 5
+     "value": 5,
+     "lastAsked": "2024-10-15"
     },
     {
      "name": "华为",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2022-04-12"
     },
     {
      "name": "网易",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2021-12-03"
     },
     {
      "name": "旷视",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2022-04-04"
     },
     {
      "name": "亚马逊",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2022-05-07"
     }
    ]
-  }
+  },
+  "explain": "归并：哑节点 + 双指针，每次取两个链表中较小的节点接到尾部。\n时间复杂度 O(lenA+lenB)，空间 O(1)。"
  },
  {
   "id": 22,
@@ -1392,77 +1604,96 @@
   "freq": {
    "rank": 43,
    "value": 151,
+   "lastAsked": "2026-06-27",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 66
+     "value": 66,
+     "lastAsked": "2026-05-08"
     },
     {
      "name": "微软",
-     "value": 11
+     "value": 11,
+     "lastAsked": "2022-06-21"
     },
     {
      "name": "腾讯",
-     "value": 11
+     "value": 11,
+     "lastAsked": "2026-04-01"
     },
     {
      "name": "虾皮",
-     "value": 9
+     "value": 9,
+     "lastAsked": "2026-03-19"
     },
     {
      "name": "快手",
-     "value": 8
+     "value": 8,
+     "lastAsked": "2026-04-04"
     },
     {
      "name": "阿里巴巴",
-     "value": 7
+     "value": 7,
+     "lastAsked": "2026-04-09"
     },
     {
      "name": "美团",
-     "value": 6
+     "value": 6,
+     "lastAsked": "2023-07-13"
     },
     {
      "name": "华为",
-     "value": 6
+     "value": 6,
+     "lastAsked": "2025-10-10"
     },
     {
      "name": "拼多多",
-     "value": 6
+     "value": 6,
+     "lastAsked": "2026-04-17"
     },
     {
      "name": "百度",
-     "value": 5
+     "value": 5,
+     "lastAsked": "2025-08-14"
     },
     {
      "name": "滴滴",
-     "value": 4
+     "value": 4,
+     "lastAsked": "2026-06-27"
     },
     {
      "name": "小米",
-     "value": 4
+     "value": 4,
+     "lastAsked": "2023-12-17"
     },
     {
      "name": "猿辅导",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2023-10-31"
     },
     {
      "name": "京东",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2024-01-10"
     },
     {
      "name": "商汤",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2022-06-12"
     },
     {
      "name": "bilibili",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2024-06-05"
     },
     {
      "name": "小红书",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2026-01-08"
     }
    ]
-  }
+  },
+  "explain": "回溯：先放左括号再放右括号，保证任意前缀左括号数 ≥ 右括号数。\n时间复杂度 O(4ⁿ/√n)（卡特兰数），空间 O(n)。"
  },
  {
   "id": 23,
@@ -1515,93 +1746,116 @@
   "freq": {
    "rank": 24,
    "value": 256,
+   "lastAsked": "2026-06-08",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 110
+     "value": 110,
+     "lastAsked": "2026-06-08"
     },
     {
      "name": "腾讯",
-     "value": 28
+     "value": 28,
+     "lastAsked": "2026-04-21"
     },
     {
      "name": "快手",
-     "value": 27
+     "value": 27,
+     "lastAsked": "2026-04-23"
     },
     {
      "name": "美团",
-     "value": 19
+     "value": 19,
+     "lastAsked": "2024-06-12"
     },
     {
      "name": "阿里巴巴",
-     "value": 11
+     "value": 11,
+     "lastAsked": "2026-05-08"
     },
     {
      "name": "猿辅导",
-     "value": 9
+     "value": 9,
+     "lastAsked": "2024-09-01"
     },
     {
      "name": "百度",
-     "value": 8
+     "value": 8,
+     "lastAsked": "2025-09-11"
     },
     {
      "name": "拼多多",
-     "value": 8
+     "value": 8,
+     "lastAsked": "2026-05-24"
     },
     {
      "name": "虾皮",
-     "value": 7
+     "value": 7,
+     "lastAsked": "2026-03-04"
     },
     {
      "name": "京东",
-     "value": 6
+     "value": 6,
+     "lastAsked": "2026-04-30"
     },
     {
      "name": "微软",
-     "value": 5
+     "value": 5,
+     "lastAsked": "2026-03-07"
     },
     {
      "name": "滴滴",
-     "value": 5
+     "value": 5,
+     "lastAsked": "2026-06-02"
     },
     {
      "name": "小米",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2026-01-13"
     },
     {
      "name": "网易",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2022-06-22"
     },
     {
      "name": "亚马逊",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2022-04-26"
     },
     {
      "name": "华为",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2022-09-27"
     },
     {
      "name": "商汤",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-08-10"
     },
     {
      "name": "旷视",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2022-08-19"
     },
     {
      "name": "图森",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-08-09"
     },
     {
      "name": "bilibili",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2024-03-27"
     },
     {
      "name": "小红书",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2025-10-30"
     }
    ]
-  }
+  },
+  "explain": "优先队列：把每条链表的头节点入小顶堆，每次弹出最小节点接上，再把它的后继入堆。\n时间复杂度 O(n log k)（n 为总节点数，k 为链表数）。"
  },
  {
   "id": 24,
@@ -1650,65 +1904,81 @@
   "freq": {
    "rank": 91,
    "value": 73,
+   "lastAsked": "2026-06-10",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 31
+     "value": 31,
+     "lastAsked": "2026-04-16"
     },
     {
      "name": "腾讯",
-     "value": 7
+     "value": 7,
+     "lastAsked": "2026-05-21"
     },
     {
      "name": "快手",
-     "value": 6
+     "value": 6,
+     "lastAsked": "2021-03-26"
     },
     {
      "name": "拼多多",
-     "value": 6
+     "value": 6,
+     "lastAsked": "2026-06-10"
     },
     {
      "name": "微软",
-     "value": 5
+     "value": 5,
+     "lastAsked": "2024-01-08"
     },
     {
      "name": "美团",
-     "value": 5
+     "value": 5,
+     "lastAsked": "2021-08-31"
     },
     {
      "name": "阿里巴巴",
-     "value": 4
+     "value": 4,
+     "lastAsked": "2024-01-06"
     },
     {
      "name": "猿辅导",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2020-10-17"
     },
     {
      "name": "华为",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2022-04-02"
     },
     {
      "name": "滴滴",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2025-04-19"
     },
     {
      "name": "京东",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-10-27"
     },
     {
      "name": "网易",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2024-06-04"
     },
     {
      "name": "旷视",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2022-07-18"
     },
     {
      "name": "亚马逊",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2022-07-22"
     }
    ]
-  }
+  },
+  "explain": "哑节点 + 三指针：prev→a→b，先让 a.next=b.next、b.next=a、prev.next=b，再整体前移两位。\n时间复杂度 O(n)，空间 O(1)。"
  },
  {
   "id": 25,
@@ -1766,81 +2036,101 @@
   "freq": {
    "rank": 5,
    "value": 526,
+   "lastAsked": "2026-08-13",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 299
+     "value": 299,
+     "lastAsked": "2026-07-21"
     },
     {
      "name": "美团",
-     "value": 67
+     "value": 67,
+     "lastAsked": "2026-04-10"
     },
     {
      "name": "腾讯",
-     "value": 39
+     "value": 39,
+     "lastAsked": "2026-04-28"
     },
     {
      "name": "阿里巴巴",
-     "value": 23
+     "value": 23,
+     "lastAsked": "2026-08-13"
     },
     {
      "name": "快手",
-     "value": 21
+     "value": 21,
+     "lastAsked": "2026-02-28"
     },
     {
      "name": "虾皮",
-     "value": 19
+     "value": 19,
+     "lastAsked": "2026-03-16"
     },
     {
      "name": "百度",
-     "value": 14
+     "value": 14,
+     "lastAsked": "2024-08-29"
     },
     {
      "name": "微软",
-     "value": 10
+     "value": 10,
+     "lastAsked": "2022-08-22"
     },
     {
      "name": "猿辅导",
-     "value": 9
+     "value": 9,
+     "lastAsked": "2021-08-20"
     },
     {
      "name": "滴滴",
-     "value": 9
+     "value": 9,
+     "lastAsked": "2026-04-13"
     },
     {
      "name": "小米",
-     "value": 4
+     "value": 4,
+     "lastAsked": "2026-03-16"
     },
     {
      "name": "小红书",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2026-07-20"
     },
     {
      "name": "京东",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2021-01-16"
     },
     {
      "name": "拼多多",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2026-03-18"
     },
     {
      "name": "bilibili",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2025-09-04"
     },
     {
      "name": "网易",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2026-05-19"
     },
     {
      "name": "商汤",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-06-08"
     },
     {
      "name": "旷视",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-08-24"
     }
    ]
-  }
+  },
+  "explain": "分组反转：哑节点 + 每 k 个一组定位组尾，反转该区间后接回；不足 k 个直接返回。\n时间复杂度 O(n)，空间 O(1)。"
  },
  {
   "id": 31,
@@ -1889,61 +2179,76 @@
   "freq": {
    "rank": 49,
    "value": 137,
+   "lastAsked": "2026-08-04",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 103
+     "value": 103,
+     "lastAsked": "2026-03-27"
     },
     {
      "name": "腾讯",
-     "value": 6
+     "value": 6,
+     "lastAsked": "2024-06-09"
     },
     {
      "name": "阿里巴巴",
-     "value": 5
+     "value": 5,
+     "lastAsked": "2026-04-27"
     },
     {
      "name": "微软",
-     "value": 4
+     "value": 4,
+     "lastAsked": "2022-08-01"
     },
     {
      "name": "百度",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2026-08-04"
     },
     {
      "name": "网易",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2023-12-27"
     },
     {
      "name": "美团",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2024-04-27"
     },
     {
      "name": "快手",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2024-04-25"
     },
     {
      "name": "猿辅导",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2021-08-13"
     },
     {
      "name": "华为",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2025-06-04"
     },
     {
      "name": "虾皮",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2021-09-01"
     },
     {
      "name": "携程",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2024-05-09"
     },
     {
      "name": "滴滴",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2022-10-28"
     }
    ]
-  }
+  },
+  "explain": "找降序点：从右找第一个 nums[i] < nums[i+1]，再找右侧大于 nums[i] 的最小值交换，最后反转后缀。\n原地修改，时间复杂度 O(n)，空间 O(1)。"
  },
  {
   "id": 32,
@@ -1992,73 +2297,91 @@
   "freq": {
    "rank": 44,
    "value": 148,
+   "lastAsked": "2026-06-04",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 69
+     "value": 69,
+     "lastAsked": "2026-06-04"
     },
     {
      "name": "美团",
-     "value": 16
+     "value": 16,
+     "lastAsked": "2026-04-21"
     },
     {
      "name": "腾讯",
-     "value": 15
+     "value": 15,
+     "lastAsked": "2026-04-07"
     },
     {
      "name": "微软",
-     "value": 10
+     "value": 10,
+     "lastAsked": "2024-07-29"
     },
     {
      "name": "拼多多",
-     "value": 7
+     "value": 7,
+     "lastAsked": "2025-06-26"
     },
     {
      "name": "阿里巴巴",
-     "value": 5
+     "value": 5,
+     "lastAsked": "2025-10-10"
     },
     {
      "name": "快手",
-     "value": 5
+     "value": 5,
+     "lastAsked": "2026-02-09"
     },
     {
      "name": "猿辅导",
-     "value": 5
+     "value": 5,
+     "lastAsked": "2025-07-24"
     },
     {
      "name": "百度",
-     "value": 4
+     "value": 4,
+     "lastAsked": "2025-09-17"
     },
     {
      "name": "bilibili",
-     "value": 4
+     "value": 4,
+     "lastAsked": "2025-03-11"
     },
     {
      "name": "华为",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2022-04-13"
     },
     {
      "name": "虾皮",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2024-12-30"
     },
     {
      "name": "滴滴",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2025-10-21"
     },
     {
      "name": "网易",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2025-03-27"
     },
     {
      "name": "小米",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-08-23"
     },
     {
      "name": "图森",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2022-08-31"
     }
    ]
-  }
+  },
+  "explain": "DP：dp[i] 记录以 s[i] 结尾的最长有效括号长度，处理 '()' 直接配对与 '(...)' 包裹两种转移。\n时间复杂度 O(n)，空间 O(n)。也可用栈。"
  },
  {
   "id": 33,
@@ -2112,77 +2435,96 @@
   "freq": {
    "rank": 13,
    "value": 312,
+   "lastAsked": "2026-08-04",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 156
+     "value": 156,
+     "lastAsked": "2026-06-29"
     },
     {
      "name": "美团",
-     "value": 23
+     "value": 23,
+     "lastAsked": "2025-10-13"
     },
     {
      "name": "腾讯",
-     "value": 22
+     "value": 22,
+     "lastAsked": "2026-03-30"
     },
     {
      "name": "快手",
-     "value": 21
+     "value": 21,
+     "lastAsked": "2026-01-19"
     },
     {
      "name": "阿里巴巴",
-     "value": 18
+     "value": 18,
+     "lastAsked": "2025-12-10"
     },
     {
      "name": "微软",
-     "value": 15
+     "value": 15,
+     "lastAsked": "2025-01-11"
     },
     {
      "name": "滴滴",
-     "value": 14
+     "value": 14,
+     "lastAsked": "2026-02-03"
     },
     {
      "name": "百度",
-     "value": 11
+     "value": 11,
+     "lastAsked": "2025-09-11"
     },
     {
      "name": "猿辅导",
-     "value": 10
+     "value": 10,
+     "lastAsked": "2022-08-19"
     },
     {
      "name": "京东",
-     "value": 7
+     "value": 7,
+     "lastAsked": "2026-07-27"
     },
     {
      "name": "拼多多",
-     "value": 5
+     "value": 5,
+     "lastAsked": "2026-08-04"
     },
     {
      "name": "小米",
-     "value": 4
+     "value": 4,
+     "lastAsked": "2024-10-25"
     },
     {
      "name": "虾皮",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2025-06-20"
     },
     {
      "name": "华为",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2023-04-17"
     },
     {
      "name": "网易",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2020-06-14"
     },
     {
      "name": "商汤",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2022-05-08"
     },
     {
      "name": "图森",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2022-02-17"
     }
    ]
-  }
+  },
+  "explain": "二分：先判断 mid 落在哪个有序半边，再根据 target 与边界的关系决定收缩方向。\n时间复杂度 O(log n)，空间 O(1)。"
  },
  {
   "id": 34,
@@ -2236,69 +2578,86 @@
   "freq": {
    "rank": 61,
    "value": 103,
+   "lastAsked": "2026-07-23",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 24
+     "value": 24,
+     "lastAsked": "2026-03-30"
     },
     {
      "name": "腾讯",
-     "value": 12
+     "value": 12,
+     "lastAsked": "2026-03-08"
     },
     {
      "name": "阿里巴巴",
-     "value": 10
+     "value": 10,
+     "lastAsked": "2026-01-19"
     },
     {
      "name": "快手",
-     "value": 9
+     "value": 9,
+     "lastAsked": "2023-08-18"
     },
     {
      "name": "美团",
-     "value": 8
+     "value": 8,
+     "lastAsked": "2026-03-08"
     },
     {
      "name": "百度",
-     "value": 7
+     "value": 7,
+     "lastAsked": "2025-04-14"
     },
     {
      "name": "虾皮",
-     "value": 7
+     "value": 7,
+     "lastAsked": "2022-04-05"
     },
     {
      "name": "微软",
-     "value": 6
+     "value": 6,
+     "lastAsked": "2022-09-06"
     },
     {
      "name": "滴滴",
-     "value": 5
+     "value": 5,
+     "lastAsked": "2026-03-15"
     },
     {
      "name": "猿辅导",
-     "value": 4
+     "value": 4,
+     "lastAsked": "2025-03-13"
     },
     {
      "name": "拼多多",
-     "value": 4
+     "value": 4,
+     "lastAsked": "2026-04-18"
     },
     {
      "name": "华为",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2026-07-23"
     },
     {
      "name": "携程",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2022-06-01"
     },
     {
      "name": "京东",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2025-03-17"
     },
     {
      "name": "小米",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-08-17"
     }
    ]
-  }
+  },
+  "explain": "两次二分：lower_bound 找第一个 ≥ target，upper_bound 找第一个 > target，两者区间即答案；不存在返回 [-1,-1]。\n时间复杂度 O(log n)，空间 O(1)。"
  },
  {
   "id": 35,
@@ -2352,25 +2711,31 @@
   "freq": {
    "rank": 395,
    "value": 8,
+   "lastAsked": "2025-07-24",
    "companies": [
     {
      "name": "快手",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2023-07-26"
     },
     {
      "name": "字节跳动",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2025-07-24"
     },
     {
      "name": "微软",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2022-07-05"
     },
     {
      "name": "腾讯",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-05-12"
     }
    ]
-  }
+  },
+  "explain": "二分：找第一个 ≥ target 的位置（左闭右开写法），返回 left。\n时间复杂度 O(log n)，空间 O(1)。"
  },
  {
   "id": 39,
@@ -2424,69 +2789,86 @@
   "freq": {
    "rank": 67,
    "value": 96,
+   "lastAsked": "2026-05-26",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 56
+     "value": 56,
+     "lastAsked": "2026-05-23"
     },
     {
      "name": "微软",
-     "value": 7
+     "value": 7,
+     "lastAsked": "2022-03-31"
     },
     {
      "name": "百度",
-     "value": 7
+     "value": 7,
+     "lastAsked": "2024-08-23"
     },
     {
      "name": "美团",
-     "value": 4
+     "value": 4,
+     "lastAsked": "2022-04-21"
     },
     {
      "name": "阿里巴巴",
-     "value": 4
+     "value": 4,
+     "lastAsked": "2025-06-19"
     },
     {
      "name": "拼多多",
-     "value": 4
+     "value": 4,
+     "lastAsked": "2025-03-23"
     },
     {
      "name": "滴滴",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2026-05-26"
     },
     {
      "name": "快手",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2024-09-13"
     },
     {
      "name": "腾讯",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2025-09-27"
     },
     {
      "name": "京东",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2025-10-28"
     },
     {
      "name": "猿辅导",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2020-09-04"
     },
     {
      "name": "华为",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2022-09-19"
     },
     {
      "name": "亚马逊",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2022-03-30"
     },
     {
      "name": "携程",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2025-06-04"
     },
     {
      "name": "小红书",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2026-03-28"
     }
    ]
-  }
+  },
+  "explain": "回溯：下标只增不减（可重复选取当前及之后的元素），避免重复组合；无解时输出为空。\n时间复杂度 O(2^t)（t 为目标值相关），空间 O(target/min)。"
  },
  {
   "id": 41,
@@ -2535,65 +2917,81 @@
   "freq": {
    "rank": 57,
    "value": 114,
+   "lastAsked": "2026-06-16",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 73
+     "value": 73,
+     "lastAsked": "2026-06-16"
     },
     {
      "name": "美团",
-     "value": 9
+     "value": 9,
+     "lastAsked": "2024-09-04"
     },
     {
      "name": "微软",
-     "value": 7
+     "value": 7,
+     "lastAsked": "2022-04-25"
     },
     {
      "name": "腾讯",
-     "value": 6
+     "value": 6,
+     "lastAsked": "2025-05-19"
     },
     {
      "name": "阿里巴巴",
-     "value": 4
+     "value": 4,
+     "lastAsked": "2025-04-06"
     },
     {
      "name": "快手",
-     "value": 4
+     "value": 4,
+     "lastAsked": "2026-01-20"
     },
     {
      "name": "百度",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2021-08-23"
     },
     {
      "name": "网易",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2022-03-25"
     },
     {
      "name": "虾皮",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2022-05-31"
     },
     {
      "name": "猿辅导",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2020-07-08"
     },
     {
      "name": "滴滴",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2025-12-22"
     },
     {
      "name": "京东",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2025-04-24"
     },
     {
      "name": "拼多多",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2022-07-04"
     },
     {
      "name": "bilibili",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2023-08-28"
     }
    ]
-  }
+  },
+  "explain": "原地哈希：把值在 [1,n] 内的元素放到下标 x-1 的位置（交换），最后扫描找第一个 nums[i] != i+1 的位置。\n时间复杂度 O(n)，空间 O(1)。注意处理负数与 INT_MIN。"
  },
  {
   "id": 42,
@@ -2642,69 +3040,86 @@
   "freq": {
    "rank": 31,
    "value": 199,
+   "lastAsked": "2026-08-05",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 130
+     "value": 130,
+     "lastAsked": "2026-08-05"
     },
     {
      "name": "美团",
-     "value": 16
+     "value": 16,
+     "lastAsked": "2026-04-25"
     },
     {
      "name": "腾讯",
-     "value": 15
+     "value": 15,
+     "lastAsked": "2026-03-24"
     },
     {
      "name": "快手",
-     "value": 12
+     "value": 12,
+     "lastAsked": "2026-03-20"
     },
     {
      "name": "百度",
-     "value": 5
+     "value": 5,
+     "lastAsked": "2026-07-08"
     },
     {
      "name": "阿里巴巴",
-     "value": 4
+     "value": 4,
+     "lastAsked": "2022-02-27"
     },
     {
      "name": "虾皮",
-     "value": 4
+     "value": 4,
+     "lastAsked": "2026-03-27"
     },
     {
      "name": "微软",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2024-03-07"
     },
     {
      "name": "华为",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2022-09-21"
     },
     {
      "name": "猿辅导",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2020-11-05"
     },
     {
      "name": "滴滴",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-03-30"
     },
     {
      "name": "京东",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-07-24"
     },
     {
      "name": "拼多多",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2023-08-19"
     },
     {
      "name": "小米",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-05-15"
     },
     {
      "name": "小红书",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2025-11-19"
     }
    ]
-  }
+  },
+  "explain": "双指针：维护左右两侧的最大高度，哪边小就移动哪边，累加 min(lMax,rMax)-height[i]。\n时间复杂度 O(n)，空间 O(1)。也可用单调栈或前缀最大高度。"
  },
  {
   "id": 45,
@@ -2753,53 +3168,66 @@
   "freq": {
    "rank": 153,
    "value": 38,
+   "lastAsked": "2026-03-25",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 20
+     "value": 20,
+     "lastAsked": "2026-03-06"
     },
     {
      "name": "华为",
-     "value": 5
+     "value": 5,
+     "lastAsked": "2023-01-17"
     },
     {
      "name": "阿里巴巴",
-     "value": 4
+     "value": 4,
+     "lastAsked": "2026-03-25"
     },
     {
      "name": "滴滴",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2023-11-07"
     },
     {
      "name": "美团",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-08-26"
     },
     {
      "name": "腾讯",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-04-02"
     },
     {
      "name": "百度",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-07-29"
     },
     {
      "name": "拼多多",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2026-03-21"
     },
     {
      "name": "网易",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-09-02"
     },
     {
      "name": "虾皮",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-09-16"
     },
     {
      "name": "携程",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2023-04-06"
     }
    ]
-  }
+  },
+  "explain": "贪心（BFS 分层）：维护当前层的 curEnd 与最远 farthest，到达 curEnd 时步数 +1。\n时间复杂度 O(n)，空间 O(1)。"
  },
  {
   "id": 46,
@@ -2848,93 +3276,116 @@
   "freq": {
    "rank": 16,
    "value": 298,
+   "lastAsked": "2026-07-17",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 123
+     "value": 123,
+     "lastAsked": "2026-06-11"
     },
     {
      "name": "快手",
-     "value": 29
+     "value": 29,
+     "lastAsked": "2025-08-14"
     },
     {
      "name": "美团",
-     "value": 25
+     "value": 25,
+     "lastAsked": "2026-03-04"
     },
     {
      "name": "百度",
-     "value": 23
+     "value": 23,
+     "lastAsked": "2026-04-13"
     },
     {
      "name": "腾讯",
-     "value": 21
+     "value": 21,
+     "lastAsked": "2026-01-30"
     },
     {
      "name": "阿里巴巴",
-     "value": 14
+     "value": 14,
+     "lastAsked": "2026-03-27"
     },
     {
      "name": "滴滴",
-     "value": 12
+     "value": 12,
+     "lastAsked": "2026-07-17"
     },
     {
      "name": "华为",
-     "value": 11
+     "value": 11,
+     "lastAsked": "2025-09-15"
     },
     {
      "name": "微软",
-     "value": 9
+     "value": 9,
+     "lastAsked": "2024-01-25"
     },
     {
      "name": "京东",
-     "value": 7
+     "value": 7,
+     "lastAsked": "2025-09-28"
     },
     {
      "name": "拼多多",
-     "value": 5
+     "value": 5,
+     "lastAsked": "2025-03-30"
     },
     {
      "name": "猿辅导",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2025-03-16"
     },
     {
      "name": "商汤",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2026-04-09"
     },
     {
      "name": "bilibili",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2025-11-13"
     },
     {
      "name": "亚马逊",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2022-03-03"
     },
     {
      "name": "虾皮",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2025-09-11"
     },
     {
      "name": "图森",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2025-09-11"
     },
     {
      "name": "小米",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-08-28"
     },
     {
      "name": "旷视",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2024-09-19"
     },
     {
      "name": "携程",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-08-25"
     },
     {
      "name": "小红书",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2026-02-09"
     }
    ]
-  }
+  },
+  "explain": "回溯：used 数组记录已选元素，按下标递增顺序尝试，保证输出顺序确定。\n时间复杂度 O(n·n!)，空间 O(n)。"
  },
  {
   "id": 48,
@@ -2983,61 +3434,76 @@
   "freq": {
    "rank": 81,
    "value": 84,
+   "lastAsked": "2026-05-14",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 37
+     "value": 37,
+     "lastAsked": "2025-03-10"
     },
     {
      "name": "微软",
-     "value": 11
+     "value": 11,
+     "lastAsked": "2022-05-10"
     },
     {
      "name": "美团",
-     "value": 9
+     "value": 9,
+     "lastAsked": "2024-12-05"
     },
     {
      "name": "快手",
-     "value": 8
+     "value": 8,
+     "lastAsked": "2024-11-02"
     },
     {
      "name": "阿里巴巴",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2025-04-14"
     },
     {
      "name": "百度",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2026-04-01"
     },
     {
      "name": "拼多多",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2025-08-05"
     },
     {
      "name": "腾讯",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2021-04-08"
     },
     {
      "name": "华为",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2026-05-14"
     },
     {
      "name": "小米",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2025-10-24"
     },
     {
      "name": "商汤",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2021-11-30"
     },
     {
      "name": "猿辅导",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2020-08-08"
     },
     {
      "name": "虾皮",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-05-30"
     }
    ]
-  }
+  },
+  "explain": "转置 + 逐行反转：先沿主对角线转置，再每行反转，即顺时针旋转 90°。\n原地修改，时间复杂度 O(n²)，空间 O(1)。"
  },
  {
   "id": 49,
@@ -3086,33 +3552,41 @@
   "freq": {
    "rank": 252,
    "value": 17,
+   "lastAsked": "2026-06-05",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 9
+     "value": 9,
+     "lastAsked": "2026-06-05"
     },
     {
      "name": "百度",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2026-01-29"
     },
     {
      "name": "华为",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2023-05-27"
     },
     {
      "name": "微软",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2022-04-25"
     },
     {
      "name": "美团",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2025-04-23"
     },
     {
      "name": "阿里巴巴",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2026-03-22"
     }
    ]
-  }
+  },
+  "explain": "哈希分组：把每个字符串排序后的结果作为 key，归入同一组，保持组内首次出现顺序。\n时间复杂度 O(n·klogk)（k 为字符串平均长度）。也可用字符计数作为 key。"
  },
  {
   "id": 51,
@@ -3161,41 +3635,51 @@
   "freq": {
    "rank": 185,
    "value": 27,
+   "lastAsked": "2026-08-10",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 14
+     "value": 14,
+     "lastAsked": "2026-08-10"
     },
     {
      "name": "滴滴",
-     "value": 4
+     "value": 4,
+     "lastAsked": "2026-04-26"
     },
     {
      "name": "美团",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2022-03-28"
     },
     {
      "name": "华为",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2024-11-19"
     },
     {
      "name": "虾皮",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2022-03-20"
     },
     {
      "name": "快手",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2025-08-31"
     },
     {
      "name": "腾讯",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-09-15"
     },
     {
      "name": "京东",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-07-28"
     }
    ]
-  }
+  },
+  "explain": "回溯 + 冲突数组：逐行放置皇后，用 cols/d1/d2 三个布尔数组 O(1) 判断列与两条对角线冲突。\n时间复杂度 O(n!)，空间 O(n)。"
  },
  {
   "id": 53,
@@ -3244,85 +3728,106 @@
   "freq": {
    "rank": 7,
    "value": 375,
+   "lastAsked": "2026-07-16",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 117
+     "value": 117,
+     "lastAsked": "2026-05-31"
     },
     {
      "name": "腾讯",
-     "value": 67
+     "value": 67,
+     "lastAsked": "2026-04-21"
     },
     {
      "name": "美团",
-     "value": 37
+     "value": 37,
+     "lastAsked": "2026-06-08"
     },
     {
      "name": "快手",
-     "value": 26
+     "value": 26,
+     "lastAsked": "2025-03-25"
     },
     {
      "name": "阿里巴巴",
-     "value": 23
+     "value": 23,
+     "lastAsked": "2025-03-27"
     },
     {
      "name": "百度",
-     "value": 20
+     "value": 20,
+     "lastAsked": "2026-04-28"
     },
     {
      "name": "微软",
-     "value": 16
+     "value": 16,
+     "lastAsked": "2024-05-27"
     },
     {
      "name": "拼多多",
-     "value": 16
+     "value": 16,
+     "lastAsked": "2026-06-03"
     },
     {
      "name": "虾皮",
-     "value": 12
+     "value": 12,
+     "lastAsked": "2025-05-31"
     },
     {
      "name": "滴滴",
-     "value": 11
+     "value": 11,
+     "lastAsked": "2026-03-30"
     },
     {
      "name": "华为",
-     "value": 6
+     "value": 6,
+     "lastAsked": "2024-04-28"
     },
     {
      "name": "网易",
-     "value": 5
+     "value": 5,
+     "lastAsked": "2026-01-28"
     },
     {
      "name": "携程",
-     "value": 5
+     "value": 5,
+     "lastAsked": "2024-03-27"
     },
     {
      "name": "小米",
-     "value": 4
+     "value": 4,
+     "lastAsked": "2024-10-22"
     },
     {
      "name": "bilibili",
-     "value": 4
+     "value": 4,
+     "lastAsked": "2024-09-09"
     },
     {
      "name": "京东",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2022-11-16"
     },
     {
      "name": "商汤",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-07-12"
     },
     {
      "name": "图森",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-01-14"
     },
     {
      "name": "小红书",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2026-07-16"
     }
    ]
-  }
+  },
+  "explain": "动态规划（Kadane）：cur = max(nums[i], cur + nums[i])，答案取过程中的最大值。\n时间复杂度 O(n)，空间 O(1)。"
  },
  {
   "id": 54,
@@ -3371,81 +3876,101 @@
   "freq": {
    "rank": 23,
    "value": 256,
+   "lastAsked": "2026-07-30",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 137
+     "value": 137,
+     "lastAsked": "2026-07-21"
     },
     {
      "name": "美团",
-     "value": 26
+     "value": 26,
+     "lastAsked": "2025-08-20"
     },
     {
      "name": "腾讯",
-     "value": 17
+     "value": 17,
+     "lastAsked": "2025-10-19"
     },
     {
      "name": "快手",
-     "value": 16
+     "value": 16,
+     "lastAsked": "2026-01-27"
     },
     {
      "name": "拼多多",
-     "value": 15
+     "value": 15,
+     "lastAsked": "2026-01-22"
     },
     {
      "name": "猿辅导",
-     "value": 7
+     "value": 7,
+     "lastAsked": "2022-05-25"
     },
     {
      "name": "滴滴",
-     "value": 6
+     "value": 6,
+     "lastAsked": "2025-11-30"
     },
     {
      "name": "微软",
-     "value": 5
+     "value": 5,
+     "lastAsked": "2025-02-24"
     },
     {
      "name": "京东",
-     "value": 5
+     "value": 5,
+     "lastAsked": "2025-11-25"
     },
     {
      "name": "华为",
-     "value": 4
+     "value": 4,
+     "lastAsked": "2023-06-09"
     },
     {
      "name": "阿里巴巴",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2025-03-12"
     },
     {
      "name": "百度",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2025-09-11"
     },
     {
      "name": "小米",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2025-06-19"
     },
     {
      "name": "虾皮",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2021-04-18"
     },
     {
      "name": "商汤",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2025-01-13"
     },
     {
      "name": "bilibili",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2025-03-03"
     },
     {
      "name": "亚马逊",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2022-05-08"
     },
     {
      "name": "小红书",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2026-07-30"
     }
    ]
-  }
+  },
+  "explain": "按层收缩：维护上下左右四个边界，按 右→下→左→上 遍历一圈后收缩，任一方向耗尽即停止。\n时间复杂度 O(m·n)，空间 O(1)（输出外）。注意单行/单列不要重复。"
  },
  {
   "id": 55,
@@ -3494,53 +4019,66 @@
   "freq": {
    "rank": 112,
    "value": 56,
+   "lastAsked": "2026-04-18",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 28
+     "value": 28,
+     "lastAsked": "2026-04-18"
     },
     {
      "name": "腾讯",
-     "value": 6
+     "value": 6,
+     "lastAsked": "2026-04-03"
     },
     {
      "name": "华为",
-     "value": 5
+     "value": 5,
+     "lastAsked": "2023-08-07"
     },
     {
      "name": "百度",
-     "value": 4
+     "value": 4,
+     "lastAsked": "2025-09-16"
     },
     {
      "name": "美团",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2023-08-28"
     },
     {
      "name": "拼多多",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2026-01-20"
     },
     {
      "name": "微软",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2022-08-24"
     },
     {
      "name": "京东",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2021-09-15"
     },
     {
      "name": "阿里巴巴",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2025-12-09"
     },
     {
      "name": "快手",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2025-09-28"
     },
     {
      "name": "滴滴",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2023-09-28"
     }
    ]
-  }
+  },
+  "explain": "贪心：维护最远可达下标，遍历时若 i > reach 则不可达；否则 reach = max(reach, i + nums[i])。\n时间复杂度 O(n)，空间 O(1)。"
  },
  {
   "id": 56,
@@ -3589,89 +4127,111 @@
   "freq": {
    "rank": 27,
    "value": 244,
+   "lastAsked": "2026-08-12",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 77
+     "value": 77,
+     "lastAsked": "2026-07-29"
     },
     {
      "name": "美团",
-     "value": 29
+     "value": 29,
+     "lastAsked": "2026-03-29"
     },
     {
      "name": "腾讯",
-     "value": 24
+     "value": 24,
+     "lastAsked": "2026-07-27"
     },
     {
      "name": "快手",
-     "value": 19
+     "value": 19,
+     "lastAsked": "2026-05-10"
     },
     {
      "name": "拼多多",
-     "value": 16
+     "value": 16,
+     "lastAsked": "2026-04-26"
     },
     {
      "name": "百度",
-     "value": 12
+     "value": 12,
+     "lastAsked": "2026-08-12"
     },
     {
      "name": "微软",
-     "value": 11
+     "value": 11,
+     "lastAsked": "2024-02-26"
     },
     {
      "name": "华为",
-     "value": 11
+     "value": 11,
+     "lastAsked": "2025-12-13"
     },
     {
      "name": "猿辅导",
-     "value": 10
+     "value": 10,
+     "lastAsked": "2022-04-28"
     },
     {
      "name": "阿里巴巴",
-     "value": 9
+     "value": 9,
+     "lastAsked": "2026-04-01"
     },
     {
      "name": "虾皮",
-     "value": 6
+     "value": 6,
+     "lastAsked": "2026-04-05"
     },
     {
      "name": "滴滴",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2025-06-03"
     },
     {
      "name": "京东",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2025-08-24"
     },
     {
      "name": "小米",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2025-10-20"
     },
     {
      "name": "亚马逊",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2022-04-26"
     },
     {
      "name": "bilibili",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2025-11-13"
     },
     {
      "name": "小红书",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2026-01-04"
     },
     {
      "name": "网易",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2024-01-19"
     },
     {
      "name": "旷视",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2022-03-20"
     },
     {
      "name": "携程",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2024-12-08"
     }
    ]
-  }
+  },
+  "explain": "排序 + 合并：按左端点排序，逐个合并，若新区间左端点 ≤ 当前右端点则扩展，否则开新区间。\n时间复杂度 O(n log n)，空间 O(n)。"
  },
  {
   "id": 62,
@@ -3725,69 +4285,86 @@
   "freq": {
    "rank": 88,
    "value": 78,
+   "lastAsked": "2026-06-01",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 35
+     "value": 35,
+     "lastAsked": "2026-05-06"
     },
     {
      "name": "腾讯",
-     "value": 8
+     "value": 8,
+     "lastAsked": "2025-03-19"
     },
     {
      "name": "百度",
-     "value": 8
+     "value": 8,
+     "lastAsked": "2024-09-05"
     },
     {
      "name": "美团",
-     "value": 6
+     "value": 6,
+     "lastAsked": "2025-04-24"
     },
     {
      "name": "微软",
-     "value": 4
+     "value": 4,
+     "lastAsked": "2022-01-28"
     },
     {
      "name": "阿里巴巴",
-     "value": 4
+     "value": 4,
+     "lastAsked": "2026-06-01"
     },
     {
      "name": "滴滴",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2025-04-21"
     },
     {
      "name": "网易",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2021-12-22"
     },
     {
      "name": "商汤",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2023-04-19"
     },
     {
      "name": "猿辅导",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2020-09-05"
     },
     {
      "name": "华为",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2025-05-12"
     },
     {
      "name": "拼多多",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-08-10"
     },
     {
      "name": "小米",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2023-12-17"
     },
     {
      "name": "虾皮",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2020-08-07"
     },
     {
      "name": "携程",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2022-08-30"
     }
    ]
-  }
+  },
+  "explain": "DP：dp[i][j] = dp[i-1][j] + dp[i][j-1]，第一行第一列全 1，滚动数组优化。\n时间复杂度 O(m·n)，空间 O(n)。C++ 用 long long 防溢出。"
  },
  {
   "id": 64,
@@ -3836,53 +4413,66 @@
   "freq": {
    "rank": 68,
    "value": 95,
+   "lastAsked": "2026-05-27",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 41
+     "value": 41,
+     "lastAsked": "2026-04-02"
     },
     {
      "name": "美团",
-     "value": 13
+     "value": 13,
+     "lastAsked": "2026-03-16"
     },
     {
      "name": "快手",
-     "value": 10
+     "value": 10,
+     "lastAsked": "2026-01-14"
     },
     {
      "name": "腾讯",
-     "value": 9
+     "value": 9,
+     "lastAsked": "2026-05-27"
     },
     {
      "name": "微软",
-     "value": 6
+     "value": 6,
+     "lastAsked": "2022-01-20"
     },
     {
      "name": "阿里巴巴",
-     "value": 4
+     "value": 4,
+     "lastAsked": "2024-08-06"
     },
     {
      "name": "华为",
-     "value": 4
+     "value": 4,
+     "lastAsked": "2022-09-26"
     },
     {
      "name": "猿辅导",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2020-08-25"
     },
     {
      "name": "百度",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2023-11-02"
     },
     {
      "name": "滴滴",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2021-11-08"
     },
     {
      "name": "虾皮",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2022-02-19"
     }
    ]
-  }
+  },
+  "explain": "DP：dp[i][j] = min(上, 左) + grid[i][j]，原地修改或滚动数组。\n时间复杂度 O(m·n)，空间 O(1)（原地）。"
  },
  {
   "id": 70,
@@ -3931,69 +4521,86 @@
   "freq": {
    "rank": 55,
    "value": 130,
+   "lastAsked": "2026-06-22",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 38
+     "value": 38,
+     "lastAsked": "2026-06-22"
     },
     {
      "name": "腾讯",
-     "value": 26
+     "value": 26,
+     "lastAsked": "2025-09-17"
     },
     {
      "name": "百度",
-     "value": 16
+     "value": 16,
+     "lastAsked": "2025-09-02"
     },
     {
      "name": "美团",
-     "value": 12
+     "value": 12,
+     "lastAsked": "2024-04-29"
     },
     {
      "name": "虾皮",
-     "value": 9
+     "value": 9,
+     "lastAsked": "2026-05-24"
     },
     {
      "name": "阿里巴巴",
-     "value": 8
+     "value": 8,
+     "lastAsked": "2025-03-12"
     },
     {
      "name": "快手",
-     "value": 5
+     "value": 5,
+     "lastAsked": "2021-04-30"
     },
     {
      "name": "华为",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2024-10-16"
     },
     {
      "name": "拼多多",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2026-01-14"
     },
     {
      "name": "微软",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2021-10-19"
     },
     {
      "name": "滴滴",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2022-05-17"
     },
     {
      "name": "小米",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2024-09-19"
     },
     {
      "name": "bilibili",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2024-04-11"
     },
     {
      "name": "京东",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2022-04-15"
     },
     {
      "name": "携程",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2026-03-17"
     }
    ]
-  }
+  },
+  "explain": "动态规划：dp[i] = dp[i-1] + dp[i-2]（斐波那契），滚动变量 O(1) 空间。\n时间复杂度 O(n)，空间 O(1)。"
  },
  {
   "id": 72,
@@ -4047,85 +4654,106 @@
   "freq": {
    "rank": 29,
    "value": 205,
+   "lastAsked": "2026-08-12",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 85
+     "value": 85,
+     "lastAsked": "2026-08-12"
     },
     {
      "name": "腾讯",
-     "value": 17
+     "value": 17,
+     "lastAsked": "2026-04-28"
     },
     {
      "name": "美团",
-     "value": 16
+     "value": 16,
+     "lastAsked": "2025-09-04"
     },
     {
      "name": "快手",
-     "value": 15
+     "value": 15,
+     "lastAsked": "2026-03-24"
     },
     {
      "name": "百度",
-     "value": 15
+     "value": 15,
+     "lastAsked": "2026-05-17"
     },
     {
      "name": "虾皮",
-     "value": 12
+     "value": 12,
+     "lastAsked": "2026-06-25"
     },
     {
      "name": "阿里巴巴",
-     "value": 11
+     "value": 11,
+     "lastAsked": "2026-04-27"
     },
     {
      "name": "微软",
-     "value": 7
+     "value": 7,
+     "lastAsked": "2022-09-19"
     },
     {
      "name": "小米",
-     "value": 7
+     "value": 7,
+     "lastAsked": "2026-03-05"
     },
     {
      "name": "拼多多",
-     "value": 5
+     "value": 5,
+     "lastAsked": "2025-08-21"
     },
     {
      "name": "网易",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2025-07-14"
     },
     {
      "name": "bilibili",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2025-09-11"
     },
     {
      "name": "商汤",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2022-04-21"
     },
     {
      "name": "携程",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2025-08-21"
     },
     {
      "name": "猿辅导",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2020-08-27"
     },
     {
      "name": "滴滴",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2024-09-09"
     },
     {
      "name": "京东",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-07-23"
     },
     {
      "name": "华为",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2022-09-23"
     },
     {
      "name": "小红书",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2026-04-08"
     }
    ]
-  }
+  },
+  "explain": "二维 DP：dp[i][j] = min(删, 插, 换) + 1，字符相同则继承对角。\n时间复杂度 O(m·n)，空间 O(n)（滚动）。"
  },
  {
   "id": 73,
@@ -4174,37 +4802,46 @@
   "freq": {
    "rank": 346,
    "value": 11,
+   "lastAsked": "2025-03-19",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2022-01-05"
     },
     {
      "name": "微软",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2021-06-07"
     },
     {
      "name": "阿里巴巴",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2021-08-08"
     },
     {
      "name": "腾讯",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2025-03-19"
     },
     {
      "name": "美团",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2020-12-21"
     },
     {
      "name": "猿辅导",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2020-08-08"
     },
     {
      "name": "虾皮",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-07-10"
     }
    ]
-  }
+  },
+  "explain": "标记法：用第一行第一列作为标记，记录哪些行/列需要置零，最后统一置零。\n原地修改，时间复杂度 O(m·n)，空间 O(1)。"
  },
  {
   "id": 74,
@@ -4258,49 +4895,61 @@
   "freq": {
    "rank": 133,
    "value": 46,
+   "lastAsked": "2026-05-22",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 20
+     "value": 20,
+     "lastAsked": "2026-05-22"
     },
     {
      "name": "腾讯",
-     "value": 9
+     "value": 9,
+     "lastAsked": "2024-07-10"
     },
     {
      "name": "美团",
-     "value": 5
+     "value": 5,
+     "lastAsked": "2024-09-04"
     },
     {
      "name": "猿辅导",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2020-07-08"
     },
     {
      "name": "微软",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2022-06-30"
     },
     {
      "name": "快手",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2023-09-26"
     },
     {
      "name": "华为",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2022-09-29"
     },
     {
      "name": "阿里巴巴",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2022-01-10"
     },
     {
      "name": "百度",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-09-09"
     },
     {
      "name": "小米",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-09-05"
     }
    ]
-  }
+  },
+  "explain": "整体二分：把二维矩阵拉平成逻辑一维数组，mid/n、mid%n 定位，标准二分。\n时间复杂度 O(log(m·n))，空间 O(1)。"
  },
  {
   "id": 75,
@@ -4349,57 +4998,71 @@
   "freq": {
    "rank": 122,
    "value": 49,
+   "lastAsked": "2026-04-19",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 17
+     "value": 17,
+     "lastAsked": "2025-11-09"
     },
     {
      "name": "腾讯",
-     "value": 13
+     "value": 13,
+     "lastAsked": "2026-04-19"
     },
     {
      "name": "小米",
-     "value": 4
+     "value": 4,
+     "lastAsked": "2022-01-18"
     },
     {
      "name": "滴滴",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2024-08-02"
     },
     {
      "name": "华为",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2023-05-08"
     },
     {
      "name": "阿里巴巴",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2026-03-14"
     },
     {
      "name": "虾皮",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2026-02-09"
     },
     {
      "name": "微软",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-11-04"
     },
     {
      "name": "美团",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2022-03-10"
     },
     {
      "name": "快手",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2020-09-26"
     },
     {
      "name": "亚马逊",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2023-04-12"
     },
     {
      "name": "小红书",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2026-03-20"
     }
    ]
-  }
+  },
+  "explain": "三指针（荷兰国旗）：0 往前放、2 往后放、1 自然在中间，一趟扫描。\n原地修改，时间复杂度 O(n)，空间 O(1)。"
  },
  {
   "id": 76,
@@ -4453,69 +5116,86 @@
   "freq": {
    "rank": 50,
    "value": 134,
+   "lastAsked": "2026-06-25",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 52
+     "value": 52,
+     "lastAsked": "2026-05-20"
     },
     {
      "name": "美团",
-     "value": 18
+     "value": 18,
+     "lastAsked": "2025-08-20"
     },
     {
      "name": "腾讯",
-     "value": 18
+     "value": 18,
+     "lastAsked": "2026-06-25"
     },
     {
      "name": "阿里巴巴",
-     "value": 8
+     "value": 8,
+     "lastAsked": "2026-06-05"
     },
     {
      "name": "快手",
-     "value": 7
+     "value": 7,
+     "lastAsked": "2026-04-23"
     },
     {
      "name": "虾皮",
-     "value": 7
+     "value": 7,
+     "lastAsked": "2023-11-04"
     },
     {
      "name": "百度",
-     "value": 6
+     "value": 6,
+     "lastAsked": "2026-05-17"
     },
     {
      "name": "微软",
-     "value": 5
+     "value": 5,
+     "lastAsked": "2022-04-21"
     },
     {
      "name": "拼多多",
-     "value": 4
+     "value": 4,
+     "lastAsked": "2025-10-16"
     },
     {
      "name": "猿辅导",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2025-04-22"
     },
     {
      "name": "华为",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2021-09-15"
     },
     {
      "name": "网易",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2022-03-21"
     },
     {
      "name": "滴滴",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-07-11"
     },
     {
      "name": "小米",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2025-04-11"
     },
     {
      "name": "旷视",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2022-08-12"
     }
    ]
-  }
+  },
+  "explain": "滑动窗口 + 计数：先扩展右边界直到覆盖 t 的所有字符，再收缩左边界找最短可行窗口。\n时间复杂度 O(n)，空间 O(字符集)。注意处理多个相同字符的计数。"
  },
  {
   "id": 78,
@@ -4564,73 +5244,91 @@
   "freq": {
    "rank": 58,
    "value": 107,
+   "lastAsked": "2026-08-09",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 49
+     "value": 49,
+     "lastAsked": "2026-03-18"
     },
     {
      "name": "美团",
-     "value": 13
+     "value": 13,
+     "lastAsked": "2024-09-29"
     },
     {
      "name": "百度",
-     "value": 10
+     "value": 10,
+     "lastAsked": "2026-07-09"
     },
     {
      "name": "腾讯",
-     "value": 9
+     "value": 9,
+     "lastAsked": "2025-05-08"
     },
     {
      "name": "快手",
-     "value": 6
+     "value": 6,
+     "lastAsked": "2022-08-23"
     },
     {
      "name": "阿里巴巴",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2025-03-27"
     },
     {
      "name": "滴滴",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2024-08-02"
     },
     {
      "name": "华为",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2023-12-06"
     },
     {
      "name": "微软",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2025-08-14"
     },
     {
      "name": "拼多多",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2023-04-23"
     },
     {
      "name": "小米",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2026-08-09"
     },
     {
      "name": "猿辅导",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2020-09-04"
     },
     {
      "name": "商汤",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-07-01"
     },
     {
      "name": "旷视",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2024-07-25"
     },
     {
      "name": "亚马逊",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2022-06-22"
     },
     {
      "name": "虾皮",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2025-12-16"
     }
    ]
-  }
+  },
+  "explain": "回溯：按起始下标扩展子集（选/不选），保证确定性顺序。\n时间复杂度 O(2ⁿ)，空间 O(n)。"
  },
  {
   "id": 79,
@@ -4684,69 +5382,86 @@
   "freq": {
    "rank": 103,
    "value": 61,
+   "lastAsked": "2026-06-03",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 41
+     "value": 41,
+     "lastAsked": "2026-06-03"
     },
     {
      "name": "微软",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2021-12-05"
     },
     {
      "name": "阿里巴巴",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2025-08-11"
     },
     {
      "name": "美团",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2024-04-15"
     },
     {
      "name": "腾讯",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2025-03-17"
     },
     {
      "name": "快手",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2024-05-13"
     },
     {
      "name": "猿辅导",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2020-09-19"
     },
     {
      "name": "华为",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2023-10-13"
     },
     {
      "name": "拼多多",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2025-08-15"
     },
     {
      "name": "小米",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2026-02-05"
     },
     {
      "name": "商汤",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2025-04-29"
     },
     {
      "name": "亚马逊",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2022-02-14"
     },
     {
      "name": "虾皮",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-05-14"
     },
     {
      "name": "携程",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-08-31"
     },
     {
      "name": "bilibili",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2024-04-23"
     }
    ]
-  }
+  },
+  "explain": "DFS + 回溯：每个格子作为起点，沿四个方向搜索，用 '#' 或 visited 标记访问，失败回溯恢复。\n时间复杂度 O(m·n·4^L)，空间 O(L)。"
  },
  {
   "id": 84,
@@ -4795,41 +5510,51 @@
   "freq": {
    "rank": 190,
    "value": 26,
+   "lastAsked": "2026-03-01",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 12
+     "value": 12,
+     "lastAsked": "2026-03-01"
     },
     {
      "name": "百度",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2025-02-19"
     },
     {
      "name": "华为",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2025-06-05"
     },
     {
      "name": "微软",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2022-03-20"
     },
     {
      "name": "阿里巴巴",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2025-04-25"
     },
     {
      "name": "腾讯",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2025-03-17"
     },
     {
      "name": "美团",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-05-18"
     },
     {
      "name": "bilibili",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2023-05-27"
     }
    ]
-  }
+  },
+  "explain": "单调递增栈 + 哨兵：弹栈时以当前下标为右边界、栈内前一个为左边界计算宽度。\n时间复杂度 O(n)，空间 O(n)。中间用 long long 防溢出。"
  },
  {
   "id": 94,
@@ -4882,73 +5607,91 @@
   "freq": {
    "rank": 47,
    "value": 144,
+   "lastAsked": "2026-05-20",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 45
+     "value": 45,
+     "lastAsked": "2025-05-26"
     },
     {
      "name": "美团",
-     "value": 16
+     "value": 16,
+     "lastAsked": "2025-04-15"
     },
     {
      "name": "腾讯",
-     "value": 12
+     "value": 12,
+     "lastAsked": "2026-05-20"
     },
     {
      "name": "百度",
-     "value": 12
+     "value": 12,
+     "lastAsked": "2023-02-23"
     },
     {
      "name": "阿里巴巴",
-     "value": 11
+     "value": 11,
+     "lastAsked": "2026-05-06"
     },
     {
      "name": "快手",
-     "value": 10
+     "value": 10,
+     "lastAsked": "2026-04-20"
     },
     {
      "name": "微软",
-     "value": 8
+     "value": 8,
+     "lastAsked": "2022-03-08"
     },
     {
      "name": "虾皮",
-     "value": 8
+     "value": 8,
+     "lastAsked": "2025-05-16"
     },
     {
      "name": "京东",
-     "value": 5
+     "value": 5,
+     "lastAsked": "2024-04-16"
     },
     {
      "name": "拼多多",
-     "value": 5
+     "value": 5,
+     "lastAsked": "2025-04-17"
     },
     {
      "name": "猿辅导",
-     "value": 4
+     "value": 4,
+     "lastAsked": "2020-08-20"
     },
     {
      "name": "华为",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2024-05-11"
     },
     {
      "name": "小米",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2021-11-30"
     },
     {
      "name": "滴滴",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-09-17"
     },
     {
      "name": "网易",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2022-04-12"
     },
     {
      "name": "小红书",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2026-03-08"
     }
    ]
-  }
+  },
+  "explain": "中序遍历：递归 左-根-右；或用显式栈迭代。\n时间复杂度 O(n)，空间 O(h)（h 为树高）。"
  },
  {
   "id": 98,
@@ -4997,65 +5740,81 @@
   "freq": {
    "rank": 82,
    "value": 84,
+   "lastAsked": "2026-04-20",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 46
+     "value": 46,
+     "lastAsked": "2026-04-20"
     },
     {
      "name": "微软",
-     "value": 11
+     "value": 11,
+     "lastAsked": "2026-02-12"
     },
     {
      "name": "猿辅导",
-     "value": 8
+     "value": 8,
+     "lastAsked": "2020-08-15"
     },
     {
      "name": "快手",
-     "value": 5
+     "value": 5,
+     "lastAsked": "2022-03-25"
     },
     {
      "name": "美团",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2023-08-28"
     },
     {
      "name": "阿里巴巴",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2024-10-16"
     },
     {
      "name": "腾讯",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2025-04-24"
     },
     {
      "name": "虾皮",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2022-02-08"
     },
     {
      "name": "百度",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2020-07-31"
     },
     {
      "name": "滴滴",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2025-07-17"
     },
     {
      "name": "华为",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-09-15"
     },
     {
      "name": "拼多多",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2025-10-18"
     },
     {
      "name": "小米",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2024-04-08"
     },
     {
      "name": "bilibili",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2025-05-01"
     }
    ]
-  }
+  },
+  "explain": "递归 + 边界：向下传递 (lo, hi) 开区间，左子树限定 (< val)，右子树限定 (> val)。\n时间复杂度 O(n)，空间 O(h)。C++ 用 LLONG_MIN/MAX 处理 INT 边界。"
  },
  {
   "id": 101,
@@ -5108,57 +5867,71 @@
   "freq": {
    "rank": 65,
    "value": 97,
+   "lastAsked": "2026-07-12",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 63
+     "value": 63,
+     "lastAsked": "2026-03-29"
     },
     {
      "name": "美团",
-     "value": 10
+     "value": 10,
+     "lastAsked": "2022-07-04"
     },
     {
      "name": "阿里巴巴",
-     "value": 5
+     "value": 5,
+     "lastAsked": "2026-07-12"
     },
     {
      "name": "百度",
-     "value": 5
+     "value": 5,
+     "lastAsked": "2024-07-27"
     },
     {
      "name": "快手",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2024-12-09"
     },
     {
      "name": "腾讯",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2024-09-02"
     },
     {
      "name": "猿辅导",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2020-08-23"
     },
     {
      "name": "小米",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2022-07-16"
     },
     {
      "name": "虾皮",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2022-02-02"
     },
     {
      "name": "华为",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2024-03-08"
     },
     {
      "name": "拼多多",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2023-05-29"
     },
     {
      "name": "携程",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2022-03-23"
     }
    ]
-  }
+  },
+  "explain": "对称判定：check(a,b)：值相等 && check(a.left,b.right) && check(a.right,b.left)。\n时间复杂度 O(n)，空间 O(h)。空树为 true。"
  },
  {
   "id": 102,
@@ -5207,93 +5980,116 @@
   "freq": {
    "rank": 11,
    "value": 330,
+   "lastAsked": "2026-07-28",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 87
+     "value": 87,
+     "lastAsked": "2026-06-28"
     },
     {
      "name": "美团",
-     "value": 83
+     "value": 83,
+     "lastAsked": "2026-04-28"
     },
     {
      "name": "快手",
-     "value": 36
+     "value": 36,
+     "lastAsked": "2026-05-26"
     },
     {
      "name": "腾讯",
-     "value": 22
+     "value": 22,
+     "lastAsked": "2026-05-28"
     },
     {
      "name": "百度",
-     "value": 19
+     "value": 19,
+     "lastAsked": "2026-03-22"
     },
     {
      "name": "虾皮",
-     "value": 17
+     "value": 17,
+     "lastAsked": "2026-04-01"
     },
     {
      "name": "阿里巴巴",
-     "value": 15
+     "value": 15,
+     "lastAsked": "2025-08-07"
     },
     {
      "name": "小米",
-     "value": 11
+     "value": 11,
+     "lastAsked": "2025-09-07"
     },
     {
      "name": "滴滴",
-     "value": 6
+     "value": 6,
+     "lastAsked": "2026-04-27"
     },
     {
      "name": "京东",
-     "value": 6
+     "value": 6,
+     "lastAsked": "2026-04-09"
     },
     {
      "name": "猿辅导",
-     "value": 5
+     "value": 5,
+     "lastAsked": "2024-03-05"
     },
     {
      "name": "bilibili",
-     "value": 5
+     "value": 5,
+     "lastAsked": "2026-04-07"
     },
     {
      "name": "小红书",
-     "value": 4
+     "value": 4,
+     "lastAsked": "2026-07-28"
     },
     {
      "name": "拼多多",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2023-07-13"
     },
     {
      "name": "亚马逊",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2024-05-28"
     },
     {
      "name": "微软",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2022-04-14"
     },
     {
      "name": "华为",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2024-05-16"
     },
     {
      "name": "网易",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2023-08-16"
     },
     {
      "name": "商汤",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2026-01-09"
     },
     {
      "name": "旷视",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-03-16"
     },
     {
      "name": "携程",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2024-04-15"
     }
    ]
-  }
+  },
+  "explain": "层序 BFS：按层记录队列大小，逐层收集节点值。\n时间复杂度 O(n)，空间 O(n)。"
  },
  {
   "id": 104,
@@ -5346,69 +6142,86 @@
   "freq": {
    "rank": 72,
    "value": 91,
+   "lastAsked": "2026-05-07",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 28
+     "value": 28,
+     "lastAsked": "2024-09-26"
     },
     {
      "name": "腾讯",
-     "value": 13
+     "value": 13,
+     "lastAsked": "2026-04-02"
     },
     {
      "name": "美团",
-     "value": 12
+     "value": 12,
+     "lastAsked": "2025-04-28"
     },
     {
      "name": "百度",
-     "value": 11
+     "value": 11,
+     "lastAsked": "2022-07-19"
     },
     {
      "name": "快手",
-     "value": 7
+     "value": 7,
+     "lastAsked": "2026-05-07"
     },
     {
      "name": "猿辅导",
-     "value": 4
+     "value": 4,
+     "lastAsked": "2020-08-15"
     },
     {
      "name": "微软",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2022-09-18"
     },
     {
      "name": "拼多多",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2026-05-07"
     },
     {
      "name": "小米",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2022-12-21"
     },
     {
      "name": "虾皮",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2026-01-15"
     },
     {
      "name": "阿里巴巴",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-03-27"
     },
     {
      "name": "滴滴",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-02-24"
     },
     {
      "name": "京东",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2020-08-13"
     },
     {
      "name": "华为",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-07-26"
     },
     {
      "name": "商汤",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-08-16"
     }
    ]
-  }
+  },
+  "explain": "深度优先：depth = 1 + max(左子树深度, 右子树深度)，递归到空节点返回 0。\n时间复杂度 O(n)，空间 O(h)。"
  },
  {
   "id": 105,
@@ -5462,61 +6275,76 @@
   "freq": {
    "rank": 56,
    "value": 117,
+   "lastAsked": "2026-06-29",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 62
+     "value": 62,
+     "lastAsked": "2026-06-29"
     },
     {
      "name": "美团",
-     "value": 11
+     "value": 11,
+     "lastAsked": "2025-05-31"
     },
     {
      "name": "腾讯",
-     "value": 11
+     "value": 11,
+     "lastAsked": "2026-04-21"
     },
     {
      "name": "虾皮",
-     "value": 6
+     "value": 6,
+     "lastAsked": "2024-03-06"
     },
     {
      "name": "微软",
-     "value": 5
+     "value": 5,
+     "lastAsked": "2022-01-16"
     },
     {
      "name": "百度",
-     "value": 5
+     "value": 5,
+     "lastAsked": "2024-08-29"
     },
     {
      "name": "拼多多",
-     "value": 4
+     "value": 4,
+     "lastAsked": "2026-04-29"
     },
     {
      "name": "阿里巴巴",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2021-05-07"
     },
     {
      "name": "快手",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2026-06-21"
     },
     {
      "name": "华为",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2024-11-28"
     },
     {
      "name": "猿辅导",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2020-09-25"
     },
     {
      "name": "滴滴",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2024-10-30"
     },
     {
      "name": "小红书",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2026-04-27"
     }
    ]
-  }
+  },
+  "explain": "分治 + 哈希：用中序数组建「值→下标」映射，按前序顺序定位根，递归构建左右子树。\n时间复杂度 O(n)，空间 O(n)。"
  },
  {
   "id": 108,
@@ -5565,41 +6393,51 @@
   "freq": {
    "rank": 255,
    "value": 17,
+   "lastAsked": "2025-10-25",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 7
+     "value": 7,
+     "lastAsked": "2022-06-22"
     },
     {
      "name": "微软",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2022-01-21"
     },
     {
      "name": "美团",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2023-04-12"
     },
     {
      "name": "腾讯",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2025-04-10"
     },
     {
      "name": "阿里巴巴",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2023-08-24"
     },
     {
      "name": "猿辅导",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2020-07-08"
     },
     {
      "name": "百度",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2025-10-25"
     },
     {
      "name": "滴滴",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2023-03-14"
     }
    ]
-  }
+  },
+  "explain": "二分建树：每次取有序数组的中点作为根，左半递归建左子树、右半建右子树。\n时间复杂度 O(n)，空间 O(log n)。"
  },
  {
   "id": 114,
@@ -5648,57 +6486,71 @@
   "freq": {
    "rank": 127,
    "value": 47,
+   "lastAsked": "2026-06-14",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 26
+     "value": 26,
+     "lastAsked": "2026-06-14"
     },
     {
      "name": "美团",
-     "value": 10
+     "value": 10,
+     "lastAsked": "2026-03-31"
     },
     {
      "name": "快手",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2023-08-18"
     },
     {
      "name": "微软",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2020-11-18"
     },
     {
      "name": "阿里巴巴",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2024-07-04"
     },
     {
      "name": "腾讯",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2024-04-03"
     },
     {
      "name": "猿辅导",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2023-03-14"
     },
     {
      "name": "百度",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2024-10-10"
     },
     {
      "name": "华为",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2024-10-13"
     },
     {
      "name": "小米",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2023-11-27"
     },
     {
      "name": "虾皮",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-04-20"
     },
     {
      "name": "携程",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2024-01-23"
     }
    ]
-  }
+  },
+  "explain": "原地展开（莫里斯式）：把左子树最右节点接到 cur 的右孩子，左子树移到右孩子位置，直到 cur 无左子树。\n原地修改，时间复杂度 O(n)，空间 O(1)。"
  },
  {
   "id": 118,
@@ -5747,37 +6599,46 @@
   "freq": {
    "rank": 345,
    "value": 11,
+   "lastAsked": "2025-09-02",
    "companies": [
     {
      "name": "美团",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2024-04-25"
     },
     {
      "name": "腾讯",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2021-03-23"
     },
     {
      "name": "虾皮",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2022-03-20"
     },
     {
      "name": "字节跳动",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2023-09-15"
     },
     {
      "name": "快手",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-09-03"
     },
     {
      "name": "百度",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2025-09-02"
     },
     {
      "name": "亚马逊",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2022-05-07"
     }
    ]
-  }
+  },
+  "explain": "逐行构造：每行两端为 1，中间为上一行相邻两数之和。\n时间复杂度 O(n²)，空间 O(1)（输出外）。"
  },
  {
   "id": 121,
@@ -5826,81 +6687,101 @@
   "freq": {
    "rank": 18,
    "value": 279,
+   "lastAsked": "2026-04-29",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 148
+     "value": 148,
+     "lastAsked": "2026-04-29"
     },
     {
      "name": "美团",
-     "value": 30
+     "value": 30,
+     "lastAsked": "2026-04-13"
     },
     {
      "name": "腾讯",
-     "value": 29
+     "value": 29,
+     "lastAsked": "2026-04-07"
     },
     {
      "name": "快手",
-     "value": 13
+     "value": 13,
+     "lastAsked": "2026-03-02"
     },
     {
      "name": "阿里巴巴",
-     "value": 10
+     "value": 10,
+     "lastAsked": "2026-02-09"
     },
     {
      "name": "百度",
-     "value": 10
+     "value": 10,
+     "lastAsked": "2024-07-30"
     },
     {
      "name": "拼多多",
-     "value": 9
+     "value": 9,
+     "lastAsked": "2025-09-11"
     },
     {
      "name": "微软",
-     "value": 8
+     "value": 8,
+     "lastAsked": "2022-05-28"
     },
     {
      "name": "虾皮",
-     "value": 5
+     "value": 5,
+     "lastAsked": "2026-03-12"
     },
     {
      "name": "滴滴",
-     "value": 4
+     "value": 4,
+     "lastAsked": "2026-04-29"
     },
     {
      "name": "京东",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2026-03-26"
     },
     {
      "name": "网易",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2022-04-26"
     },
     {
      "name": "亚马逊",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2022-05-07"
     },
     {
      "name": "小红书",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2026-03-13"
     },
     {
      "name": "华为",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2025-10-20"
     },
     {
      "name": "小米",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2024-04-24"
     },
     {
      "name": "商汤",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-12-06"
     },
     {
      "name": "携程",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-08-19"
     }
    ]
-  }
+  },
+  "explain": "一次遍历：维护历史最低价，每天计算 price - min 更新最大利润。\n时间复杂度 O(n)，空间 O(1)。"
  },
  {
   "id": 124,
@@ -5949,77 +6830,96 @@
   "freq": {
    "rank": 34,
    "value": 185,
+   "lastAsked": "2026-08-06",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 78
+     "value": 78,
+     "lastAsked": "2026-08-06"
     },
     {
      "name": "美团",
-     "value": 48
+     "value": 48,
+     "lastAsked": "2026-04-12"
     },
     {
      "name": "微软",
-     "value": 20
+     "value": 20,
+     "lastAsked": "2022-05-13"
     },
     {
      "name": "快手",
-     "value": 7
+     "value": 7,
+     "lastAsked": "2026-06-18"
     },
     {
      "name": "百度",
-     "value": 6
+     "value": 6,
+     "lastAsked": "2025-07-24"
     },
     {
      "name": "腾讯",
-     "value": 5
+     "value": 5,
+     "lastAsked": "2026-03-18"
     },
     {
      "name": "拼多多",
-     "value": 5
+     "value": 5,
+     "lastAsked": "2026-03-22"
     },
     {
      "name": "阿里巴巴",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2024-09-09"
     },
     {
      "name": "华为",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2025-09-22"
     },
     {
      "name": "网易",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2021-08-24"
     },
     {
      "name": "小米",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2025-08-28"
     },
     {
      "name": "虾皮",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2021-12-19"
     },
     {
      "name": "猿辅导",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2020-07-08"
     },
     {
      "name": "滴滴",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-09-17"
     },
     {
      "name": "京东",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2022-09-19"
     },
     {
      "name": "亚马逊",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2025-04-17"
     },
     {
      "name": "bilibili",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2023-12-01"
     }
    ]
-  }
+  },
+  "explain": "后序 DFS：子树贡献取 max(0, 路径和)（负数截断），全局答案取 node.val + left + right 的最大值。\n时间复杂度 O(n)，空间 O(h)。C++ 用 INT_MIN 初始化答案。"
  },
  {
   "id": 128,
@@ -6068,57 +6968,71 @@
   "freq": {
    "rank": 70,
    "value": 93,
+   "lastAsked": "2026-06-30",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 40
+     "value": 40,
+     "lastAsked": "2026-06-30"
     },
     {
      "name": "腾讯",
-     "value": 15
+     "value": 15,
+     "lastAsked": "2026-03-10"
     },
     {
      "name": "美团",
-     "value": 13
+     "value": 13,
+     "lastAsked": "2025-04-07"
     },
     {
      "name": "快手",
-     "value": 8
+     "value": 8,
+     "lastAsked": "2025-12-17"
     },
     {
      "name": "百度",
-     "value": 6
+     "value": 6,
+     "lastAsked": "2025-09-11"
     },
     {
      "name": "阿里巴巴",
-     "value": 4
+     "value": 4,
+     "lastAsked": "2026-04-03"
     },
     {
      "name": "猿辅导",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2020-08-08"
     },
     {
      "name": "微软",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2022-03-06"
     },
     {
      "name": "滴滴",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2025-05-15"
     },
     {
      "name": "京东",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2025-03-13"
     },
     {
      "name": "拼多多",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2023-05-24"
     },
     {
      "name": "虾皮",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-08-09"
     }
    ]
-  }
+  },
+  "explain": "哈希集合去重后，只从「x-1 不在集合中」的数开始向后累加，保证每段只被扫描一次。\n时间复杂度 O(n)，空间 O(n)。"
  },
  {
   "id": 131,
@@ -6167,29 +7081,36 @@
   "freq": {
    "rank": 281,
    "value": 15,
+   "lastAsked": "2025-07-17",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 6
+     "value": 6,
+     "lastAsked": "2024-03-03"
     },
     {
      "name": "腾讯",
-     "value": 4
+     "value": 4,
+     "lastAsked": "2024-08-22"
     },
     {
      "name": "阿里巴巴",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2025-07-17"
     },
     {
      "name": "美团",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2022-04-14"
     },
     {
      "name": "百度",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2023-07-26"
     }
    ]
-  }
+  },
+  "explain": "回溯：逐位尝试更长的回文前缀（双指针判回文），确定性子集顺序输出。\n时间复杂度 O(n·2ⁿ)，空间 O(n)。"
  },
  {
   "id": 136,
@@ -6238,53 +7159,66 @@
   "freq": {
    "rank": 117,
    "value": 53,
+   "lastAsked": "2026-04-21",
    "companies": [
     {
      "name": "腾讯",
-     "value": 12
+     "value": 12,
+     "lastAsked": "2026-04-15"
     },
     {
      "name": "字节跳动",
-     "value": 9
+     "value": 9,
+     "lastAsked": "2021-12-15"
     },
     {
      "name": "美团",
-     "value": 9
+     "value": 9,
+     "lastAsked": "2021-08-25"
     },
     {
      "name": "快手",
-     "value": 6
+     "value": 6,
+     "lastAsked": "2026-04-13"
     },
     {
      "name": "虾皮",
-     "value": 6
+     "value": 6,
+     "lastAsked": "2021-09-06"
     },
     {
      "name": "百度",
-     "value": 4
+     "value": 4,
+     "lastAsked": "2026-04-21"
     },
     {
      "name": "微软",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2022-02-24"
     },
     {
      "name": "阿里巴巴",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2023-02-14"
     },
     {
      "name": "猿辅导",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2020-08-08"
     },
     {
      "name": "拼多多",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2026-01-11"
     },
     {
      "name": "bilibili",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2023-03-07"
     }
    ]
-  }
+  },
+  "explain": "异或：相同数字异或为 0，全部异或一遍剩下唯一出现一次的数。\n时间复杂度 O(n)，空间 O(1)。"
  },
  {
   "id": 138,
@@ -6337,57 +7271,71 @@
   "freq": {
    "rank": 108,
    "value": 58,
+   "lastAsked": "2025-08-23",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 26
+     "value": 26,
+     "lastAsked": "2025-08-23"
     },
     {
      "name": "腾讯",
-     "value": 10
+     "value": 10,
+     "lastAsked": "2025-04-08"
     },
     {
      "name": "微软",
-     "value": 7
+     "value": 7,
+     "lastAsked": "2025-07-09"
     },
     {
      "name": "虾皮",
-     "value": 4
+     "value": 4,
+     "lastAsked": "2024-09-08"
     },
     {
      "name": "快手",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2025-08-05"
     },
     {
      "name": "美团",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2022-08-16"
     },
     {
      "name": "阿里巴巴",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2022-03-01"
     },
     {
      "name": "猿辅导",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-04-01"
     },
     {
      "name": "百度",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-03-27"
     },
     {
      "name": "华为",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2022-08-26"
     },
     {
      "name": "网易",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2022-05-09"
     },
     {
      "name": "小米",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2022-09-01"
     }
    ]
-  }
+  },
+  "explain": "原地复制：先在每个原节点后插入拷贝节点，再处理 random 指针（copy.random = orig.random.next），最后拆分两条链表。\n时间复杂度 O(n)，空间 O(1)。也可用哈希表存 原→新 映射。"
  },
  {
   "id": 139,
@@ -6441,57 +7389,71 @@
   "freq": {
    "rank": 94,
    "value": 69,
+   "lastAsked": "2026-04-07",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 42
+     "value": 42,
+     "lastAsked": "2026-04-01"
     },
     {
      "name": "百度",
-     "value": 6
+     "value": 6,
+     "lastAsked": "2024-07-09"
     },
     {
      "name": "微软",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2022-03-20"
     },
     {
      "name": "美团",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2022-08-24"
     },
     {
      "name": "阿里巴巴",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2026-04-07"
     },
     {
      "name": "虾皮",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2025-11-04"
     },
     {
      "name": "腾讯",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2023-03-23"
     },
     {
      "name": "滴滴",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2025-05-29"
     },
     {
      "name": "华为",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2023-05-18"
     },
     {
      "name": "快手",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2024-09-03"
     },
     {
      "name": "猿辅导",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2025-04-19"
     },
     {
      "name": "京东",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-07-27"
     }
    ]
-  }
+  },
+  "explain": "DP：dp[i] 表示前 i 个字符可拆分，枚举字典单词检查后缀；用最长词长剪枝。\n时间复杂度 O(n·m)（m 为词数×词长），空间 O(n)。"
  },
  {
   "id": 141,
@@ -6544,73 +7506,91 @@
   "freq": {
    "rank": 26,
    "value": 252,
+   "lastAsked": "2026-07-08",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 82
+     "value": 82,
+     "lastAsked": "2026-07-08"
     },
     {
      "name": "美团",
-     "value": 52
+     "value": 52,
+     "lastAsked": "2024-12-13"
     },
     {
      "name": "腾讯",
-     "value": 22
+     "value": 22,
+     "lastAsked": "2025-11-05"
     },
     {
      "name": "百度",
-     "value": 22
+     "value": 22,
+     "lastAsked": "2025-10-31"
     },
     {
      "name": "快手",
-     "value": 16
+     "value": 16,
+     "lastAsked": "2024-08-18"
     },
     {
      "name": "阿里巴巴",
-     "value": 15
+     "value": 15,
+     "lastAsked": "2026-05-17"
     },
     {
      "name": "虾皮",
-     "value": 11
+     "value": 11,
+     "lastAsked": "2025-09-23"
     },
     {
      "name": "微软",
-     "value": 8
+     "value": 8,
+     "lastAsked": "2022-09-22"
     },
     {
      "name": "滴滴",
-     "value": 6
+     "value": 6,
+     "lastAsked": "2025-10-14"
     },
     {
      "name": "猿辅导",
-     "value": 5
+     "value": 5,
+     "lastAsked": "2024-08-31"
     },
     {
      "name": "小米",
-     "value": 4
+     "value": 4,
+     "lastAsked": "2023-02-04"
     },
     {
      "name": "京东",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2024-12-09"
     },
     {
      "name": "华为",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2024-03-08"
     },
     {
      "name": "拼多多",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2025-04-19"
     },
     {
      "name": "bilibili",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2026-04-22"
     },
     {
      "name": "网易",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2024-11-14"
     }
    ]
-  }
+  },
+  "explain": "快慢指针：fast 每次走两步、slow 走一步，若相遇则有环。\n时间复杂度 O(n)，空间 O(1)。"
  },
  {
   "id": 142,
@@ -6663,77 +7643,96 @@
   "freq": {
    "rank": 38,
    "value": 170,
+   "lastAsked": "2026-05-08",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 49
+     "value": 49,
+     "lastAsked": "2026-05-08"
     },
     {
      "name": "美团",
-     "value": 36
+     "value": 36,
+     "lastAsked": "2025-04-08"
     },
     {
      "name": "快手",
-     "value": 16
+     "value": 16,
+     "lastAsked": "2026-05-06"
     },
     {
      "name": "腾讯",
-     "value": 13
+     "value": 13,
+     "lastAsked": "2025-03-17"
     },
     {
      "name": "百度",
-     "value": 13
+     "value": 13,
+     "lastAsked": "2026-03-03"
     },
     {
      "name": "京东",
-     "value": 10
+     "value": 10,
+     "lastAsked": "2025-04-21"
     },
     {
      "name": "微软",
-     "value": 6
+     "value": 6,
+     "lastAsked": "2022-04-24"
     },
     {
      "name": "虾皮",
-     "value": 5
+     "value": 5,
+     "lastAsked": "2024-02-29"
     },
     {
      "name": "阿里巴巴",
-     "value": 4
+     "value": 4,
+     "lastAsked": "2025-04-03"
     },
     {
      "name": "猿辅导",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2021-02-22"
     },
     {
      "name": "网易",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2022-04-06"
     },
     {
      "name": "小米",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2022-09-12"
     },
     {
      "name": "商汤",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2022-05-08"
     },
     {
      "name": "旷视",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2025-09-03"
     },
     {
      "name": "滴滴",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-07-06"
     },
     {
      "name": "拼多多",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2024-05-17"
     },
     {
      "name": "小红书",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2026-01-21"
     }
    ]
-  }
+  },
+  "explain": "快慢指针：相遇后让头指针与慢指针同步前进，再次相遇处即环入口。\n时间复杂度 O(n)，空间 O(1)。本题评测返回环入口节点的值。"
  },
  {
   "id": 146,
@@ -6796,97 +7795,121 @@
   "freq": {
    "rank": 2,
    "value": 942,
+   "lastAsked": "2026-08-10",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 362
+     "value": 362,
+     "lastAsked": "2026-07-16"
     },
     {
      "name": "腾讯",
-     "value": 189
+     "value": 189,
+     "lastAsked": "2026-05-19"
     },
     {
      "name": "阿里巴巴",
-     "value": 96
+     "value": 96,
+     "lastAsked": "2026-07-13"
     },
     {
      "name": "快手",
-     "value": 57
+     "value": 57,
+     "lastAsked": "2026-07-23"
     },
     {
      "name": "美团",
-     "value": 47
+     "value": 47,
+     "lastAsked": "2026-04-12"
     },
     {
      "name": "虾皮",
-     "value": 36
+     "value": 36,
+     "lastAsked": "2026-07-20"
     },
     {
      "name": "百度",
-     "value": 32
+     "value": 32,
+     "lastAsked": "2026-07-20"
     },
     {
      "name": "微软",
-     "value": 21
+     "value": 21,
+     "lastAsked": "2025-05-31"
     },
     {
      "name": "拼多多",
-     "value": 21
+     "value": 21,
+     "lastAsked": "2026-08-10"
     },
     {
      "name": "滴滴",
-     "value": 18
+     "value": 18,
+     "lastAsked": "2026-07-17"
     },
     {
      "name": "京东",
-     "value": 10
+     "value": 10,
+     "lastAsked": "2025-08-27"
     },
     {
      "name": "小红书",
-     "value": 9
+     "value": 9,
+     "lastAsked": "2026-07-17"
     },
     {
      "name": "猿辅导",
-     "value": 8
+     "value": 8,
+     "lastAsked": "2022-04-23"
     },
     {
      "name": "网易",
-     "value": 8
+     "value": 8,
+     "lastAsked": "2025-09-22"
     },
     {
      "name": "华为",
-     "value": 6
+     "value": 6,
+     "lastAsked": "2025-05-08"
     },
     {
      "name": "亚马逊",
-     "value": 6
+     "value": 6,
+     "lastAsked": "2026-01-07"
     },
     {
      "name": "bilibili",
-     "value": 5
+     "value": 5,
+     "lastAsked": "2026-05-07"
     },
     {
      "name": "小米",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2025-05-28"
     },
     {
      "name": "旷视",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2023-08-02"
     },
     {
      "name": "图森",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2023-05-16"
     },
     {
      "name": "携程",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2022-11-14"
     },
     {
      "name": "商汤",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2023-04-18"
     }
    ]
-  }
+  },
+  "explain": "哈希表 + 双向链表（或有序结构）：get/put 均 O(1)。访问时移到链表头，容量满时淘汰链表尾。\nPython 可用 OrderedDict，C++ 用 list + unordered_map。"
  },
  {
   "id": 148,
@@ -6939,77 +7962,96 @@
   "freq": {
    "rank": 46,
    "value": 147,
+   "lastAsked": "2026-06-07",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 69
+     "value": 69,
+     "lastAsked": "2026-06-07"
     },
     {
      "name": "百度",
-     "value": 12
+     "value": 12,
+     "lastAsked": "2026-03-17"
     },
     {
      "name": "快手",
-     "value": 10
+     "value": 10,
+     "lastAsked": "2024-04-08"
     },
     {
      "name": "猿辅导",
-     "value": 10
+     "value": 10,
+     "lastAsked": "2021-08-13"
     },
     {
      "name": "腾讯",
-     "value": 9
+     "value": 9,
+     "lastAsked": "2025-12-18"
     },
     {
      "name": "美团",
-     "value": 8
+     "value": 8,
+     "lastAsked": "2025-10-20"
     },
     {
      "name": "阿里巴巴",
-     "value": 6
+     "value": 6,
+     "lastAsked": "2025-05-06"
     },
     {
      "name": "微软",
-     "value": 5
+     "value": 5,
+     "lastAsked": "2022-03-06"
     },
     {
      "name": "虾皮",
-     "value": 5
+     "value": 5,
+     "lastAsked": "2026-01-27"
     },
     {
      "name": "拼多多",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2024-04-21"
     },
     {
      "name": "滴滴",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2026-02-26"
     },
     {
      "name": "网易",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2026-03-11"
     },
     {
      "name": "bilibili",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2024-09-04"
     },
     {
      "name": "华为",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-09-25"
     },
     {
      "name": "商汤",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2022-01-19"
     },
     {
      "name": "携程",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2022-08-03"
     },
     {
      "name": "小红书",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2026-01-20"
     }
    ]
-  }
+  },
+  "explain": "归并排序：快慢指针找中点拆成两半，递归排序后合并。\n时间复杂度 O(n log n)，空间 O(log n)（递归栈）。"
  },
  {
   "id": 152,
@@ -7058,77 +8100,96 @@
   "freq": {
    "rank": 77,
    "value": 85,
+   "lastAsked": "2026-05-27",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 39
+     "value": 39,
+     "lastAsked": "2026-05-18"
     },
     {
      "name": "虾皮",
-     "value": 8
+     "value": 8,
+     "lastAsked": "2026-03-12"
     },
     {
      "name": "微软",
-     "value": 6
+     "value": 6,
+     "lastAsked": "2022-05-23"
     },
     {
      "name": "百度",
-     "value": 5
+     "value": 5,
+     "lastAsked": "2024-07-25"
     },
     {
      "name": "快手",
-     "value": 4
+     "value": 4,
+     "lastAsked": "2024-08-21"
     },
     {
      "name": "小米",
-     "value": 4
+     "value": 4,
+     "lastAsked": "2026-02-02"
     },
     {
      "name": "阿里巴巴",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2025-01-14"
     },
     {
      "name": "商汤",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2023-07-20"
     },
     {
      "name": "腾讯",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2026-05-27"
     },
     {
      "name": "华为",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2022-09-23"
     },
     {
      "name": "bilibili",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2026-03-11"
     },
     {
      "name": "小红书",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2026-03-05"
     },
     {
      "name": "美团",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-09-15"
     },
     {
      "name": "猿辅导",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-01-29"
     },
     {
      "name": "滴滴",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2026-04-21"
     },
     {
      "name": "京东",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2023-08-23"
     },
     {
      "name": "拼多多",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2025-01-20"
     }
    ]
-  }
+  },
+  "explain": "DP：同时维护以当前元素结尾的最大/最小乘积（负负得正），ans 取最大值。\n时间复杂度 O(n)，空间 O(1)。中间用 long long 防溢出。"
  },
  {
   "id": 153,
@@ -7177,49 +8238,61 @@
   "freq": {
    "rank": 107,
    "value": 58,
+   "lastAsked": "2026-04-16",
    "companies": [
     {
      "name": "腾讯",
-     "value": 21
+     "value": 21,
+     "lastAsked": "2025-04-28"
     },
     {
      "name": "字节跳动",
-     "value": 17
+     "value": 17,
+     "lastAsked": "2026-04-16"
     },
     {
      "name": "微软",
-     "value": 5
+     "value": 5,
+     "lastAsked": "2022-04-23"
     },
     {
      "name": "美团",
-     "value": 5
+     "value": 5,
+     "lastAsked": "2022-02-24"
     },
     {
      "name": "猿辅导",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2021-08-12"
     },
     {
      "name": "阿里巴巴",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2022-04-14"
     },
     {
      "name": "快手",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2025-08-07"
     },
     {
      "name": "百度",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-02-13"
     },
     {
      "name": "拼多多",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2024-05-27"
     },
     {
      "name": "虾皮",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-04-10"
     }
    ]
-  }
+  },
+  "explain": "二分：与右端点 nums[hi] 比较，若 nums[mid] > nums[hi] 最小值在右半，否则在左半（含 mid）。\n时间复杂度 O(log n)，空间 O(1)。"
  },
  {
   "id": 155,
@@ -7284,53 +8357,66 @@
   "freq": {
    "rank": 64,
    "value": 99,
+   "lastAsked": "2026-04-13",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 42
+     "value": 42,
+     "lastAsked": "2026-04-13"
     },
     {
      "name": "腾讯",
-     "value": 14
+     "value": 14,
+     "lastAsked": "2025-02-26"
     },
     {
      "name": "阿里巴巴",
-     "value": 10
+     "value": 10,
+     "lastAsked": "2026-01-08"
     },
     {
      "name": "快手",
-     "value": 8
+     "value": 8,
+     "lastAsked": "2024-05-05"
     },
     {
      "name": "美团",
-     "value": 5
+     "value": 5,
+     "lastAsked": "2021-04-09"
     },
     {
      "name": "百度",
-     "value": 5
+     "value": 5,
+     "lastAsked": "2023-05-05"
     },
     {
      "name": "微软",
-     "value": 4
+     "value": 4,
+     "lastAsked": "2022-04-07"
     },
     {
      "name": "虾皮",
-     "value": 4
+     "value": 4,
+     "lastAsked": "2024-05-31"
     },
     {
      "name": "拼多多",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2022-08-15"
     },
     {
      "name": "滴滴",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2022-05-23"
     },
     {
      "name": "华为",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2025-11-19"
     }
    ]
-  }
+  },
+  "explain": "双栈：主栈存数据，辅助栈存当前最小值（单调不减），getMin 取辅助栈栈顶。\n所有操作 O(1)，空间 O(n)。"
  },
  {
   "id": 160,
@@ -7384,57 +8470,71 @@
   "freq": {
    "rank": 30,
    "value": 202,
+   "lastAsked": "2026-06-29",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 115
+     "value": 115,
+     "lastAsked": "2026-05-07"
     },
     {
      "name": "腾讯",
-     "value": 18
+     "value": 18,
+     "lastAsked": "2026-04-09"
     },
     {
      "name": "虾皮",
-     "value": 13
+     "value": 13,
+     "lastAsked": "2021-08-20"
     },
     {
      "name": "快手",
-     "value": 12
+     "value": 12,
+     "lastAsked": "2023-09-24"
     },
     {
      "name": "百度",
-     "value": 12
+     "value": 12,
+     "lastAsked": "2025-11-03"
     },
     {
      "name": "美团",
-     "value": 11
+     "value": 11,
+     "lastAsked": "2024-03-20"
     },
     {
      "name": "阿里巴巴",
-     "value": 7
+     "value": 7,
+     "lastAsked": "2025-04-23"
     },
     {
      "name": "微软",
-     "value": 4
+     "value": 4,
+     "lastAsked": "2022-02-08"
     },
     {
      "name": "滴滴",
-     "value": 4
+     "value": 4,
+     "lastAsked": "2026-06-29"
     },
     {
      "name": "猿辅导",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2025-09-13"
     },
     {
      "name": "携程",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2022-04-01"
     },
     {
      "name": "网易",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2024-01-21"
     }
    ]
-  }
+  },
+  "explain": "双指针：a、b 分别从两个链表头出发，走完本链后换到另一条链，交点处必然相遇（都走了 lenA+lenB 步）。\n时间复杂度 O(lenA+lenB)，空间 O(1)。"
  },
  {
   "id": 169,
@@ -7483,61 +8583,76 @@
   "freq": {
    "rank": 98,
    "value": 68,
+   "lastAsked": "2026-03-18",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 21
+     "value": 21,
+     "lastAsked": "2022-03-24"
     },
     {
      "name": "美团",
-     "value": 11
+     "value": 11,
+     "lastAsked": "2022-03-17"
     },
     {
      "name": "腾讯",
-     "value": 10
+     "value": 10,
+     "lastAsked": "2024-05-31"
     },
     {
      "name": "阿里巴巴",
-     "value": 8
+     "value": 8,
+     "lastAsked": "2026-03-18"
     },
     {
      "name": "快手",
-     "value": 4
+     "value": 4,
+     "lastAsked": "2021-10-24"
     },
     {
      "name": "百度",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2024-09-25"
     },
     {
      "name": "拼多多",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2023-03-18"
     },
     {
      "name": "滴滴",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2025-08-01"
     },
     {
      "name": "网易",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2022-03-25"
     },
     {
      "name": "华为",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2022-04-20"
     },
     {
      "name": "小米",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2025-09-03"
     },
     {
      "name": "亚马逊",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2022-05-07"
     },
     {
      "name": "虾皮",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2020-09-08"
     }
    ]
-  }
+  },
+  "explain": "摩尔投票：候选者 + 计数器，相同 +1 不同 -1，归零换人，最终为多数元素。\n时间复杂度 O(n)，空间 O(1)。"
  },
  {
   "id": 189,
@@ -7591,45 +8706,56 @@
   "freq": {
    "rank": 165,
    "value": 34,
+   "lastAsked": "2026-05-16",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 13
+     "value": 13,
+     "lastAsked": "2026-05-16"
     },
     {
      "name": "快手",
-     "value": 5
+     "value": 5,
+     "lastAsked": "2025-12-23"
     },
     {
      "name": "腾讯",
-     "value": 5
+     "value": 5,
+     "lastAsked": "2021-04-26"
     },
     {
      "name": "微软",
-     "value": 4
+     "value": 4,
+     "lastAsked": "2022-03-22"
     },
     {
      "name": "猿辅导",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2020-07-08"
     },
     {
      "name": "美团",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-09-16"
     },
     {
      "name": "阿里巴巴",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2022-03-06"
     },
     {
      "name": "滴滴",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2024-08-01"
     },
     {
      "name": "小米",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2022-09-29"
     }
    ]
-  }
+  },
+  "explain": "三次翻转：整体翻转 → 前 k 部分翻转 → 后 n-k 部分翻转，k 先取模。\n原地修改，时间复杂度 O(n)，空间 O(1)。"
  },
  {
   "id": 198,
@@ -7678,65 +8804,81 @@
   "freq": {
    "rank": 89,
    "value": 75,
+   "lastAsked": "2026-07-28",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 36
+     "value": 36,
+     "lastAsked": "2025-07-02"
     },
     {
      "name": "腾讯",
-     "value": 8
+     "value": 8,
+     "lastAsked": "2026-03-26"
     },
     {
      "name": "美团",
-     "value": 6
+     "value": 6,
+     "lastAsked": "2025-06-03"
     },
     {
      "name": "阿里巴巴",
-     "value": 5
+     "value": 5,
+     "lastAsked": "2025-04-21"
     },
     {
      "name": "华为",
-     "value": 4
+     "value": 4,
+     "lastAsked": "2025-03-25"
     },
     {
      "name": "微软",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2022-05-17"
     },
     {
      "name": "拼多多",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2025-10-29"
     },
     {
      "name": "快手",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2026-07-28"
     },
     {
      "name": "京东",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2021-09-18"
     },
     {
      "name": "网易",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2026-07-15"
     },
     {
      "name": "滴滴",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2022-02-14"
     },
     {
      "name": "亚马逊",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2025-04-17"
     },
     {
      "name": "虾皮",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2022-07-28"
     },
     {
      "name": "携程",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2023-03-08"
     }
    ]
-  }
+  },
+  "explain": "滚动 DP：rob[i] = max(rob[i-1], rob[i-2] + nums[i])，两个变量滚动。\n时间复杂度 O(n)，空间 O(1)。"
  },
  {
   "id": 199,
@@ -7785,65 +8927,81 @@
   "freq": {
    "rank": 40,
    "value": 161,
+   "lastAsked": "2026-05-28",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 90
+     "value": 90,
+     "lastAsked": "2026-05-07"
     },
     {
      "name": "百度",
-     "value": 15
+     "value": 15,
+     "lastAsked": "2026-01-13"
     },
     {
      "name": "快手",
-     "value": 13
+     "value": 13,
+     "lastAsked": "2026-04-06"
     },
     {
      "name": "腾讯",
-     "value": 13
+     "value": 13,
+     "lastAsked": "2026-03-10"
     },
     {
      "name": "美团",
-     "value": 9
+     "value": 9,
+     "lastAsked": "2025-04-16"
     },
     {
      "name": "阿里巴巴",
-     "value": 4
+     "value": 4,
+     "lastAsked": "2025-12-11"
     },
     {
      "name": "虾皮",
-     "value": 4
+     "value": 4,
+     "lastAsked": "2026-05-28"
     },
     {
      "name": "猿辅导",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2020-09-19"
     },
     {
      "name": "滴滴",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2023-10-20"
     },
     {
      "name": "微软",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2024-03-04"
     },
     {
      "name": "bilibili",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2025-02-27"
     },
     {
      "name": "京东",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2025-06-14"
     },
     {
      "name": "网易",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2022-07-14"
     },
     {
      "name": "携程",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-11-24"
     }
    ]
-  }
+  },
+  "explain": "层序 BFS：每层取最后一个节点加入结果。\n时间复杂度 O(n)，空间 O(n)。"
  },
  {
   "id": 200,
@@ -7892,85 +9050,106 @@
   "freq": {
    "rank": 12,
    "value": 329,
+   "lastAsked": "2026-06-20",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 189
+     "value": 189,
+     "lastAsked": "2026-06-20"
     },
     {
      "name": "快手",
-     "value": 17
+     "value": 17,
+     "lastAsked": "2026-04-18"
     },
     {
      "name": "百度",
-     "value": 17
+     "value": 17,
+     "lastAsked": "2026-03-20"
     },
     {
      "name": "腾讯",
-     "value": 15
+     "value": 15,
+     "lastAsked": "2026-03-24"
     },
     {
      "name": "阿里巴巴",
-     "value": 13
+     "value": 13,
+     "lastAsked": "2026-04-27"
     },
     {
      "name": "猿辅导",
-     "value": 12
+     "value": 12,
+     "lastAsked": "2025-09-08"
     },
     {
      "name": "华为",
-     "value": 11
+     "value": 11,
+     "lastAsked": "2026-05-23"
     },
     {
      "name": "微软",
-     "value": 10
+     "value": 10,
+     "lastAsked": "2025-12-21"
     },
     {
      "name": "美团",
-     "value": 10
+     "value": 10,
+     "lastAsked": "2022-04-13"
     },
     {
      "name": "滴滴",
-     "value": 10
+     "value": 10,
+     "lastAsked": "2025-09-04"
     },
     {
      "name": "虾皮",
-     "value": 6
+     "value": 6,
+     "lastAsked": "2025-11-05"
     },
     {
      "name": "拼多多",
-     "value": 5
+     "value": 5,
+     "lastAsked": "2026-04-27"
     },
     {
      "name": "bilibili",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2024-09-09"
     },
     {
      "name": "小红书",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2026-05-25"
     },
     {
      "name": "小米",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2023-08-03"
     },
     {
      "name": "商汤",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2026-03-01"
     },
     {
      "name": "亚马逊",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2022-06-27"
     },
     {
      "name": "旷视",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-07-19"
     },
     {
      "name": "图森",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-07-17"
     }
    ]
-  }
+  },
+  "explain": "DFS 淹没：遍历网格，遇到 '1' 计数并递归把连通的 '1' 全部置 '0'。\n时间复杂度 O(m·n)，空间 O(m·n)（递归栈）。"
  },
  {
   "id": 206,
@@ -8023,85 +9202,106 @@
   "freq": {
    "rank": 3,
    "value": 749,
+   "lastAsked": "2026-08-09",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 240
+     "value": 240,
+     "lastAsked": "2026-07-15"
     },
     {
      "name": "腾讯",
-     "value": 109
+     "value": 109,
+     "lastAsked": "2026-03-20"
     },
     {
      "name": "美团",
-     "value": 101
+     "value": 101,
+     "lastAsked": "2026-02-01"
     },
     {
      "name": "百度",
-     "value": 74
+     "value": 74,
+     "lastAsked": "2026-08-09"
     },
     {
      "name": "快手",
-     "value": 54
+     "value": 54,
+     "lastAsked": "2026-05-25"
     },
     {
      "name": "滴滴",
-     "value": 34
+     "value": 34,
+     "lastAsked": "2026-04-16"
     },
     {
      "name": "阿里巴巴",
-     "value": 30
+     "value": 30,
+     "lastAsked": "2026-03-29"
     },
     {
      "name": "微软",
-     "value": 25
+     "value": 25,
+     "lastAsked": "2026-04-21"
     },
     {
      "name": "虾皮",
-     "value": 19
+     "value": 19,
+     "lastAsked": "2022-05-17"
     },
     {
      "name": "小米",
-     "value": 17
+     "value": 17,
+     "lastAsked": "2024-12-08"
     },
     {
      "name": "拼多多",
-     "value": 11
+     "value": 11,
+     "lastAsked": "2026-05-28"
     },
     {
      "name": "京东",
-     "value": 10
+     "value": 10,
+     "lastAsked": "2025-10-16"
     },
     {
      "name": "猿辅导",
-     "value": 7
+     "value": 7,
+     "lastAsked": "2022-04-01"
     },
     {
      "name": "bilibili",
-     "value": 5
+     "value": 5,
+     "lastAsked": "2025-09-04"
     },
     {
      "name": "网易",
-     "value": 4
+     "value": 4,
+     "lastAsked": "2026-04-08"
     },
     {
      "name": "携程",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2025-05-13"
     },
     {
      "name": "小红书",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2026-04-23"
     },
     {
      "name": "亚马逊",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2025-09-04"
     },
     {
      "name": "华为",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2022-04-17"
     }
    ]
-  }
+  },
+  "explain": "迭代反转：prev/cur/nxt 三指针，逐个把 cur.next 指向 prev。\n时间复杂度 O(n)，空间 O(1)。也可用递归。"
  },
  {
   "id": 207,
@@ -8155,61 +9355,76 @@
   "freq": {
    "rank": 99,
    "value": 67,
+   "lastAsked": "2026-07-08",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 34
+     "value": 34,
+     "lastAsked": "2026-07-08"
     },
     {
      "name": "微软",
-     "value": 14
+     "value": 14,
+     "lastAsked": "2022-03-16"
     },
     {
      "name": "华为",
-     "value": 4
+     "value": 4,
+     "lastAsked": "2024-10-16"
     },
     {
      "name": "阿里巴巴",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2026-04-07"
     },
     {
      "name": "快手",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2023-06-26"
     },
     {
      "name": "腾讯",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2026-03-19"
     },
     {
      "name": "拼多多",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2026-04-14"
     },
     {
      "name": "小红书",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2026-01-26"
     },
     {
      "name": "美团",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-04-28"
     },
     {
      "name": "猿辅导",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2020-07-27"
     },
     {
      "name": "滴滴",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2025-07-25"
     },
     {
      "name": "商汤",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-09-21"
     },
     {
      "name": "携程",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2022-04-14"
     }
    ]
-  }
+  },
+  "explain": "拓扑排序：建图 + 入度表，Kahn 算法不断取出入度为 0 的课程，若取出的数量等于 n 则无环可完成。\n时间复杂度 O(V+E)，空间 O(V+E)。"
  },
  {
   "id": 208,
@@ -8273,53 +9488,66 @@
   "freq": {
    "rank": 141,
    "value": 42,
+   "lastAsked": "2026-07-23",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 17
+     "value": 17,
+     "lastAsked": "2026-06-29"
     },
     {
      "name": "腾讯",
-     "value": 7
+     "value": 7,
+     "lastAsked": "2026-04-28"
     },
     {
      "name": "微软",
-     "value": 4
+     "value": 4,
+     "lastAsked": "2022-04-21"
     },
     {
      "name": "百度",
-     "value": 4
+     "value": 4,
+     "lastAsked": "2026-07-23"
     },
     {
      "name": "快手",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2021-07-18"
     },
     {
      "name": "拼多多",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2024-09-18"
     },
     {
      "name": "虾皮",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2026-01-20"
     },
     {
      "name": "美团",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-04-17"
     },
     {
      "name": "阿里巴巴",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-04-25"
     },
     {
      "name": "猿辅导",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2020-07-08"
     },
     {
      "name": "华为",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2024-10-11"
     }
    ]
-  }
+  },
+  "explain": "字典树：每个节点含 children 哈希表与 isEnd 标记；insert/search/startsWith 都沿路径逐字符走。\n时间复杂度 O(len)，空间 O(节点数×字符集)。"
  },
  {
   "id": 215,
@@ -8373,97 +9601,121 @@
   "freq": {
    "rank": 4,
    "value": 601,
+   "lastAsked": "2026-08-06",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 205
+     "value": 205,
+     "lastAsked": "2026-04-14"
     },
     {
      "name": "美团",
-     "value": 101
+     "value": 101,
+     "lastAsked": "2026-08-06"
     },
     {
      "name": "腾讯",
-     "value": 62
+     "value": 62,
+     "lastAsked": "2026-07-09"
     },
     {
      "name": "百度",
-     "value": 45
+     "value": 45,
+     "lastAsked": "2026-04-27"
     },
     {
      "name": "阿里巴巴",
-     "value": 34
+     "value": 34,
+     "lastAsked": "2026-04-28"
     },
     {
      "name": "快手",
-     "value": 34
+     "value": 34,
+     "lastAsked": "2026-05-10"
     },
     {
      "name": "微软",
-     "value": 29
+     "value": 29,
+     "lastAsked": "2026-03-04"
     },
     {
      "name": "拼多多",
-     "value": 16
+     "value": 16,
+     "lastAsked": "2026-06-22"
     },
     {
      "name": "猿辅导",
-     "value": 15
+     "value": 15,
+     "lastAsked": "2022-12-26"
     },
     {
      "name": "虾皮",
-     "value": 12
+     "value": 12,
+     "lastAsked": "2026-05-24"
     },
     {
      "name": "滴滴",
-     "value": 10
+     "value": 10,
+     "lastAsked": "2026-04-15"
     },
     {
      "name": "小米",
-     "value": 9
+     "value": 9,
+     "lastAsked": "2025-03-25"
     },
     {
      "name": "京东",
-     "value": 7
+     "value": 7,
+     "lastAsked": "2023-09-15"
     },
     {
      "name": "网易",
-     "value": 5
+     "value": 5,
+     "lastAsked": "2022-04-07"
     },
     {
      "name": "小红书",
-     "value": 5
+     "value": 5,
+     "lastAsked": "2026-06-16"
     },
     {
      "name": "bilibili",
-     "value": 4
+     "value": 4,
+     "lastAsked": "2026-03-17"
     },
     {
      "name": "商汤",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2022-01-12"
     },
     {
      "name": "亚马逊",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2025-03-20"
     },
     {
      "name": "华为",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2022-04-07"
     },
     {
      "name": "旷视",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2022-04-06"
     },
     {
      "name": "图森",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2023-03-17"
     },
     {
      "name": "携程",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2026-05-28"
     }
    ]
-  }
+  },
+  "explain": "小根堆（大小为 k）：遍历时保持堆内为最大的 k 个元素，堆顶即第 k 大。\n时间复杂度 O(n log k)。也可用快速选择 O(n) 期望。"
  },
  {
   "id": 226,
@@ -8516,65 +9768,81 @@
   "freq": {
    "rank": 97,
    "value": 68,
+   "lastAsked": "2026-03-29",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 26
+     "value": 26,
+     "lastAsked": "2026-03-29"
     },
     {
      "name": "美团",
-     "value": 7
+     "value": 7,
+     "lastAsked": "2021-04-27"
     },
     {
      "name": "虾皮",
-     "value": 7
+     "value": 7,
+     "lastAsked": "2025-09-09"
     },
     {
      "name": "阿里巴巴",
-     "value": 5
+     "value": 5,
+     "lastAsked": "2025-04-07"
     },
     {
      "name": "快手",
-     "value": 4
+     "value": 4,
+     "lastAsked": "2025-03-19"
     },
     {
      "name": "腾讯",
-     "value": 4
+     "value": 4,
+     "lastAsked": "2021-08-02"
     },
     {
      "name": "拼多多",
-     "value": 4
+     "value": 4,
+     "lastAsked": "2025-06-29"
     },
     {
      "name": "百度",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2023-03-15"
     },
     {
      "name": "微软",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2022-03-30"
     },
     {
      "name": "滴滴",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2025-06-25"
     },
     {
      "name": "猿辅导",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2020-07-08"
     },
     {
      "name": "华为",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-12-03"
     },
     {
      "name": "网易",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-04-11"
     },
     {
      "name": "商汤",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-04-27"
     }
    ]
-  }
+  },
+  "explain": "递归交换：交换左右子树后递归处理左右子树。\n时间复杂度 O(n)，空间 O(h)。"
  },
  {
   "id": 230,
@@ -8628,41 +9896,51 @@
   "freq": {
    "rank": 169,
    "value": 33,
+   "lastAsked": "2024-04-10",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 23
+     "value": 23,
+     "lastAsked": "2024-04-10"
     },
     {
      "name": "美团",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2022-05-13"
     },
     {
      "name": "快手",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2021-03-30"
     },
     {
      "name": "微软",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2022-04-11"
     },
     {
      "name": "腾讯",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-04-21"
     },
     {
      "name": "猿辅导",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-08-14"
     },
     {
      "name": "百度",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2023-08-30"
     },
     {
      "name": "虾皮",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-04-12"
     }
    ]
-  }
+  },
+  "explain": "中序遍历计数：迭代中序遍历（显式栈），第 k 个出栈的元素即答案。\n时间复杂度 O(h+k)，空间 O(h)。"
  },
  {
   "id": 234,
@@ -8715,61 +9993,76 @@
   "freq": {
    "rank": 75,
    "value": 86,
+   "lastAsked": "2026-05-21",
    "companies": [
     {
      "name": "腾讯",
-     "value": 32
+     "value": 32,
+     "lastAsked": "2026-03-27"
     },
     {
      "name": "字节跳动",
-     "value": 25
+     "value": 25,
+     "lastAsked": "2026-05-21"
     },
     {
      "name": "美团",
-     "value": 9
+     "value": 9,
+     "lastAsked": "2025-03-25"
     },
     {
      "name": "猿辅导",
-     "value": 4
+     "value": 4,
+     "lastAsked": "2024-09-20"
     },
     {
      "name": "百度",
-     "value": 4
+     "value": 4,
+     "lastAsked": "2025-08-26"
     },
     {
      "name": "阿里巴巴",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2025-01-11"
     },
     {
      "name": "微软",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2022-04-21"
     },
     {
      "name": "滴滴",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2026-01-26"
     },
     {
      "name": "快手",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2023-08-04"
     },
     {
      "name": "拼多多",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-09-02"
     },
     {
      "name": "网易",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-08-09"
     },
     {
      "name": "虾皮",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2022-02-20"
     },
     {
      "name": "图森",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-10-08"
     }
    ]
-  }
+  },
+  "explain": "快慢指针找中点 + 反转后半段：先定位中点，反转后半链表，再逐节点比较。\n时间复杂度 O(n)，空间 O(1)。"
  },
  {
   "id": 236,
@@ -8828,77 +10121,96 @@
   "freq": {
    "rank": 22,
    "value": 267,
+   "lastAsked": "2026-07-06",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 130
+     "value": 130,
+     "lastAsked": "2026-05-18"
     },
     {
      "name": "快手",
-     "value": 22
+     "value": 22,
+     "lastAsked": "2026-05-11"
     },
     {
      "name": "微软",
-     "value": 21
+     "value": 21,
+     "lastAsked": "2022-12-22"
     },
     {
      "name": "美团",
-     "value": 20
+     "value": 20,
+     "lastAsked": "2025-10-11"
     },
     {
      "name": "腾讯",
-     "value": 17
+     "value": 17,
+     "lastAsked": "2025-05-13"
     },
     {
      "name": "百度",
-     "value": 13
+     "value": 13,
+     "lastAsked": "2026-04-23"
     },
     {
      "name": "猿辅导",
-     "value": 8
+     "value": 8,
+     "lastAsked": "2025-07-24"
     },
     {
      "name": "虾皮",
-     "value": 8
+     "value": 8,
+     "lastAsked": "2026-07-06"
     },
     {
      "name": "阿里巴巴",
-     "value": 7
+     "value": 7,
+     "lastAsked": "2024-10-14"
     },
     {
      "name": "滴滴",
-     "value": 6
+     "value": 6,
+     "lastAsked": "2024-05-24"
     },
     {
      "name": "小米",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2025-09-01"
     },
     {
      "name": "亚马逊",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2024-03-14"
     },
     {
      "name": "小红书",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2026-03-30"
     },
     {
      "name": "拼多多",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2023-03-18"
     },
     {
      "name": "bilibili",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2023-04-11"
     },
     {
      "name": "华为",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2022-03-09"
     },
     {
      "name": "网易",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2022-02-17"
     }
    ]
-  }
+  },
+  "explain": "后序递归：左右子树分别找 p/q，若两侧都有结果则当前节点即 LCA；否则返回非空的一侧。\n时间复杂度 O(n)，空间 O(h)。本题以节点值表示 p/q。"
  },
  {
   "id": 238,
@@ -8947,49 +10259,61 @@
   "freq": {
    "rank": 277,
    "value": 15,
+   "lastAsked": "2026-03-31",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 6
+     "value": 6,
+     "lastAsked": "2026-03-09"
     },
     {
      "name": "微软",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2022-04-21"
     },
     {
      "name": "阿里巴巴",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-08-10"
     },
     {
      "name": "快手",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2020-09-16"
     },
     {
      "name": "腾讯",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2022-08-30"
     },
     {
      "name": "百度",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2024-07-03"
     },
     {
      "name": "京东",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2026-03-31"
     },
     {
      "name": "拼多多",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-08-13"
     },
     {
      "name": "旷视",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2025-07-25"
     },
     {
      "name": "虾皮",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2026-03-01"
     }
    ]
-  }
+  },
+  "explain": "前缀积 × 后缀积：先算每个位置左侧所有数的乘积，再乘上右侧所有数的乘积，不用除法。\n时间复杂度 O(n)，空间 O(1)（结果数组外）。中间用 long long 防溢出。"
  },
  {
   "id": 239,
@@ -9043,93 +10367,116 @@
   "freq": {
    "rank": 42,
    "value": 153,
+   "lastAsked": "2026-06-18",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 47
+     "value": 47,
+     "lastAsked": "2026-05-18"
     },
     {
      "name": "腾讯",
-     "value": 24
+     "value": 24,
+     "lastAsked": "2026-05-12"
     },
     {
      "name": "美团",
-     "value": 17
+     "value": 17,
+     "lastAsked": "2026-04-09"
     },
     {
      "name": "快手",
-     "value": 11
+     "value": 11,
+     "lastAsked": "2026-06-18"
     },
     {
      "name": "虾皮",
-     "value": 9
+     "value": 9,
+     "lastAsked": "2026-04-09"
     },
     {
      "name": "微软",
-     "value": 6
+     "value": 6,
+     "lastAsked": "2022-05-19"
     },
     {
      "name": "阿里巴巴",
-     "value": 6
+     "value": 6,
+     "lastAsked": "2025-02-20"
     },
     {
      "name": "猿辅导",
-     "value": 5
+     "value": 5,
+     "lastAsked": "2022-11-14"
     },
     {
      "name": "华为",
-     "value": 5
+     "value": 5,
+     "lastAsked": "2026-04-16"
     },
     {
      "name": "拼多多",
-     "value": 5
+     "value": 5,
+     "lastAsked": "2026-04-02"
     },
     {
      "name": "滴滴",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2025-03-27"
     },
     {
      "name": "京东",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2026-03-06"
     },
     {
      "name": "网易",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2022-09-14"
     },
     {
      "name": "小米",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2024-11-25"
     },
     {
      "name": "商汤",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2024-06-05"
     },
     {
      "name": "bilibili",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2025-08-28"
     },
     {
      "name": "百度",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2020-07-20"
     },
     {
      "name": "旷视",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-11-23"
     },
     {
      "name": "图森",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-08-29"
     },
     {
      "name": "携程",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2024-09-02"
     },
     {
      "name": "小红书",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2025-08-19"
     }
    ]
-  }
+  },
+  "explain": "单调队列：维护一个下标单调递减的双端队列（存下标），队首即窗口最大值，过期下标出队。\n时间复杂度 O(n)，空间 O(k)。"
  },
  {
   "id": 240,
@@ -9183,69 +10530,86 @@
   "freq": {
    "rank": 76,
    "value": 85,
+   "lastAsked": "2026-07-21",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 43
+     "value": 43,
+     "lastAsked": "2026-02-23"
     },
     {
      "name": "腾讯",
-     "value": 10
+     "value": 10,
+     "lastAsked": "2026-03-26"
     },
     {
      "name": "微软",
-     "value": 7
+     "value": 7,
+     "lastAsked": "2022-04-08"
     },
     {
      "name": "美团",
-     "value": 6
+     "value": 6,
+     "lastAsked": "2024-05-06"
     },
     {
      "name": "阿里巴巴",
-     "value": 4
+     "value": 4,
+     "lastAsked": "2025-03-02"
     },
     {
      "name": "快手",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2024-10-09"
     },
     {
      "name": "猿辅导",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2020-08-27"
     },
     {
      "name": "百度",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2026-04-23"
     },
     {
      "name": "京东",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2025-05-13"
     },
     {
      "name": "华为",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2022-09-25"
     },
     {
      "name": "拼多多",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2023-02-02"
     },
     {
      "name": "网易",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2022-04-01"
     },
     {
      "name": "小米",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2023-06-20"
     },
     {
      "name": "虾皮",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2025-03-20"
     },
     {
      "name": "小红书",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2026-07-21"
     }
    ]
-  }
+  },
+  "explain": "Z 字形搜索：从右上角出发，若大于 target 左移，小于 target 下移。\n时间复杂度 O(m+n)，空间 O(1)。"
  },
  {
   "id": 279,
@@ -9294,33 +10658,41 @@
   "freq": {
    "rank": 200,
    "value": 24,
+   "lastAsked": "2026-03-20",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 18
+     "value": 18,
+     "lastAsked": "2026-03-20"
     },
     {
      "name": "腾讯",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2022-02-16"
     },
     {
      "name": "美团",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2022-06-04"
     },
     {
      "name": "滴滴",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2022-07-20"
     },
     {
      "name": "华为",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2022-10-28"
     },
     {
      "name": "商汤",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-12-06"
     }
    ]
-  }
+  },
+  "explain": "DP：dp[i] = min(dp[i - j²] + 1)，j² ≤ i。\n时间复杂度 O(n√n)，空间 O(n)。"
  },
  {
   "id": 283,
@@ -9369,73 +10741,91 @@
   "freq": {
    "rank": 100,
    "value": 67,
+   "lastAsked": "2026-03-23",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 22
+     "value": 22,
+     "lastAsked": "2026-01-16"
     },
     {
      "name": "美团",
-     "value": 8
+     "value": 8,
+     "lastAsked": "2023-10-11"
     },
     {
      "name": "百度",
-     "value": 6
+     "value": 6,
+     "lastAsked": "2024-10-31"
     },
     {
      "name": "虾皮",
-     "value": 5
+     "value": 5,
+     "lastAsked": "2025-10-29"
     },
     {
      "name": "微软",
-     "value": 4
+     "value": 4,
+     "lastAsked": "2022-09-19"
     },
     {
      "name": "阿里巴巴",
-     "value": 4
+     "value": 4,
+     "lastAsked": "2025-11-12"
     },
     {
      "name": "滴滴",
-     "value": 4
+     "value": 4,
+     "lastAsked": "2025-07-12"
     },
     {
      "name": "腾讯",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2024-03-05"
     },
     {
      "name": "快手",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2021-05-25"
     },
     {
      "name": "拼多多",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2026-03-23"
     },
     {
      "name": "小米",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2022-05-06"
     },
     {
      "name": "猿辅导",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-04-13"
     },
     {
      "name": "京东",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-03-20"
     },
     {
      "name": "华为",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-04-27"
     },
     {
      "name": "旷视",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2022-07-29"
     },
     {
      "name": "bilibili",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2025-07-14"
     }
    ]
-  }
+  },
+  "explain": "双指针：slow 指向下一个非零位置，遍历时把非零元素前移，末尾补零；或直接交换。\n原地修改，时间复杂度 O(n)，空间 O(1)。"
  },
  {
   "id": 287,
@@ -9484,45 +10874,56 @@
   "freq": {
    "rank": 154,
    "value": 37,
+   "lastAsked": "2026-08-03",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 17
+     "value": 17,
+     "lastAsked": "2026-08-03"
     },
     {
      "name": "腾讯",
-     "value": 9
+     "value": 9,
+     "lastAsked": "2025-07-13"
     },
     {
      "name": "微软",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2022-01-08"
     },
     {
      "name": "百度",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2025-08-13"
     },
     {
      "name": "美团",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-08-24"
     },
     {
      "name": "阿里巴巴",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2026-04-15"
     },
     {
      "name": "滴滴",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2026-02-03"
     },
     {
      "name": "拼多多",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2025-08-07"
     },
     {
      "name": "商汤",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2025-01-08"
     }
    ]
-  }
+  },
+  "explain": "Floyd 判圈：把值当下标走链，快慢指针相遇后从头同步走，相遇即重复数。\n时间复杂度 O(n)，空间 O(1)。等价于带环链表的环入口问题。"
  },
  {
   "id": 295,
@@ -9577,49 +10978,61 @@
   "freq": {
    "rank": 158,
    "value": 36,
+   "lastAsked": "2026-04-16",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 17
+     "value": 17,
+     "lastAsked": "2026-04-16"
     },
     {
      "name": "腾讯",
-     "value": 6
+     "value": 6,
+     "lastAsked": "2026-04-07"
     },
     {
      "name": "微软",
-     "value": 5
+     "value": 5,
+     "lastAsked": "2022-03-19"
     },
     {
      "name": "虾皮",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2022-01-04"
     },
     {
      "name": "美团",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2022-02-20"
     },
     {
      "name": "阿里巴巴",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2022-09-03"
     },
     {
      "name": "快手",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2022-05-06"
     },
     {
      "name": "拼多多",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2023-03-11"
     },
     {
      "name": "网易",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-09-28"
     },
     {
      "name": "亚马逊",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2024-01-18"
     }
    ]
-  }
+  },
+  "explain": "双堆：大根堆存较小的一半、小根堆存较大的一半，保持两堆大小平衡；findMedian 取堆顶平均。\naddNum O(log n)，findMedian O(1)。注意除以 2.0 保留小数。"
  },
  {
   "id": 300,
@@ -9668,85 +11081,106 @@
   "freq": {
    "rank": 19,
    "value": 271,
+   "lastAsked": "2026-08-08",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 107
+     "value": 107,
+     "lastAsked": "2026-07-16"
     },
     {
      "name": "腾讯",
-     "value": 49
+     "value": 49,
+     "lastAsked": "2026-06-22"
     },
     {
      "name": "快手",
-     "value": 30
+     "value": 30,
+     "lastAsked": "2026-04-21"
     },
     {
      "name": "美团",
-     "value": 18
+     "value": 18,
+     "lastAsked": "2026-03-20"
     },
     {
      "name": "百度",
-     "value": 14
+     "value": 14,
+     "lastAsked": "2026-01-13"
     },
     {
      "name": "滴滴",
-     "value": 9
+     "value": 9,
+     "lastAsked": "2026-07-26"
     },
     {
      "name": "阿里巴巴",
-     "value": 8
+     "value": 8,
+     "lastAsked": "2026-04-15"
     },
     {
      "name": "华为",
-     "value": 5
+     "value": 5,
+     "lastAsked": "2025-10-13"
     },
     {
      "name": "拼多多",
-     "value": 5
+     "value": 5,
+     "lastAsked": "2026-08-08"
     },
     {
      "name": "微软",
-     "value": 4
+     "value": 4,
+     "lastAsked": "2024-07-02"
     },
     {
      "name": "图森",
-     "value": 4
+     "value": 4,
+     "lastAsked": "2025-05-17"
     },
     {
      "name": "bilibili",
-     "value": 4
+     "value": 4,
+     "lastAsked": "2025-05-22"
     },
     {
      "name": "商汤",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2024-09-18"
     },
     {
      "name": "虾皮",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2021-08-17"
     },
     {
      "name": "小红书",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2026-02-03"
     },
     {
      "name": "携程",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2025-05-12"
     },
     {
      "name": "网易",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2022-04-02"
     },
     {
      "name": "小米",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2025-08-12"
     },
     {
      "name": "亚马逊",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2022-03-30"
     }
    ]
-  }
+  },
+  "explain": "贪心 + 二分：tails[i] 存长度为 i+1 的递增子序列最小末尾，lower_bound 替换或追加。\n时间复杂度 O(n log n)，空间 O(n)。"
  },
  {
   "id": 322,
@@ -9800,73 +11234,91 @@
   "freq": {
    "rank": 53,
    "value": 132,
+   "lastAsked": "2026-04-15",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 59
+     "value": 59,
+     "lastAsked": "2026-04-15"
     },
     {
      "name": "腾讯",
-     "value": 23
+     "value": 23,
+     "lastAsked": "2025-06-26"
     },
     {
      "name": "美团",
-     "value": 8
+     "value": 8,
+     "lastAsked": "2025-03-26"
     },
     {
      "name": "快手",
-     "value": 7
+     "value": 7,
+     "lastAsked": "2026-03-18"
     },
     {
      "name": "华为",
-     "value": 7
+     "value": 7,
+     "lastAsked": "2025-09-23"
     },
     {
      "name": "阿里巴巴",
-     "value": 6
+     "value": 6,
+     "lastAsked": "2026-03-12"
     },
     {
      "name": "微软",
-     "value": 4
+     "value": 4,
+     "lastAsked": "2025-03-03"
     },
     {
      "name": "滴滴",
-     "value": 4
+     "value": 4,
+     "lastAsked": "2026-02-02"
     },
     {
      "name": "百度",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2023-08-08"
     },
     {
      "name": "拼多多",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2024-03-29"
     },
     {
      "name": "亚马逊",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2022-06-27"
     },
     {
      "name": "虾皮",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2025-09-05"
     },
     {
      "name": "猿辅导",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2023-08-05"
     },
     {
      "name": "网易",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-08-24"
     },
     {
      "name": "旷视",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-08-16"
     },
     {
      "name": "bilibili",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2025-06-28"
     }
    ]
-  }
+  },
+  "explain": "完全背包：dp[i] = min(dp[i - c] + 1)，c 为硬币面额；无法凑成保持无穷大，最终输出 -1；amount=0 输出 0。\n时间复杂度 O(n·amount)，空间 O(amount)。"
  },
  {
   "id": 347,
@@ -9920,65 +11372,81 @@
   "freq": {
    "rank": 136,
    "value": 44,
+   "lastAsked": "2026-07-13",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 15
+     "value": 15,
+     "lastAsked": "2026-04-10"
     },
     {
      "name": "腾讯",
-     "value": 6
+     "value": 6,
+     "lastAsked": "2026-03-31"
     },
     {
      "name": "微软",
-     "value": 4
+     "value": 4,
+     "lastAsked": "2022-08-28"
     },
     {
      "name": "阿里巴巴",
-     "value": 4
+     "value": 4,
+     "lastAsked": "2026-07-13"
     },
     {
      "name": "京东",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2025-03-26"
     },
     {
      "name": "百度",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2022-08-03"
     },
     {
      "name": "华为",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2024-05-13"
     },
     {
      "name": "小红书",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2026-03-25"
     },
     {
      "name": "美团",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-05-25"
     },
     {
      "name": "快手",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2026-03-10"
     },
     {
      "name": "滴滴",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-03-19"
     },
     {
      "name": "拼多多",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2025-02-09"
     },
     {
      "name": "商汤",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-08-09"
     },
     {
      "name": "旷视",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2023-05-03"
     }
    ]
-  }
+  },
+  "explain": "哈希计数 + 排序：先统计频率，再按 (-频率, 值) 排序取前 k，保证确定性顺序。\n时间复杂度 O(n log n)；要求 O(n) 可用桶排序/堆。"
  },
  {
   "id": 394,
@@ -10027,57 +11495,71 @@
   "freq": {
    "rank": 62,
    "value": 100,
+   "lastAsked": "2026-05-31",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 57
+     "value": 57,
+     "lastAsked": "2026-05-28"
     },
     {
      "name": "腾讯",
-     "value": 13
+     "value": 13,
+     "lastAsked": "2026-03-13"
     },
     {
      "name": "华为",
-     "value": 7
+     "value": 7,
+     "lastAsked": "2024-07-01"
     },
     {
      "name": "阿里巴巴",
-     "value": 5
+     "value": 5,
+     "lastAsked": "2026-05-31"
     },
     {
      "name": "拼多多",
-     "value": 5
+     "value": 5,
+     "lastAsked": "2025-07-17"
     },
     {
      "name": "微软",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2022-04-01"
     },
     {
      "name": "美团",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2025-07-22"
     },
     {
      "name": "百度",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2025-02-27"
     },
     {
      "name": "虾皮",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2024-12-26"
     },
     {
      "name": "猿辅导",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2020-09-11"
     },
     {
      "name": "滴滴",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2026-01-29"
     },
     {
      "name": "小红书",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2026-03-17"
     }
    ]
-  }
+  },
+  "explain": "栈：数字与字符串分别累积，遇 [ 把 (前置串, 重复次数) 入栈，遇 ] 弹栈拼接。\n时间复杂度 O(输出长度)，空间 O(嵌套深度)。注意数字可多位。"
  },
  {
   "id": 416,
@@ -10126,49 +11608,61 @@
   "freq": {
    "rank": 175,
    "value": 31,
+   "lastAsked": "2026-07-14",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 11
+     "value": 11,
+     "lastAsked": "2026-07-14"
     },
     {
      "name": "阿里巴巴",
-     "value": 6
+     "value": 6,
+     "lastAsked": "2026-02-05"
     },
     {
      "name": "华为",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2023-10-19"
     },
     {
      "name": "拼多多",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2025-09-02"
     },
     {
      "name": "猿辅导",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2024-07-01"
     },
     {
      "name": "百度",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2021-08-31"
     },
     {
      "name": "快手",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2023-08-12"
     },
     {
      "name": "腾讯",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2025-04-28"
     },
     {
      "name": "滴滴",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2024-07-30"
     },
     {
      "name": "网易",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-09-17"
     }
    ]
-  }
+  },
+  "explain": "0/1 背包：总和为奇数直接 false；dp 凑 target = sum/2。\n时间复杂度 O(n·target)，空间 O(target)。空数组按 LeetCode 语义返回 true。"
  },
  {
   "id": 437,
@@ -10222,37 +11716,46 @@
   "freq": {
    "rank": 304,
    "value": 13,
+   "lastAsked": "2026-03-23",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 6
+     "value": 6,
+     "lastAsked": "2023-08-16"
     },
     {
      "name": "微软",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2022-05-23"
     },
     {
      "name": "快手",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-03-21"
     },
     {
      "name": "腾讯",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2026-03-23"
     },
     {
      "name": "猿辅导",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2020-08-28"
     },
     {
      "name": "拼多多",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-08-04"
     },
     {
      "name": "网易",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-04-09"
     }
    ]
-  }
+  },
+  "explain": "前缀和 + 回溯：向下 DFS 时维护路径前缀和哈希表，统计 prefix - target 出现次数，回溯时恢复。\n时间复杂度 O(n)，空间 O(h)。注意路径必须向下且可延伸。"
  },
  {
   "id": 438,
@@ -10306,25 +11809,31 @@
   "freq": {
    "rank": 282,
    "value": 15,
+   "lastAsked": "2025-04-22",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 8
+     "value": 8,
+     "lastAsked": "2024-07-09"
     },
     {
      "name": "华为",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2023-05-05"
     },
     {
      "name": "微软",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2021-12-15"
     },
     {
      "name": "百度",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2025-04-22"
     }
    ]
-  }
+  },
+  "explain": "定长滑动窗口：用 26 长度频次数组记录窗口内字符，与 p 的频次数组比对，相等即是一个异位词起点。\n时间复杂度 O(n)，空间 O(1)。"
  },
  {
   "id": 543,
@@ -10377,53 +11886,66 @@
   "freq": {
    "rank": 84,
    "value": 82,
+   "lastAsked": "2026-08-03",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 36
+     "value": 36,
+     "lastAsked": "2026-08-03"
     },
     {
      "name": "美团",
-     "value": 10
+     "value": 10,
+     "lastAsked": "2023-04-04"
     },
     {
      "name": "阿里巴巴",
-     "value": 8
+     "value": 8,
+     "lastAsked": "2025-06-11"
     },
     {
      "name": "微软",
-     "value": 7
+     "value": 7,
+     "lastAsked": "2022-01-26"
     },
     {
      "name": "猿辅导",
-     "value": 6
+     "value": 6,
+     "lastAsked": "2021-08-14"
     },
     {
      "name": "腾讯",
-     "value": 4
+     "value": 4,
+     "lastAsked": "2026-03-19"
     },
     {
      "name": "快手",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2021-06-27"
     },
     {
      "name": "百度",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2021-08-23"
     },
     {
      "name": "网易",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2024-10-09"
     },
     {
      "name": "亚马逊",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2022-06-27"
     },
     {
      "name": "小米",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-08-03"
     }
    ]
-  }
+  },
+  "explain": "后序 DFS：对每个节点计算 left+right 更新全局最大直径，向上返回 1+max(left,right)。\n时间复杂度 O(n)，空间 O(h)。"
  },
  {
   "id": 560,
@@ -10477,77 +11999,96 @@
   "freq": {
    "rank": 86,
    "value": 79,
+   "lastAsked": "2026-07-20",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 28
+     "value": 28,
+     "lastAsked": "2026-03-04"
     },
     {
      "name": "微软",
-     "value": 11
+     "value": 11,
+     "lastAsked": "2022-09-22"
     },
     {
      "name": "腾讯",
-     "value": 8
+     "value": 8,
+     "lastAsked": "2026-04-09"
     },
     {
      "name": "美团",
-     "value": 5
+     "value": 5,
+     "lastAsked": "2025-08-28"
     },
     {
      "name": "快手",
-     "value": 5
+     "value": 5,
+     "lastAsked": "2026-03-11"
     },
     {
      "name": "滴滴",
-     "value": 5
+     "value": 5,
+     "lastAsked": "2026-07-20"
     },
     {
      "name": "华为",
-     "value": 4
+     "value": 4,
+     "lastAsked": "2024-04-25"
     },
     {
      "name": "阿里巴巴",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2024-08-19"
     },
     {
      "name": "百度",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2026-03-17"
     },
     {
      "name": "网易",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2022-05-28"
     },
     {
      "name": "猿辅导",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2020-07-08"
     },
     {
      "name": "京东",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2025-03-30"
     },
     {
      "name": "拼多多",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-08-16"
     },
     {
      "name": "小米",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2024-03-28"
     },
     {
      "name": "亚马逊",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2025-05-28"
     },
     {
      "name": "虾皮",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-08-04"
     },
     {
      "name": "bilibili",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2025-09-03"
     }
    ]
-  }
+  },
+  "explain": "前缀和 + 哈希计数：记录每个前缀和出现的次数，遍历时累加 cnt[pre - k]。\n时间复杂度 O(n)，空间 O(n)。前缀和与 k 用 long long 防溢出。"
  },
  {
   "id": 739,
@@ -10596,45 +12137,56 @@
   "freq": {
    "rank": 102,
    "value": 63,
+   "lastAsked": "2026-05-19",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 26
+     "value": 26,
+     "lastAsked": "2025-09-19"
     },
     {
      "name": "华为",
-     "value": 23
+     "value": 23,
+     "lastAsked": "2026-05-19"
     },
     {
      "name": "腾讯",
-     "value": 4
+     "value": 4,
+     "lastAsked": "2026-04-28"
     },
     {
      "name": "微软",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2022-01-21"
     },
     {
      "name": "美团",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2025-09-02"
     },
     {
      "name": "虾皮",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2024-09-23"
     },
     {
      "name": "bilibili",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2025-06-22"
     },
     {
      "name": "滴滴",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2025-07-31"
     },
     {
      "name": "拼多多",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2023-03-22"
     }
    ]
-  }
+  },
+  "explain": "单调递减栈（从右往左或从左往右）：栈存下标，遇到更高温度时弹栈并计算天数差。\n时间复杂度 O(n)，空间 O(n)。"
  },
  {
   "id": 763,
@@ -10683,29 +12235,36 @@
   "freq": {
    "rank": 215,
    "value": 22,
+   "lastAsked": "2026-01-13",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 17
+     "value": 17,
+     "lastAsked": "2025-10-17"
     },
     {
      "name": "华为",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2021-09-14"
     },
     {
      "name": "美团",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2024-08-09"
     },
     {
      "name": "阿里巴巴",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2024-01-14"
     },
     {
      "name": "京东",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2026-01-13"
     }
    ]
-  }
+  },
+  "explain": "贪心：先记录每个字母最后出现的位置，扫描时扩展区间右端，i == end 时切分。\n时间复杂度 O(n)，空间 O(字符集)。"
  },
  {
   "id": 994,
@@ -10754,45 +12313,56 @@
   "freq": {
    "rank": 275,
    "value": 15,
+   "lastAsked": "2026-04-21",
    "companies": [
     {
      "name": "华为",
-     "value": 4
+     "value": 4,
+     "lastAsked": "2023-04-27"
     },
     {
      "name": "腾讯",
-     "value": 3
+     "value": 3,
+     "lastAsked": "2025-04-10"
     },
     {
      "name": "字节跳动",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2022-05-03"
     },
     {
      "name": "微软",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2022-12-31"
     },
     {
      "name": "阿里巴巴",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2024-04-06"
     },
     {
      "name": "滴滴",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2025-12-09"
     },
     {
      "name": "拼多多",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2026-04-21"
     },
     {
      "name": "小米",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2022-09-16"
     },
     {
      "name": "小红书",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2026-03-17"
     }
    ]
-  }
+  },
+  "explain": "多源 BFS：把所有腐烂橘子入队，按层扩散，层数即分钟数；统计新鲜橘子，结束仍有新鲜则返回 -1。\n时间复杂度 O(m·n)，空间 O(m·n)。"
  },
  {
   "id": 1143,
@@ -10846,80 +12416,100 @@
   "freq": {
    "rank": 32,
    "value": 197,
+   "lastAsked": "2026-06-30",
    "companies": [
     {
      "name": "字节跳动",
-     "value": 60
+     "value": 60,
+     "lastAsked": "2026-06-04"
     },
     {
      "name": "腾讯",
-     "value": 29
+     "value": 29,
+     "lastAsked": "2025-07-17"
     },
     {
      "name": "美团",
-     "value": 23
+     "value": 23,
+     "lastAsked": "2025-09-10"
     },
     {
      "name": "快手",
-     "value": 21
+     "value": 21,
+     "lastAsked": "2026-06-03"
     },
     {
      "name": "百度",
-     "value": 20
+     "value": 20,
+     "lastAsked": "2026-03-12"
     },
     {
      "name": "阿里巴巴",
-     "value": 10
+     "value": 10,
+     "lastAsked": "2026-06-30"
     },
     {
      "name": "滴滴",
-     "value": 7
+     "value": 7,
+     "lastAsked": "2026-04-21"
     },
     {
      "name": "华为",
-     "value": 5
+     "value": 5,
+     "lastAsked": "2025-03-27"
     },
     {
      "name": "小米",
-     "value": 5
+     "value": 5,
+     "lastAsked": "2024-03-20"
     },
     {
      "name": "小红书",
-     "value": 5
+     "value": 5,
+     "lastAsked": "2026-04-27"
     },
     {
      "name": "微软",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2022-03-07"
     },
     {
      "name": "拼多多",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2023-05-06"
     },
     {
      "name": "网易",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2025-10-11"
     },
     {
      "name": "虾皮",
-     "value": 2
+     "value": 2,
+     "lastAsked": "2023-08-01"
     },
     {
      "name": "猿辅导",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2020-07-08"
     },
     {
      "name": "京东",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2026-03-18"
     },
     {
      "name": "商汤",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2021-09-27"
     },
     {
      "name": "携程",
-     "value": 1
+     "value": 1,
+     "lastAsked": "2024-07-29"
     }
    ]
-  }
+  },
+  "explain": "二维 DP：dp[i][j]，字符相同取对角 +1，否则取 max(上, 左)。\n时间复杂度 O(m·n)，空间可滚动到 O(n)。"
  }
 ]

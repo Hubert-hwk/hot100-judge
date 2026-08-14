@@ -144,6 +144,12 @@ function setupFilters() {
     .sort((a, b) => (a === '全部' ? -1 : b === '全部' ? 1 : a.localeCompare(b, 'zh-CN')));
   $('difficultyFilter').innerHTML = difficulties.map((d) => `<option value="${d}">${d}</option>`).join('');
   $('topicFilter').innerHTML = topics.map((t) => `<option value="${t}">${t}</option>`).join('');
+  const companies = [...new Set(
+    state.problems.flatMap((p) => (p.freq && p.freq.companies ? p.freq.companies : []).map((c) => c.name)),
+  )].sort((a, b) => a.localeCompare(b, 'zh-CN'));
+  $('companyFilter').innerHTML = ['<option value="全部">全部</option>',
+    ...companies.map((c) => `<option value="${c}">${c}</option>`),
+  ].join('');
 }
 
 function filteredProblems() {
@@ -152,11 +158,13 @@ function filteredProblems() {
   const topic = $('topicFilter').value;
   const sort = $('sortFilter').value;
   const onlyStar = $('starFilter').checked;
+  const company = $('companyFilter').value;
   const list = state.problems.filter((p) => {
     const text = `${p.id} ${p.title} ${p.topic}`.toLowerCase();
     return (!keyword || text.includes(keyword))
       && (difficulty === '全部' || p.difficulty === difficulty)
       && (topic === '全部' || (p.topic || '').includes(topic))
+      && (company === '全部' || ((p.freq && p.freq.companies) || []).some((c) => c.name === company))
       && (!onlyStar || state.starred[p.id]);
   });
   if (sort === 'hot') {
@@ -230,9 +238,18 @@ function renderProblem() {
   if (freq && freq.companies && freq.companies.length) {
     compsEl.hidden = false;
     compsEl.innerHTML = freq.companies.slice(0, 6).map((c) =>
-      `<span class="company-tag" title="出现 ${c.value} 次">${esc(c.name)}</span>`).join('');
+      `<span class="company-tag" title="${esc(c.name)} · 出现 ${c.value} 次 · 最近 ${c.lastAsked || '未知'}">${esc(c.name)}</span>`).join('');
   } else {
     compsEl.hidden = true;
+  }
+
+  // 最近被考日期 + 数据来源说明
+  const freqNote = $('freqNote');
+  if (freq) {
+    freqNote.hidden = false;
+    freqNote.textContent = `最近被考：${freq.lastAsked || '未知'} ｜ 高频/公司数据来自 CodeTop（codetop.cc），仅供参考`;
+  } else {
+    freqNote.hidden = true;
   }
 
   // 收藏状态
@@ -357,6 +374,13 @@ function renderSolution() {
 
   const entry = sol[state.solutionLang];
   const blocks = [];
+  if (problem.explain) {
+    blocks.push(`
+      <div class="sol-explain">
+        <div class="sol-explain-head">💡 解题思路</div>
+        <div class="sol-explain-body">${esc(problem.explain)}</div>
+      </div>`);
+  }
   if (entry && entry.core) {
     blocks.push(solBlock('核心代码（函数签名模式）', entry.core));
   }
@@ -700,6 +724,7 @@ function setupEvents() {
   $('difficultyFilter').addEventListener('change', renderList);
   $('topicFilter').addEventListener('change', renderList);
   $('sortFilter').addEventListener('change', renderList);
+  $('companyFilter').addEventListener('change', renderList);
   $('starFilter').addEventListener('change', renderList);
 
   $('randomBtn').addEventListener('click', () => {
